@@ -1160,9 +1160,9 @@
 
 
 <p><a id="refheadingtoc251844278084667"></a></p>
-<h1 id="19-vuejs-client-improvements">19. <span style="color: #365f91"><strong>Vue.js Client Improvements</strong></span></h1>
+<h1 id="19-vuejs-client-improvements">19. <span style="color: #365f91">Vue.js Client Improvements</span></h1>
 <p><a id="refheadingtoc251846278084667"></a></p>
-<h2 id="191-introduction">19.1. <span style="color: #4f81bd"><strong>Introduction</strong></span></h2>
+<h2 id="191-introduction">19.1. <span style="color: #4f81bd">Introduction</span></h2>
 <p>We will test the <strong>[vuejs-21]</strong> project with the development server. Therefore, we will again need the server to send CORS headers. The <strong>[config.json]</strong> file for version 14 of the tax calculation server must therefore allow these headers:</p>
 <p><img src="images/1000000000000753000004330D3ABFCE.png" style="width:14.88cm;height:8.532cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000753000004330D3ABFCE.png" /></p>
 <p>The <strong>[vuejs-21]</strong> project is initially created by duplicating the <strong>[vuejs-20]</strong> project. It is then modified <strong>[3]</strong>.</p>
@@ -1233,7 +1233,7 @@
   </li>
 </ul>
 <p><a id="refheadingtoc259307196815120"></a></p>
-<h2 id="193-the-session">19.3. <span style="color: #4f81bd"><strong>The session</strong></span></h2>
+<h2 id="193-the-session">19.3. <span style="color: #4f81bd">The session</span></h2>
 <p>The need for a session arises because when the user types a URL into the browser’s address bar, the <strong>[main.js]</strong> script <strong>is executed again</strong>. However, this script contains the following instruction:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
 <span class="odt-code-line">// Vuex store</span>
@@ -1437,7 +1437,7 @@
   </li>
 </ul>
 <p><a id="refheadingtoc259311196815120"></a></p>
-<h2 id="195-the-pluginsession-plugin">19.5. <span style="color: #4f81bd"><strong>The [pluginSession] plugin</strong></span></h2>
+<h2 id="195-the-pluginsession-plugin">19.5. <span style="color: #4f81bd">The [pluginSession] plugin</span></h2>
 <p>As has been done many times before, the <strong>[pluginSession]</strong> plugin will allow views to access the session via the <strong>[this.$session]</strong> property:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
 <span class="odt-code-line"><span style="color:#0000ff">export default </span><span style="color:#000000">{</span></span>
@@ -1645,7 +1645,7 @@
   </li>
 </ul>
 <p><a id="refheadingtoc259317196815120"></a></p>
-<h2 id="198-the-notfound-view">19.8. <span style="color: #4f81bd"><strong>The [NotFound] view</strong></span></h2>
+<h2 id="198-the-notfound-view">19.8. <span style="color: #4f81bd">The [NotFound] view</span></h2>
 <p>The <strong>[NotFound]</strong> view is displayed if the route entered by the user does not match any known route:</p>
 <p><img src="images/10000000000008AD000003E60EE642BE.png" style="width:14.69cm;height:6.6cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000008AD000003E60EE642BE.png" /></p>
 <p>The view code is as follows:</p>
@@ -1729,10 +1729,10 @@
   </li>
 </ul>
 <p><a id="refheadingtoc259319196815120"></a></p>
-<h2 id="199-the-authentication-view">19.9. <span style="color: #4f81bd"><strong>The [Authentication] view</strong></span></h2>
+<h2 id="199-the-authentication-view">19.9. <span style="color: #4f81bd">The [Authentication] view</span></h2>
 <p>The <strong>[Authentication]</strong> view evolves as follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
-<span class="odt-code-line"><span style="color:#006400">&lt;!-- HTML definition of the view --&gt;</span></span>
+<span class="odt-code-line">&lt;!-- HTML definition of the view --&gt;</span>
 <span class="odt-code-line"><span style="color:#0000ff">&lt;</span><span style="color:#800000">template</span><span style="color:#0000ff">&gt;</span></span>
 <span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">Layout </span><span style="color:#ff0000">:</span><span style="color:#0000ff">left=&quot;false&quot; </span><span style="color:#ff0000">:</span><span style="color:#0000ff">right=&quot;true&quot;&gt;</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">...</span></span>
@@ -1909,7 +1909,7 @@
   </li>
 </ul>
 <p><a id="refheadingtoc259321196815120"></a></p>
-<h2 id="1910-the-calculimpot-view">19.10. <span style="color: #4f81bd"><strong>The [CalculImpot] view</strong></span></h2>
+<h2 id="1910-the-calculimpot-view">19.10. <span style="color: #4f81bd">The [CalculImpot] view</span></h2>
 <p>The code for the <strong>[CalculImpot]</strong> view evolves as follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
 <span class="odt-code-line">&lt;!-- HTML definition of the view --&gt;</span>
@@ -1978,7 +1978,7 @@
   </li>
 </ul>
 <p><a id="refheadingtoc259323196815120"></a></p>
-<h2 id="1911-the-simulationlist-view">19.11. <span style="color: #4f81bd"><strong>The [SimulationList] view</strong></span></h2>
+<h2 id="1911-the-simulationlist-view">19.11. <span style="color: #4f81bd">The [SimulationList] view</span></h2>
 <p>The <strong>[ListeSimulations]</strong> view evolves as follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
 <span class="odt-code-line">&lt;!-- HTML definition of the view --&gt;</span>
@@ -2036,7 +2036,7 @@
   </li>
 </ul>
 <p><a id="refheadingtoc259325196815120"></a></p>
-<h2 id="1912-project-execution">19.12. <span style="color: #4f81bd"><strong>Project Execution</strong></span></h2>
+<h2 id="1912-project-execution">19.12. <span style="color: #4f81bd">Project Execution</span></h2>
 <p><img src="images/10000000000007660000021C6CDBCEAB.png" style="width:15.032cm;height:4.286cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000007660000021C6CDBCEAB.png" /></p>
 <p>During testing, verify the following points:</p>
 <ul>
@@ -2068,10 +2068,10 @@
   </li>
 </ul>
 <p><a id="refheadingtoc259327196815120"></a></p>
-<h2 id="1913-deploying-the-application-on-a-local-server">19.13. <span style="color: #4f81bd"><strong>Deploying the application on a local server</strong></span></h2>
+<h2 id="1913-deploying-the-application-on-a-local-server">19.13. <span style="color: #4f81bd">Deploying the application on a local server</span></h2>
 <p>As an exercise, follow the section <a href="#1176deploiement-de-lapplication-sur-un-serveur-localoutline"><u><span style="color: #0563c1">|Deployment on a local server|</span></u></a> to deploy the <strong>[vuejs-21]</strong> project on the local Laragon server. Then test it.</p>
 <p><a id="refheadingtoc539270143258178"></a></p>
-<h2 id="1914-developing-the-mobile-version">19.14. <span style="color: #4f81bd"><strong>Developing the mobile version</strong></span></h2>
+<h2 id="1914-developing-the-mobile-version">19.14. <span style="color: #4f81bd">Developing the mobile version</span></h2>
 <p>In theory, using Bootstrap should allow us to have an application that works on different devices: smartphones, tablets, laptops, and desktops. What differentiates these devices is their screen size.</p>
 <p>If we test the <strong>[vuejs-21]</strong> version on a mobile device, we see that the view display is a mess. The <strong>[vuejs-22]</strong> version fixes this issue. All changes were made in the view templates. They mainly involved optimizing the display for a smartphone screen. Once this is optimized, the display on larger screens works smoothly thanks to Bootstrap.</p>
 <p><img src="images/10000000000001AB0000028FA58683A3.png" style="width:3.949cm;height:6.059cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001AB0000028FA58683A3.png" /></p>
@@ -2130,7 +2130,7 @@
 </code></pre></div>
 
 <p><a id="refheadingtoc539276143258178"></a></p>
-<h3 id="19143-the-authentication-view">19.14.3. <span style="color: #4f81bd"><strong>The [Authentication] view</strong></span></h3>
+<h3 id="19143-the-authentication-view">19.14.3. <span style="color: #4f81bd">The [Authentication] view</span></h3>
 <p>The <strong>[Authentication]</strong> view evolves as follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
 <span class="odt-code-line">&lt;!-- HTML definition of the view --&gt;</span>
@@ -2182,7 +2182,7 @@
   </li>
 </ul>
 <p><a id="refheadingtoc539278143258178"></a></p>
-<h3 id="19144-the-calculimpot-view">19.14.4. <span style="color: #4f81bd"><strong>The [CalculImpot] view</strong></span></h3>
+<h3 id="19144-the-calculimpot-view">19.14.4. <span style="color: #4f81bd">The [CalculImpot] view</span></h3>
 <p>The <strong>[CalculImpot]</strong> view has been updated as follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-html">
 <span class="odt-code-line">&lt;!-- HTML definition of the view --&gt;</span>
@@ -2210,7 +2210,7 @@
 </code></pre></div>
 
 <p><a id="refheadingtoc539280143258178"></a></p>
-<h3 id="19145-the-formcalculimpot-view">19.14.5. <span style="color: #4f81bd"><strong>The [FormCalculImpot] view</strong></span></h3>
+<h3 id="19145-the-formcalculimpot-view">19.14.5. <span style="color: #4f81bd">The [FormCalculImpot] view</span></h3>
 <p>The <strong>[FormCalculImpot]</strong> view evolves as follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
 <span class="odt-code-line">&lt;!-- HTML definition of the view --&gt;</span>
@@ -2347,7 +2347,7 @@
   </li>
 </ul>
 <p><a id="refheadingtoc539284143258178"></a></p>
-<h3 id="19147-the-simulationlist-view">19.14.7. <span style="color: #4f81bd"><strong>The [SimulationList] view</strong></span></h3>
+<h3 id="19147-the-simulationlist-view">19.14.7. <span style="color: #4f81bd">The [SimulationList] view</span></h3>
 <p>The <strong>[ListeSimulations]</strong> view remains unchanged:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-html">
 <span class="odt-code-line">&lt;!-- HTML definition of the view --&gt;</span>
@@ -2395,7 +2395,7 @@
   </li>
 </ul>
 <p><a id="refheadingtoc539286143258178"></a></p>
-<h3 id="19148-the-notfound-view">19.14.8. <span style="color: #4f81bd"><strong>The [NotFound] view</strong></span></h3>
+<h3 id="19148-the-notfound-view">19.14.8. <span style="color: #4f81bd">The [NotFound] view</span></h3>
 <p>It remains unchanged.</p>
 <p><a id="refheadingtoc539288143258178"></a></p>
 <h3 id="19149-mobile-views">19.14.9. <span style="color: #4f81bd">Mobile <strong>views</strong></span></h3>
