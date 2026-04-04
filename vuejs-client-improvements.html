@@ -1,0 +1,2471 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="An Introduction to the Vue.js Framework Through Examples">
+      
+      
+        <meta name="author" content="Serge Tahé">
+      
+      
+        <link rel="canonical" href="https://stahe.github.io/en-vuejs-oct-2019/vuejs-client-improvements.html">
+      
+      
+        <link rel="prev" href="vuejs-client-of-the-tax-calculation-server.html">
+      
+      
+        <link rel="next" href="deploying-the-clientserver-application-on-a-hosting-service.html">
+      
+      
+        
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>19. Vue.js Client Improvements - An Introduction to the Vue.js Framework Through Examples</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.618322db.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="stylesheets/focus.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-EBZC3JVJNR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    var siteName = "An Introduction to the Vue.js Framework Through Examples";
+    gtag('config', 'G-EBZC3JVJNR', {
+        'page_title': siteName
+    });
+  </script>
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#19-vuejs-client-improvements" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="index.html" title="An Introduction to the Vue.js Framework Through Examples" class="md-header__button md-logo" aria-label="An Introduction to the Vue.js Framework Through Examples" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            An Introduction to the Vue.js Framework Through Examples
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              19. Vue.js Client Improvements
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="purple"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="purple"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://stahe.github.io/en-vuejs-oct-2019" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="An Introduction to the Vue.js Framework Through Examples" class="md-nav__button md-logo" aria-label="An Introduction to the Vue.js Framework Through Examples" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    An Introduction to the Vue.js Framework Through Examples
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://stahe.github.io/en-vuejs-oct-2019" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Welcome
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="introduction-to-the-vuejs-framework.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. Introduction to the VUE.JS framework
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="setting-up-a-development-environment.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Setting up a development environment
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="project-vuejs-01-the-basics.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Project [vuejs-01]: The Basics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="project-vuejs-02-using-the-bootstrap-css-framework.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. Project [vuejs-02]: Using the Bootstrap CSS framework
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="project-vuejs-03-event-handling.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. Project [vuejs-03]: Event Handling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="project-vuejs-04-directives-v-model-v-bind-computed-properties-input-form.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. project [vuejs-04]: directives [v-model, v-bind], computed properties, input form
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="vuejs-05-project-v-for-directive.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. [vuejs-05] project: [v-for] directive
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="project-vuejs-06-laying-out-a-view-with-slots.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8. project [vuejs-06]: laying out a view with slots
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="project-vuejs-07-event-propagation-in-the-component-hierarchy.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9. project [vuejs-07]: event propagation in the component hierarchy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="project-vuejs-08-events-independent-of-the-component-hierarchy-component-lifecycle.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10. Project [vuejs-08]: Events independent of the component hierarchy, component lifecycle
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="project-vuejs-09-using-an-eventbus-plugin.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11. Project [vuejs-09]: Using an [eventBus] plugin
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="project-vuejs-10-dao-plugin-asynchronous-http-requests.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12. Project [vuejs-10]: [dao] plugin, asynchronous HTTP requests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="vuejs-11-project-routing-and-navigation.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13. [vuejs-11] project: routing and navigation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="project-vuejs-12-html-table-management.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14. Project [vuejs-12]: HTML table management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="project-vuejs-13-updating-a-component-using-a-session.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    15. Project [vuejs-13]: Updating a component, using a session
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="project-vuejs-14-making-the-session-reactive.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    16. Project [vuejs-14]: Making the session reactive
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="project-vuejs-15-using-the-vuex-plugin.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    17. Project [vuejs-15]: Using the [Vuex] plugin
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="vuejs-client-of-the-tax-calculation-server.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    18. Vue.js client of the tax calculation server
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    19. Vue.js Client Improvements
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="vuejs-client-improvements.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    19. Vue.js Client Improvements
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#191-introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        19.1. Introduction
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#192-the-vuex-store" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        19.2. The [Vuex] store
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#193-the-session" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        19.3. The session
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#194-the-config-configuration-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        19.4. The [config] configuration file
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#195-the-pluginsession-plugin" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        19.5. The [pluginSession] plugin
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#196-the-main-script-main" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        19.6. The main script [main]
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#197-the-routing-file-router" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        19.7. The routing file [router]
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#198-the-notfound-view" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        19.8. The [NotFound] view
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#199-the-authentication-view" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        19.9. The [Authentication] view
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1910-the-calculimpot-view" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        19.10. The [CalculImpot] view
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1911-the-simulationlist-view" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        19.11. The [SimulationList] view
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1912-project-execution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        19.12. Project Execution
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1913-deploying-the-application-on-a-local-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        19.13. Deploying the application on a local server
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1914-developing-the-mobile-version" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        19.14. Developing the mobile version
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="19.14. Developing the mobile version">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#19141-the-main-view" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        19.14.1. The [Main] view
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#19142-the-layout-view" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        19.14.2. The [Layout] view
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#19143-the-authentication-view" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        19.14.3. The [Authentication] view
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#19144-the-calculimpot-view" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        19.14.4. The [CalculImpot] view
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#19145-the-formcalculimpot-view" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        19.14.5. The [FormCalculImpot] view
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#19146-the-menu-view" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        19.14.6. The [Menu] view
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#19147-the-simulationlist-view" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        19.14.7. The [SimulationList] view
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#19148-the-notfound-view" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        19.14.8. The [NotFound] view
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#19149-mobile-views" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        19.14.9. Mobile views
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="deploying-the-clientserver-application-on-a-hosting-service.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    20. Deploying the client/server application on a hosting service
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<p><a id="refheadingtoc251844278084667"></a></p>
+<h1 id="19-vuejs-client-improvements">19. <span style="color: #365f91"><strong>Vue.js Client Improvements</strong></span></h1>
+<p><a id="refheadingtoc251846278084667"></a></p>
+<h2 id="191-introduction">19.1. <span style="color: #4f81bd"><strong>Introduction</strong></span></h2>
+<p>We will test the <strong>[vuejs-21]</strong> project with the development server. Therefore, we will again need the server to send CORS headers. The <strong>[config.json]</strong> file for version 14 of the tax calculation server must therefore allow these headers:</p>
+<p><img src="images/1000000000000753000004330D3ABFCE.png" style="width:14.88cm;height:8.532cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000753000004330D3ABFCE.png" /></p>
+<p>The <strong>[vuejs-21]</strong> project is initially created by duplicating the <strong>[vuejs-20]</strong> project. It is then modified <strong>[3]</strong>.</p>
+<p>New files appear:</p>
+<ul>
+  <li><b>[session.js]</b>: exports a <b>[session] </b>object that will encapsulate information about the current session;
+  </li>
+  <li><b>[pluginSession]</b>: makes the previous <b>[session] </b>object available in the <b>[$session] </b>property of the views;
+  </li>
+  <li><b>[NotFound.vue]</b>: a new view displayed when the user manually requests a URL that does not exist;
+  </li>
+</ul>
+
+<p>The following files will be modified:</p>
+<ul>
+  <li><b>[main.js]</b>: will initialize the current session and then restore it when the user manually enters a URL;
+  </li>
+  <li><b>[router.js]</b>: controls are added to handle URLs entered by the user;
+  </li>
+  <li><b>[store.js]</b>: a new mutation is added;
+  </li>
+  <li><b>[config.js]</b>: a new configuration is added;
+  </li>
+  <li>various views, primarily to save the current session at key points in the application’s lifecycle. The session is then restored whenever the user manually enters URLs;
+  </li>
+</ul>
+<p><a id="refheadingtoc259305196815120"></a></p>
+<h2 id="192-the-vuex-store">19.2. <span style="color: #4f81bd"><strong>The</strong> [Vuex] <strong>store</strong></span></h2>
+<p>The <strong>[./store]</strong> script evolves as follows:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<span class="odt-code-line">// Vuex plugin</span>
+<span class="odt-code-line"><span style="color:#0000ff">import </span><span style="color:#000000">Vue </span><span style="color:#0000ff">from </span><span style="color:#a31515">&#x27;vue&#x27;</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">import </span><span style="color:#000000">Vuex </span><span style="color:#0000ff">from </span><span style="color:#a31515">&#x27;vuex&#x27;</span></span>
+<span class="odt-code-line">Vue.use(Vuex);</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">// Vuex store</span>
+<span class="odt-code-line"><span style="color:#0000ff">const </span><span style="color:#000000">store = </span><span style="color:#0000ff">new </span><span style="color:#2b91af">Vuex</span><span style="color:#000000">.Store({</span></span>
+<span class="odt-code-line">  state: {</span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008000">// the array of simulations</span></span>
+<span class="odt-code-line">    simulations: [],</span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008000">// the number of the last simulation</span></span>
+<span class="odt-code-line">    simulationId: 0</span>
+<span class="odt-code-line">  },</span>
+<span class="odt-code-line">  changes: {</span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008000">// delete row index</span></span>
+<span class="odt-code-line">    deleteSimulation(state, index) {</span>
+<span class="odt-code-line">      ...</span>
+<span class="odt-code-line">    },</span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008000">// add a simulation</span></span>
+<span class="odt-code-line">    addSimulation(state, simulation) {</span>
+<span class="odt-code-line">      ...</span>
+<span class="odt-code-line">    },</span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008000">// clear state</span></span>
+<span class="odt-code-line">    clear(state) {</span>
+<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#008000">// no more simulations</span></span>
+<span class="odt-code-line">      state.simulations = [];</span>
+<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#008000">// simulation numbering resets to 0</span></span>
+<span class="odt-code-line">      state.simulationId = 0;</span>
+<span class="odt-code-line">    }</span>
+<span class="odt-code-line">  }</span>
+<span class="odt-code-line">});</span>
+<span class="odt-code-line">// export the <span style="font-weight:bold">[store] </span>object</span>
+<span class="odt-code-line"><span style="color:#0000ff">export default </span><span style="color:#000000">store;</span></span>
+</code></pre></div>
+
+<ul>
+  <li>lines 24-29: the <b>[clear] </b>assignment deletes the list of saved simulations and resets the last simulation number to 0.
+  </li>
+</ul>
+<p><a id="refheadingtoc259307196815120"></a></p>
+<h2 id="193-the-session">19.3. <span style="color: #4f81bd"><strong>The session</strong></span></h2>
+<p>The need for a session arises because when the user types a URL into the browser’s address bar, the <strong>[main.js]</strong> script <strong>is executed again</strong>. However, this script contains the following instruction:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<span class="odt-code-line">// Vuex store</span>
+<span class="odt-code-line"><span style="color:#0000ff">import </span><span style="color:#000000">store </span><span style="color:#0000ff">from </span><span style="color:#a31515">&#x27;./store&#x27;</span></span>
+</code></pre></div>
+
+<p>This instruction imports the following <strong>[./store]</strong> file:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<span class="odt-code-line">// Vuex plugin</span>
+<span class="odt-code-line"><span style="color:#0000ff">import </span><span style="color:#000000">Vue </span><span style="color:#0000ff">from </span><span style="color:#a31515">&#x27;vue&#x27;</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">import </span><span style="color:#000000">Vuex </span><span style="color:#0000ff">from </span><span style="color:#a31515">&#x27;vuex&#x27;</span></span>
+<span class="odt-code-line">Vue.use(Vuex);</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">// Vuex store</span>
+<span class="odt-code-line"><span style="color:#0000ff">const </span><span style="color:#000000">store = </span><span style="color:#0000ff">new </span><span style="color:#2b91af">Vuex</span><span style="color:#000000">.Store({</span></span>
+<span class="odt-code-line">  state: {</span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008000">// the array of simulations</span></span>
+<span class="odt-code-line">    simulations: [],</span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008000">// the number of the last simulation</span></span>
+<span class="odt-code-line">    simulationId: 0</span>
+<span class="odt-code-line">  },</span>
+<span class="odt-code-line">  changes: {</span>
+<span class="odt-code-line">    ...</span>
+<span class="odt-code-line">  }</span>
+<span class="odt-code-line">});</span>
+<span class="odt-code-line">// export the <span style="font-weight:bold">[store] </span>object</span>
+<span class="odt-code-line"><span style="color:#0000ff">export default </span><span style="color:#000000">store;</span></span>
+</code></pre></div>
+
+<p>As we can see in lines 7–13, we import an empty array of simulations. So if we had simulations before the user typed a URL into the browser’s address bar, we no longer have any afterward. The idea is:</p>
+<ul>
+  <li>to use a session that would store the information you want to keep if the user manually enters URLs;
+  </li>
+  <li>save it at key points in the application;
+  </li>
+  <li>restore it in <b>[main.js], </b>which <b>is always executed </b>when a URL is entered manually;
+  </li>
+</ul>
+
+<p>The <strong>[./session]</strong> script is as follows:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<span class="odt-code-line">// import the Vuex store</span>
+<span class="odt-code-line"><span style="color:#0000ff">import </span><span style="color:#000000">store </span><span style="color:#0000ff">from </span><span style="color:#a31515">&#x27;./store&#x27;</span></span>
+<span class="odt-code-line">// import the configuration</span>
+<span class="odt-code-line"><span style="color:#0000ff">import </span><span style="color:#000000">config </span><span style="color:#0000ff">from </span><span style="color:#a31515">&#x27;./config&#x27;</span><span style="color:#000000">;</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">// the <span style="font-weight:bold">[session] </span>object</span>
+<span class="odt-code-line"><span style="color:#0000ff">const </span><span style="color:#000000">session = {</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#008000">// session started</span></span>
+<span class="odt-code-line"><span style="color:#000000">  started: </span><span style="color:#0000ff">false</span><span style="color:#000000">,</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#008000">// authentication</span></span>
+<span class="odt-code-line"><span style="color:#000000">  authenticated: </span><span style="color:#0000ff">false</span><span style="color:#000000">,</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#008000">// save time</span></span>
+<span class="odt-code-line"><span style="color:#000000">  saveTime: </span><span style="color:#a31515">&quot;&quot;</span><span style="color:#000000">,</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#008000">// </span><span style="font-weight:bold;color:#008000">[business] </span><span style="color:#008000">layer</span></span>
+<span class="odt-code-line"><span style="color:#000000">  business: </span><span style="color:#0000ff">null</span><span style="color:#000000">,</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#008000">// Vuex state</span></span>
+<span class="odt-code-line"><span style="color:#000000">  state: </span><span style="color:#0000ff">null</span><span style="color:#000000">,</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#008000">// Save the session as a JSON string</span></span>
+<span class="odt-code-line">  save() {</span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008000">// add some properties to the session</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">this</span><span style="color:#000000">.saveTime = Date.now();</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">this</span><span style="color:#000000">.state = store.state;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008000">// convert it to JSON</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">const </span><span style="color:#000000">json = JSON.stringify(</span><span style="color:#0000ff">this</span><span style="color:#000000">);</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008000">// Store it in the browser</span></span>
+<span class="odt-code-line"><span style="color:#000000">    localStorage.setItem(</span><span style="color:#a31515">&quot;session&quot;</span><span style="color:#000000">, json);</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008000">// eslint-disable-next-line no-console</span></span>
+<span class="odt-code-line"><span style="color:#000000">    console.log(</span><span style="color:#a31515">&quot;session saved&quot;</span><span style="color:#000000">, json);</span></span>
+<span class="odt-code-line">  },</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#008000">// restore the session</span></span>
+<span class="odt-code-line">  restore() {</span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008000">// retrieve the JSON session from the browser</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">const </span><span style="color:#000000">json = localStorage.getItem(</span><span style="color:#a31515">&quot;session&quot;</span><span style="color:#000000">)</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008000">// if something was retrieved</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">if </span><span style="color:#000000">(json) {</span></span>
+<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#008000">// restore all session keys</span></span>
+<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#0000ff">const </span><span style="color:#000000">restore = JSON.parse(json);</span></span>
+<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#0000ff">for </span><span style="color:#000000">(</span><span style="color:#0000ff">var </span><span style="color:#000000">key </span><span style="color:#0000ff">in </span><span style="color:#000000">restore) {</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">if </span><span style="color:#000000">(restore.hasOwnProperty(key)) {</span></span>
+<span class="odt-code-line"><span style="color:#000000">          </span><span style="color:#0000ff">this</span><span style="font-weight:bold;color:#000000">[key] </span><span style="color:#000000">= restore</span><span style="font-weight:bold;color:#000000">[key]</span><span style="color:#000000">;</span></span>
+<span class="odt-code-line">        }</span>
+<span class="odt-code-line">      }</span>
+<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#008000">// if a certain period of inactivity has elapsed since the start of the session, reset to zero</span></span>
+<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#0000ff">let </span><span style="color:#000000">duration = Date.now() - </span><span style="color:#0000ff">this</span><span style="color:#000000">.saveTime;</span></span>
+<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#0000ff">if </span><span style="color:#000000">(duration &gt; config.sessionDuration) {</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008000">// clear the session—it will also be saved</span></span>
+<span class="odt-code-line">        session.clear();</span>
+<span class="odt-code-line"><span style="color:#000000">      } </span><span style="color:#0000ff">else </span><span style="color:#000000">{</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008000">// regenerate the Vuex store</span></span>
+<span class="odt-code-line"><span style="color:#000000">        store.replaceState(JSON.parse(JSON.stringify(</span><span style="color:#0000ff">this</span><span style="color:#000000">.state)));</span></span>
+<span class="odt-code-line">      }</span>
+<span class="odt-code-line">    }</span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008000">// eslint-disable-next-line no-console</span></span>
+<span class="odt-code-line"><span style="color:#000000">    console.log(</span><span style="color:#a31515">&quot;session restore&quot;</span><span style="color:#000000">, </span><span style="color:#0000ff">this</span><span style="color:#000000">);</span></span>
+<span class="odt-code-line">  },</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008000">// clear the session</span></span>
+<span class="odt-code-line">  clear() {</span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008000">// eslint-disable-next-line no-console</span></span>
+<span class="odt-code-line"><span style="color:#000000">    console.log(</span><span style="color:#a31515">&quot;session clear&quot;</span><span style="color:#000000">);</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008000">// Clear certain session fields</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">this</span><span style="color:#000000">.authenticated = </span><span style="color:#0000ff">false</span><span style="color:#000000">;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">this</span><span style="color:#000000">.saveTime = </span><span style="color:#a31515">&quot;&quot;</span><span style="color:#000000">;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">this</span><span style="color:#000000">.started = </span><span style="color:#0000ff">false</span><span style="color:#000000">;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">if </span><span style="color:#000000">(</span><span style="color:#0000ff">this</span><span style="color:#000000">.job) {</span></span>
+<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#008000">// reset the </span><span style="font-weight:bold;color:#008000">[taxAdminData] </span><span style="color:#008000">field</span></span>
+<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#0000ff">this</span><span style="color:#000000">.profession.taxAdminData = </span><span style="color:#0000ff">null</span><span style="color:#000000">;</span></span>
+<span class="odt-code-line">    }</span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008000">// The Vuex store is also cleared</span></span>
+<span class="odt-code-line"><span style="color:#000000">    store.commit(</span><span style="color:#a31515">&quot;clear&quot;</span><span style="color:#000000">);</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008000">// Save the new session</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">this</span><span style="color:#000000">.save();</span></span>
+<span class="odt-code-line">  },</span>
+<span class="odt-code-line">}</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">// export the <span style="font-weight:bold">[session] </span>object</span>
+<span class="odt-code-line"><span style="color:#0000ff">export default </span><span style="color:#000000">session;</span></span>
+</code></pre></div>
+
+<p><strong>Comments</strong></p>
+<ul>
+  <li>line 2: the session will also encapsulate the <b>[Vuex] </b>store (list of simulations, ID of the last simulation performed);
+  </li>
+  <li>lines 7-17: information stored by the session:
+    <ul>
+      <li><b>[started]</b>: whether the JSON session with the server has started or not;
+      </li>
+      <li><b>[authenticated]</b>: whether the user has authenticated or not;
+      </li>
+      <li><b>[saveTime]</b>: the date in milliseconds of the last save;
+      </li>
+      <li><b>[business] </b>: a reference to the <b>[business] </b>layer. This contains the <b>[taxAdminData] </b>data used to calculate the tax;
+      </li>
+      <li><b>[state]</b>: the state of the <b>[Vuex] </b>store (list of simulations, number of the last simulation performed);
+      </li>
+    </ul>
+  </li>
+  <li>lines 20–30: the <b>[save] </b>method saves the session locally on the browser running the application;
+    <ul>
+      <li>line 22: the save time is recorded;
+      </li>
+      <li>line 23: the <b>[state] </b>of the <b>[Vuex] </b>store is retrieved;
+      </li>
+      <li>line 25: the session’s JSON string is created;
+      </li>
+      <li>line 27: it is stored locally on the browser associated with the <b>[session] </b>key;
+      </li>
+    </ul>
+  </li>
+  <li>lines 33–57: the <b>[restore] </b>method restores a session from its local save in the browser;
+    <ul>
+      <li>line 35: retrieve the local JSON backup;
+      </li>
+      <li>line 37: if something was retrieved;
+      </li>
+      <li>lines 39–44: the <b>[session] </b>object is reconstructed;
+      </li>
+      <li>line 46: the time elapsed since the last backup is calculated;
+      </li>
+      <li>lines 47–50: if this duration exceeds a value <b>[config.sessionDuration] </b>set in the configuration, the session is reset (line 49) and saved at that time;
+      </li>
+      <li>line 52: otherwise, the <b>[state] </b>attribute of the <b>[Vuex] </b>store is regenerated;
+      </li>
+    </ul>
+  </li>
+  <li>lines 60–75: the <b>[clear] </b>method resets the session;
+    <ul>
+      <li>lines 64–70: the session properties are reset to their initial values;
+      </li>
+      <li>line 72: as well as the <b>[Vuex] </b>store;
+      </li>
+      <li>line 74: the new session is saved;
+      </li>
+    </ul>
+  </li>
+</ul>
+<p><a id="refheadingtoc259309196815120"></a></p>
+<h2 id="194-the-config-configuration-file">19.4. <span style="color: #4f81bd"><strong>The</strong> [config] <strong>configuration file</strong></span></h2>
+<p>The <strong>[./config]</strong> file evolves as follows:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
+<span class="odt-code-line">// using the <span style="font-weight:bold">[axios] </span>library</span>
+<span class="odt-code-line"><span style="color:#0000ff">const </span><span style="color:#000000">axios = require(</span><span style="color:#a31515">&#x27;axios&#x27;</span><span style="color:#000000">);</span></span>
+<span class="odt-code-line">// HTTP request timeout</span>
+<span class="odt-code-line">axios.defaults.timeout = 2000;</span>
+<span class="odt-code-line">...</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">// Export the configuration</span>
+<span class="odt-code-line"><span style="color:#0000ff">export default </span><span style="color:#000000">{</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#008000">// </span><span style="font-weight:bold;color:#008000">[axios] </span><span style="color:#008000">object</span></span>
+<span class="odt-code-line">  axios: axios,</span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#008000">// maximum session inactivity timeout: 5 min = 300 s = 300,000 ms</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="background-color:#ffff00;color:#000000">sessionDuration: 300000</span></span>
+<span class="odt-code-line">}</span>
+</code></pre></div>
+
+<ul>
+  <li>line 12: we’ll manage the application session much like we manage a web session. Here, we set a maximum inactivity duration of 5 minutes;
+  </li>
+</ul>
+<p><a id="refheadingtoc259311196815120"></a></p>
+<h2 id="195-the-pluginsession-plugin">19.5. <span style="color: #4f81bd"><strong>The [pluginSession] plugin</strong></span></h2>
+<p>As has been done many times before, the <strong>[pluginSession]</strong> plugin will allow views to access the session via the <strong>[this.$session]</strong> property:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<span class="odt-code-line"><span style="color:#0000ff">export default </span><span style="color:#000000">{</span></span>
+<span class="odt-code-line">  install(Vue, session) {</span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008000">// adds a </span><span style="font-weight:bold;color:#008000">[$session] </span><span style="color:#008000">property to the view class</span></span>
+<span class="odt-code-line"><span style="color:#000000">    Object.defineProperty(Vue.prototype, </span><span style="color:#a31515">&#x27;$session&#x27;</span><span style="color:#000000">, {</span></span>
+<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#008000">// when Vue.$session is referenced, we return the second parameter </span><span style="font-weight:bold;color:#008000">[session]</span></span>
+<span class="odt-code-line">      get: () =&gt; session,</span>
+<span class="odt-code-line">    })</span>
+<span class="odt-code-line">  }</span>
+<span class="odt-code-line">}</span>
+</code></pre></div>
+
+<p><a id="refheadingtoc259313196815120"></a></p>
+<h2 id="196-the-main-script-main">19.6. <span style="color: #4f81bd"><strong>The main script</strong> [main]</span></h2>
+<p>The main script <strong>[./main.js]</strong> evolves as follows:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<span class="odt-code-line">// startup log</span>
+<span class="odt-code-line">// eslint-disable-next-line no-console</span>
+<span class="odt-code-line"><span style="color:#000000">console.log(</span><span style="color:#a31515">&quot;main started&quot;</span><span style="color:#000000">);</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">// imports</span>
+<span class="odt-code-line"><span style="color:#0000ff">import </span><span style="color:#000000">Vue </span><span style="color:#0000ff">from </span><span style="color:#a31515">&#x27;vue&#x27;</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">...</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">// instantiate <span style="font-weight:bold">[business] </span>layer</span>
+<span class="odt-code-line"><span style="color:#0000ff">import </span><span style="color:#000000">Business </span><span style="color:#0000ff">from </span><span style="color:#a31515">&#x27;./layers/Business&#x27;</span><span style="color:#000000">;</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">const </span><span style="color:#000000">business = </span><span style="color:#0000ff">new </span><span style="color:#000000">Business();</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">// <span style="font-weight:bold">[business] </span>plugin</span>
+<span class="odt-code-line"><span style="color:#0000ff">import </span><span style="color:#000000">BusinessPlugin </span><span style="color:#0000ff">from </span><span style="color:#a31515">&#x27;./plugins/BusinessPlugin&#x27;</span></span>
+<span class="odt-code-line">Vue.use(businessPlugin, business)</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">// Vuex store</span>
+<span class="odt-code-line"><span style="color:#0000ff">import </span><span style="color:#000000">store </span><span style="color:#0000ff">from </span><span style="color:#a31515">&#x27;./store&#x27;</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">// session</span>
+<span class="odt-code-line"><span style="color:#0000ff">import </span><span style="color:#000000">session </span><span style="color:#0000ff">from </span><span style="color:#a31515">&#x27;./session&#x27;</span><span style="color:#000000">;</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">import </span><span style="color:#000000">pluginSession </span><span style="color:#0000ff">from </span><span style="color:#a31515">&#x27;./plugins/pluginSession&#x27;</span></span>
+<span class="odt-code-line">Vue.use(pluginSession, session)</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">// Restore the session before restarting</span>
+<span class="odt-code-line">session.restore();</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">// restore the <span style="font-weight:bold">[business] </span>layer</span>
+<span class="odt-code-line"><span style="color:#0000ff">if </span><span style="color:#000000">(session.business &amp;&amp; session.business.taxAdminData) {</span></span>
+<span class="odt-code-line">  business.setTaxAdminData(session.business.taxAdminData);</span>
+<span class="odt-code-line">}</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">// Start the UI</span>
+<span class="odt-code-line"><span style="color:#0000ff">new </span><span style="color:#000000">Vue({</span></span>
+<span class="odt-code-line"><span style="color:#000000">  el: </span><span style="color:#a31515">&#x27;#app&#x27;</span><span style="color:#000000">,</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#008000">// the router</span></span>
+<span class="odt-code-line">  router: router,</span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#008000">// the Vuex store</span></span>
+<span class="odt-code-line">  store: store,</span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#008000">// the main view</span></span>
+<span class="odt-code-line">  render: h =&gt; h(Main),</span>
+<span class="odt-code-line">})</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">// end log</span>
+<span class="odt-code-line">// eslint-disable-next-line no-console</span>
+<span class="odt-code-line"><span style="color:#000000">console.log(</span><span style="color:#a31515">&quot;main terminated, session=&quot;</span><span style="color:#000000">, session);</span></span>
+</code></pre></div>
+
+<ul>
+  <li>line 19: import the session;
+  </li>
+  <li>line 20: import the plugin;
+  </li>
+  <li>line 21: the <b>[pluginSession] </b>plugin is integrated into <b>[Vue]</b>. After this instruction, all views have the session available in their <b>[$session] </b>attribute;
+  </li>
+  <li>line 27: the session is restored. The session imported on line 11 is then initialized with the contents of its last save;
+  </li>
+  <li>after line 16, the views have a <b>[$métier] </b>property initialized on line 12. This property does not contain the <b>[taxAdminData] </b>information used to calculate the tax;
+  </li>
+  <li>lines 30–32: if the restoration just performed has restored the <b>[session.métier.taxAdminData] </b>property, then the <b>[$métier] </b>property of the views is initialized with this value;
+  </li>
+</ul>
+<p><a id="refheadingtoc259315196815120"></a></p>
+<h2 id="197-the-routing-file-router">19.7. <span style="color: #4f81bd"><strong>The routing file</strong> [router]</span></h2>
+<p>The routing file <strong>[./router]</strong> evolves as follows:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<span class="odt-code-line">// imports</span>
+<span class="odt-code-line"><span style="color:#0000ff">import </span><span style="color:#000000">Vue </span><span style="color:#0000ff">from </span><span style="color:#a31515">&#x27;vue&#x27;</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">import </span><span style="color:#000000">VueRouter </span><span style="color:#0000ff">from </span><span style="color:#a31515">&#x27;vue-router&#x27;</span></span>
+<span class="odt-code-line">// views</span>
+<span class="odt-code-line"><span style="color:#0000ff">import </span><span style="color:#000000">Authentication </span><span style="color:#0000ff">from </span><span style="color:#a31515">&#x27;./views/Authentication&#x27;</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">import </span><span style="color:#000000">TaxCalculation </span><span style="color:#0000ff">from </span><span style="color:#a31515">&#x27;./views/TaxCalculation&#x27;</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">import </span><span style="color:#000000">SimulationList </span><span style="color:#0000ff">from </span><span style="color:#a31515">&#x27;./views/SimulationList&#x27;</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">import </span><span style="color:#000000">NotFound </span><span style="color:#0000ff">from </span><span style="color:#a31515">&#x27;./views/NotFound&#x27;</span></span>
+<span class="odt-code-line">// the session</span>
+<span class="odt-code-line"><span style="color:#0000ff">import </span><span style="color:#000000">session </span><span style="color:#0000ff">from </span><span style="color:#a31515">&#x27;./session&#x27;</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">// routing plugin</span>
+<span class="odt-code-line">Vue.use(VueRouter)</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">// application routes</span>
+<span class="odt-code-line"><span style="color:#0000ff">const </span><span style="color:#000000">routes = [</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#008000">// authentication</span></span>
+<span class="odt-code-line"><span style="color:#000000">  { path: </span><span style="color:#a31515">&#x27;/&#x27;</span><span style="color:#000000">, name: </span><span style="color:#a31515">&#x27;authentication&#x27;</span><span style="color:#000000">, component: Authentication },</span></span>
+<span class="odt-code-line"><span style="color:#000000">  { path: </span><span style="color:#a31515">&#x27;/authentication&#x27;</span><span style="color:#000000">, name: </span><span style="color:#a31515">&#x27;authentication&#x27;</span><span style="color:#000000">, component: Authentication },</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#008000">// tax calculation</span></span>
+<span class="odt-code-line">  {</span>
+<span class="odt-code-line"><span style="color:#000000">    path: </span><span style="color:#a31515">&#x27;/tax-calculation&#x27;</span><span style="color:#000000">, name: </span><span style="color:#a31515">&#x27;taxCalculation&#x27;</span><span style="color:#000000">, component: TaxCalculation,</span></span>
+<span class="odt-code-line"><span style="color:#000000">    meta: { authenticated: </span><span style="color:#0000ff">true </span><span style="color:#000000">}</span></span>
+<span class="odt-code-line">  },</span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#008000">// list of simulations</span></span>
+<span class="odt-code-line">  {</span>
+<span class="odt-code-line"><span style="color:#000000">    path: </span><span style="color:#a31515">&#x27;/list-of-simulations&#x27;</span><span style="color:#000000">, name: </span><span style="color:#a31515">&#x27;listSimulations&#x27;</span><span style="color:#000000">, component: ListSimulations,</span></span>
+<span class="odt-code-line"><span style="color:#000000">    meta: { authenticated: </span><span style="color:#0000ff">true </span><span style="color:#000000">}</span></span>
+<span class="odt-code-line">  },</span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#008000">// end of session</span></span>
+<span class="odt-code-line">  {</span>
+<span class="odt-code-line"><span style="color:#000000">    path: </span><span style="color:#a31515">&#x27;/end-session&#x27;</span><span style="color:#000000">, name: </span><span style="color:#a31515">&#x27;endSession&#x27;</span></span>
+<span class="odt-code-line">  },</span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#008000">// unknown page</span></span>
+<span class="odt-code-line">  {</span>
+<span class="odt-code-line"><span style="color:#000000">    path: </span><span style="color:#a31515">&#x27;*&#x27;</span><span style="color:#000000">, name: </span><span style="color:#a31515">&#x27;notFound&#x27;</span><span style="color:#000000">, component: NotFound,</span></span>
+<span class="odt-code-line">  },</span>
+<span class="odt-code-line">]</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">// the router</span>
+<span class="odt-code-line"><span style="color:#0000ff">const </span><span style="color:#000000">router = </span><span style="color:#0000ff">new </span><span style="color:#000000">VueRouter({</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#008000">// the routes</span></span>
+<span class="odt-code-line">  routes,</span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#008000">// URL display mode</span></span>
+<span class="odt-code-line"><span style="color:#000000">  mode: </span><span style="color:#a31515">&#x27;history&#x27;</span><span style="color:#000000">,</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#008000">// the application&#x27;s base URL</span></span>
+<span class="odt-code-line"><span style="color:#000000">  base: </span><span style="color:#a31515">&#x27;/client-vuejs-tax/&#x27;</span></span>
+<span class="odt-code-line">})</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">// route validation</span>
+<span class="odt-code-line">router.beforeEach((to, from, next) =&gt; {</span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#008000">// eslint-disable-next-line no-console</span></span>
+<span class="odt-code-line"><span style="color:#000000">  console.log(</span><span style="color:#a31515">&quot;router to=&quot;</span><span style="color:#000000">, to, </span><span style="color:#a31515">&quot;from=&quot;</span><span style="color:#000000">, from);</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#008000">// route reserved for authenticated users?</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#0000ff">if </span><span style="color:#000000">(to.meta.authenticated &amp;&amp; !session.authenticated) {</span></span>
+<span class="odt-code-line">    next({</span>
+<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#008000">// proceed to authentication</span></span>
+<span class="odt-code-line"><span style="color:#000000">      name: </span><span style="color:#a31515">&#x27;authentication&#x27;</span><span style="color:#000000">,</span></span>
+<span class="odt-code-line">    })</span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008000">// return to the event loop</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">return</span><span style="color:#000000">;</span></span>
+<span class="odt-code-line">  }</span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#008000">// special case for end of session</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#0000ff">if </span><span style="color:#000000">(to.name === </span><span style="color:#a31515">&quot;endSession&quot;</span><span style="color:#000000">) {</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008000">// clear the session</span></span>
+<span class="odt-code-line">    session.clear();</span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008000">// go to the </span><span style="font-weight:bold;color:#008000">[authentication] </span><span style="color:#008000">view</span></span>
+<span class="odt-code-line">    next({</span>
+<span class="odt-code-line"><span style="color:#000000">      name: </span><span style="color:#a31515">&#x27;authentication&#x27;</span><span style="color:#000000">,</span></span>
+<span class="odt-code-line">    })</span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008000">// return to the event loop</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">return</span><span style="color:#000000">;</span></span>
+<span class="odt-code-line">  }</span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#008000">// other cases - next normal view in the routing</span></span>
+<span class="odt-code-line">  next();</span>
+<span class="odt-code-line">})</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">// export the router</span>
+<span class="odt-code-line"><span style="color:#0000ff">export default </span><span style="color:#000000">router</span></span>
+</code></pre></div>
+
+<p><strong>Comments</strong></p>
+<ul>
+  <li>lines 16–38: some routes have been enhanced with additional information;
+  </li>
+  <li>line 19: a new route has been created to go to the <b>[Authentication] </b>view;
+  </li>
+  <li>lines 21–24: The route leading to the <b>[TaxCalculation] </b>view now has a <b>[meta] </b>property (this name is required). The content of this object can be anything and is set by the developer;
+  </li>
+  <li>line 23: We add the <b>[authenticated] </b>property to <b>[meta] </b>(this name can be anything). This means that to access the <b>[TaxCalculation] </b>view, the user must be authenticated;
+  </li>
+  <li>lines 26–29: we do the same for the route leading to the <b>[ListeSimulations] </b>view. Here too, the user must be authenticated;
+  </li>
+  <li>The <b>[meta.authenticated] </b>property will allow us to verify that a user who manually types the URLs for the <b>[CalculImpot] and [ListeSimulations] </b>views cannot access them if they are not authenticated;
+  </li>
+  <li>lines 51–76: The <b>[beforeEach] </b>method is executed before a view is routed. This is the right time to perform checks;
+    <ul>
+      <li><b>[to]</b>: the next route if nothing is done;
+      </li>
+      <li><b>[from]</b>: the last route displayed;
+      </li>
+      <li><b>[next]</b>: function to change the next route displayed;
+      </li>
+    </ul>
+  </li>
+  <li>line 55: we check if the next route requires the user to be authenticated;
+  </li>
+  <li>lines 56–59: if so, and the user is not authenticated, we change the next route to the <b>[Authentication] </b>view;
+  </li>
+  <li>lines 64–73: handle the special case of the <b>[endSession] </b>route from lines 30–32. This route has no associated view;
+    <ul>
+      <li>line 66: the session is reset to its initial value;
+      </li>
+      <li>lines 68–70: set the <b>[Authentication] </b>view as the next view;
+      </li>
+    </ul>
+  </li>
+  <li>line 75: if neither of the previous two cases applies, we simply proceed to the route specified by the routing file;
+  </li>
+  <li>lines 35–37: a <b>[NotFound] </b>view is provided if the route entered by the user does not match any known route. This view is imported on line 8. Routes are checked in the order of the routing file. Therefore, if we reach line 36, it means the requested route is none of the routes in lines 18–33;
+  </li>
+</ul>
+<p><a id="refheadingtoc259317196815120"></a></p>
+<h2 id="198-the-notfound-view">19.8. <span style="color: #4f81bd"><strong>The [NotFound] view</strong></span></h2>
+<p>The <strong>[NotFound]</strong> view is displayed if the route entered by the user does not match any known route:</p>
+<p><img src="images/10000000000008AD000003E60EE642BE.png" style="width:14.69cm;height:6.6cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000008AD000003E60EE642BE.png" /></p>
+<p>The view code is as follows:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<span class="odt-code-line">&lt;!-- HTML definition of the view --&gt;</span>
+<span class="odt-code-line"><span style="color:#0000ff">&lt;</span><span style="color:#800000">template</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#006400">&lt;!-- layout --&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">Layout </span><span style="color:#ff0000">:</span><span style="color:#0000ff">left=&quot;true&quot; </span><span style="color:#ff0000">:</span><span style="color:#0000ff">right=&quot;true&quot;&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#006400">&lt;!-- alert in the right column --&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">template </span><span style="color:#0000ff">slot=&quot;right&quot;&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#006400">&lt;!-- message on yellow background --&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">b-alert </span><span style="color:#ff0000">show </span><span style="color:#0000ff">variant=&quot;danger&quot; align=&quot;center&quot;&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">h4</span><span style="color:#0000ff">&gt;</span><span style="color:#000000">This page does not exist</span><span style="color:#0000ff">&lt;</span><span style="color:#800000">/h4</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">/b-alert</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">/template</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#006400">&lt;!-- navigation menu in the left column --&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">Menu </span><span style="color:#0000ff">slot=&quot;left&quot; :options=&quot;options&quot; /&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">/Layout</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">&lt;</span><span style="color:#800000">/template</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#0000ff">&lt;</span><span style="color:#800000">script</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">// imports</span>
+<span class="odt-code-line"><span style="color:#0000ff">import </span><span style="color:#000000">Layout </span><span style="color:#0000ff">from </span><span style="color:#a31515">&quot;./Layout&quot;</span><span style="color:#000000">;</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">import </span><span style="color:#000000">Menu </span><span style="color:#0000ff">from </span><span style="color:#a31515">&quot;./Menu&quot;</span><span style="color:#000000">;</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">export default </span><span style="color:#000000">{</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#008000">// components</span></span>
+<span class="odt-code-line">  components: {</span>
+<span class="odt-code-line">    Layout,</span>
+<span class="odt-code-line">    Menu</span>
+<span class="odt-code-line">  },</span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#008000">// internal state of the component</span></span>
+<span class="odt-code-line">  data() {</span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">return </span><span style="color:#000000">{</span></span>
+<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#008000">// navigation menu options</span></span>
+<span class="odt-code-line">      options: [</span>
+<span class="odt-code-line">        {</span>
+<span class="odt-code-line"><span style="color:#000000">          text: </span><span style="color:#a31515">&quot;Authentication&quot;</span><span style="color:#000000">,</span></span>
+<span class="odt-code-line"><span style="color:#000000">          path: </span><span style="color:#a31515">&quot;/&quot;</span></span>
+<span class="odt-code-line">        }</span>
+<span class="odt-code-line">      ]</span>
+<span class="odt-code-line">    };</span>
+<span class="odt-code-line">  },</span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#008000">// lifecycle</span></span>
+<span class="odt-code-line">  created() {</span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008000">// eslint-disable-next-line</span></span>
+<span class="odt-code-line"><span style="color:#000000">    console.log(</span><span style="color:#a31515">&quot;NotFound created&quot;</span><span style="color:#000000">);</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008000">// check which menu options to offer</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">if </span><span style="color:#000000">(</span><span style="color:#0000ff">this</span><span style="color:#000000">.$session.authenticated &amp;&amp; </span><span style="color:#0000ff">this</span><span style="color:#000000">.$role.taxAdminData) {</span></span>
+<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#008000">// the user can run simulations</span></span>
+<span class="odt-code-line"><span style="color:#000000">      Array.prototype.push.apply(</span><span style="color:#0000ff">this</span><span style="color:#000000">.options, [</span></span>
+<span class="odt-code-line">        {</span>
+<span class="odt-code-line"><span style="color:#000000">          text: </span><span style="color:#a31515">&quot;Tax Calculation&quot;</span><span style="color:#000000">,</span></span>
+<span class="odt-code-line"><span style="color:#000000">          path: </span><span style="color:#a31515">&quot;/tax-calculation&quot;</span></span>
+<span class="odt-code-line">        },</span>
+<span class="odt-code-line">        {</span>
+<span class="odt-code-line"><span style="color:#000000">          text: </span><span style="color:#a31515">&quot;List of simulations&quot;</span><span style="color:#000000">,</span></span>
+<span class="odt-code-line"><span style="color:#000000">          path: </span><span style="color:#a31515">&quot;/list-of-simulations&quot;</span></span>
+<span class="odt-code-line">        }</span>
+<span class="odt-code-line">      ]);</span>
+<span class="odt-code-line">    }</span>
+<span class="odt-code-line">  }</span>
+<span class="odt-code-line">};</span>
+<span class="odt-code-line"><span style="color:#0000ff">&lt;</span><span style="color:#800000">/script</span><span style="color:#0000ff">&gt;</span></span>
+</code></pre></div>
+
+<p><strong>Comments</strong></p>
+<ul>
+  <li>line 4: it uses both columns of the routed views;
+  </li>
+  <li>lines 6–11: an error message;
+  </li>
+  <li>line 13: the navigation menu occupies the left column;
+  </li>
+  <li>lines 31–36: the menu’s default options;
+  </li>
+  <li>lines 40–57: code executed when the view is created;
+  </li>
+  <li>line 44: checks whether the user can run simulations;
+  </li>
+  <li>lines 45–55: if so, two options are added to the navigation menu—those requiring authentication and an operational <b>[business] </b>layer (lines 46–55);
+  </li>
+</ul>
+<p><a id="refheadingtoc259319196815120"></a></p>
+<h2 id="199-the-authentication-view">19.9. <span style="color: #4f81bd"><strong>The [Authentication] view</strong></span></h2>
+<p>The <strong>[Authentication]</strong> view evolves as follows:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<span class="odt-code-line"><span style="color:#006400">&lt;!-- HTML definition of the view --&gt;</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">&lt;</span><span style="color:#800000">template</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">Layout </span><span style="color:#ff0000">:</span><span style="color:#0000ff">left=&quot;false&quot; </span><span style="color:#ff0000">:</span><span style="color:#0000ff">right=&quot;true&quot;&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">...</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">/Layout</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">&lt;</span><span style="color:#800000">/template</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">&lt;!-- view dynamics --&gt;</span>
+<span class="odt-code-line"><span style="color:#0000ff">&lt;</span><span style="color:#800000">script</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">import </span><span style="color:#000000">Layout </span><span style="color:#0000ff">from </span><span style="color:#a31515">&quot;./Layout&quot;</span><span style="color:#000000">;</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">export default </span><span style="color:#000000">{</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#008000">// component state</span></span>
+<span class="odt-code-line">  data() {</span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">return </span><span style="color:#000000">{</span></span>
+<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#008000">// user</span></span>
+<span class="odt-code-line"><span style="color:#000000">      user: </span><span style="color:#a31515">&quot;&quot;</span><span style="color:#000000">,</span></span>
+<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#008000">// their password</span></span>
+<span class="odt-code-line"><span style="color:#000000">      password: </span><span style="color:#a31515">&quot;&quot;</span><span style="color:#000000">,</span></span>
+<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#008000">// controls whether an error message is displayed</span></span>
+<span class="odt-code-line"><span style="color:#000000">      showError: </span><span style="color:#0000ff">false</span><span style="color:#000000">,</span></span>
+<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#008000">// the error message</span></span>
+<span class="odt-code-line"><span style="color:#000000">      message: </span><span style="color:#a31515">&quot;&quot;</span></span>
+<span class="odt-code-line">    };</span>
+<span class="odt-code-line">  },</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#008000">// components used</span></span>
+<span class="odt-code-line">  components: {</span>
+<span class="odt-code-line">    Layout</span>
+<span class="odt-code-line">  },</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#008000">// computed properties</span></span>
+<span class="odt-code-line">  computed: {</span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008000">// valid inputs</span></span>
+<span class="odt-code-line">    valid() {</span>
+<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#0000ff">return this</span><span style="color:#000000">.user &amp;&amp; </span><span style="color:#0000ff">this</span><span style="color:#000000">.password &amp;&amp; </span><span style="background-color:#ffff00;color:#0000ff">this</span><span style="background-color:#ffff00;color:#000000">.$session.started</span><span style="color:#000000">;</span></span>
+<span class="odt-code-line">    }</span>
+<span class="odt-code-line">  },</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#008000">// event handlers</span></span>
+<span class="odt-code-line">  methods: {</span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008000">// ----------- authentication</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">async </span><span style="color:#000000">login() {</span></span>
+<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#0000ff">try </span><span style="color:#000000">{</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008000">// start waiting</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">this</span><span style="color:#000000">.$emit(</span><span style="color:#a31515">&quot;loading&quot;</span><span style="color:#000000">, </span><span style="color:#0000ff">true</span><span style="color:#000000">);</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008000">// not yet authenticated</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="background-color:#ffff00;color:#0000ff">this</span><span style="background-color:#ffff00;color:#000000">.$session.authenticated </span><span style="color:#000000">= </span><span style="color:#0000ff">false</span><span style="color:#000000">;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008000">// Blocking authentication with the server</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">const </span><span style="color:#000000">response = </span><span style="color:#0000ff">await this</span><span style="color:#000000">.$dao.authenticateUser(</span></span>
+<span class="odt-code-line"><span style="color:#000000">          </span><span style="color:#0000ff">this</span><span style="color:#000000">.user,</span></span>
+<span class="odt-code-line"><span style="color:#000000">          </span><span style="color:#0000ff">this</span><span style="color:#000000">.password</span></span>
+<span class="odt-code-line">        );</span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008000">// end of loading</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">this</span><span style="color:#000000">.$emit(</span><span style="color:#a31515">&quot;loading&quot;</span><span style="color:#000000">, </span><span style="color:#0000ff">false</span><span style="color:#000000">);</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008000">// analyze the server response</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">if </span><span style="color:#000000">(response.status != 200) {</span></span>
+<span class="odt-code-line"><span style="color:#000000">          </span><span style="color:#008000">// display the error</span></span>
+<span class="odt-code-line"><span style="color:#000000">          </span><span style="color:#0000ff">this</span><span style="color:#000000">.message = response.response;</span></span>
+<span class="odt-code-line"><span style="color:#000000">          </span><span style="color:#0000ff">this</span><span style="color:#000000">.showError = </span><span style="color:#0000ff">true</span><span style="color:#000000">;</span></span>
+<span class="odt-code-line"><span style="color:#000000">          </span><span style="color:#008000">// return to the event loop</span></span>
+<span class="odt-code-line"><span style="color:#000000">          </span><span style="color:#0000ff">return</span><span style="color:#000000">;</span></span>
+<span class="odt-code-line">        }</span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008000">// no error</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">this</span><span style="color:#000000">.showError = </span><span style="color:#0000ff">false</span><span style="color:#000000">;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008000">// we are authenticated</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="background-color:#ffff00;color:#0000ff">this</span><span style="background-color:#ffff00;color:#000000">.$session.authenticated </span><span style="color:#000000">= </span><span style="color:#0000ff">true</span><span style="color:#000000">;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008000">// --------- now requesting data from the tax authority</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008000">// initially, no data</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">this</span><span style="color:#000000">.$business.setTaxAdminData(</span><span style="color:#0000ff">null</span><span style="color:#000000">);</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008000">// start waiting</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">this</span><span style="color:#000000">.$emit(</span><span style="color:#a31515">&quot;loading&quot;</span><span style="color:#000000">, </span><span style="color:#0000ff">true</span><span style="color:#000000">);</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008000">// Blocking request to the server</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">const </span><span style="color:#000000">response2 = </span><span style="color:#0000ff">await this</span><span style="color:#000000">.$dao.getAdminData();</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008000">// end of loading</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">this</span><span style="color:#000000">.$emit(</span><span style="color:#a31515">&quot;loading&quot;</span><span style="color:#000000">, </span><span style="color:#0000ff">false</span><span style="color:#000000">);</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008000">// parse the response</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">if </span><span style="color:#000000">(response2.status != 1000) {</span></span>
+<span class="odt-code-line"><span style="color:#000000">          </span><span style="color:#008000">// display the error</span></span>
+<span class="odt-code-line"><span style="color:#000000">          </span><span style="color:#0000ff">this</span><span style="color:#000000">.message = response2.response;</span></span>
+<span class="odt-code-line"><span style="color:#000000">          </span><span style="color:#0000ff">this</span><span style="color:#000000">.showError = </span><span style="color:#0000ff">true</span><span style="color:#000000">;</span></span>
+<span class="odt-code-line"><span style="color:#000000">          </span><span style="color:#008000">// return to the event loop</span></span>
+<span class="odt-code-line"><span style="color:#000000">          </span><span style="color:#0000ff">return</span><span style="color:#000000">;</span></span>
+<span class="odt-code-line">        }</span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008000">// no error</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">this</span><span style="color:#000000">.showError = </span><span style="color:#0000ff">false</span><span style="color:#000000">;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008000">// store the received data in the </span><span style="font-weight:bold;color:#008000">[business] </span><span style="color:#008000">layer</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">this</span><span style="color:#000000">.$business.setTaxAdminData(response2.response);</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008000">// we can proceed to the tax calculation</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">this</span><span style="color:#000000">.$router.push({ name: </span><span style="color:#a31515">&quot;calculImpot&quot; </span><span style="color:#000000">});</span></span>
+<span class="odt-code-line"><span style="color:#000000">      } </span><span style="color:#0000ff">catch </span><span style="color:#000000">(error) {</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008000">// we propagate the error to the main component</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">this</span><span style="color:#000000">.$emit(</span><span style="color:#a31515">&quot;error&quot;</span><span style="color:#000000">, error);</span></span>
+<span class="odt-code-line"><span style="color:#000000">      } </span><span style="color:#0000ff">finally </span><span style="color:#000000">{</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008000">// update session</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="background-color:#ffff00;color:#0000ff">this</span><span style="background-color:#ffff00;color:#000000">.$session.job </span><span style="color:#000000">= </span><span style="color:#0000ff">this</span><span style="color:#000000">.$job;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008000">// Save the session</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="background-color:#ffff00;color:#0000ff">this</span><span style="background-color:#ffff00;color:#000000">.$session.save()</span><span style="color:#000000">;</span></span>
+<span class="odt-code-line">      }</span>
+<span class="odt-code-line">    }</span>
+<span class="odt-code-line">  },</span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#008000">// lifecycle: the component has just been created</span></span>
+<span class="odt-code-line">  created() {</span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008000">// eslint-disable-next-line</span></span>
+<span class="odt-code-line"><span style="color:#000000">    console.log(</span><span style="color:#a31515">&quot;Authentication created&quot;</span><span style="color:#000000">);</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008000">// Can the user run simulations?</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">if </span><span style="color:#000000">(</span></span>
+<span class="odt-code-line"><span style="color:#000000">      </span><span style="background-color:#ffff00;color:#0000ff">this</span><span style="background-color:#ffff00;color:#000000">.$session.started </span><span style="color:#000000">&amp;&amp;</span></span>
+<span class="odt-code-line"><span style="color:#000000">      </span><span style="background-color:#ffff00;color:#0000ff">this</span><span style="background-color:#ffff00;color:#000000">.$session.authenticated </span><span style="color:#000000">&amp;&amp;</span></span>
+<span class="odt-code-line"><span style="color:#000000">      </span><span style="background-color:#ffff00;color:#0000ff">this</span><span style="background-color:#ffff00;color:#000000">.$business.taxAdminData</span></span>
+<span class="odt-code-line">    ) {</span>
+<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#008000">// then the user can run simulations</span></span>
+<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#0000ff">this</span><span style="color:#000000">.$router.push({ name: </span><span style="color:#a31515">&quot;taxCalculation&quot; </span><span style="color:#000000">});</span></span>
+<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#008000">// return to the event loop</span></span>
+<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#0000ff">return</span><span style="color:#000000">;</span></span>
+<span class="odt-code-line">    }</span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008000">// if the JSON session has already been started, do not restart it</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">if </span><span style="color:#000000">(!</span><span style="background-color:#ffff00;color:#0000ff">this</span><span style="background-color:#ffff00;color:#000000">.$session.started</span><span style="color:#000000">) {</span></span>
+<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#008000">// start waiting</span></span>
+<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#0000ff">this</span><span style="color:#000000">.$emit(</span><span style="color:#a31515">&quot;loading&quot;</span><span style="color:#000000">, </span><span style="color:#0000ff">true</span><span style="color:#000000">);</span></span>
+<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#008000">// initialize the session with the server - asynchronous request</span></span>
+<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#008000">// use the promise returned by the </span><span style="font-weight:bold;color:#008000">[dao] </span><span style="color:#008000">layer methods</span></span>
+<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#0000ff">this</span><span style="color:#000000">.$dao</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008000">// Initialize a JSON session</span></span>
+<span class="odt-code-line">        .initSession()</span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008000">// we received the response</span></span>
+<span class="odt-code-line">        .then(response =&gt; {</span>
+<span class="odt-code-line"><span style="color:#000000">          </span><span style="color:#008000">// end of wait</span></span>
+<span class="odt-code-line"><span style="color:#000000">          </span><span style="color:#0000ff">this</span><span style="color:#000000">.$emit(</span><span style="color:#a31515">&quot;loading&quot;</span><span style="color:#000000">, </span><span style="color:#0000ff">false</span><span style="color:#000000">);</span></span>
+<span class="odt-code-line"><span style="color:#000000">          </span><span style="color:#008000">// analyze the response</span></span>
+<span class="odt-code-line"><span style="color:#000000">          </span><span style="color:#0000ff">if </span><span style="color:#000000">(response.status != 700) {</span></span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#008000">// display the error</span></span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#0000ff">this</span><span style="color:#000000">.message = response.response;</span></span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#0000ff">this</span><span style="color:#000000">.showError = </span><span style="color:#0000ff">true</span><span style="color:#000000">;</span></span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#008000">// return to the event loop</span></span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#0000ff">return</span><span style="color:#000000">;</span></span>
+<span class="odt-code-line">          }</span>
+<span class="odt-code-line"><span style="color:#000000">          </span><span style="color:#008000">// The session has started</span></span>
+<span class="odt-code-line"><span style="color:#000000">          </span><span style="color:#0000ff">this</span><span style="color:#000000">.$session.started = </span><span style="color:#0000ff">true</span><span style="color:#000000">;</span></span>
+<span class="odt-code-line">        })</span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008000">// in case of an error</span></span>
+<span class="odt-code-line">        .catch(error =&gt; {</span>
+<span class="odt-code-line"><span style="color:#000000">          </span><span style="color:#008000">// we propagate the error to the </span><span style="font-weight:bold;color:#008000">[Main] </span><span style="color:#008000">view</span></span>
+<span class="odt-code-line"><span style="color:#000000">          </span><span style="color:#0000ff">this</span><span style="color:#000000">.$emit(</span><span style="color:#a31515">&quot;error&quot;</span><span style="color:#000000">, error);</span></span>
+<span class="odt-code-line">        })</span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008000">// in all cases</span></span>
+<span class="odt-code-line">        .finally(() =&gt; {</span>
+<span class="odt-code-line"><span style="color:#000000">          </span><span style="color:#008000">// save the session</span></span>
+<span class="odt-code-line"><span style="color:#000000">          </span><span style="background-color:#ffff00;color:#0000ff">this</span><span style="background-color:#ffff00;color:#000000">.$session.save()</span><span style="color:#000000">;</span></span>
+<span class="odt-code-line">        });</span>
+<span class="odt-code-line">    }</span>
+<span class="odt-code-line">  }</span>
+<span class="odt-code-line">};</span>
+<span class="odt-code-line"><span style="color:#0000ff">&lt;</span><span style="color:#800000">/script</span><span style="color:#0000ff">&gt;</span></span>
+</code></pre></div>
+
+<p><strong>Comments</strong></p>
+<ul>
+  <li>The statements that use the session introduced in this version of the <b>[Vue.js] </b>client are highlighted in yellow;
+  </li>
+  <li>lines 97, 148: at the end of the <b>[login, created] </b>methods, the session is saved regardless of the result of the HTTP requests that occur within these methods (the <b>[finally] </b>clause in both cases);
+  </li>
+  <li>the <b>[created] </b>method in lines 102–150 is executed every time the <b>[Authentication] </b>view is created. If the user typed the view’s URL, the session will tell us what to do;
+  </li>
+  <li>lines 106–115: if the JSON session is started, the user is authenticated, and the data <b>[this.$métier.taxAdminData] </b>is initialized, then the user can go directly to the tax calculation form (line 112);
+  </li>
+  <li>line 117: the <b>[created] </b>method was used in the previous version to initialize a JSON session with the server. This step is unnecessary if it has already been performed;
+  </li>
+  <li>lines 42–66: the authentication method;
+  </li>
+  <li>line 66: if authentication succeeds, it is noted in the session;
+  </li>
+  <li>lines 67–92: the request to the server for tax administration data <b>[taxAdminData]</b>;
+  </li>
+  <li>line 95: at the end of this phase, the session’s <b>[business] </b>property is updated regardless of whether the operation succeeded or not;
+  </li>
+</ul>
+<p><a id="refheadingtoc259321196815120"></a></p>
+<h2 id="1910-the-calculimpot-view">19.10. <span style="color: #4f81bd"><strong>The [CalculImpot] view</strong></span></h2>
+<p>The code for the <strong>[CalculImpot]</strong> view evolves as follows:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<span class="odt-code-line">&lt;!-- HTML definition of the view --&gt;</span>
+<span class="odt-code-line"><span style="color:#0000ff">&lt;</span><span style="color:#800000">template</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#0000ff">...</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">&lt;</span><span style="color:#800000">/template</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#0000ff">&lt;</span><span style="color:#800000">script</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">// imports</span>
+<span class="odt-code-line"><span style="color:#0000ff">import </span><span style="color:#000000">FormCalculImpot </span><span style="color:#0000ff">from </span><span style="color:#a31515">&quot;./FormCalculImpot&quot;</span><span style="color:#000000">;</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">import </span><span style="color:#000000">Menu </span><span style="color:#0000ff">from </span><span style="color:#a31515">&quot;./Menu&quot;</span><span style="color:#000000">;</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">import </span><span style="color:#000000">Layout </span><span style="color:#0000ff">from </span><span style="color:#a31515">&quot;./Layout&quot;</span><span style="color:#000000">;</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#0000ff">export default </span><span style="color:#000000">{</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#008000">// internal state</span></span>
+<span class="odt-code-line">  data() {</span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">return </span><span style="color:#000000">{</span></span>
+<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#008000">// menu options</span></span>
+<span class="odt-code-line">      options: [</span>
+<span class="odt-code-line">        {</span>
+<span class="odt-code-line"><span style="color:#000000">          text: </span><span style="color:#a31515">&quot;List of simulations&quot;</span><span style="color:#000000">,</span></span>
+<span class="odt-code-line"><span style="color:#000000">          path: </span><span style="color:#a31515">&quot;/list-of-simulations&quot;</span></span>
+<span class="odt-code-line">        },</span>
+<span class="odt-code-line">        {</span>
+<span class="odt-code-line"><span style="color:#000000">          text: </span><span style="color:#a31515">&quot;End of session&quot;</span><span style="color:#000000">,</span></span>
+<span class="odt-code-line"><span style="color:#000000">          path: </span><span style="color:#a31515">&quot;/end-session&quot;</span></span>
+<span class="odt-code-line">        }</span>
+<span class="odt-code-line">      ],</span>
+<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#008000">// tax calculation result</span></span>
+<span class="odt-code-line"><span style="color:#000000">      result: </span><span style="color:#a31515">&quot;&quot;</span><span style="color:#000000">,</span></span>
+<span class="odt-code-line"><span style="color:#000000">      resultObtained: </span><span style="color:#0000ff">false</span></span>
+<span class="odt-code-line">    };</span>
+<span class="odt-code-line">  },</span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#008000">// components used</span></span>
+<span class="odt-code-line">  components: {</span>
+<span class="odt-code-line">    Layout,</span>
+<span class="odt-code-line">    TaxCalculationForm,</span>
+<span class="odt-code-line">    Menu</span>
+<span class="odt-code-line">  },</span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#008000">// event handling methods</span></span>
+<span class="odt-code-line">  methods: {</span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008000">// tax calculation result</span></span>
+<span class="odt-code-line">    handleResult(result) {</span>
+<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#008000">// build the result as an HTML string</span></span>
+<span class="odt-code-line">      ...</span>
+<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#008000">// a simulation of +</span></span>
+<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#0000ff">this</span><span style="color:#000000">.$store.commit(</span><span style="color:#a31515">&quot;addSimulation&quot;</span><span style="color:#000000">, result);</span></span>
+<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#008000">// save the session</span></span>
+<span class="odt-code-line"><span style="color:#000000">      </span><span style="background-color:#ffff00;color:#0000ff">this</span><span style="background-color:#ffff00;color:#000000">.$session.save()</span><span style="color:#000000">;</span></span>
+<span class="odt-code-line">    }</span>
+<span class="odt-code-line">  },</span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#008000">// lifecycle</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="background-color:#ffff00;color:#000000">created</span><span style="color:#000000">() {</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008000">// eslint-disable-next-line</span></span>
+<span class="odt-code-line"><span style="color:#000000">    console.log(</span><span style="color:#a31515">&quot;CalculImpot created&quot;</span><span style="color:#000000">);</span></span>
+<span class="odt-code-line">  }</span>
+<span class="odt-code-line">};</span>
+<span class="odt-code-line"><span style="color:#0000ff">&lt;</span><span style="color:#800000">/script</span><span style="color:#0000ff">&gt;</span></span>
+</code></pre></div>
+
+<p><strong>Comments</strong></p>
+<ul>
+  <li>line 45: the calculated simulation is added to the <b>[Vuex] </b>store. This affects the session, which encompasses the store’s <b>[state] </b>property. Therefore, we save the session (line 47);
+  </li>
+  <li>line 51: we create a <b>[created] </b>method to track view creations in the logs;
+  </li>
+</ul>
+<p><a id="refheadingtoc259323196815120"></a></p>
+<h2 id="1911-the-simulationlist-view">19.11. <span style="color: #4f81bd"><strong>The [SimulationList] view</strong></span></h2>
+<p>The <strong>[ListeSimulations]</strong> view evolves as follows:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<span class="odt-code-line">&lt;!-- HTML definition of the view --&gt;</span>
+<span class="odt-code-line"><span style="color:#0000ff">&lt;</span><span style="color:#800000">template</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#0000ff">...</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">/div</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">&lt;</span><span style="color:#800000">/template</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#0000ff">&lt;</span><span style="color:#800000">script</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">// imports</span>
+<span class="odt-code-line"><span style="color:#0000ff">import </span><span style="color:#000000">Layout </span><span style="color:#0000ff">from </span><span style="color:#a31515">&quot;./Layout&quot;</span><span style="color:#000000">;</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">import </span><span style="color:#000000">Menu </span><span style="color:#0000ff">from </span><span style="color:#a31515">&quot;./Menu&quot;</span><span style="color:#000000">;</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">export default </span><span style="color:#000000">{</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#008000">// components</span></span>
+<span class="odt-code-line">  components: {</span>
+<span class="odt-code-line">    Layout,</span>
+<span class="odt-code-line">    Menu</span>
+<span class="odt-code-line">  },</span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#008000">// internal state</span></span>
+<span class="odt-code-line">  data() {</span>
+<span class="odt-code-line">    ...</span>
+<span class="odt-code-line">  },</span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#008000">// computed internal state</span></span>
+<span class="odt-code-line">  computed: {</span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008000">// list of simulations retrieved from the Vuex store</span></span>
+<span class="odt-code-line">    simulations() {</span>
+<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#0000ff">return this</span><span style="color:#000000">.$store.state.simulations;</span></span>
+<span class="odt-code-line">    }</span>
+<span class="odt-code-line">  },</span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#008000">// methods</span></span>
+<span class="odt-code-line">  methods: {</span>
+<span class="odt-code-line">    deleteSimulation(index) {</span>
+<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#008000">// eslint-disable-next-line</span></span>
+<span class="odt-code-line"><span style="color:#000000">      console.log(</span><span style="color:#a31515">&quot;deleteSimulation&quot;</span><span style="color:#000000">, index);</span></span>
+<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#008000">// Delete simulation #</span><span style="font-weight:bold;color:#008000">[index]</span></span>
+<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#0000ff">this</span><span style="color:#000000">.$store.commit(</span><span style="color:#a31515">&quot;deleteSimulation&quot;</span><span style="color:#000000">, index);</span></span>
+<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#008000">// saving the session</span></span>
+<span class="odt-code-line"><span style="color:#000000">      </span><span style="background-color:#ffff00;color:#0000ff">this</span><span style="background-color:#ffff00;color:#000000">.$session.save()</span><span style="color:#000000">;</span></span>
+<span class="odt-code-line">    }</span>
+<span class="odt-code-line">  },</span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#008000">// lifecycle</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="background-color:#ffff00;color:#000000">created</span><span style="color:#000000">() {</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008000">// eslint-disable-next-line</span></span>
+<span class="odt-code-line"><span style="color:#000000">    console.log(</span><span style="color:#a31515">&quot;ListeSimulations created&quot;</span><span style="color:#000000">);</span></span>
+<span class="odt-code-line">  }</span>
+<span class="odt-code-line">};</span>
+<span class="odt-code-line"><span style="color:#0000ff">&lt;</span><span style="color:#800000">/script</span><span style="color:#0000ff">&gt;</span></span>
+</code></pre></div>
+
+<p><strong>Comments</strong></p>
+<ul>
+  <li>line 36: after deleting a simulation on line 34, we save the session to reflect this state change;
+  </li>
+  <li>lines 40–43: we continue to track the creation of views;
+  </li>
+</ul>
+<p><a id="refheadingtoc259325196815120"></a></p>
+<h2 id="1912-project-execution">19.12. <span style="color: #4f81bd"><strong>Project Execution</strong></span></h2>
+<p><img src="images/10000000000007660000021C6CDBCEAB.png" style="width:15.032cm;height:4.286cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000007660000021C6CDBCEAB.png" /></p>
+<p>During testing, verify the following points:</p>
+<ul>
+  <li>if the user “uses” the application via the navigation menu links and the action buttons/links, it works;
+  </li>
+  <li>if the user manually enters URLs, the application continues to function. In particular, perform the following test:
+    <ul>
+      <li>run simulations;
+      </li>
+      <li>once on the <b>[SimulationList] </b>view, reload (F5) the view. In the previous application <b>[vuejs-20]</b>, the simulations were lost at that point. That is not the case here: the simulations already performed are still present;
+      </li>
+    </ul>
+  </li>
+  <li>Check the logs to understand:
+    <ul>
+      <li>when the <b>[main] </b>script is executed. You should see that it runs every time the user manually enters a URL;
+      </li>
+      <li>when the views are created. You should see that they are created every time they are about to be displayed;
+      </li>
+      <li>how routing works. Before each routing, a log is generated that tells you:
+        <ul>
+          <li>the route you came from;
+          </li>
+          <li>the route you are going to;
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+<p><a id="refheadingtoc259327196815120"></a></p>
+<h2 id="1913-deploying-the-application-on-a-local-server">19.13. <span style="color: #4f81bd"><strong>Deploying the application on a local server</strong></span></h2>
+<p>As an exercise, follow the section <a href="#1176deploiement-de-lapplication-sur-un-serveur-localoutline"><u><span style="color: #0563c1">|Deployment on a local server|</span></u></a> to deploy the <strong>[vuejs-21]</strong> project on the local Laragon server. Then test it.</p>
+<p><a id="refheadingtoc539270143258178"></a></p>
+<h2 id="1914-developing-the-mobile-version">19.14. <span style="color: #4f81bd"><strong>Developing the mobile version</strong></span></h2>
+<p>In theory, using Bootstrap should allow us to have an application that works on different devices: smartphones, tablets, laptops, and desktops. What differentiates these devices is their screen size.</p>
+<p>If we test the <strong>[vuejs-21]</strong> version on a mobile device, we see that the view display is a mess. The <strong>[vuejs-22]</strong> version fixes this issue. All changes were made in the view templates. They mainly involved optimizing the display for a smartphone screen. Once this is optimized, the display on larger screens works smoothly thanks to Bootstrap.</p>
+<p><img src="images/10000000000001AB0000028FA58683A3.png" style="width:3.949cm;height:6.059cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001AB0000028FA58683A3.png" /></p>
+<p><a id="refheadingtoc539272143258178"></a></p>
+<h3 id="19141-the-main-view">19.14.1. <span style="color: #4f81bd"><strong>The</strong> [<strong>Main</strong>] <strong>view</strong></span></h3>
+<p>The <strong>[Main]</strong> view evolves as follows:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-html">
+<span class="odt-code-line">&lt;!-- HTML definition of the view --&gt;</span>
+<span class="odt-code-line"><span style="color:#0000ff">&lt;</span><span style="color:#800000">template</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">div </span><span style="color:#0000ff">class=&quot;container&quot;&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">b-card</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#006400">&lt;!-- jumbotron --&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">b-jumbotron</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">b-row</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">          </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">b-col </span><span style="background-color:#ffff00;color:#0000ff">sm=&quot;4&quot;</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">img </span><span style="color:#0000ff">src=&quot;../assets/logo.jpg&quot; alt=&quot;Cherry Blossoms&quot; /&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">          </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">/b-col</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">          </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">b-col </span><span style="background-color:#ffff00;color:#0000ff">sm=&quot;8&quot;</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">h1</span><span style="color:#0000ff">&gt;</span><span style="color:#000000">Calculate your tax</span><span style="color:#0000ff">&lt;</span><span style="color:#800000">/h1</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">          </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">/b-col</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">/b-row</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">/b-jumbotron</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#0000ff">....</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">/b-card</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">/div</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">&lt;</span><span style="color:#800000">/template</span><span style="color:#0000ff">&gt;</span></span>
+</code></pre></div>
+
+<p><strong>Comments</strong></p>
+<ul>
+  <li>line 8: where it used to say <b>[cols=’4’]</b>, we now write <b>[sm=’4’]</b>. <b>[sm] </b>stands for <b>[small]</b>. Smartphone screens fall into this category. The other categories are <b>[xs=extra small, md=medium, lg=large, xl=extra large]</b>;
+  </li>
+  <li>line 11: same as above;
+  </li>
+</ul>
+<p><a id="refheadingtoc539274143258178"></a></p>
+<h3 id="19142-the-layout-view">19.14.2. <span style="color: #4f81bd"><strong>The</strong> [<strong>Layout</strong>] <strong>view</strong></span></h3>
+<p>The <strong>[Layout]</strong> view evolves as follows:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-html">
+<span class="odt-code-line">&lt;!-- HTML definition of the layout for the routed view --&gt;</span>
+<span class="odt-code-line"><span style="color:#0000ff">&lt;</span><span style="color:#800000">template</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#006400">&lt;!-- line --&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">div</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">b-row</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#006400">&lt;!-- three-column area on the left --&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">b-col </span><span style="background-color:#ffff00;color:#0000ff">sm=&quot;3&quot; </span><span style="color:#0000ff">v-if=&quot;left&quot;&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">slot </span><span style="color:#0000ff">name=&quot;left&quot; /&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">/b-col</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#006400">&lt;!-- nine-column area on the right --&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">b-col </span><span style="background-color:#ffff00;color:#0000ff">sm=&quot;9&quot; </span><span style="color:#0000ff">v-if=&quot;right&quot;&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">slot </span><span style="color:#0000ff">name=&quot;right&quot; /&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">/b-col</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">/b-row</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">/div</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">&lt;</span><span style="color:#800000">/template</span><span style="color:#0000ff">&gt;</span></span>
+</code></pre></div>
+
+<p><a id="refheadingtoc539276143258178"></a></p>
+<h3 id="19143-the-authentication-view">19.14.3. <span style="color: #4f81bd"><strong>The [Authentication] view</strong></span></h3>
+<p>The <strong>[Authentication]</strong> view evolves as follows:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<span class="odt-code-line">&lt;!-- HTML definition of the view --&gt;</span>
+<span class="odt-code-line"><span style="color:#0000ff">&lt;</span><span style="color:#800000">template</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">Layout </span><span style="color:#ff0000">:</span><span style="color:#0000ff">left=&quot;false&quot; </span><span style="color:#ff0000">:</span><span style="color:#0000ff">right=&quot;true&quot;&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">template </span><span style="color:#0000ff">slot=&quot;right&quot;&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#006400">&lt;!-- HTML form - submits its values with the </span><span style="font-weight:bold;color:#006400">[authenticate-user] </span><span style="color:#006400">action --&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">b-form </span><span style="color:#ff0000">@submit.</span><span style="color:#0000ff">prevent=&quot;login&quot;&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#006400">&lt;!-- title --&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">b-alert </span><span style="color:#ff0000">show </span><span style="color:#0000ff">variant=&quot;primary&quot;&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">          </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">h4</span><span style="color:#0000ff">&gt;</span><span style="color:#000000">Welcome. Please authenticate to log in</span><span style="color:#0000ff">&lt;</span><span style="color:#800000">/h4</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">/b-alert</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#006400">&lt;!-- 1st line --&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">&lt;</span><span style="background-color:#ffff00;color:#800000">b-form-group </span><span style="color:#0000ff">label=&quot;Username&quot; label-for=&quot;user&quot; description=&quot;Type admin&quot;&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">          </span><span style="color:#006400">&lt;!-- user input field --&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">          </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">b-col </span><span style="background-color:#ffff00;color:#0000ff">sm=&quot;6&quot;</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">b-form-input </span><span style="color:#0000ff">type=&quot;text&quot; id=&quot;user&quot; placeholder=&quot;Username&quot; v-model=&quot;user&quot; /&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">          </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">/b-col</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">/b-form-group</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#006400">&lt;!-- 2nd line --&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">&lt;</span><span style="background-color:#ffff00;color:#800000">b-form-group </span><span style="color:#0000ff">label=&quot;Password&quot; label-for=&quot;password&quot; description=&quot;Enter admin&quot;&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">          </span><span style="color:#006400">&lt;!-- password input field --&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">          </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">b-col </span><span style="background-color:#ffff00;color:#0000ff">sm=&quot;6&quot;</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">b-input </span><span style="color:#0000ff">type=&quot;password&quot; id=&quot;password&quot; placeholder=&quot;Password&quot; v-model=&quot;password&quot; /&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">          </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">/b-col</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">/b-form-group</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#006400">&lt;!-- 3rd line --&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">b-alert</span></span>
+<span class="odt-code-line"><span style="color:#000000">          </span><span style="color:#ff0000">show</span></span>
+<span class="odt-code-line"><span style="color:#000000">          </span><span style="color:#0000ff">variant=&quot;danger&quot;</span></span>
+<span class="odt-code-line"><span style="color:#000000">          </span><span style="color:#0000ff">v-if=&quot;showError&quot;</span></span>
+<span class="odt-code-line"><span style="color:#000000">          </span><span style="color:#0000ff">class=&quot;mt-3&quot;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">&gt;</span><span style="color:#000000">The following error occurred: </span><span style="font-weight:bold;color:#000000">{{</span><span style="color:#800080">message</span><span style="font-weight:bold;color:#000000">}}</span><span style="color:#0000ff">&lt;</span><span style="color:#800000">/b-alert</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#006400">&lt;!-- </span><span style="font-weight:bold;color:#006400">[submit] </span><span style="color:#006400">button on a third line --&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">b-row</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">          </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">b-col </span><span style="background-color:#ffff00;color:#0000ff">sm=&quot;2&quot;</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">b-button </span><span style="color:#0000ff">variant=&quot;primary&quot; type=&quot;submit&quot; :disabled=&quot;!valid&quot;&gt;</span><span style="color:#000000">Submit</span><span style="color:#0000ff">&lt;</span><span style="color:#800000">/b-button</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">          </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">/b-col</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">/b-row</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">/b-form</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">/template</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">/Layout</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">&lt;</span><span style="color:#800000">/template</span><span style="color:#0000ff">&gt;</span></span>
+</code></pre></div>
+
+<p><strong>Comments</strong></p>
+<ul>
+  <li>Lines 11 and 19: We removed the <b>[label-cols] </b>attribute, which set the number of columns for the input label. Without this attribute, the label appears above the input field. This is better suited for smartphone screens;
+  </li>
+</ul>
+<p><a id="refheadingtoc539278143258178"></a></p>
+<h3 id="19144-the-calculimpot-view">19.14.4. <span style="color: #4f81bd"><strong>The [CalculImpot] view</strong></span></h3>
+<p>The <strong>[CalculImpot]</strong> view has been updated as follows:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-html">
+<span class="odt-code-line">&lt;!-- HTML definition of the view --&gt;</span>
+<span class="odt-code-line"><span style="color:#0000ff">&lt;</span><span style="color:#800000">template</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">div</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">Layout </span><span style="color:#ff0000">:</span><span style="color:#0000ff">left=&quot;true&quot; </span><span style="color:#ff0000">:</span><span style="color:#0000ff">right=&quot;true&quot;&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#006400">&lt;!-- tax calculation form on the right --&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">FormCalculImpot </span><span style="color:#0000ff">slot=&quot;right&quot; @resultatObtenu=&quot;handleResultatObtenu&quot; /&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#006400">&lt;!-- navigation menu on the left --&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">Menu </span><span style="color:#0000ff">slot=&quot;left&quot; :options=&quot;options&quot; /&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">/Layout</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#006400">&lt;!-- tax calculation results display area below the form --&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">b-row </span><span style="color:#0000ff">v-if=&quot;resultObtained&quot; class=&quot;mt-3&quot;&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#006400">&lt;!-- empty three-column area --&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">b-col </span><span style="background-color:#ffff00;color:#0000ff">sm=&quot;3&quot; </span><span style="color:#0000ff">/&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#006400">&lt;!-- nine-column area --&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">b-col </span><span style="background-color:#ffff00;color:#0000ff">sm=&quot;9&quot;</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">b-alert </span><span style="color:#ff0000">show </span><span style="color:#0000ff">variant=&quot;success&quot;&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">          </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">span </span><span style="color:#0000ff">v-html=&quot;result&quot;&gt;&lt;</span><span style="color:#800000">/span</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">/b-alert</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">/b-col</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">/b-row</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">/div</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">&lt;</span><span style="color:#800000">/template</span><span style="color:#0000ff">&gt;</span></span>
+</code></pre></div>
+
+<p><a id="refheadingtoc539280143258178"></a></p>
+<h3 id="19145-the-formcalculimpot-view">19.14.5. <span style="color: #4f81bd"><strong>The [FormCalculImpot] view</strong></span></h3>
+<p>The <strong>[FormCalculImpot]</strong> view evolves as follows:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<span class="odt-code-line">&lt;!-- HTML definition of the view --&gt;</span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">template</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#006400">&lt;!-- HTML form --&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">b-form </span><span style="color:#ff0000">@submit.</span><span style="color:#0000ff">prevent=&quot;calculerImpot&quot; class=&quot;mb-3&quot;&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#006400">&lt;!-- 12-column message on a blue background --&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">b-row</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">b-col </span><span style="background-color:#ffff00;color:#0000ff">sm=&quot;12&quot;</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">b-alert </span><span style="color:#ff0000">show </span><span style="color:#0000ff">variant=&quot;primary&quot;&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">          </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">h4</span><span style="color:#0000ff">&gt;</span><span style="color:#000000">Fill out the form below and submit it</span><span style="color:#0000ff">&lt;</span><span style="color:#800000">/h4</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">/b-alert</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">/b-col</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">/b-row</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#006400">&lt;!-- form elements --&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#006400">&lt;!-- first row --&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">&lt;</span><span style="background-color:#ffff00;color:#800000">b-form-group </span><span style="color:#0000ff">label=&quot;Are you married or in a civil partnership?&quot;&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#006400">&lt;!-- radio buttons in 5 columns--&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">b-col </span><span style="background-color:#ffff00;color:#0000ff">sm=&quot;5&quot;</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">b-form-radio </span><span style="color:#0000ff">v-model=&quot;married&quot; value=&quot;yes&quot;&gt;</span><span style="color:#000000">Yes</span><span style="color:#0000ff">&lt;</span><span style="color:#800000">/b-form-radio</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">b-form-radio </span><span style="color:#0000ff">v-model=&quot;married&quot; value=&quot;no&quot;&gt;</span><span style="color:#000000">No</span><span style="color:#0000ff">&lt;</span><span style="color:#800000">/b-form-radio</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">/b-col</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">/b-form-group</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#006400">&lt;!-- second line --&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">&lt;</span><span style="background-color:#ffff00;color:#800000">b-form-group </span><span style="color:#0000ff">label=&quot;Number of dependent children&quot; label-for=&quot;children&quot;&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">b-form-input</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">type=&quot;text&quot;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">id=&quot;children&quot;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">placeholder=&quot;Enter the number of children&quot;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">v-model=&quot;children&quot;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#ff0000">:</span><span style="color:#0000ff">state=&quot;childrenValid&quot;</span></span>
+<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#0000ff">&gt;&lt;</span><span style="color:#800000">/b-form-input</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#006400">&lt;!-- possible error message --&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">b-form-invalid-feedback </span><span style="color:#ff0000">:</span><span style="color:#0000ff">state=&quot;childrenValid&quot;&gt;</span><span style="color:#000000">You must enter a positive number or zero</span><span style="color:#0000ff">&lt;</span><span style="color:#800000">/b-form-invalid-feedback</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">/b-form-group</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#006400">&lt;!-- third line --&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">&lt;</span><span style="background-color:#ffff00;color:#800000">b-form-group</span></span>
+<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#0000ff">label=&quot;Net taxable annual income&quot;</span></span>
+<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#0000ff">label-for=&quot;salary&quot;</span></span>
+<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#0000ff">description=&quot;Round down to the nearest euro&quot;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">b-form-input</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">type=&quot;text&quot;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">id=&quot;salary&quot;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">placeholder=&quot;Annual salary&quot;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">v-model=&quot;salary&quot;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#ff0000">:</span><span style="color:#0000ff">state=&quot;salaireValide&quot;</span></span>
+<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#0000ff">&gt;&lt;</span><span style="color:#800000">/b-form-input</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#006400">&lt;!-- possible error message --&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">b-form-invalid-feedback </span><span style="color:#ff0000">:</span><span style="color:#0000ff">state=&quot;salaryValid&quot;&gt;</span><span style="color:#000000">You must enter a positive number or zero</span><span style="color:#0000ff">&lt;</span><span style="color:#800000">/b-form-invalid-feedback</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">/b-form-group</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#006400">&lt;!-- fourth line, </span><span style="font-weight:bold;color:#006400">[submit] </span><span style="color:#006400">button --&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">b-col </span><span style="background-color:#ffff00;color:#0000ff">sm=&quot;3&quot;</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">b-button </span><span style="color:#0000ff">type=&quot;submit&quot; variant=&quot;primary&quot; </span><span style="color:#ff0000">:</span><span style="color:#0000ff">disabled=&quot;formInvalide&quot;&gt;</span><span style="color:#000000">Submit</span><span style="color:#0000ff">&lt;</span><span style="color:#800000">/b-button</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">/b-col</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">/b-form</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">&lt;</span><span style="color:#800000">/template</span><span style="color:#0000ff">&gt;</span></span>
+</code></pre></div>
+
+<p><strong>Comments</strong></p>
+<ul>
+  <li>Lines 15, 23, 35: The <b>[label-cols] </b>attribute has been removed;
+  </li>
+</ul>
+
+<p>In addition, we are updating the validation tests:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line">...</span>
+<span class="odt-code-line">// calculated internal state</span>
+<span class="odt-code-line">  computed: {</span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008000">// form validation</span></span>
+<span class="odt-code-line">    formInvalid() {</span>
+<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#0000ff">return </span><span style="color:#000000">(</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008000">// invalid salary</span></span>
+<span class="odt-code-line"><span style="color:#000000">        !</span><span style="color:#0000ff">this</span><span style="color:#000000">.salary.match(</span><span style="color:#a31515">/^\s*\d+\s*$/</span><span style="color:#000000">) ||</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008000">// or invalid number of children</span></span>
+<span class="odt-code-line"><span style="color:#000000">        !</span><span style="color:#0000ff">this</span><span style="color:#000000">.children.match(</span><span style="color:#a31515">/^\s*\d+\s*$/</span><span style="color:#000000">) ||</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008000">// or tax data not obtained</span></span>
+<span class="odt-code-line"><span style="color:#000000">        !</span><span style="color:#0000ff">this</span><span style="color:#000000">.$occupation.taxAdminData</span></span>
+<span class="odt-code-line">      );</span>
+<span class="odt-code-line">    },</span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008000">// salary validation</span></span>
+<span class="odt-code-line">    validSalary() {</span>
+<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#008000">// must be a number &gt;= 0</span></span>
+<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#0000ff">return </span><span style="color:#000000">Boolean(</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">this</span><span style="color:#000000">.salary.match(</span><span style="color:#a31515">/^\s*\d+\s*$/</span><span style="color:#000000">) || </span><span style="color:#0000ff">this</span><span style="color:#000000">.salary.match(</span><span style="color:#a31515">/^\s*$/</span><span style="color:#000000">)</span></span>
+<span class="odt-code-line">      );</span>
+<span class="odt-code-line">    },</span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008000">// validate children</span></span>
+<span class="odt-code-line">    validateChildren() {</span>
+<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#008000">// must be a number &gt;= 0</span></span>
+<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#0000ff">return </span><span style="color:#000000">Boolean(</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">this</span><span style="color:#000000">.children.match(</span><span style="color:#a31515">/^\s*\d+\s*$/</span><span style="color:#000000">) || </span><span style="color:#0000ff">this</span><span style="color:#000000">.children.match(</span><span style="color:#a31515">/^\s*$/</span><span style="color:#000000">)</span></span>
+<span class="odt-code-line">      );</span>
+<span class="odt-code-line">    }</span>
+<span class="odt-code-line">},</span>
+<span class="odt-code-line">...</span>
+</code></pre></div>
+
+<p><strong>Comments</strong></p>
+<ul>
+  <li>line 19: when nothing has been entered, the input is considered valid. This ensures that the input is valid when the view is initially displayed. In the previous version, the input initially appeared as incorrect;
+  </li>
+  <li>line 26: same as above;
+  </li>
+  <li>Lines 5–14: The submit button is only active if both fields contain data and are valid;
+  </li>
+</ul>
+<p><a id="refheadingtoc539282143258178"></a></p>
+<h3 id="19146-the-menu-view">19.14.6. <span style="color: #4f81bd"><strong>The</strong> [Menu] <strong>view</strong></span></h3>
+<p>The <strong>[Menu]</strong> view evolves as follows:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<span class="odt-code-line">&lt;!-- HTML definition of the view --&gt;</span>
+<span class="odt-code-line"><span style="color:#0000ff">&lt;</span><span style="color:#800000">template</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#0000ff">&lt;</span><span style="background-color:#ffff00;color:#800000">b-card </span><span style="color:#0000ff">class=&quot;mb-3&quot;&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#006400">&lt;!-- Bootstrap vertical menu --&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">b-nav </span><span style="color:#ff0000">vertical</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#006400">&lt;!-- menu options --&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">b-nav-item</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">v-for=&quot;(option,index) of options&quot;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#ff0000">:</span><span style="color:#0000ff">key=&quot;index&quot;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#ff0000">:</span><span style="color:#0000ff">to=&quot;option.path&quot;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#ff0000">exact</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">exact-active-class=&quot;active&quot;</span></span>
+<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#0000ff">&gt;</span><span style="font-weight:bold;color:#000000">{{</span><span style="color:#800080">option.text</span><span style="font-weight:bold;color:#000000">}}</span><span style="color:#0000ff">&lt;</span><span style="color:#800000">/b-nav-item</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">/b-nav</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#0000ff">&lt;</span><span style="background-color:#ffff00;color:#800000">/b-card</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">&lt;</span><span style="color:#800000">/template</span><span style="color:#0000ff">&gt;</span></span>
+</code></pre></div>
+
+<p><strong>Comments</strong></p>
+<ul>
+  <li>Line 3: We add the &lt;b-card&gt; tag to surround the menu with a thin border. This helps make the menu easier to locate on a smartphone;
+  </li>
+</ul>
+<p><a id="refheadingtoc539284143258178"></a></p>
+<h3 id="19147-the-simulationlist-view">19.14.7. <span style="color: #4f81bd"><strong>The [SimulationList] view</strong></span></h3>
+<p>The <strong>[ListeSimulations]</strong> view remains unchanged:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-html">
+<span class="odt-code-line">&lt;!-- HTML definition of the view --&gt;</span>
+<span class="odt-code-line"><span style="color:#0000ff">&lt;</span><span style="color:#800000">template</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">div</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#006400">&lt;!-- layout --&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">Layout </span><span style="color:#ff0000">:</span><span style="color:#0000ff">left=&quot;true&quot; </span><span style="color:#ff0000">:</span><span style="color:#0000ff">right=&quot;true&quot;&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#006400">&lt;!-- simulations in the right column --&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">template </span><span style="color:#0000ff">slot=&quot;right&quot;&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">template </span><span style="color:#0000ff">v-if=&quot;simulations.length==0&quot;&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">          </span><span style="color:#006400">&lt;!-- no simulations --&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">          </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">b-alert </span><span style="color:#ff0000">show </span><span style="color:#0000ff">variant=&quot;primary&quot;&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">h4</span><span style="color:#0000ff">&gt;</span><span style="color:#000000">Your list of simulations is empty</span><span style="color:#0000ff">&lt;</span><span style="color:#800000">/h4</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">          </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">/b-alert</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">/template</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">template </span><span style="color:#0000ff">v-if=&quot;simulations.length!=0&quot;&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">          </span><span style="color:#006400">&lt;!-- there are simulations --&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">          </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">b-alert </span><span style="color:#ff0000">show </span><span style="color:#0000ff">variant=&quot;primary&quot;&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">h4</span><span style="color:#0000ff">&gt;</span><span style="color:#000000">List of your simulations</span><span style="color:#0000ff">&lt;</span><span style="color:#800000">/h4</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">          </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">/b-alert</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">          </span><span style="color:#006400">&lt;!-- table of simulations --&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">          </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">b-table </span><span style="color:#ff0000">striped hover </span><span style="background-color:#ffff00;color:#ff0000">responsive </span><span style="color:#ff0000">:</span><span style="color:#0000ff">items=&quot;simulations&quot; </span><span style="color:#ff0000">:</span><span style="color:#0000ff">fields=&quot;fields&quot;&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">template </span><span style="color:#ff0000">v-slot:cell(action)</span><span style="color:#0000ff">=&quot;data&quot;&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">              </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">b-button </span><span style="color:#0000ff">variant=&quot;link&quot; @click=&quot;deleteSimulation(data.index)&quot;&gt;</span><span style="color:#000000">Delete</span><span style="color:#0000ff">&lt;</span><span style="color:#800000">/b-button</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">/template</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">          </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">/b-table</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">/template</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">/template</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#006400">&lt;!-- navigation menu in left column --&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">Menu </span><span style="color:#0000ff">slot=&quot;left&quot; :options=&quot;options&quot; /&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">/Layout</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">/div</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">&lt;</span><span style="color:#800000">/template</span><span style="color:#0000ff">&gt;</span></span>
+</code></pre></div>
+
+<p><strong>Comments</strong></p>
+<ul>
+  <li>Line 20: Note the <b>[responsive] </b>attribute, which ensures that the table display adapts to the screen size:
+  </li>
+</ul>
+
+<p><img src="images/1000000000000267000005B13238244F.png" style="width:4.069cm;height:9.641cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000267000005B13238244F.png" /></p>
+<ul>
+  <li>in <b>[2]</b>, on small screens, a horizontal scrollbar allows the table to be displayed;
+  </li>
+</ul>
+<p><a id="refheadingtoc539286143258178"></a></p>
+<h3 id="19148-the-notfound-view">19.14.8. <span style="color: #4f81bd"><strong>The [NotFound] view</strong></span></h3>
+<p>It remains unchanged.</p>
+<p><a id="refheadingtoc539288143258178"></a></p>
+<h3 id="19149-mobile-views">19.14.9. <span style="color: #4f81bd">Mobile <strong>views</strong></span></h3>
+<p><img src="images/100000000000079B0000041F553B493B.png" style="width:15.452cm;height:8.371cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000079B0000041F553B493B.png" /></p>
+<p><img src="images/10000000000004AB0000041DDA2D1E61.png" style="width:9.479cm;height:8.354cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000004AB0000041DDA2D1E61.png" /></p>
+<p><strong>Note</strong>: It is certainly possible to create views that are even better suited for mobile. I am thinking in particular of the navigation menu, which could be improved, but there are other areas as well. The primary objective of this document was not to create a mobile app. In that case, we might have turned to a framework like Ionic |https://ionicframework.com/|.</p>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner">
+
+      <div>
+        <a href="https://tahe.developpez.com" target="_blank">
+          https://tahe.developpez.com
+        </a>
+        <br>
+        This tutorial written by <strong>Serge Tahé</strong> is made available to the public under the terms of the
+<em>Creative Commons Attribution – Non-Commercial –
+ShareAlike 3.0 Unported</em>.
+      </div>
+
+    </div>
+  </div>
+
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.sections", "navigation.indexes", "navigation.expand", "toc.integrate", "navigation.top"], "search": "assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+        <script src="javascripts/focus.js"></script>
+      
+    
+  </body>
+</html>

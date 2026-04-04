@@ -1,0 +1,1298 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="An Introduction to the Vue.js Framework Through Examples">
+      
+      
+        <meta name="author" content="Serge Tahé">
+      
+      
+        <link rel="canonical" href="https://stahe.github.io/en-vuejs-oct-2019/project-vuejs-12-html-table-management.html">
+      
+      
+        <link rel="prev" href="vuejs-11-project-routing-and-navigation.html">
+      
+      
+        <link rel="next" href="project-vuejs-13-updating-a-component-using-a-session.html">
+      
+      
+        
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>14. Project [vuejs-12]: HTML table management - An Introduction to the Vue.js Framework Through Examples</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.618322db.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="stylesheets/focus.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-EBZC3JVJNR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    var siteName = "An Introduction to the Vue.js Framework Through Examples";
+    gtag('config', 'G-EBZC3JVJNR', {
+        'page_title': siteName
+    });
+  </script>
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#14-project-vuejs-12-html-table-management" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="index.html" title="An Introduction to the Vue.js Framework Through Examples" class="md-header__button md-logo" aria-label="An Introduction to the Vue.js Framework Through Examples" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            An Introduction to the Vue.js Framework Through Examples
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              14. Project [vuejs-12]: HTML table management
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="purple"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="purple"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://stahe.github.io/en-vuejs-oct-2019" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="An Introduction to the Vue.js Framework Through Examples" class="md-nav__button md-logo" aria-label="An Introduction to the Vue.js Framework Through Examples" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    An Introduction to the Vue.js Framework Through Examples
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://stahe.github.io/en-vuejs-oct-2019" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Welcome
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="introduction-to-the-vuejs-framework.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. Introduction to the VUE.JS framework
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="setting-up-a-development-environment.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Setting up a development environment
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="project-vuejs-01-the-basics.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Project [vuejs-01]: The Basics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="project-vuejs-02-using-the-bootstrap-css-framework.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. Project [vuejs-02]: Using the Bootstrap CSS framework
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="project-vuejs-03-event-handling.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. Project [vuejs-03]: Event Handling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="project-vuejs-04-directives-v-model-v-bind-computed-properties-input-form.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. project [vuejs-04]: directives [v-model, v-bind], computed properties, input form
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="vuejs-05-project-v-for-directive.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. [vuejs-05] project: [v-for] directive
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="project-vuejs-06-laying-out-a-view-with-slots.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8. project [vuejs-06]: laying out a view with slots
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="project-vuejs-07-event-propagation-in-the-component-hierarchy.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9. project [vuejs-07]: event propagation in the component hierarchy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="project-vuejs-08-events-independent-of-the-component-hierarchy-component-lifecycle.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10. Project [vuejs-08]: Events independent of the component hierarchy, component lifecycle
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="project-vuejs-09-using-an-eventbus-plugin.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11. Project [vuejs-09]: Using an [eventBus] plugin
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="project-vuejs-10-dao-plugin-asynchronous-http-requests.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12. Project [vuejs-10]: [dao] plugin, asynchronous HTTP requests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="vuejs-11-project-routing-and-navigation.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13. [vuejs-11] project: routing and navigation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14. Project [vuejs-12]: HTML table management
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="project-vuejs-12-html-table-management.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14. Project [vuejs-12]: HTML table management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#141-the-main-script-mainjs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.1. The main script [main.js]
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#142-the-main-view-app" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.2. The main view [App]
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#143-the-table-component" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.3. The [Table] component
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#144-running-the-project" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.4. Running the project
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="project-vuejs-13-updating-a-component-using-a-session.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    15. Project [vuejs-13]: Updating a component, using a session
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="project-vuejs-14-making-the-session-reactive.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    16. Project [vuejs-14]: Making the session reactive
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="project-vuejs-15-using-the-vuex-plugin.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    17. Project [vuejs-15]: Using the [Vuex] plugin
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="vuejs-client-of-the-tax-calculation-server.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    18. Vue.js client of the tax calculation server
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="vuejs-client-improvements.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    19. Vue.js Client Improvements
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="deploying-the-clientserver-application-on-a-hosting-service.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    20. Deploying the client/server application on a hosting service
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<p><a id="refheadingtoc2480832728496130"></a></p>
+<h1 id="14-project-vuejs-12-html-table-management">14. <span style="color: #365f91"><strong>Project</strong> [vuejs-12]<strong>: HTML table management</strong></span></h1>
+<p>The directory structure of the <strong>[vuejs-12]</strong> project is as follows:</p>
+<p><img src="images/1000000000000155000000DF71B4D4AB.png" style="width:3.163cm;height:2.067cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000155000000DF71B4D4AB.png" /></p>
+<p><a id="refheadingtoc2480852728496130"></a></p>
+<h2 id="141-the-main-script-mainjs">14.1. <span style="color: #4f81bd"><strong>The main script</strong> [main.js]</span></h2>
+<p>The main script returns to what it was in the early projects:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<span class="odt-code-line">// imports</span>
+<span class="odt-code-line"><span style="color:#0000ff">import </span><span style="color:#000000">Vue </span><span style="color:#0000ff">from </span><span style="color:#a31515">&#x27;vue&#x27;</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">import </span><span style="color:#000000">App </span><span style="color:#0000ff">from </span><span style="color:#a31515">&#x27;./App.vue&#x27;</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">// plugins</span>
+<span class="odt-code-line"><span style="color:#0000ff">import </span><span style="color:#000000">BootstrapVue </span><span style="color:#0000ff">from </span><span style="color:#a31515">&#x27;bootstrap-vue&#x27;</span></span>
+<span class="odt-code-line">Vue.use(BootstrapVue);</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">// Bootstrap</span>
+<span class="odt-code-line"><span style="color:#0000ff">import </span><span style="color:#a31515">&#x27;bootstrap/dist/css/bootstrap.css&#x27;</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">import </span><span style="color:#a31515">&#x27;bootstrap-vue/dist/bootstrap-vue.css&#x27;</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">// configuration</span>
+<span class="odt-code-line"><span style="color:#000000">Vue.config.productionTip = </span><span style="color:#0000ff">false</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">// project instantiation <span style="font-weight:bold">[App]</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">new </span><span style="color:#000000">Vue({</span></span>
+<span class="odt-code-line"><span style="color:#000000">  name: </span><span style="color:#a31515">&quot;app&quot;</span><span style="color:#000000">,</span></span>
+<span class="odt-code-line">  render: h =&gt; h(App),</span>
+<span class="odt-code-line"><span style="color:#000000">}).$mount(</span><span style="color:#a31515">&#x27;#app&#x27;</span><span style="color:#000000">)</span></span>
+</code></pre></div>
+
+<p><a id="refheadingtoc2480872728496130"></a></p>
+<h2 id="142-the-main-view-app">14.2. <span style="color: #4f81bd"><strong>The main view</strong> [App]</span></h2>
+<p>The code for the main view <strong>[App]</strong> is as follows:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-html">
+<span class="odt-code-line"><span style="color:#0000ff">&lt;</span><span style="color:#800000">template</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">div </span><span style="color:#0000ff">class=&quot;container&quot;&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">b-card</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#006400">&lt;!-- message --&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">b-alert </span><span style="color:#ff0000">show </span><span style="color:#0000ff">variant=&quot;success&quot; align=&quot;center&quot;&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">h4</span><span style="color:#0000ff">&gt;</span><span style="font-weight:bold;color:#000000">[vuejs-12]</span><span style="color:#000000">: Table Management</span><span style="color:#0000ff">&lt;</span><span style="color:#800000">/h4</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">/b-alert</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#006400">&lt;!-- Table component --&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#0000ff">&lt;</span><span style="background-color:#ffff00;color:#800000">Table </span><span style="color:#0000ff">@deleteRow=&quot;deleteRow&quot; </span><span style="color:#ff0000">:</span><span style="color:#0000ff">rows=&quot;rows&quot; @refreshList=&quot;refreshList&quot; /&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">/b-card</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">/div</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">&lt;</span><span style="color:#800000">/template</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#0000ff">&lt;</span><span style="color:#800000">script</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#0000ff">import </span><span style="background-color:#ffff00;color:#000000">Table </span><span style="color:#0000ff">from </span><span style="color:#a31515">&quot;.</span><span style="background-color:#ffff00;color:#a31515">/components/Table</span><span style="color:#a31515">&quot;</span><span style="color:#000000">;</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#0000ff">export default </span><span style="color:#000000">{</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008000">// name</span></span>
+<span class="odt-code-line"><span style="color:#000000">    name: </span><span style="color:#a31515">&quot;app&quot;</span><span style="color:#000000">,</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008000">// components used</span></span>
+<span class="odt-code-line">    components: {</span>
+<span class="odt-code-line"><span style="color:#000000">      </span><span style="background-color:#ffff00;color:#000000">Table</span></span>
+<span class="odt-code-line">    },</span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008000">// internal state</span></span>
+<span class="odt-code-line">    data() {</span>
+<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#0000ff">return </span><span style="color:#000000">{</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008000">// list of simulations</span></span>
+<span class="odt-code-line">        rows: [</span>
+<span class="odt-code-line"><span style="color:#000000">          { id: 3, married: </span><span style="color:#a31515">&quot;yes&quot;</span><span style="color:#000000">, children: 2, salary: 35000, tax: 1200 },</span></span>
+<span class="odt-code-line"><span style="color:#000000">          { id: 5, married: </span><span style="color:#a31515">&quot;no&quot;</span><span style="color:#000000">, children: 2, salary: 35000, tax: 1900 },</span></span>
+<span class="odt-code-line"><span style="color:#000000">          { id: 7, married: </span><span style="color:#a31515">&quot;no&quot;</span><span style="color:#000000">, children: 0, salary: 30000, tax: 2000 }</span></span>
+<span class="odt-code-line">        ]</span>
+<span class="odt-code-line">      };</span>
+<span class="odt-code-line">    },</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008000">// methods</span></span>
+<span class="odt-code-line">    methods: {</span>
+<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#008000">// delete a row</span></span>
+<span class="odt-code-line">      deleteLine(index) {</span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008000">// eslint-disable-next-line</span></span>
+<span class="odt-code-line"><span style="color:#000000">        console.log(</span><span style="color:#a31515">&quot;App deleteLine&quot;</span><span style="color:#000000">, index);</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008000">// delete line at position </span><span style="font-weight:bold;color:#008000">[index]</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">this</span><span style="color:#000000">.lines.splice(index, 1);</span></span>
+<span class="odt-code-line">      },</span>
+<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#008000">// reload the list of lines</span></span>
+<span class="odt-code-line">      reloadList() {</span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008000">// eslint-disable-next-line</span></span>
+<span class="odt-code-line"><span style="color:#000000">        console.log(</span><span style="color:#a31515">&quot;App reloadList&quot;</span><span style="color:#000000">);</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008000">// regenerate the list of lines</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">this</span><span style="color:#000000">.lines = [</span></span>
+<span class="odt-code-line"><span style="color:#000000">          { id: 3, married: </span><span style="color:#a31515">&quot;yes&quot;</span><span style="color:#000000">, children: 2, salary: 35000, tax: 1200 },</span></span>
+<span class="odt-code-line"><span style="color:#000000">          { id: 5, married: </span><span style="color:#a31515">&quot;no&quot;</span><span style="color:#000000">, children: 2, salary: 35000, tax: 1900 },</span></span>
+<span class="odt-code-line"><span style="color:#000000">          { id: 7, married: </span><span style="color:#a31515">&quot;no&quot;</span><span style="color:#000000">, children: 0, salary: 30000, tax: 2000 }</span></span>
+<span class="odt-code-line">        ];</span>
+<span class="odt-code-line">      }</span>
+<span class="odt-code-line">    }</span>
+<span class="odt-code-line">  };</span>
+<span class="odt-code-line"><span style="color:#0000ff">&lt;</span><span style="color:#800000">/script</span><span style="color:#0000ff">&gt;</span></span>
+</code></pre></div>
+
+<p><strong>Comments</strong></p>
+<ul>
+  <li>the main view displays a <b>[Table] </b>component (lines 9, 15, 21);
+  </li>
+  <li>line 9:  the <b>[Table] </b>component accepts the <b>[:rows] </b>parameter, which represents the rows to be displayed in an HTML table. These rows are defined by lines 27–31 of the code;
+  </li>
+  <li>line 9: the <b>[Table] </b>component can trigger two events:
+    <ul>
+      <li><b>[deleteRow]</b>: to delete a row by specifying its index (line 38);
+      </li>
+      <li><b>[reloadList]</b>: to regenerate the list in lines 27–31. In fact, we will see that the user can delete some of the displayed rows;
+      </li>
+    </ul>
+  </li>
+  <li>lines 38–43: the method responsible for handling the <b>[deleteRow] </b>event. It receives the index of the row to be deleted as a parameter;
+  </li>
+  <li>lines 45–54: the method responsible for handling the <b>[reloadList] </b>event. By modifying the <b>[rows] </b>attribute on line 27, we trigger an update of the <b>[Table] </b>component on line 9, since it has a parameter <b>[:rows=&quot;rows&quot;] </b>;
+  </li>
+</ul>
+<p><a id="refheadingtoc2480892728496130"></a></p>
+<h2 id="143-the-table-component">14.3. <span style="color: #4f81bd"><strong>The</strong> [Table] <strong>component</strong></span></h2>
+<p>The <strong>[Table]</strong> component is as follows:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-html">
+<span class="odt-code-line"><span style="color:#0000ff">&lt;</span><span style="color:#800000">template</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">div</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#006400">&lt;!-- empty list --&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">template </span><span style="color:#0000ff">v-if=&quot;lines.length==0&quot;&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">b-alert </span><span style="color:#ff0000">show </span><span style="color:#0000ff">variant=&quot;warning&quot;&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">h4</span><span style="color:#0000ff">&gt;</span><span style="color:#000000">Your list of simulations is empty</span><span style="color:#0000ff">&lt;</span><span style="color:#800000">/h4</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">/b-alert</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#006400">&lt;!-- reload button --&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">b-button </span><span style="color:#0000ff">variant=&quot;primary&quot; @click=&quot;reloadList&quot;&gt;</span><span style="color:#000000">Reload list</span><span style="color:#0000ff">&lt;</span><span style="color:#800000">/b-button</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">/template</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#006400">&lt;!-- non-empty list--&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">template </span><span style="color:#0000ff">v-if=&quot;lines.length!=0&quot;&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">b-alert </span><span style="color:#ff0000">show </span><span style="color:#0000ff">variant=&quot;primary&quot; v-if=&quot;lignes.length==0&quot;&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">h4</span><span style="color:#0000ff">&gt;</span><span style="color:#000000">List of your simulations</span><span style="color:#0000ff">&lt;</span><span style="color:#800000">/h4</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">/b-alert</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#006400">&lt;!-- simulation table --&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">b-table </span><span style="color:#ff0000">striped hover responsive :</span><span style="color:#0000ff">items=&quot;rows&quot; </span><span style="color:#ff0000">:</span><span style="color:#0000ff">fields=&quot;fields&quot;&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">template </span><span style="color:#ff0000">v-slot:cell(action)</span><span style="color:#0000ff">=&quot;row&quot;&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">          </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">b-button </span><span style="color:#0000ff">variant=&quot;link&quot; @click=&quot;deleteRow(row.index)&quot;&gt;</span><span style="color:#000000">Delete</span><span style="color:#0000ff">&lt;</span><span style="color:#800000">/b-button</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">/template</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">/b-table</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">/template</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">/div</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">&lt;</span><span style="color:#800000">/template</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#0000ff">&lt;</span><span style="color:#800000">script</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#0000ff">export default </span><span style="color:#000000">{</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008000">// properties</span></span>
+<span class="odt-code-line">    props: {</span>
+<span class="odt-code-line">      lines: {</span>
+<span class="odt-code-line">        type: Array</span>
+<span class="odt-code-line">      }</span>
+<span class="odt-code-line">    },</span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008000">// internal state</span></span>
+<span class="odt-code-line">    data() {</span>
+<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#0000ff">return </span><span style="color:#000000">{</span></span>
+<span class="odt-code-line">        fields: [</span>
+<span class="odt-code-line"><span style="color:#000000">          { label: </span><span style="color:#a31515">&quot;#&quot;</span><span style="color:#000000">, key: </span><span style="color:#a31515">&quot;id&quot; </span><span style="color:#000000">},</span></span>
+<span class="odt-code-line"><span style="color:#000000">          { label: </span><span style="color:#a31515">&quot;Married&quot;</span><span style="color:#000000">, key: </span><span style="color:#a31515">&quot;married&quot; </span><span style="color:#000000">},</span></span>
+<span class="odt-code-line"><span style="color:#000000">          { label: </span><span style="color:#a31515">&quot;Number of children&quot;</span><span style="color:#000000">, key: </span><span style="color:#a31515">&quot;children&quot; </span><span style="color:#000000">},</span></span>
+<span class="odt-code-line"><span style="color:#000000">          { label: </span><span style="color:#a31515">&quot;Salary&quot;</span><span style="color:#000000">, key: </span><span style="color:#a31515">&quot;salary&quot; </span><span style="color:#000000">},</span></span>
+<span class="odt-code-line"><span style="color:#000000">          { label: </span><span style="color:#a31515">&quot;Tax&quot;</span><span style="color:#000000">, key: </span><span style="color:#a31515">&quot;tax&quot; </span><span style="color:#000000">},</span></span>
+<span class="odt-code-line"><span style="color:#000000">          { label: </span><span style="color:#a31515">&quot;&quot;</span><span style="color:#000000">, key: </span><span style="color:#a31515">&quot;action&quot; </span><span style="color:#000000">}</span></span>
+<span class="odt-code-line">        ]</span>
+<span class="odt-code-line">      };</span>
+<span class="odt-code-line">    },</span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008000">// methods</span></span>
+<span class="odt-code-line">    methods: {</span>
+<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#008000">// delete a row</span></span>
+<span class="odt-code-line">      deleteLine(index) {</span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008000">// eslint-disable-next-line</span></span>
+<span class="odt-code-line"><span style="color:#000000">        console.log(</span><span style="color:#a31515">&quot;Table deleteRow&quot;</span><span style="color:#000000">, index);</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008000">// pass the information to the parent component</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">this</span><span style="color:#000000">.$emit(</span><span style="color:#a31515">&quot;deleteLine&quot;</span><span style="color:#000000">, index);</span></span>
+<span class="odt-code-line">      },</span>
+<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#008000">// reload the displayed list</span></span>
+<span class="odt-code-line">      reloadList() {</span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008000">// eslint-disable-next-line</span></span>
+<span class="odt-code-line"><span style="color:#000000">        console.log(</span><span style="color:#a31515">&quot;Table reloadList&quot;</span><span style="color:#000000">);</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008000">// emit an event to the parent component</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">this</span><span style="color:#000000">.$emit(</span><span style="color:#a31515">&quot;reloadList&quot;</span><span style="color:#000000">);</span></span>
+<span class="odt-code-line">      }</span>
+<span class="odt-code-line">    }</span>
+<span class="odt-code-line">  };</span>
+<span class="odt-code-line"><span style="color:#0000ff">&lt;</span><span style="color:#800000">/script</span><span style="color:#0000ff">&gt;</span></span>
+</code></pre></div>
+
+<p><strong>Comments</strong></p>
+<p>This component has two states:</p>
+<ol>
+  <li>it displays a list in an HTML table;
+  </li>
+  <li>or a message indicating that the list to be displayed is empty;
+  </li>
+</ol>
+
+<p>The first state is displayed if the condition <strong>[lines.length!=0]</strong> is true (line 12):</p>
+<p><img src="images/10000000000007CF00000339BCF658A0.png" style="width:13.22cm;height:5.456cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000007CF00000339BCF658A0.png" /></p>
+<p>The second one is displayed if the condition <strong>[lines.length==0]</strong> is true (line 4).</p>
+<p><img src="images/100000000000065500000249DDE95992.png" style="width:10.719cm;height:3.868cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000065500000249DDE95992.png" /></p>
+<ul>
+  <li><b>[lines] </b>is an input parameter of the component (lines 29–33);
+  </li>
+  <li>lines 4–10: instead of inserting a code block with a &lt;div&gt; tag, we have used a &lt;template&gt; tag here. The difference between the two is that the &lt;template&gt; tag is not included in the generated HTML code;
+  </li>
+  <li>line 9: when the list displayed by the HTML table is empty, a button offers to refresh it. When this button is clicked, the <b>[reloadList] </b>method in lines 57–62 is executed. This method simply sends the <b>[reloadList] </b>event to the parent component, which instructs the parent to regenerate the list displayed by the HTML table;
+  </li>
+  <li>lines 12–22: the code displayed when the list to be displayed is not empty;
+  </li>
+  <li>line 17: the &lt;b-table&gt; tag is the tag that generates an HTML table. The attributes used here are as follows:
+    <ul>
+      <li><b>[striped]</b>: the background color of the rows alternates. There is one color for even rows and another for odd rows. This improves visibility;
+      </li>
+      <li><b>[hover]</b>: the row over which the mouse hovers changes color;
+      </li>
+      <li><b>[responsive]</b>: the table’s size adapts to the screen displaying it;
+      </li>
+      <li><b>[:items]</b>: the array of items to display. Here, the <b>[rows] </b>array is passed as a parameter to the component (lines 30–32);
+      </li>
+      <li><b>[:fields]</b>: an array defining the layout of the HTML table (lines 37–44);
+        <ul>
+          <li>Each element in the <b>[fields] </b>array defines a column in the HTML table;
+          </li>
+          <li><b>[label]</b>: specifies the column header;
+          </li>
+          <li><b>[key]</b>: specifies the column’s content;
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>line 38: defines column 0 of the HTML table:
+    <ul>
+      <li><b>[#]</b>: is the column header;
+      </li>
+      <li><b>[id]</b>: is its content. It is the <b>[id] </b>field of the displayed row that will populate column 0;
+      </li>
+    </ul>
+  </li>
+  <li>line 39: defines column 1 of the HTML table:
+    <ul>
+      <li><b>[Married]</b>: is the column header;
+      </li>
+      <li><b>[married]</b>: is its content. It is the <b>[married] </b>field of the displayed row that will populate column 0;
+      </li>
+    </ul>
+  </li>
+  <li>line 43: defines the last column of the HTML table:
+    <ul>
+      <li>the column has no title;
+      </li>
+      <li>its content is defined by an <b>[action] </b>field, a field that does not exist in the displayed rows. This key is referenced in line 18 of the <b>[template]</b>. The key is therefore used here solely to identify a column;
+      </li>
+    </ul>
+  </li>
+  <li>lines 18–20: this code is used to define the last column of the HTML table, the one with the <b>[action] </b>key:
+  </li>
+</ul>
+
+<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line"><span style="color:#0000ff">&lt;</span><span style="color:#800000">template </span><span style="color:#ff0000">v-slot:cell(action)</span><span style="color:#0000ff">=&quot;row&quot;&gt;</span></span>
+</code></pre></div>
+
+<p>The syntax <strong>[v-slot:cell(action)]</strong> refers to the <strong>[action]</strong> key column. This syntax allows you to define a column when the <strong>[fields]</strong> array syntax is not sufficient to describe it. Here, we want the last column to contain a link that allows you to delete a row from the HTML table:</p>
+<p><img src="images/10000000000007D20000034311EC8DBA.png" style="width:13.242cm;height:5.523cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000007D20000034311EC8DBA.png" /></p>
+<p>In the syntax <strong>[&lt;template v-slot:cell(action)=&quot;row&quot;&gt;]</strong>, the name <strong>[row]</strong> refers to the table row. You can use any name you want. We could have written <strong>[&lt;template v-slot:cell(action)=&quot;row&quot;&gt;]</strong>;</p>
+<ul>
+  <li>line 19: a &lt;b-button&gt; displayed as a link <b>[variant=&#x27;link&#x27;]</b>. Clicking this link triggers the execution of the <b>[supprimerLigne(row.index)] </b>method. Here, <b>[row] </b>is the name given to the row in the HTML table, line 18 of the code;
+  </li>
+  <li>Lines 50–55: the <b>[deleteRow] </b>method;
+  </li>
+  <li>line 54: the <b>[deleteRow] </b>event is sent to the parent component along with the number of the row to be deleted;
+  </li>
+  <li>lines 57–62: the <b>[reloadList] </b>method;
+  </li>
+  <li>line 61: the <b>[reloadList] </b>event is sent to the parent component;
+  </li>
+</ul>
+<p><a id="refheadingtoc2480912728496130"></a></p>
+<h2 id="144-running-the-project">14.4. <span style="color: #4f81bd"><strong>Running the project</strong></span></h2>
+<p><img src="images/10000000000007080000025F4C64C426.png" style="width:11.912cm;height:4.016cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000007080000025F4C64C426.png" /></p>
+<p>The first view displayed is as follows:</p>
+<p><img src="images/10000000000007E80000034849481130.png" style="width:13.39cm;height:5.556cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000007E80000034849481130.png" /></p>
+<p>After deleting row 1 <strong>[1]</strong>, the view becomes as follows:</p>
+<p><img src="images/10000000000007930000029F72EBB598.png" style="width:12.831cm;height:4.44cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000007930000029F72EBB598.png" /></p>
+<p>After deleting all rows:</p>
+<p><img src="images/10000000000005AF000002571579D8D9.png" style="width:9.62cm;height:3.962cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000005AF000002571579D8D9.png" /></p>
+<p>After clicking the button <strong>[2]</strong>, the list is restored:</p>
+<p><img src="images/10000000000007BE0000033BEA6E9866.png" style="width:13.109cm;height:5.47cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000007BE0000033BEA6E9866.png" /></p>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner">
+
+      <div>
+        <a href="https://tahe.developpez.com" target="_blank">
+          https://tahe.developpez.com
+        </a>
+        <br>
+        This tutorial written by <strong>Serge Tahé</strong> is made available to the public under the terms of the
+<em>Creative Commons Attribution – Non-Commercial –
+ShareAlike 3.0 Unported</em>.
+      </div>
+
+    </div>
+  </div>
+
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.sections", "navigation.indexes", "navigation.expand", "toc.integrate", "navigation.top"], "search": "assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+        <script src="javascripts/focus.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,1386 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="An Introduction to the Vue.js Framework Through Examples">
+      
+      
+        <meta name="author" content="Serge Tahé">
+      
+      
+        <link rel="canonical" href="https://stahe.github.io/en-vuejs-oct-2019/deploying-the-clientserver-application-on-a-hosting-service.html">
+      
+      
+        <link rel="prev" href="vuejs-client-improvements.html">
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>20. Deploying the client/server application on a hosting service - An Introduction to the Vue.js Framework Through Examples</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.618322db.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="stylesheets/focus.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-EBZC3JVJNR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    var siteName = "An Introduction to the Vue.js Framework Through Examples";
+    gtag('config', 'G-EBZC3JVJNR', {
+        'page_title': siteName
+    });
+  </script>
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#20-deploying-the-clientserver-application-on-a-hosting-service" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="index.html" title="An Introduction to the Vue.js Framework Through Examples" class="md-header__button md-logo" aria-label="An Introduction to the Vue.js Framework Through Examples" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            An Introduction to the Vue.js Framework Through Examples
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              20. Deploying the client/server application on a hosting service
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="purple"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="purple"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://stahe.github.io/en-vuejs-oct-2019" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="An Introduction to the Vue.js Framework Through Examples" class="md-nav__button md-logo" aria-label="An Introduction to the Vue.js Framework Through Examples" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    An Introduction to the Vue.js Framework Through Examples
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://stahe.github.io/en-vuejs-oct-2019" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Welcome
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="introduction-to-the-vuejs-framework.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. Introduction to the VUE.JS framework
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="setting-up-a-development-environment.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Setting up a development environment
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="project-vuejs-01-the-basics.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Project [vuejs-01]: The Basics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="project-vuejs-02-using-the-bootstrap-css-framework.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. Project [vuejs-02]: Using the Bootstrap CSS framework
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="project-vuejs-03-event-handling.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. Project [vuejs-03]: Event Handling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="project-vuejs-04-directives-v-model-v-bind-computed-properties-input-form.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. project [vuejs-04]: directives [v-model, v-bind], computed properties, input form
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="vuejs-05-project-v-for-directive.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. [vuejs-05] project: [v-for] directive
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="project-vuejs-06-laying-out-a-view-with-slots.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8. project [vuejs-06]: laying out a view with slots
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="project-vuejs-07-event-propagation-in-the-component-hierarchy.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9. project [vuejs-07]: event propagation in the component hierarchy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="project-vuejs-08-events-independent-of-the-component-hierarchy-component-lifecycle.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10. Project [vuejs-08]: Events independent of the component hierarchy, component lifecycle
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="project-vuejs-09-using-an-eventbus-plugin.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11. Project [vuejs-09]: Using an [eventBus] plugin
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="project-vuejs-10-dao-plugin-asynchronous-http-requests.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12. Project [vuejs-10]: [dao] plugin, asynchronous HTTP requests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="vuejs-11-project-routing-and-navigation.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13. [vuejs-11] project: routing and navigation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="project-vuejs-12-html-table-management.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14. Project [vuejs-12]: HTML table management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="project-vuejs-13-updating-a-component-using-a-session.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    15. Project [vuejs-13]: Updating a component, using a session
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="project-vuejs-14-making-the-session-reactive.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    16. Project [vuejs-14]: Making the session reactive
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="project-vuejs-15-using-the-vuex-plugin.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    17. Project [vuejs-15]: Using the [Vuex] plugin
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="vuejs-client-of-the-tax-calculation-server.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    18. Vue.js client of the tax calculation server
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="vuejs-client-improvements.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    19. Vue.js Client Improvements
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    20. Deploying the client/server application on a hosting service
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="deploying-the-clientserver-application-on-a-hosting-service.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    20. Deploying the client/server application on a hosting service
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#201-server-deployment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        20.1. Server Deployment
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#202-deployment-of-the-vuejs-client" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        20.2. Deployment of the [Vue.js] client
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#203-conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        20.3. Conclusion
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<p><a id="refheadingtoc2721183944631036"></a></p>
+<h1 id="20-deploying-the-clientserver-application-on-a-hosting-service">20. <span style="color: #365f91"><strong>Deploying the client/server application on a hosting service</strong></span></h1>
+<p>Here we outline the deployment of the client/server application we developed on an OVH server <strong>[https://www.ovh.com/fr/]</strong>. Deployment on other hosting providers should not be very different. We simply want to show that our application lends itself well to this deployment.</p>
+<p><a id="refheadingtoc2721203944631036"></a></p>
+<h2 id="201-server-deployment">20.1. <span style="color: #4f81bd"><strong>Server Deployment</strong></span></h2>
+<p>The OVH hosting service in question is a basic hosting plan:</p>
+<ol>
+  <li>a PHP 7.3 environment;
+  </li>
+  <li>a MySQL DBMS;
+  </li>
+  <li>no <b>[Redis] </b>server;
+  </li>
+</ol>
+
+<p>The third point requires us to modify version 14 of our tax calculation server.</p>
+<p><img src="images/10000000000008170000026ACEE5D371.png" style="width:16.439cm;height:4.905cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000008170000026ACEE5D371.png" /></p>
+<p>We need to modify:</p>
+<ul>
+  <li> the configuration files <b>[1]</b>;
+  </li>
+  <li>the <b>[AdminDataController] </b>and <b>[CalculerImpotController] </b>controllers to account for the fact that there is no <b>[Redis] </b>server;
+  </li>
+</ul>
+
+<p>The <strong>[config.json]</strong> file changes as follows:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<span class="odt-code-line">{</span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#2e75b6">&quot;databaseFilename&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;Config/database.json&quot;</span><span style="color:#000000">,</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#2e75b6">&quot;corsAllowed&quot;</span><span style="color:#000000">: </span><span style="color:#0000ff">false</span><span style="color:#000000">,</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#2e75b6">&quot;</span><span style="background-color:#ffff00;color:#2e75b6">redisAvailable</span><span style="color:#2e75b6">&quot;</span><span style="color:#000000">:</span><span style="background-color:#ffff00;color:#0000ff">false</span><span style="color:#000000">,</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#2e75b6">&quot;rootDirectory&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;</span><span style="background-color:#ffff00;color:#a31515">/.../www/apps/import/php7-server</span><span style="color:#a31515">&quot;</span><span style="color:#000000">,</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#2e75b6">&quot;relativeDependencies&quot;</span><span style="color:#000000">: [</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#a31515">&quot;/Entities/BaseEntity.php&quot;</span><span style="color:#000000">,</span></span>
+<span class="odt-code-line">        ...</span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#a31515">&quot;/Controllers/AdminDataController.php&quot;</span></span>
+<span class="odt-code-line">    ],</span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#2e75b6">&quot;absoluteDependencies&quot;</span><span style="color:#000000">: [</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#a31515">&quot;/</span><span style="background-color:#ffff00;color:#a31515">...</span><span style="color:#a31515">/vendor/autoload.php&quot;</span><span style="color:#000000">,</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#a31515">&quot;/</span><span style="background-color:#ffff00;color:#a31515">...</span><span style="color:#a31515">/vendor/predis/predis/autoload.php&quot;</span></span>
+<span class="odt-code-line">    ],</span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#2e75b6">&quot;users&quot;</span><span style="color:#000000">: [</span></span>
+<span class="odt-code-line">        {</span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#2e75b6">&quot;login&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;admin&quot;</span><span style="color:#000000">,</span></span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#2e75b6">&quot;passwd&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;admin&quot;</span></span>
+<span class="odt-code-line">        }</span>
+<span class="odt-code-line">    ],</span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#a31515">...</span></span>
+<span class="odt-code-line">}</span>
+</code></pre></div>
+
+<p><strong><span style="color: #000000">Comments</span></strong></p>
+<ul>
+  <li><span style="color: #000000">line 4: we introduce a boolean </span><b><span style="color: #000000">[redisAvailable] </span></b><span style="color: #000000">to indicate whether or not we have access to a </span><b><span style="color: #000000">[Redis] </span></b><span style="color: #000000">server;</span>
+  </li>
+  <li><span style="color: #000000">lines 5, 13, 14: the absolute paths will change;</span>
+  </li>
+</ul>
+
+<p><span style="color: #000000">The </span><strong><span style="color: #000000">[database.json] </span></strong><span style="color: #000000">file changes as follows:</span></p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line">{</span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#2e75b6">&quot;dsn&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;mysql:host=</span><span style="background-color:#ffff00;color:#a31515">...</span><span style="color:#a31515">;dbname=</span><span style="background-color:#ffff00;color:#a31515">...</span><span style="color:#a31515">&quot;</span><span style="color:#000000">,</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#2e75b6">&quot;id&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;</span><span style="background-color:#ffff00;color:#a31515">...</span><span style="color:#a31515">&quot;</span><span style="color:#000000">,</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#2e75b6">&quot;pwd&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;</span><span style="background-color:#ffff00;color:#a31515">...</span><span style="color:#a31515">&quot;</span><span style="color:#000000">,</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#2e75b6">&quot;tableTranches&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;</span><span style="background-color:#ffff00;color:#a31515">dbimpots_tbtranches</span><span style="color:#a31515">&quot;</span><span style="color:#000000">,</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#2e75b6">&quot;colLimites&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;limites&quot;</span><span style="color:#000000">,</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#2e75b6">&quot;colCoeffR&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;coeffr&quot;</span><span style="color:#000000">,</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#2e75b6">&quot;colCoeffN&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;coeffn&quot;</span><span style="color:#000000">,</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#2e75b6">&quot;tableConstants&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;</span><span style="background-color:#ffff00;color:#a31515">dbimpots_tbconstants</span><span style="color:#a31515">&quot;</span><span style="color:#000000">,</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#2e75b6">&quot;colPlafondQfDemiPart&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;plafondQfDemiPart&quot;</span><span style="color:#000000">,</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#a31515">...</span></span>
+<span class="odt-code-line">}</span>
+</code></pre></div>
+
+<p><strong>Comments</strong></p>
+<ul>
+  <li>lines 2–4: the database name and its owner’s credentials will change;
+  </li>
+</ul>
+
+<p>The <strong>[AdminDataController]</strong> evolves as follows:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
+<span class="odt-code-line">&lt;?php</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#0000ff">namespace </span><span style="color:#2b91af">Application</span><span style="color:#000000">;</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">// Symfony dependencies</span>
+<span class="odt-code-line"><span style="color:#0000ff">use </span><span style="color:#000000">\Symfony\Component\HttpFoundation\Response;</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">use </span><span style="color:#000000">\Symfony\Component\HttpFoundation\Request;</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">use </span><span style="color:#000000">\Symfony\Component\HttpFoundation\Session\Session;</span></span>
+<span class="odt-code-line">// alias for the <span style="font-weight:bold">[dao] </span>layer</span>
+<span class="odt-code-line"><span style="color:#0000ff">use </span><span style="color:#000000">\Application\ServerDaoWithSession </span><span style="color:#0000ff">as </span><span style="color:#000000">ServerDaoWithRedis;</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#0000ff">class </span><span style="color:#2b91af">AdminDataController </span><span style="color:#0000ff">implements </span><span style="color:#2b91af">InterfaceController </span><span style="color:#000000">{</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#008000">// $config is the application configuration</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#008000">// processing a Request</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#008000">// uses the Session and can modify it</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#008000">// $infos is additional information specific to each controller</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#008000">// returns an array </span><span style="font-weight:bold;color:#008000">[$statusCode, $status, $content, $headers]</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#0000ff">public function </span><span style="color:#2b91af">execute</span><span style="color:#000000">(</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">array </span><span style="color:#000000">$config,</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#2b91af">Request </span><span style="color:#000000">$request,</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#2b91af">Session </span><span style="color:#000000">$session,</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">array </span><span style="color:#000000">$infos = </span><span style="color:#0000ff">NULL</span><span style="color:#000000">): </span><span style="color:#0000ff">array </span><span style="color:#000000">{</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008000">// There must be a single GET parameter</span></span>
+<span class="odt-code-line"><span style="color:#000000">    $method = </span><span style="color:#0000ff">strtolower</span><span style="color:#000000">($request-&gt;getMethod());</span></span>
+<span class="odt-code-line">    ...</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008000">// we can work</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008000">// Redis</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">if </span><span style="color:#000000">(</span><span style="background-color:#ffff00;color:#000000">$config</span><span style="font-weight:bold;background-color:#ffff00;color:#000000">[&quot;redisAvailable&quot;]</span><span style="color:#000000">) {</span></span>
+<span class="odt-code-line"><span style="color:#000000">      \Predis\</span><span style="color:#2b91af">Autoloader</span><span style="color:#000000">::register();</span></span>
+<span class="odt-code-line">      ...</span>
+<span class="odt-code-line"><span style="color:#000000">    } </span><span style="color:#0000ff">else </span><span style="color:#000000">{</span></span>
+<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#0000ff">try </span><span style="color:#000000">{</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008000">// retrieve tax data from the database</span></span>
+<span class="odt-code-line"><span style="color:#000000">        $dao = </span><span style="color:#0000ff">new </span><span style="color:#2b91af">ServerDaoWithRedis</span><span style="color:#000000">($config</span><span style="font-weight:bold;color:#000000">[&quot;databaseFilename&quot;]</span><span style="color:#000000">, </span><span style="color:#0000ff">NULL</span><span style="color:#000000">);</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008000">// taxAdminData</span></span>
+<span class="odt-code-line">        $taxAdminData = $dao-&gt;getTaxAdminData();</span>
+<span class="odt-code-line"><span style="color:#000000">      } </span><span style="color:#0000ff">catch </span><span style="color:#000000">(\</span><span style="color:#2b91af">Throwable </span><span style="color:#000000">$ex) {</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008000">// Something went wrong</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008000">// Return the result with an error to the main controller</span></span>
+<span class="odt-code-line">        $status = 1051;</span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">return </span><span style="color:#000000">[</span><span style="color:#2b91af">Response</span><span style="color:#000000">::HTTP_INTERNAL_SERVER_ERROR, $status,</span></span>
+<span class="odt-code-line"><span style="color:#000000">          </span><span style="font-weight:bold;color:#000000">[&quot;response&quot; =&gt; utf8_encode($ex-&gt;getMessage())]</span><span style="color:#000000">, </span><span style="font-weight:bold;color:#000000">[]]</span><span style="color:#000000">;</span></span>
+<span class="odt-code-line">      }</span>
+<span class="odt-code-line">    }</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008000">// return result to the main controller</span></span>
+<span class="odt-code-line">    $status = 1000;</span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">return </span><span style="font-weight:bold;color:#000000">[Response::HTTP_OK, $status, [&quot;response&quot; =&gt; $taxAdminData]</span><span style="color:#000000">, </span><span style="font-weight:bold;color:#000000">[]]</span><span style="color:#000000">;</span></span>
+<span class="odt-code-line">  }</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">}</span>
+</code></pre></div>
+
+<p><strong>Comments</strong></p>
+<ul>
+  <li>line 31: we now check whether or not we have a <b>[Redis] </b>server;
+  </li>
+  <li>lines 32–34: if so, the preceding code is executed in its entirety;
+  </li>
+  <li>lines 35–46: otherwise, the tax authority data is retrieved from the database;
+  </li>
+</ul>
+
+<p>The <strong>[CalculerImpotController]</strong> controller, which also requires data from the tax authority, is updated in the same way.</p>
+<p>That’s it. Deployment to the OVH server involved using FTP. We uploaded the following to OVH:</p>
+<ul>
+  <li>the <b>[vuejs-14-without-redis] </b>version;
+  </li>
+  <li>the <b>[vendor] </b>folder, which contains all dependencies for the <b>[vuejs-14-without-redis] </b>server;
+  </li>
+</ul>
+
+<p>Once the FTP transfer was complete, we generated the necessary tables for the server using the following SQL script:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-sql">
+<span class="odt-code-line">-- phpMyAdmin SQL Dump</span>
+<span class="odt-code-line">-- version 4.8.5</span>
+<span class="odt-code-line">-- https://www.phpmyadmin.net/</span>
+<span class="odt-code-line">--</span>
+<span class="odt-code-line">-- Host: localhost:3306</span>
+<span class="odt-code-line">-- Generation Time: Oct 12, 2019 at 7:45 AM</span>
+<span class="odt-code-line">-- Server version: 5.7.24</span>
+<span class="odt-code-line">-- PHP Version: 7.2.11</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#0000ff">SET </span><span style="color:#000000">SQL_MODE = </span><span style="color:#a31515">&quot;NO_AUTO_VALUE_ON_ZERO&quot;</span><span style="color:#000000">;</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">SET </span><span style="color:#000000">AUTOCOMMIT = 0;</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">START TRANSACTION</span><span style="color:#000000">;</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">SET </span><span style="color:#000000">time_zone = </span><span style="color:#a31515">&quot;+00:00&quot;</span><span style="color:#000000">;</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#008000">/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */</span><span style="color:#000000">;</span></span>
+<span class="odt-code-line"><span style="color:#008000">/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */</span><span style="color:#000000">;</span></span>
+<span class="odt-code-line"><span style="color:#008000">/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */</span><span style="color:#000000">;</span></span>
+<span class="odt-code-line"><span style="color:#008000">/*!40101 SET NAMES utf8mb4 */</span><span style="color:#000000">;</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">--</span>
+<span class="odt-code-line">-- Table structure for table `dbimpots_tbconstantes`</span>
+<span class="odt-code-line">--</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#0000ff">CREATE TABLE </span><span style="color:#000000">`</span><span style="background-color:#ffff00;color:#2b91af">dbimpots_tbconstantes</span><span style="color:#000000">` (</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#a31515">`id` </span><span style="color:#0000ff">int</span><span style="color:#000000">(11) </span><span style="color:#0000ff">NOT NULL</span><span style="color:#000000">,</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#a31515">`QfDemiPartLimit` </span><span style="color:#0000ff">decimal</span><span style="color:#000000">(10,2) </span><span style="color:#0000ff">NOT NULL</span><span style="color:#000000">,</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#a31515">`singleIncomeLimitForReduction` </span><span style="color:#0000ff">decimal</span><span style="color:#000000">(10,2) </span><span style="color:#0000ff">NOT NULL</span><span style="color:#000000">,</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#a31515">`coupleIncomeLimitForReduction` </span><span style="color:#0000ff">decimal</span><span style="color:#000000">(10,2) </span><span style="color:#0000ff">NOT NULL</span><span style="color:#000000">,</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#a31515">`half-share-reduction-value` </span><span style="color:#0000ff">decimal</span><span style="color:#000000">(10,2) </span><span style="color:#0000ff">NOT NULL</span><span style="color:#000000">,</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#a31515">`singleDiscountLimit` </span><span style="color:#0000ff">decimal</span><span style="color:#000000">(10,2) </span><span style="color:#0000ff">NOT NULL</span><span style="color:#000000">,</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#a31515">`coupleDiscountLimit` </span><span style="color:#0000ff">decimal</span><span style="color:#000000">(10,2) </span><span style="color:#0000ff">NOT NULL</span><span style="color:#000000">,</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#a31515">`singleTaxCeilingForDiscount` </span><span style="color:#0000ff">decimal</span><span style="color:#000000">(10,2) </span><span style="color:#0000ff">NOT NULL</span><span style="color:#000000">,</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#a31515">`coupleTaxCeilingForDiscount` </span><span style="color:#0000ff">decimal</span><span style="color:#000000">(10,2) </span><span style="color:#0000ff">NOT NULL</span><span style="color:#000000">,</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#a31515">`MaxTenPercentDeduction` </span><span style="color:#0000ff">decimal</span><span style="color:#000000">(10,2) </span><span style="color:#0000ff">NOT NULL</span><span style="color:#000000">,</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#a31515">`minTenPercentDeduction` </span><span style="color:#0000ff">decimal</span><span style="color:#000000">(10,2) </span><span style="color:#0000ff">NOT NULL</span></span>
+<span class="odt-code-line">) ENGINE=InnoDB DEFAULT CHARSET=utf8;</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">--</span>
+<span class="odt-code-line">-- Dumping data for table `dbimpots_tbconstantes`</span>
+<span class="odt-code-line">--</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#0000ff">INSERT INTO </span><span style="color:#a31515">`dbimpots_tbconstantes` </span><span style="color:#000000">(</span><span style="color:#a31515">`id`</span><span style="color:#000000">, </span><span style="color:#a31515">`half-share-threshold`</span><span style="color:#000000">, </span><span style="color:#a31515">`single-income-threshold-for-reduction`</span><span style="color:#000000">, </span><span style="color:#a31515">`couple-income-threshold-for-reduction`</span><span style="color:#000000">, </span><span style="color:#a31515">`half-share-reduction-value`</span><span style="color:#000000">, </span><span style="color:#a31515">`single-discount-threshold`</span><span style="color:#000000">, </span><span style="color:#a31515">`couple-discount-threshold`</span><span style="color:#000000">, </span><span style="color:#a31515">`singleTaxCeilingForDiscount`</span><span style="color:#000000">, </span><span style="color:#a31515">`coupleTaxCeilingForDiscount`</span><span style="color:#000000">, </span><span style="color:#a31515">`maxTenPercentDeduction`</span><span style="color:#000000">, </span><span style="color:#a31515">`minTenPercentDeduction`</span><span style="color:#000000">) </span><span style="color:#0000ff">VALUES</span></span>
+<span class="odt-code-line"><span style="color:#000000">(8, </span><span style="color:#a31515">&#x27;1551.00&#x27;</span><span style="color:#000000">, </span><span style="color:#a31515">&#x27;21037.00&#x27;</span><span style="color:#000000">, </span><span style="color:#a31515">&#x27;42074.00&#x27;</span><span style="color:#000000">, </span><span style="color:#a31515">&#x27;3797.00&#x27;</span><span style="color:#000000">, </span><span style="color:#a31515">&#x27;1196.00&#x27;</span><span style="color:#000000">, </span><span style="color:#a31515">&#x27;1970.00&#x27;</span><span style="color:#000000">, </span><span style="color:#a31515">&#x27;1595.00&#x27;</span><span style="color:#000000">, </span><span style="color:#a31515">&#x27;2627.00&#x27;</span><span style="color:#000000">, </span><span style="color:#a31515">&#x27;12502.00&#x27;</span><span style="color:#000000">, </span><span style="color:#a31515">&#x27;437.00&#x27;</span><span style="color:#000000">);</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">-- --------------------------------------------------------</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">--</span>
+<span class="odt-code-line">-- Table structure for table `dbimpots_tbtranches`</span>
+<span class="odt-code-line">--</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#0000ff">CREATE TABLE </span><span style="color:#000000">`</span><span style="background-color:#ffff00;color:#2b91af">dbimpots_tbtranches</span><span style="color:#000000">` (</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#a31515">`id` </span><span style="color:#0000ff">int</span><span style="color:#000000">(11) </span><span style="color:#0000ff">NOT NULL</span><span style="color:#000000">,</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#a31515">`limits` </span><span style="color:#0000ff">decimal</span><span style="color:#000000">(10,2) </span><span style="color:#0000ff">NOT NULL</span><span style="color:#000000">,</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#a31515">`coeffR` </span><span style="color:#0000ff">decimal</span><span style="color:#000000">(10,2) </span><span style="color:#0000ff">NOT NULL</span><span style="color:#000000">,</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#a31515">`coeffN` </span><span style="color:#0000ff">decimal</span><span style="color:#000000">(10,2) </span><span style="color:#0000ff">NOT NULL</span></span>
+<span class="odt-code-line">) ENGINE=InnoDB DEFAULT CHARSET=utf8;</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">--</span>
+<span class="odt-code-line">-- Dumping data for table `dbimpots_tbtranches`</span>
+<span class="odt-code-line">--</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#0000ff">INSERT INTO </span><span style="color:#a31515">`dbimpots_tbtranches` </span><span style="color:#000000">(</span><span style="color:#a31515">`id`</span><span style="color:#000000">, </span><span style="color:#a31515">`limits`</span><span style="color:#000000">, </span><span style="color:#a31515">`coeffR`</span><span style="color:#000000">, </span><span style="color:#a31515">`coeffN`</span><span style="color:#000000">) </span><span style="color:#0000ff">VALUES</span></span>
+<span class="odt-code-line"><span style="color:#000000">(36, </span><span style="color:#a31515">&#x27;9964.00&#x27;</span><span style="color:#000000">, </span><span style="color:#a31515">&#x27;0.00&#x27;</span><span style="color:#000000">, </span><span style="color:#a31515">&#x27;0.00&#x27;</span><span style="color:#000000">),</span></span>
+<span class="odt-code-line"><span style="color:#000000">(37, </span><span style="color:#a31515">&#x27;27519.00&#x27;</span><span style="color:#000000">, </span><span style="color:#a31515">&#x27;0.14&#x27;</span><span style="color:#000000">, </span><span style="color:#a31515">&#x27;1394.96&#x27;</span><span style="color:#000000">),</span></span>
+<span class="odt-code-line"><span style="color:#000000">(38, </span><span style="color:#a31515">&#x27;73779.00&#x27;</span><span style="color:#000000">, </span><span style="color:#a31515">&#x27;0.30&#x27;</span><span style="color:#000000">, </span><span style="color:#a31515">&#x27;5798.00&#x27;</span><span style="color:#000000">),</span></span>
+<span class="odt-code-line"><span style="color:#000000">(39, </span><span style="color:#a31515">&#x27;156244.00&#x27;</span><span style="color:#000000">, </span><span style="color:#a31515">&#x27;0.41&#x27;</span><span style="color:#000000">, </span><span style="color:#a31515">&#x27;13913.69&#x27;</span><span style="color:#000000">),</span></span>
+<span class="odt-code-line"><span style="color:#000000">(40, </span><span style="color:#a31515">&#x27;0.00&#x27;</span><span style="color:#000000">, </span><span style="color:#a31515">&#x27;0.45&#x27;</span><span style="color:#000000">, </span><span style="color:#a31515">&#x27;20163.45&#x27;</span><span style="color:#000000">);</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">--</span>
+<span class="odt-code-line">-- Indexes for dumped tables</span>
+<span class="odt-code-line">--</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">--</span>
+<span class="odt-code-line">-- Indexes for table `dbimpots_tbconstantes`</span>
+<span class="odt-code-line">--</span>
+<span class="odt-code-line"><span style="color:#0000ff">ALTER TABLE </span><span style="color:#a31515">`dbimpots_tbconstantes`</span></span>
+<span class="odt-code-line"><span style="color:#000000">  ADD </span><span style="color:#0000ff">PRIMARY KEY </span><span style="color:#000000">(</span><span style="color:#a31515">`id`</span><span style="color:#000000">);</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">--</span>
+<span class="odt-code-line">-- Indexes for table `dbimpots_tbtranches`</span>
+<span class="odt-code-line">--</span>
+<span class="odt-code-line"><span style="color:#0000ff">ALTER TABLE </span><span style="color:#a31515">`dbimpots_tbtranches`</span></span>
+<span class="odt-code-line"><span style="color:#000000">  ADD </span><span style="color:#0000ff">PRIMARY KEY </span><span style="color:#000000">(</span><span style="color:#a31515">`id`</span><span style="color:#000000">);</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">--</span>
+<span class="odt-code-line">-- AUTO_INCREMENT for dumped tables</span>
+<span class="odt-code-line">--</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">--</span>
+<span class="odt-code-line">-- AUTO_INCREMENT for table `dbimpots_tbconstantes`</span>
+<span class="odt-code-line">--</span>
+<span class="odt-code-line"><span style="color:#0000ff">ALTER TABLE </span><span style="color:#a31515">`dbimpots_tbconstantes`</span></span>
+<span class="odt-code-line"><span style="color:#000000">  MODIFY </span><span style="color:#a31515">`id` </span><span style="color:#0000ff">int</span><span style="color:#000000">(11) </span><span style="color:#0000ff">NOT NULL </span><span style="color:#000000">AUTO_INCREMENT, AUTO_INCREMENT=9;</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">--</span>
+<span class="odt-code-line">-- AUTO_INCREMENT for table `dbimpots_tbtranches`</span>
+<span class="odt-code-line">--</span>
+<span class="odt-code-line"><span style="color:#0000ff">ALTER TABLE </span><span style="color:#a31515">`dbimpots_tbtranches`</span></span>
+<span class="odt-code-line"><span style="color:#000000">  MODIFY </span><span style="color:#a31515">`id` </span><span style="color:#0000ff">int</span><span style="color:#000000">(11) </span><span style="color:#0000ff">NOT NULL </span><span style="color:#000000">AUTO_INCREMENT, AUTO_INCREMENT=41;</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">COMMIT</span><span style="color:#000000">;</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#008000">/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */</span><span style="color:#000000">;</span></span>
+<span class="odt-code-line"><span style="color:#008000">/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */</span><span style="color:#000000">;</span></span>
+<span class="odt-code-line"><span style="color:#008000">/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */</span><span style="color:#000000">;</span></span>
+</code></pre></div>
+
+<p>Once all of this was done, we adapted the <strong>[config.json, database.json]</strong> files to their new environment.</p>
+<p><a id="refheadingtoc2721223944631036"></a></p>
+<h2 id="202-deployment-of-the-vuejs-client">20.2. <span style="color: #4f81bd"><strong>Deployment of the</strong> [Vue.js] <strong>client</strong></span></h2>
+<p>It was decided to deploy the <strong>[Vue.js]</strong> client to the URL <strong>[http://machine/apps/impot/client-vuejs/]</strong>. This resulted in the following changes:</p>
+<p>At the root of <strong>the [VSCode] [workspace],</strong> we created the following <strong>[vue.config.js]</strong> file:</p>
+<p><img src="images/10000000000007F9000004EBFEE45FBD.png" style="width:16.2cm;height:9.992cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000007F9000004EBFEE45FBD.png" /></p>
+<p>The <strong>[vue.config.js]</strong> file is as follows:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line">// vue.config.js</span>
+<span class="odt-code-line">module.exports = {</span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#008000">// the service URL of the </span><span style="font-weight:bold;color:#008000">[vuejs] </span><span style="color:#008000">client on the tax calculation server</span></span>
+<span class="odt-code-line"><span style="color:#000000">  publicPath: </span><span style="color:#a31515">&#x27;/apps/tax/client-vuejs/&#x27;</span></span>
+<span class="odt-code-line">}</span>
+</code></pre></div>
+
+<p>The <strong>[router.js] [3]</strong> file has also been modified:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<span class="odt-code-line">// imports</span>
+<span class="odt-code-line"><span style="color:#0000ff">import </span><span style="color:#000000">Vue </span><span style="color:#0000ff">from </span><span style="color:#a31515">&#x27;vue&#x27;</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">import </span><span style="color:#000000">VueRouter </span><span style="color:#0000ff">from </span><span style="color:#a31515">&#x27;vue-router&#x27;</span></span>
+<span class="odt-code-line">...</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">// routing plugin</span>
+<span class="odt-code-line">Vue.use(VueRouter)</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">// application routes</span>
+<span class="odt-code-line"><span style="color:#0000ff">const </span><span style="color:#000000">routes = [</span></span>
+<span class="odt-code-line">  ...</span>
+<span class="odt-code-line">]</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">// the router</span>
+<span class="odt-code-line"><span style="color:#0000ff">const </span><span style="color:#000000">router = </span><span style="color:#0000ff">new </span><span style="color:#000000">VueRouter({</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#008000">// the routes</span></span>
+<span class="odt-code-line">  routes,</span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#008000">// URL display mode</span></span>
+<span class="odt-code-line"><span style="color:#000000">  mode: </span><span style="color:#a31515">&#x27;history&#x27;</span><span style="color:#000000">,</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#008000">// the application&#x27;s base URL</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="background-color:#ffff00;color:#000000">base: </span><span style="background-color:#ffff00;color:#a31515">&#x27;/apps/impot/client-vuejs/&#x27;</span></span>
+<span class="odt-code-line">})</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">// route validation</span>
+<span class="odt-code-line">router.beforeEach((to, from, next) =&gt; {</span>
+<span class="odt-code-line">  ...</span>
+<span class="odt-code-line">})</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">// export the router</span>
+<span class="odt-code-line"><span style="color:#0000ff">export default </span><span style="color:#000000">router</span></span>
+</code></pre></div>
+
+<p><strong>Comments</strong></p>
+<ul>
+  <li>line 21: the URL base has been changed;
+  </li>
+</ul>
+
+<p>The <strong>[config.js]</strong> file is modified as follows:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
+<span class="odt-code-line"><span style="color:#008000">// using the </span><span style="font-weight:bold;color:#008000">[axios] </span><span style="color:#008000">library</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">const </span><span style="color:#000000">axios = require(</span><span style="color:#a31515">&#x27;axios&#x27;</span><span style="color:#000000">);</span></span>
+<span class="odt-code-line">// HTTP request timeout</span>
+<span class="odt-code-line">axios.defaults.timeout = 5000;</span>
+<span class="odt-code-line">// base URL for the tax calculation server</span>
+<span class="odt-code-line">// The <span style="font-weight:bold">[https] </span>scheme causes issues in Firefox because the tax calculation server</span>
+<span class="odt-code-line">// sends a self-signed certificate. Works fine with Chrome and Edge. Not tested with Safari.</span>
+<span class="odt-code-line">// With Firefox, this is possible by requesting the URL below directly and telling Firefox</span>
+<span class="odt-code-line">// that you accept the risk of an unsigned certificate. Then the <span style="font-weight:bold">[vuejs] </span>client will work.</span>
+<span class="odt-code-line"><span style="color:#000000">axios.defaults.baseURL = </span><span style="color:#a31515">&#x27;http://.../apps/impot/serveur-php7&#x27;</span><span style="color:#000000">;</span></span>
+<span class="odt-code-line">// we&#x27;re going to use cookies</span>
+<span class="odt-code-line"><span style="color:#000000">axios.defaults.withCredentials = </span><span style="color:#0000ff">true</span><span style="color:#000000">;</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">// export the configuration</span>
+<span class="odt-code-line"><span style="color:#0000ff">export default </span><span style="color:#000000">{</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#008000">// </span><span style="font-weight:bold;color:#008000">[axios] </span><span style="color:#008000">object</span></span>
+<span class="odt-code-line">  axios: axios,</span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#008000">// maximum session inactivity timeout: 5 min = 300 s = 300,000 ms</span></span>
+<span class="odt-code-line">  sessionDuration: 300000</span>
+<span class="odt-code-line">}</span>
+</code></pre></div>
+
+<p><strong>Comments</strong></p>
+<ul>
+  <li>line 10: enter the URL of the tax calculation server;
+  </li>
+</ul>
+
+<p>The production version of the project was generated using the <strong>[build]</strong> command in the following <strong>[package.json]</strong> file <strong>[5]</strong>:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line">{</span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#2e75b6">&quot;name&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;vuejs&quot;</span><span style="color:#000000">,</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#2e75b6">&quot;version&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;0.1.0&quot;</span><span style="color:#000000">,</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#2e75b6">&quot;private&quot;</span><span style="color:#000000">: </span><span style="color:#0000ff">true</span><span style="color:#000000">,</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#2e75b6">&quot;scripts&quot;</span><span style="color:#000000">: {</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#2e75b6">&quot;serve&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;vue-cli-service serve vuejs-22/main.js&quot;</span><span style="color:#000000">,</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="background-color:#ffff00;color:#2e75b6">&quot;build&quot;</span><span style="background-color:#ffff00;color:#000000">: </span><span style="background-color:#ffff00;color:#a31515">&quot;vue-cli-service build vuejs-22-ovh-withBootstrapVue/main.js&quot;</span><span style="background-color:#ffff00;color:#000000">,</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#2e75b6">&quot;lint&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;vue-cli-service lint&quot;</span></span>
+<span class="odt-code-line">  },</span>
+<span class="odt-code-line">  ...</span>
+<span class="odt-code-line">}</span>
+</code></pre></div>
+
+<p>Once this was done, the <strong>[dist]</strong> folder containing the generated production version was ‘uploaded’ to the OVH server into the <strong>[/.../apps/impot]</strong> folder and then renamed <strong>[client-vuejs]</strong> so that the client code would be in the <strong>[/.../apps/impot/client-vuejs/]</strong> folder as planned. Then, in this folder, we uploaded the following <strong>[.htaccess]</strong> file:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<span class="odt-code-line"><span style="color:#0000ff">&lt;</span><span style="color:#a31515">IfModule </span><span style="color:#ff0000">mod_rewrite.c</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">  RewriteEngine On</span>
+<span class="odt-code-line"><span style="color:#000000">  RewriteBase </span><span style="background-color:#ffff00;color:#000000">/apps/impot/client-vuejs/</span></span>
+<span class="odt-code-line">  RewriteRule ^index\.html$ - <span style="font-weight:bold">[L]</span></span>
+<span class="odt-code-line">  RewriteCond %{REQUEST_FILENAME} !-f</span>
+<span class="odt-code-line">  RewriteCond %{REQUEST_FILENAME} !-d</span>
+<span class="odt-code-line"><span style="color:#000000">  RewriteRule . /apps/import/client-vuejs/index.html </span><span style="font-weight:bold;color:#000000">[L]</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">&lt;</span><span style="color:#a31515">/IfModule</span><span style="color:#0000ff">&gt;</span></span>
+</code></pre></div>
+
+<p>This is because the OVH web server used here is an Apache server. For other types of servers, please refer to the documentation |<a href="https://cli.vuejs.org/guide/deployment.html"><u><span style="color: #0563c1">https://cli.vuejs.org/guide/deployment.html</span></u></a>|.</p>
+<p>The PHP 7 server application can be tested <strong>|here|</strong>.</p>
+<p>The [Vue.js] client can be tested <strong>|here|</strong>.</p>
+<p><a id="refheadingtoc259329196815120"></a></p>
+<h2 id="203-conclusion">20.3. <span style="color: #4f81bd"><strong>Conclusion</strong></span></h2>
+<p>Version <strong>[vuejs-21]</strong> was not essential. We had seen that version <strong>[vuejs-20]</strong> handled user-entered URLs correctly. Nevertheless, the new version provides additional convenience for the user. They can navigate by typing URLs. The application then displays the view that best suits the current state (the session) of the application. In addition, version <strong>[vuejs-22]</strong> brings improvements to the application’s display on mobile devices.</p>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner">
+
+      <div>
+        <a href="https://tahe.developpez.com" target="_blank">
+          https://tahe.developpez.com
+        </a>
+        <br>
+        This tutorial written by <strong>Serge Tahé</strong> is made available to the public under the terms of the
+<em>Creative Commons Attribution – Non-Commercial –
+ShareAlike 3.0 Unported</em>.
+      </div>
+
+    </div>
+  </div>
+
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.sections", "navigation.indexes", "navigation.expand", "toc.integrate", "navigation.top"], "search": "assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+        <script src="javascripts/focus.js"></script>
+      
+    
+  </body>
+</html>
