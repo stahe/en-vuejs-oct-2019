@@ -876,84 +876,84 @@
 </ul>
 
 <p>We create a working environment in <strong>[VSCode]</strong>:</p>
-<p><img src="images/10000000000007180000016F1B193B93.png" style="width:16.82cm;height:3.399cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000007180000016F1B193B93.png" /></p>
+<p><img src="images/10000000000007180000016F1B193B93.png" width="636" height="128" style="width:16.82cm;height:3.399cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000007180000016F1B193B93.png" /></p>
 <ul>
   <li>In <b>[1-5]</b>, we open an empty <b>[vuejs] </b>folder in <b>[VSCode]</b>;
   </li>
 </ul>
 
-<p><img src="images/10000000000007C30000010B752D2E42.png" style="width:16.82cm;height:2.26cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000007C30000010B752D2E42.png" /></p>
+<p><img src="images/10000000000007C30000010B752D2E42.png" width="636" height="85" style="width:16.82cm;height:2.26cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000007C30000010B752D2E42.png" /></p>
 <ul>
   <li>In <b>[8-10]</b>, we install the <b>[@vue/cli] </b>dependency, which will allow us to initialize a <b>[Vue.js] </b>project. This dependency includes a large number of packages (several hundred);
   </li>
 </ul>
 
 <p>In the same terminal, we then type the command <strong>[vue create .],</strong> which creates a <strong>[Vue.js]</strong> project in the current directory (.):</p>
-<p><img src="images/100000000000076500000133CEB6CD5E.png" style="width:16.82cm;height:2.729cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000076500000133CEB6CD5E.png" /></p>
+<p><img src="images/100000000000076500000133CEB6CD5E.png" width="636" height="103" style="width:16.82cm;height:2.729cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000076500000133CEB6CD5E.png" /></p>
 <ul>
   <li>In <b>[13]</b>, a series of questions begins to configure the project;
   </li>
 </ul>
 
-<p><img src="images/10000000000001C7000001FE8A3A4F63.png" style="width:4.21cm;height:4.72cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001C7000001FE8A3A4F63.png" /></p>
+<p><img src="images/10000000000001C7000001FE8A3A4F63.png" width="159" height="178" style="width:4.21cm;height:4.72cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001C7000001FE8A3A4F63.png" /></p>
 <ul>
   <li>Once all questions have been answered, new packages are downloaded and a project is generated in the current directory <b>[14]</b>.
   </li>
 </ul>
 
 <p>Let’s take a look at what was generated. The <strong>[package.json]</strong> file is as follows:</p>
-<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-vbscript">
-<span class="odt-code-line">{</span>
-<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#2e75b6">&quot;name&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;vuejs&quot;</span><span style="color:#000000">,</span></span>
-<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#2e75b6">&quot;version&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;0.1.0&quot;</span><span style="color:#000000">,</span></span>
-<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#2e75b6">&quot;private&quot;</span><span style="color:#000000">: </span><span style="color:#0000ff">true</span><span style="color:#000000">,</span></span>
-<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#2e75b6">&quot;scripts&quot;</span><span style="color:#000000">: {</span></span>
-<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#2e75b6">&quot;serve&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;vue-cli-service serve vuejs-20/main.js&quot;</span><span style="color:#000000">,</span></span>
-<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#2e75b6">&quot;build&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;vue-cli-service build vuejs-20/main.js&quot;</span><span style="color:#000000">,</span></span>
-<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#2e75b6">&quot;lint&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;vue-cli-service lint&quot;</span></span>
-<span class="odt-code-line">  },</span>
-<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#2e75b6">&quot;dependencies&quot;</span><span style="color:#000000">: {</span></span>
-<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#2e75b6">&quot;axios&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;^0.19.0&quot;</span><span style="color:#000000">,</span></span>
-<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#2e75b6">&quot;bootstrap&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;^4.3.1&quot;</span><span style="color:#000000">,</span></span>
-<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#2e75b6">&quot;bootstrap-vue&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;^2.0.2&quot;</span><span style="color:#000000">,</span></span>
-<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#2e75b6">&quot;core-js&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;^2.6.5&quot;</span><span style="color:#000000">,</span></span>
-<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#2e75b6">&quot;vue&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;^2.6.10&quot;</span><span style="color:#000000">,</span></span>
-<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#2e75b6">&quot;vue-router&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;^3.1.3&quot;</span><span style="color:#000000">,</span></span>
-<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#2e75b6">&quot;vuex&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;^3.1.1&quot;</span></span>
-<span class="odt-code-line">  },</span>
-<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#2e75b6">&quot;devDependencies&quot;</span><span style="color:#000000">: {</span></span>
-<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#2e75b6">&quot;@vue/cli-plugin-babel&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;^3.11.0&quot;</span><span style="color:#000000">,</span></span>
-<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#2e75b6">&quot;@vue/cli-plugin-eslint&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;^3.11.0&quot;</span><span style="color:#000000">,</span></span>
-<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#2e75b6">&quot;@vue/cli-service&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;^3.11.0&quot;</span><span style="color:#000000">,</span></span>
-<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#2e75b6">&quot;babel-eslint&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;^10.0.1&quot;</span><span style="color:#000000">,</span></span>
-<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#2e75b6">&quot;eslint&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;^5.16.0&quot;</span><span style="color:#000000">,</span></span>
-<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#2e75b6">&quot;eslint-plugin-vue&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;^5.0.0&quot;</span><span style="color:#000000">,</span></span>
-<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#2e75b6">&quot;vue-template-compiler&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;^2.6.10&quot;</span></span>
-<span class="odt-code-line">  },</span>
-<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#2e75b6">&quot;eslintConfig&quot;</span><span style="color:#000000">: {</span></span>
-<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#2e75b6">&quot;root&quot;</span><span style="color:#000000">: </span><span style="color:#0000ff">true</span><span style="color:#000000">,</span></span>
-<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#2e75b6">&quot;env&quot;</span><span style="color:#000000">: {</span></span>
-<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#2e75b6">&quot;node&quot;</span><span style="color:#000000">: </span><span style="color:#0000ff">true</span></span>
-<span class="odt-code-line">    },</span>
-<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#2e75b6">&quot;extends&quot;</span><span style="color:#000000">: [</span></span>
-<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#a31515">&quot;plugin:vue/essential&quot;</span><span style="color:#000000">,</span></span>
-<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#a31515">&quot;eslint:recommended&quot;</span></span>
-<span class="odt-code-line">    ],</span>
-<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#2e75b6">&quot;rules&quot;</span><span style="color:#000000">: {},</span></span>
-<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#2e75b6">&quot;parserOptions&quot;</span><span style="color:#000000">: {</span></span>
-<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#2e75b6">&quot;parser&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;babel-eslint&quot;</span></span>
-<span class="odt-code-line">    }</span>
-<span class="odt-code-line">  },</span>
-<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#2e75b6">&quot;postcss&quot;</span><span style="color:#000000">: {</span></span>
-<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#2e75b6">&quot;plugins&quot;</span><span style="color:#000000">: {</span></span>
-<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#2e75b6">&quot;autoprefixer&quot;</span><span style="color:#000000">: {}</span></span>
-<span class="odt-code-line">    }</span>
-<span class="odt-code-line">  },</span>
-<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#2e75b6">&quot;browserslist&quot;</span><span style="color:#000000">: [</span></span>
-<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#a31515">&quot;&gt; 1%&quot;</span><span style="color:#000000">,</span></span>
-<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#a31515">&quot;last 2 versions&quot;</span></span>
-<span class="odt-code-line">  ]</span>
-<span class="odt-code-line">}</span>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-javascript">
+<span class="odt-code-line"><span class="odt-code-line-content">{</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#2e75b6">&quot;name&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;vuejs&quot;</span><span style="color:#000000">,</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#2e75b6">&quot;version&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;0.1.0&quot;</span><span style="color:#000000">,</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#2e75b6">&quot;private&quot;</span><span style="color:#000000">: </span><span style="color:#0000ff">true</span><span style="color:#000000">,</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#2e75b6">&quot;scripts&quot;</span><span style="color:#000000">: {</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#2e75b6">&quot;serve&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;vue-cli-service serve vuejs-20/main.js&quot;</span><span style="color:#000000">,</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#2e75b6">&quot;build&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;vue-cli-service build vuejs-20/main.js&quot;</span><span style="color:#000000">,</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#2e75b6">&quot;lint&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;vue-cli-service lint&quot;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  },</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#2e75b6">&quot;dependencies&quot;</span><span style="color:#000000">: {</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#2e75b6">&quot;axios&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;^0.19.0&quot;</span><span style="color:#000000">,</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#2e75b6">&quot;bootstrap&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;^4.3.1&quot;</span><span style="color:#000000">,</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#2e75b6">&quot;bootstrap-vue&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;^2.0.2&quot;</span><span style="color:#000000">,</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#2e75b6">&quot;core-js&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;^2.6.5&quot;</span><span style="color:#000000">,</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#2e75b6">&quot;vue&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;^2.6.10&quot;</span><span style="color:#000000">,</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#2e75b6">&quot;vue-router&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;^3.1.3&quot;</span><span style="color:#000000">,</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#2e75b6">&quot;vuex&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;^3.1.1&quot;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  },</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#2e75b6">&quot;devDependencies&quot;</span><span style="color:#000000">: {</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#2e75b6">&quot;@vue/cli-plugin-babel&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;^3.11.0&quot;</span><span style="color:#000000">,</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#2e75b6">&quot;@vue/cli-plugin-eslint&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;^3.11.0&quot;</span><span style="color:#000000">,</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#2e75b6">&quot;@vue/cli-service&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;^3.11.0&quot;</span><span style="color:#000000">,</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#2e75b6">&quot;babel-eslint&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;^10.0.1&quot;</span><span style="color:#000000">,</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#2e75b6">&quot;eslint&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;^5.16.0&quot;</span><span style="color:#000000">,</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#2e75b6">&quot;eslint-plugin-vue&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;^5.0.0&quot;</span><span style="color:#000000">,</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#2e75b6">&quot;vue-template-compiler&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;^2.6.10&quot;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  },</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#2e75b6">&quot;eslintConfig&quot;</span><span style="color:#000000">: {</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#2e75b6">&quot;root&quot;</span><span style="color:#000000">: </span><span style="color:#0000ff">true</span><span style="color:#000000">,</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#2e75b6">&quot;env&quot;</span><span style="color:#000000">: {</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span><span style="color:#2e75b6">&quot;node&quot;</span><span style="color:#000000">: </span><span style="color:#0000ff">true</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    },</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#2e75b6">&quot;extends&quot;</span><span style="color:#000000">: [</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span><span style="color:#a31515">&quot;plugin:vue/essential&quot;</span><span style="color:#000000">,</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span><span style="color:#a31515">&quot;eslint:recommended&quot;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    ],</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#2e75b6">&quot;rules&quot;</span><span style="color:#000000">: {},</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#2e75b6">&quot;parserOptions&quot;</span><span style="color:#000000">: {</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span><span style="color:#2e75b6">&quot;parser&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;babel-eslint&quot;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  },</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#2e75b6">&quot;postcss&quot;</span><span style="color:#000000">: {</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#2e75b6">&quot;plugins&quot;</span><span style="color:#000000">: {</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span><span style="color:#2e75b6">&quot;autoprefixer&quot;</span><span style="color:#000000">: {}</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  },</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#2e75b6">&quot;browserslist&quot;</span><span style="color:#000000">: [</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#a31515">&quot;&gt; 1%&quot;</span><span style="color:#000000">,</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#a31515">&quot;last 2 versions&quot;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  ]</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
 </code></pre></div>
 
 <p><strong>Comments</strong></p>
@@ -976,50 +976,50 @@
 
 <p>A <strong>[README.md]</strong> file has been generated with the following content:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-markdown">
-<span class="odt-code-line"><span style="color:#008000"># </span><span style="color:#2b91af">vuejs</span></span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#008000">## </span><span style="color:#2b91af">Project setup</span></span>
-<span class="odt-code-line">```</span>
-<span class="odt-code-line">npm install</span>
-<span class="odt-code-line">```</span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#008000">### </span><span style="color:#2b91af">Compilation and hot reloading for development</span></span>
-<span class="odt-code-line">```</span>
-<span class="odt-code-line">npm run serve</span>
-<span class="odt-code-line">```</span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#008000">### </span><span style="color:#2b91af">Compiles and minifies for production</span></span>
-<span class="odt-code-line">```</span>
-<span class="odt-code-line">npm run build</span>
-<span class="odt-code-line">```</span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#008000">### </span><span style="color:#2b91af">Run your tests</span></span>
-<span class="odt-code-line">```</span>
-<span class="odt-code-line">npm run test</span>
-<span class="odt-code-line">```</span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#008000">### </span><span style="color:#2b91af">Lints and fixes files</span></span>
-<span class="odt-code-line">```</span>
-<span class="odt-code-line">npm run lint</span>
-<span class="odt-code-line">```</span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#008000">### </span><span style="color:#2b91af">Customize configuration</span></span>
-<span class="odt-code-line"><span style="color:#000000">See </span><span style="color:#a31515">[Configuration Reference]</span><span style="color:#000000">(https://cli.vuejs.org/config/).</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#008000"># vuejs</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#008000">## Project setup</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">```</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">npm install</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">```</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#008000">### Compiles and hot-reloads for development</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">```</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">npm run serve</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">```</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#008000">### Compiles and minifies for production</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">```</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">npm run build</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">```</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#008000">### Run your tests</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">```</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">npm run test</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">```</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#008000">### Lints and fixes files</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">```</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">npm run lint</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">```</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#008000">### Customize configuration</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">See </span><span style="color:#a31515">[Configuration Reference]</span><span style="color:#000000">(https://cli.vuejs.org/config/).</span></span></span>
 </code></pre></div>
 
 <p>This file summarizes the commands to use for managing the project.</p>
 <p>We know that in <strong>[VSCode]</strong>, <strong>[npm]</strong> tasks are available for execution:</p>
-<p><img src="images/10000000000006FF000001C5AB06CAC3.png" style="width:16.82cm;height:4.255cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000006FF000001C5AB06CAC3.png" /></p>
+<p><img src="images/10000000000006FF000001C5AB06CAC3.png" width="636" height="161" style="width:16.82cm;height:4.255cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000006FF000001C5AB06CAC3.png" /></p>
 <ul>
   <li>in <b>[1-3]</b>, we run the <b>[serve] </b>command, which will compile and then run the project <b>[4-5]</b>;
   </li>
 </ul>
 
 <p>At the URL <strong>[http://localhost:8080]</strong>, we get the following page:</p>
-<p><img src="images/10000000000005C60000049A83E55A37.png" style="width:9.783cm;height:7.796cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000005C60000049A83E55A37.png" /></p>
+<p><img src="images/10000000000005C60000049A83E55A37.png" width="370" height="295" style="width:9.783cm;height:7.796cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000005C60000049A83E55A37.png" /></p>
 <p>We’ll explain a little later what led to this page.</p>
 <p>Let’s continue setting up our work environment:</p>
-<p><img src="images/10000000000007930000036A2200C029.png" style="width:15.392cm;height:6.937cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000007930000036A2200C029.png" /></p>
+<p><img src="images/10000000000007930000036A2200C029.png" width="582" height="262" style="width:15.392cm;height:6.937cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000007930000036A2200C029.png" /></p>
 <ul>
   <li>in <b>[2] </b>above, we see <b>[git] </b>indicators. <b>[git] </b>is a source code version control system that allows you to manage successive versions of the code and share them among developers. We will disable this tool for the project;
   </li>
@@ -1027,7 +1027,7 @@
   </li>
 </ul>
 
-<p><img src="images/100000000000042B000002D0FFC38A47.png" style="width:8.47cm;height:5.717cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000042B000002D0FFC38A47.png" /></p>
+<p><img src="images/100000000000042B000002D0FFC38A47.png" width="320" height="216" style="width:8.47cm;height:5.717cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000042B000002D0FFC38A47.png" /></p>
 <ul>
   <li>in <b>[9-10]</b>, we disable the use of <b>[git] </b>in the project;
   </li>
@@ -1035,11 +1035,11 @@
 
 <p>We will write various tests to demonstrate how <strong>[vue.js]</strong> works. However, we do not want to create a new project each time, as this would require generating a <strong>[node_modules]</strong> folder every time, and this folder is several hundred megabytes in size. Let’s revisit the <strong>[npm]</strong> tasks in the <strong>[package.json]</strong> file:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
-<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#2e75b6">&quot;scripts&quot;</span><span style="color:#000000">: {</span></span>
-<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#2e75b6">&quot;serve&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;vue-cli-service serve vuejs-00/main.js&quot;</span><span style="color:#000000">,</span></span>
-<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#2e75b6">&quot;build&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;vue-cli-service build vuejs-00/main.js&quot;</span><span style="color:#000000">,</span></span>
-<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#2e75b6">&quot;lint&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;vue-cli-service lint&quot;</span></span>
-<span class="odt-code-line">  },</span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#2e75b6">&quot;scripts&quot;</span><span style="color:#000000">: {</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#2e75b6">&quot;serve&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;vue-cli-service serve vuejs-00/main.js&quot;</span><span style="color:#000000">,</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#2e75b6">&quot;build&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;vue-cli-service build vuejs-00/main.js&quot;</span><span style="color:#000000">,</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#2e75b6">&quot;lint&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;vue-cli-service lint&quot;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  },</span></span>
 </code></pre></div>
 
 <ul>
@@ -1055,11 +1055,11 @@
 
 <p>On line 2, you can specify the project&#x27;s entry point for the <strong>[serve]</strong> command, for example:</p>
 <div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
-<span class="odt-code-line"><span style="color:#2e75b6">&quot;serve&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;vue-cli-service serve vuejs-00/main.js&quot;</span><span style="color:#000000">,</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#2e75b6">&quot;serve&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;vue-cli-service serve vuejs-00/main.js&quot;</span><span style="color:#000000">,</span></span></span>
 </code></pre></div>
 
 <p>Let&#x27;s try it:</p>
-<p><img src="images/10000000000007DE00000279D843579C.png" style="width:16.82cm;height:5.286cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000007DE00000279D843579C.png" /></p>
+<p><img src="images/10000000000007DE00000279D843579C.png" width="636" height="200" style="width:16.82cm;height:5.286cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000007DE00000279D843579C.png" /></p>
 <ul>
   <li>in <b>[1]</b>, the <b>[src] </b>folder has been renamed to <b>[vuejs-00]</b>;
   </li>
@@ -1070,7 +1070,7 @@
 </ul>
 
 <p>We get the same result as before:</p>
-<p><img src="images/10000000000004FB00000392CB7FEF0D.png" style="width:8.43cm;height:6.043cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000004FB00000392CB7FEF0D.png" /></p>
+<p><img src="images/10000000000004FB00000392CB7FEF0D.png" width="319" height="228" style="width:8.43cm;height:6.043cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000004FB00000392CB7FEF0D.png" /></p>
 <p>For our tests, we will proceed as follows:</p>
 <ul>
   <li>writing code in a <b>[vuejs-xx] </b>folder within the project;
@@ -1080,7 +1080,7 @@
 </ul>
 
 <p>When the development server is running, any change to one of the project files triggers a recompilation. For this reason, we disable the <strong>[Auto Save]</strong> mode in <strong>[VSCode]</strong>. Indeed, we do not want a recompilation to occur every time we type characters into one of the project files. We only want a recompilation at certain times:</p>
-<p><img src="images/100000000000022B000002F6F4291A79.png" style="width:4.399cm;height:6.01cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000022B000002F6F4291A79.png" /></p>
+<p><img src="images/100000000000022B000002F6F4291A79.png" width="166" height="227" style="width:4.399cm;height:6.01cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000022B000002F6F4291A79.png" /></p>
 <ul>
   <li>in <b>[2]</b>, the <b>[Auto Save] </b>option must not be checked;
   </li>
@@ -1120,8 +1120,8 @@
     <div class="md-footer-meta__inner">
 
       <div>
-        <a href="https://tahe.developpez.com" target="_blank">
-          https://tahe.developpez.com
+        <a href="https://stahe.github.io" target="_blank">
+          https://stahe.github.io
         </a>
         <br>
         This tutorial written by <strong>Serge Tahé</strong> is made available to the public under the terms of the

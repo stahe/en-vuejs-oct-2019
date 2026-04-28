@@ -992,11 +992,11 @@
 <h1 id="13-vuejs-11-project-routing-and-navigation">13. <span style="color: #365f91">[vuejs-11] <strong>project: routing and navigation</strong></span></h1>
 <p>Routing is what allows users to navigate between the different pages of the application.</p>
 <p>The project directory structure is as follows:</p>
-<p><img src="images/10000000000001930000019551D01FF3.png" style="width:3.731cm;height:3.75cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001930000019551D01FF3.png" /></p>
+<p><img src="images/10000000000001930000019551D01FF3.png" width="141" height="142" style="width:3.731cm;height:3.75cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001930000019551D01FF3.png" /></p>
 <p><a id="refheadingtoc2480672728496130"></a></p>
 <h2 id="131-installing-dependencies">13.1. <span style="color: #4f81bd">Installing dependencies</span></h2>
 <p>Routing in <strong>[Vue.js]</strong> requires the <strong>[vue-router]</strong> dependency:</p>
-<p><img src="images/1000000000000783000002717021C36E.png" style="width:15.259cm;height:4.96cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000783000002717021C36E.png" /></p>
+<p><img src="images/1000000000000783000002717021C36E.png" width="577" height="187" style="width:15.259cm;height:4.96cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000783000002717021C36E.png" /></p>
 <ul>
   <li>In <b>[1-3]</b>, we install the <b>[vue-router] </b>dependency;
   </li>
@@ -1007,45 +1007,45 @@
 <h2 id="132-the-routing-script-routerjs">13.2. <span style="color: #4f81bd"><strong>The routing script</strong> [router.js]</span></h2>
 <p>The application’s navigation rules are defined in the <strong>[router.js]</strong> file (the script name can be anything):</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
-<span class="odt-code-line">// imports required for routing</span>
-<span class="odt-code-line"><span style="color:#0000ff">import </span><span style="color:#000000">Vue </span><span style="color:#0000ff">from </span><span style="color:#a31515">&#x27;vue&#x27;</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">import </span><span style="color:#000000">VueRouter </span><span style="color:#0000ff">from </span><span style="color:#a31515">&#x27;vue-router&#x27;</span></span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line">// routing plugin</span>
-<span class="odt-code-line">Vue.use(VueRouter)</span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line">// target components for routing</span>
-<span class="odt-code-line"><span style="color:#0000ff">import </span><span style="color:#000000">Component1 </span><span style="color:#0000ff">from </span><span style="color:#a31515">&#x27;./components/Component1.vue&#x27;</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">import </span><span style="color:#000000">Component2 </span><span style="color:#0000ff">from </span><span style="color:#a31515">&#x27;./components/Component2.vue&#x27;</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">import </span><span style="color:#000000">Component3 </span><span style="color:#0000ff">from </span><span style="color:#a31515">&#x27;./components/Component3.vue&#x27;</span></span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line">// the application&#x27;s routes</span>
-<span class="odt-code-line"><span style="color:#0000ff">const </span><span style="color:#000000">routes = [</span></span>
-<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#008000">// home</span></span>
-<span class="odt-code-line"><span style="color:#000000">  { path: </span><span style="color:#a31515">&#x27;/&#x27;</span><span style="color:#000000">, name: </span><span style="color:#a31515">&#x27;home&#x27;</span><span style="color:#000000">, component: Component1 },</span></span>
-<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#008000">// Component1</span></span>
-<span class="odt-code-line">  {</span>
-<span class="odt-code-line"><span style="color:#000000">    path: </span><span style="color:#a31515">&#x27;/view1&#x27;</span><span style="color:#000000">, name: </span><span style="color:#a31515">&#x27;view1&#x27;</span><span style="color:#000000">, component: Component1</span></span>
-<span class="odt-code-line">  },</span>
-<span class="odt-code-line">  {</span>
-<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008000">// Component2</span></span>
-<span class="odt-code-line"><span style="color:#000000">    path: </span><span style="color:#a31515">&#x27;/view2&#x27;</span><span style="color:#000000">, name: </span><span style="color:#a31515">&#x27;view2&#x27;</span><span style="color:#000000">, component: Component2</span></span>
-<span class="odt-code-line">  },</span>
-<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#008000">// Component3</span></span>
-<span class="odt-code-line">  {</span>
-<span class="odt-code-line"><span style="color:#000000">    path: </span><span style="color:#a31515">&#x27;/view3&#x27;</span><span style="color:#000000">, name: </span><span style="color:#a31515">&#x27;view3&#x27;</span><span style="color:#000000">, component: Component3</span></span>
-<span class="odt-code-line">  },</span>
-<span class="odt-code-line">]</span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line">// the router</span>
-<span class="odt-code-line"><span style="color:#0000ff">const </span><span style="color:#000000">router = </span><span style="color:#0000ff">new </span><span style="color:#000000">VueRouter({</span></span>
-<span class="odt-code-line">  routes,</span>
-<span class="odt-code-line"><span style="color:#000000">  mode: </span><span style="color:#a31515">&#x27;history&#x27;</span><span style="color:#000000">,</span></span>
-<span class="odt-code-line">})</span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line">// export the router</span>
-<span class="odt-code-line"><span style="color:#0000ff">export default </span><span style="color:#000000">router</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">// imports nécessaires au routage</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">import</span><span style="color:#000000"> Vue </span><span style="color:#0000ff">from</span><span style="color:#000000"> </span><span style="color:#a31515">&#x27;vue&#x27;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">import</span><span style="color:#000000"> VueRouter </span><span style="color:#0000ff">from</span><span style="color:#000000"> </span><span style="color:#a31515">&#x27;vue-router&#x27;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">// plugin de routage</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">Vue.use(VueRouter)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">// les composants cibles du routage</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">import</span><span style="color:#000000"> Component1 </span><span style="color:#0000ff">from</span><span style="color:#000000"> </span><span style="color:#a31515">&#x27;./components/Component1.vue&#x27;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">import</span><span style="color:#000000"> Component2 </span><span style="color:#0000ff">from</span><span style="color:#000000"> </span><span style="color:#a31515">&#x27;./components/Component2.vue&#x27;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">import</span><span style="color:#000000"> Component3 </span><span style="color:#0000ff">from</span><span style="color:#000000"> </span><span style="color:#a31515">&#x27;./components/Component3.vue&#x27;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">// les routes de l&#x27;application</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">const</span><span style="color:#000000"> routes = [</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// home</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  { path: </span><span style="color:#a31515">&#x27;/&#x27;</span><span style="color:#000000">, name: </span><span style="color:#a31515">&#x27;home&#x27;</span><span style="color:#000000">, component: Component1 },</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// Component1</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    path: </span><span style="color:#a31515">&#x27;/vue1&#x27;</span><span style="color:#000000">, name: </span><span style="color:#a31515">&#x27;vue1&#x27;</span><span style="color:#000000">, component: Component1</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  },</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// Component2</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    path: </span><span style="color:#a31515">&#x27;/vue2&#x27;</span><span style="color:#000000">, name: </span><span style="color:#a31515">&#x27;vue2&#x27;</span><span style="color:#000000">, component: Component2</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  },</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// Component3</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    path: </span><span style="color:#a31515">&#x27;/vue3&#x27;</span><span style="color:#000000">, name: </span><span style="color:#a31515">&#x27;vue3&#x27;</span><span style="color:#000000">, component: Component3</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  },</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">]</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">// le routeur</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">const</span><span style="color:#000000"> router = </span><span style="color:#0000ff">new</span><span style="color:#000000"> VueRouter({</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  routes,</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  mode: </span><span style="color:#a31515">&#x27;history&#x27;</span><span style="color:#000000">,</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">})</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">// export du routeur</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">export</span><span style="color:#000000"> </span><span style="color:#0000ff">default</span><span style="color:#000000"> router</span></span></span>
 </code></pre></div>
 
 <p><strong>Comments</strong></p>
@@ -1085,32 +1085,32 @@
 <h2 id="133-the-main-script-mainjs">13.3. <span style="color: #4f81bd"><strong>The main script</strong> [main.js]</span></h2>
 <p>The main script <strong>[main.js]</strong> is as follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
-<span class="odt-code-line">// imports</span>
-<span class="odt-code-line"><span style="color:#0000ff">import </span><span style="color:#000000">Vue </span><span style="color:#0000ff">from </span><span style="color:#a31515">&#x27;vue&#x27;</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">import </span><span style="color:#000000">App </span><span style="color:#0000ff">from </span><span style="color:#a31515">&#x27;./App.vue&#x27;</span></span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line">// plugins</span>
-<span class="odt-code-line"><span style="color:#0000ff">import </span><span style="color:#000000">BootstrapVue </span><span style="color:#0000ff">from </span><span style="color:#a31515">&#x27;bootstrap-vue&#x27;</span></span>
-<span class="odt-code-line">Vue.use(BootstrapVue);</span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line">// Bootstrap</span>
-<span class="odt-code-line"><span style="color:#0000ff">import </span><span style="color:#a31515">&#x27;bootstrap/dist/css/bootstrap.css&#x27;</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">import </span><span style="color:#a31515">&#x27;bootstrap-vue/dist/bootstrap-vue.css&#x27;</span></span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line">// router</span>
-<span class="odt-code-line"><span style="color:#0000ff">import </span><span style="background-color:#ffff00;color:#000000">myRouter </span><span style="color:#0000ff">from </span><span style="color:#a31515">&#x27;./router&#x27;</span></span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line">// configuration</span>
-<span class="odt-code-line"><span style="color:#000000">Vue.config.productionTip = </span><span style="color:#0000ff">false</span></span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line">// project instantiation <span style="font-weight:bold">[App]</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">new </span><span style="color:#000000">Vue({</span></span>
-<span class="odt-code-line"><span style="color:#000000">  name: </span><span style="color:#a31515">&quot;app&quot;</span><span style="color:#000000">,</span></span>
-<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#008000">// main view</span></span>
-<span class="odt-code-line">  render: h =&gt; h(App),</span>
-<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#008000">// router</span></span>
-<span class="odt-code-line"><span style="color:#000000">  </span><span style="background-color:#e0c2cd;color:#000000">router</span><span style="color:#000000">: </span><span style="background-color:#ffff00;color:#000000">myRouter</span><span style="color:#000000">,</span></span>
-<span class="odt-code-line"><span style="color:#000000">}).$mount(</span><span style="color:#a31515">&#x27;#app&#x27;</span><span style="color:#000000">)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">// imports</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">import</span><span style="color:#000000"> Vue </span><span style="color:#0000ff">from</span><span style="color:#000000"> </span><span style="color:#a31515">&#x27;vue&#x27;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">import</span><span style="color:#000000"> App </span><span style="color:#0000ff">from</span><span style="color:#000000"> </span><span style="color:#a31515">&#x27;./App.vue&#x27;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">// plugins</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">import</span><span style="color:#000000"> BootstrapVue </span><span style="color:#0000ff">from</span><span style="color:#000000"> </span><span style="color:#a31515">&#x27;bootstrap-vue&#x27;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">Vue.use(BootstrapVue);</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">// bootstrap</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">import</span><span style="color:#000000"> </span><span style="color:#a31515">&#x27;bootstrap/dist/css/bootstrap.css&#x27;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">import</span><span style="color:#000000"> </span><span style="color:#a31515">&#x27;bootstrap-vue/dist/bootstrap-vue.css&#x27;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">// routeur</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">import</span><span style="color:#000000"> </span><span style="background-color:#ffff00;color:#000000">monRouteur</span><span style="color:#000000"> </span><span style="color:#0000ff">from</span><span style="color:#000000"> </span><span style="color:#a31515">&#x27;./router&#x27;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">// configuration</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">Vue.config.productionTip = </span><span style="color:#0000ff">false</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold">// instanciation projet [App]</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">new</span><span style="color:#000000"> Vue({</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  name: </span><span style="color:#a31515">&quot;app&quot;</span><span style="color:#000000">,</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// vue principale</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  render: h =&gt; h(App),</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// routeur</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="background-color:#e0c2cd;color:#000000">router</span><span style="color:#000000">: </span><span style="background-color:#ffff00;color:#000000">monRouteur</span><span style="color:#000000">,</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">}).$mount(</span><span style="color:#a31515">&#x27;#app&#x27;</span><span style="color:#000000">)</span></span></span>
 </code></pre></div>
 
 <p><strong>Comments</strong></p>
@@ -1124,24 +1124,24 @@
 <h2 id="134-the-main-view-app">13.4. <span style="color: #4f81bd"><strong>The main view</strong> [App]</span></h2>
 <p>The code for the main view is as follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-html">
-<span class="odt-code-line"><span style="color:#0000ff">&lt;</span><span style="color:#800000">template</span><span style="color:#0000ff">&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">div </span><span style="color:#0000ff">class=&quot;container&quot;&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">b-card</span><span style="color:#0000ff">&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#006400">&lt;!-- a message --&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">b-alert </span><span style="color:#ff0000">show </span><span style="color:#0000ff">variant=&quot;success&quot; align=&quot;center&quot;&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">h4</span><span style="color:#0000ff">&gt;</span><span style="font-weight:bold;color:#000000">[vuejs-11]</span><span style="color:#000000">: Routing and Navigation</span><span style="color:#0000ff">&lt;</span><span style="color:#800000">/h4</span><span style="color:#0000ff">&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">/b-alert</span><span style="color:#0000ff">&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#006400">&lt;!-- the current routing view --&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">router-view </span><span style="color:#0000ff">/&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">/b-card</span><span style="color:#0000ff">&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">/div</span><span style="color:#0000ff">&gt;</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">&lt;</span><span style="color:#800000">/template</span><span style="color:#0000ff">&gt;</span></span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#0000ff">&lt;</span><span style="color:#800000">script</span><span style="color:#0000ff">&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#0000ff">export default </span><span style="color:#000000">{</span></span>
-<span class="odt-code-line"><span style="color:#000000">    name: </span><span style="color:#a31515">&quot;app&quot;</span></span>
-<span class="odt-code-line">  };</span>
-<span class="odt-code-line"><span style="color:#0000ff">&lt;</span><span style="color:#800000">/script</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;</span><span style="color:#800000">template</span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">div</span><span style="color:#000000"> </span><span style="color:#ff0000">class</span><span style="color:#0000ff">=&quot;container&quot;&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">b-card</span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">&lt;!-- a message --&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">b-alert</span><span style="color:#000000"> </span><span style="color:#ff0000">show</span><span style="color:#000000"> </span><span style="color:#ff0000">variant</span><span style="color:#0000ff">=&quot;success&quot;</span><span style="color:#000000"> </span><span style="color:#ff0000">align</span><span style="color:#0000ff">=&quot;center&quot;&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">h4</span><span style="color:#0000ff">&gt;</span><span style="font-weight:bold;color:#000000">[vuejs-11]</span><span style="color:#000000"> : routage et navigation</span><span style="color:#0000ff">&lt;/</span><span style="color:#800000">h4</span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span><span style="color:#0000ff">&lt;/</span><span style="color:#800000">b-alert</span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">&lt;!-- the current routing view --&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">router-view</span><span style="color:#000000"> </span><span style="color:#0000ff">/&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">&lt;/</span><span style="color:#800000">b-card</span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#0000ff">&lt;/</span><span style="color:#800000">div</span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;/</span><span style="color:#800000">template</span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;</span><span style="color:#800000">script</span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#0000ff">export</span><span style="color:#000000"> </span><span style="color:#0000ff">default</span><span style="color:#000000"> {</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    name: </span><span style="color:#a31515">&quot;app&quot;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  };</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;/</span><span style="color:#800000">script</span><span style="color:#0000ff">&gt;</span></span></span>
 </code></pre></div>
 
 <p><strong>Comments</strong></p>
@@ -1153,52 +1153,52 @@
 <h2 id="135-view-layout">13.5. <span style="color: #4f81bd">View Layout</span></h2>
 <p>View layout is handled by the following <strong>[Layout]</strong> component:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-html">
-<span class="odt-code-line"><span style="color:#0000ff">&lt;</span><span style="color:#800000">template</span><span style="color:#0000ff">&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#006400">&lt;!-- line --&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">div</span><span style="color:#0000ff">&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">b-row</span><span style="color:#0000ff">&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#006400">&lt;!-- three-column section --&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">b-col </span><span style="color:#0000ff">cols=&quot;2&quot; v-if=&quot;left&quot;&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">slot </span><span style="color:#0000ff">name=&quot;left&quot; /&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">/b-col</span><span style="color:#0000ff">&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#006400">&lt;!-- nine-column area --&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">b-col </span><span style="color:#0000ff">cols=&quot;10&quot; v-if=&quot;right&quot;&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">slot </span><span style="color:#0000ff">name=&quot;right&quot; /&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">/b-col</span><span style="color:#0000ff">&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">/b-row</span><span style="color:#0000ff">&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">/div</span><span style="color:#0000ff">&gt;</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">&lt;</span><span style="color:#800000">/template</span><span style="color:#0000ff">&gt;</span></span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#0000ff">&lt;</span><span style="color:#800000">script</span><span style="color:#0000ff">&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#0000ff">export default </span><span style="color:#000000">{</span></span>
-<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008000">// settings</span></span>
-<span class="odt-code-line">    props: {</span>
-<span class="odt-code-line">      left: {</span>
-<span class="odt-code-line">        type: Boolean</span>
-<span class="odt-code-line">      },</span>
-<span class="odt-code-line">      right: {</span>
-<span class="odt-code-line">        type: Boolean</span>
-<span class="odt-code-line">      }</span>
-<span class="odt-code-line">    }</span>
-<span class="odt-code-line">  };</span>
-<span class="odt-code-line"><span style="color:#0000ff">&lt;</span><span style="color:#800000">/script</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;</span><span style="color:#800000">template</span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">&lt;!-- line --&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">div</span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">b-row</span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">&lt;!-- three-column zone --&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">b-col</span><span style="color:#000000"> </span><span style="color:#ff0000">cols</span><span style="color:#0000ff">=&quot;2&quot;</span><span style="color:#000000"> </span><span style="color:#ff0000">v-if</span><span style="color:#0000ff">=&quot;left&quot;&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">slot</span><span style="color:#000000"> </span><span style="color:#ff0000">name</span><span style="color:#0000ff">=&quot;left&quot;</span><span style="color:#000000"> </span><span style="color:#0000ff">/&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span><span style="color:#0000ff">&lt;/</span><span style="color:#800000">b-col</span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">&lt;!-- nine-column zone --&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">b-col</span><span style="color:#000000"> </span><span style="color:#ff0000">cols</span><span style="color:#0000ff">=&quot;10&quot;</span><span style="color:#000000"> </span><span style="color:#ff0000">v-if</span><span style="color:#0000ff">=&quot;right&quot;&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">slot</span><span style="color:#000000"> </span><span style="color:#ff0000">name</span><span style="color:#0000ff">=&quot;right&quot;</span><span style="color:#000000"> </span><span style="color:#0000ff">/&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span><span style="color:#0000ff">&lt;/</span><span style="color:#800000">b-col</span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">&lt;/</span><span style="color:#800000">b-row</span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#0000ff">&lt;/</span><span style="color:#800000">div</span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;/</span><span style="color:#800000">template</span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;</span><span style="color:#800000">script</span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#0000ff">export</span><span style="color:#000000"> </span><span style="color:#0000ff">default</span><span style="color:#000000"> {</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// paramètres</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    props: {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      left: {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        type: Boolean</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      },</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      right: {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        type: Boolean</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  };</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;/</span><span style="color:#800000">script</span><span style="color:#0000ff">&gt;</span></span></span>
 </code></pre></div>
 
 <p>We have already used and explained this layout in the <strong>[vuejs-06]</strong> project in section <a href="#17projet-vuejs-06--mise-en-page-dune-vue-avec-des-slotsoutline"><u><span style="color: #0563c1">[vuejs-06]</span></u></a>.</p>
 <p><a id="refheadingtoc2480772728496130"></a></p>
 <h2 id="136-the-navigation-component">13.6. <span style="color: #4f81bd">The Navigation Component</span></h2>
 <p>The <strong>[Navigation]</strong> component provides a navigation menu to the user:</p>
-<p><img src="images/100000000000029F00000282F75F1E89.png" style="width:4.44cm;height:4.247cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000029F00000282F75F1E89.png" /></p>
+<p><img src="images/100000000000029F00000282F75F1E89.png" width="168" height="161" style="width:4.44cm;height:4.247cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000029F00000282F75F1E89.png" /></p>
 <p>The component that generates block <strong>[1]</strong> is as follows:</p>
-<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-vbscript">
-<span class="odt-code-line"><span style="color:#0000ff">&lt;</span><span style="color:#800000">template</span><span style="color:#0000ff">&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#006400">&lt;!-- Bootstrap menu with three options --&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">b-nav </span><span style="color:#ff0000">vertical</span><span style="color:#0000ff">&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">b-nav-item </span><span style="color:#0000ff">to=&quot;/vue1&quot; </span><span style="color:#ff0000">exact </span><span style="color:#0000ff">exact-active-class=&quot;active&quot;&gt;</span><span style="color:#000000">View 1</span><span style="color:#0000ff">&lt;</span><span style="color:#800000">/b-nav-item</span><span style="color:#0000ff">&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">b-nav-item </span><span style="color:#0000ff">to=&quot;/view2&quot; </span><span style="color:#ff0000">exact </span><span style="color:#0000ff">exact-active-class=&quot;active&quot;&gt;</span><span style="color:#000000">View 2</span><span style="color:#0000ff">&lt;</span><span style="color:#800000">/b-nav-item</span><span style="color:#0000ff">&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">b-nav-item </span><span style="color:#0000ff">to=&quot;/view3&quot; </span><span style="color:#ff0000">exact </span><span style="color:#0000ff">exact-active-class=&quot;active&quot;&gt;</span><span style="color:#000000">View 3</span><span style="color:#0000ff">&lt;</span><span style="color:#800000">/b-nav-item</span><span style="color:#0000ff">&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">/b-nav</span><span style="color:#0000ff">&gt;</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">&lt;</span><span style="color:#800000">/template</span><span style="color:#0000ff">&gt;</span></span>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-xml">
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;</span><span style="color:#800000">template</span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">&lt;!-- bootstrap menu with three options --&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">b-nav</span><span style="color:#000000"> </span><span style="color:#ff0000">vertical</span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">b-nav-item</span><span style="color:#000000"> </span><span style="color:#ff0000">to</span><span style="color:#0000ff">=&quot;/vue1&quot;</span><span style="color:#000000"> </span><span style="color:#ff0000">exact</span><span style="color:#000000"> </span><span style="color:#ff0000">exact-active-class</span><span style="color:#0000ff">=&quot;active&quot;&gt;</span><span style="color:#000000">Vue 1</span><span style="color:#0000ff">&lt;/</span><span style="color:#800000">b-nav-item</span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">b-nav-item</span><span style="color:#000000"> </span><span style="color:#ff0000">to</span><span style="color:#0000ff">=&quot;/vue2&quot;</span><span style="color:#000000"> </span><span style="color:#ff0000">exact</span><span style="color:#000000"> </span><span style="color:#ff0000">exact-active-class</span><span style="color:#0000ff">=&quot;active&quot;&gt;</span><span style="color:#000000">Vue 2</span><span style="color:#0000ff">&lt;/</span><span style="color:#800000">b-nav-item</span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">b-nav-item</span><span style="color:#000000"> </span><span style="color:#ff0000">to</span><span style="color:#0000ff">=&quot;/vue3&quot;</span><span style="color:#000000"> </span><span style="color:#ff0000">exact</span><span style="color:#000000"> </span><span style="color:#ff0000">exact-active-class</span><span style="color:#0000ff">=&quot;active&quot;&gt;</span><span style="color:#000000">Vue 3</span><span style="color:#0000ff">&lt;/</span><span style="color:#800000">b-nav-item</span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#0000ff">&lt;/</span><span style="color:#800000">b-nav</span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;/</span><span style="color:#800000">template</span><span style="color:#0000ff">&gt;</span></span></span>
 </code></pre></div>
 
 <ul>
@@ -1210,30 +1210,30 @@
 <p><a id="refheadingtoc2480792728496130"></a></p>
 <h2 id="137-the-views">13.7. <span style="color: #4f81bd">The Views</span></h2>
 <p>View #1 is as follows:</p>
-<p><img src="images/100000000000064F0000027D0D352B4D.png" style="width:10.68cm;height:4.212cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000064F0000027D0D352B4D.png" /></p>
+<p><img src="images/100000000000064F0000027D0D352B4D.png" width="404" height="159" style="width:10.68cm;height:4.212cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000064F0000027D0D352B4D.png" /></p>
 <p>Areas <strong>[3-4]</strong> are generated by the following <strong>[Component1]</strong> component:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
-<span class="odt-code-line"><span style="color:#0000ff">&lt;</span><span style="color:#800000">template</span><span style="color:#0000ff">&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">Layout </span><span style="color:#ff0000">:</span><span style="color:#0000ff">left=&quot;true&quot; </span><span style="color:#ff0000">:</span><span style="color:#0000ff">right=&quot;true&quot;&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#006400">&lt;!-- navigation --&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">Navigation </span><span style="color:#0000ff">slot=&quot;left&quot; /&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#006400">&lt;!-- message--&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">b-alert </span><span style="color:#ff0000">show </span><span style="color:#0000ff">variant=&quot;primary&quot; slot=&quot;right&quot;&gt;</span><span style="color:#000000">View 1</span><span style="color:#0000ff">&lt;</span><span style="color:#800000">/b-alert</span><span style="color:#0000ff">&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">/Layout</span><span style="color:#0000ff">&gt;</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">&lt;</span><span style="color:#800000">/template</span><span style="color:#0000ff">&gt;</span></span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#0000ff">&lt;</span><span style="color:#800000">script</span><span style="color:#0000ff">&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#0000ff">import </span><span style="color:#000000">Navigation </span><span style="color:#0000ff">from </span><span style="color:#a31515">&#x27;./Navigation&#x27;</span><span style="color:#000000">;</span></span>
-<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#0000ff">import </span><span style="color:#000000">Layout </span><span style="color:#0000ff">from </span><span style="color:#a31515">&#x27;./Layout&#x27;</span><span style="color:#000000">;</span></span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#0000ff">export default </span><span style="color:#000000">{</span></span>
-<span class="odt-code-line"><span style="color:#000000">    name: </span><span style="color:#a31515">&quot;</span><span style="background-color:#ffff00;color:#a31515">component1</span><span style="color:#a31515">&quot;</span><span style="color:#000000">,</span></span>
-<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008000">// components used</span></span>
-<span class="odt-code-line">    components: {</span>
-<span class="odt-code-line">      Layout, Navigation</span>
-<span class="odt-code-line">    }</span>
-<span class="odt-code-line">  };</span>
-<span class="odt-code-line"><span style="color:#0000ff">&lt;</span><span style="color:#800000">/script</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;</span><span style="color:#800000">template</span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">Layout</span><span style="color:#000000"> </span><span style="color:#ff0000">:left</span><span style="color:#0000ff">=&quot;true&quot;</span><span style="color:#000000"> </span><span style="color:#ff0000">:right</span><span style="color:#0000ff">=&quot;true&quot;&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">&lt;!-- navigation --&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">Navigation</span><span style="color:#000000"> </span><span style="color:#ff0000">slot</span><span style="color:#0000ff">=&quot;left&quot;</span><span style="color:#000000"> </span><span style="color:#0000ff">/&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">&lt;!-- message--&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">b-alert</span><span style="color:#000000"> </span><span style="color:#ff0000">show</span><span style="color:#000000"> </span><span style="color:#ff0000">variant</span><span style="color:#0000ff">=&quot;primary&quot;</span><span style="color:#000000"> </span><span style="color:#ff0000">slot</span><span style="color:#0000ff">=&quot;right&quot;&gt;</span><span style="color:#000000">Vue 1</span><span style="color:#0000ff">&lt;/</span><span style="color:#800000">b-alert</span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#0000ff">&lt;/</span><span style="color:#800000">Layout</span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;/</span><span style="color:#800000">template</span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;</span><span style="color:#800000">script</span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#0000ff">import</span><span style="color:#000000"> Navigation </span><span style="color:#0000ff">from</span><span style="color:#000000"> </span><span style="color:#a31515">&#x27;./Navigation&#x27;</span><span style="color:#000000">;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#0000ff">import</span><span style="color:#000000"> Layout </span><span style="color:#0000ff">from</span><span style="color:#000000"> </span><span style="color:#a31515">&#x27;./Layout&#x27;</span><span style="color:#000000">;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#0000ff">export</span><span style="color:#000000"> </span><span style="color:#0000ff">default</span><span style="color:#000000"> {</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    name: </span><span style="color:#a31515">&quot;</span><span style="background-color:#ffff00;color:#a31515">component1</span><span style="color:#a31515">&quot;</span><span style="color:#000000">,</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// composants utilisés</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    components: {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      Layout, Navigation</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  };</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;/</span><span style="color:#800000">script</span><span style="color:#0000ff">&gt;</span></span></span>
 </code></pre></div>
 
 <p><strong>Comments</strong></p>
@@ -1249,74 +1249,74 @@
 <p>Views 2 and 3 are similar.</p>
 <p>View #2 displayed by the <strong>[Component2]</strong> component:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
-<span class="odt-code-line">&lt;!-- view #2 --&gt;</span>
-<span class="odt-code-line"><span style="color:#0000ff">&lt;</span><span style="color:#800000">template</span><span style="color:#0000ff">&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">Layout </span><span style="color:#ff0000">:</span><span style="color:#0000ff">left=&quot;true&quot; </span><span style="color:#ff0000">:</span><span style="color:#0000ff">right=&quot;true&quot;&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#006400">&lt;!-- navigation --&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">Navigation </span><span style="color:#0000ff">slot=&quot;left&quot; /&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#006400">&lt;!-- message --&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">b-alert </span><span style="color:#ff0000">show </span><span style="color:#0000ff">variant=&quot;secondary&quot; slot=&quot;right&quot;&gt;</span><span style="color:#000000">View 2</span><span style="color:#0000ff">&lt;</span><span style="color:#800000">/b-alert</span><span style="color:#0000ff">&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">/Layout</span><span style="color:#0000ff">&gt;</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">&lt;</span><span style="color:#800000">/template</span><span style="color:#0000ff">&gt;</span></span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#0000ff">&lt;</span><span style="color:#800000">script</span><span style="color:#0000ff">&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#0000ff">import </span><span style="color:#000000">Navigation </span><span style="color:#0000ff">from </span><span style="color:#a31515">&#x27;./Navigation&#x27;</span><span style="color:#000000">;</span></span>
-<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#0000ff">import </span><span style="color:#000000">Layout </span><span style="color:#0000ff">from </span><span style="color:#a31515">&#x27;./Layout&#x27;</span><span style="color:#000000">;</span></span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#0000ff">export default </span><span style="color:#000000">{</span></span>
-<span class="odt-code-line"><span style="color:#000000">    name: </span><span style="color:#a31515">&quot;</span><span style="background-color:#ffff00;color:#a31515">component2</span><span style="color:#a31515">&quot;</span><span style="color:#000000">,</span></span>
-<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008000">// view components</span></span>
-<span class="odt-code-line">    components: {</span>
-<span class="odt-code-line">      Layout, Navigation</span>
-<span class="odt-code-line">    }</span>
-<span class="odt-code-line">  };</span>
-<span class="odt-code-line"><span style="color:#0000ff">&lt;</span><span style="color:#800000">/script</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">&lt;!-- vue n° 2 --&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;</span><span style="color:#800000">template</span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">Layout</span><span style="color:#000000"> </span><span style="color:#ff0000">:left</span><span style="color:#0000ff">=&quot;true&quot;</span><span style="color:#000000"> </span><span style="color:#ff0000">:right</span><span style="color:#0000ff">=&quot;true&quot;&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">&lt;!-- navigation --&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">Navigation</span><span style="color:#000000"> </span><span style="color:#ff0000">slot</span><span style="color:#0000ff">=&quot;left&quot;</span><span style="color:#000000"> </span><span style="color:#0000ff">/&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">&lt;!-- message --&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">b-alert</span><span style="color:#000000"> </span><span style="color:#ff0000">show</span><span style="color:#000000"> </span><span style="color:#ff0000">variant</span><span style="color:#0000ff">=&quot;secondary&quot;</span><span style="color:#000000"> </span><span style="color:#ff0000">slot</span><span style="color:#0000ff">=&quot;right&quot;&gt;</span><span style="color:#000000">Vue 2</span><span style="color:#0000ff">&lt;/</span><span style="color:#800000">b-alert</span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#0000ff">&lt;/</span><span style="color:#800000">Layout</span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;/</span><span style="color:#800000">template</span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;</span><span style="color:#800000">script</span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#0000ff">import</span><span style="color:#000000"> Navigation </span><span style="color:#0000ff">from</span><span style="color:#000000"> </span><span style="color:#a31515">&#x27;./Navigation&#x27;</span><span style="color:#000000">;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#0000ff">import</span><span style="color:#000000"> Layout </span><span style="color:#0000ff">from</span><span style="color:#000000"> </span><span style="color:#a31515">&#x27;./Layout&#x27;</span><span style="color:#000000">;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#0000ff">export</span><span style="color:#000000"> </span><span style="color:#0000ff">default</span><span style="color:#000000"> {</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    name: </span><span style="color:#a31515">&quot;</span><span style="background-color:#ffff00;color:#a31515">component2</span><span style="color:#a31515">&quot;</span><span style="color:#000000">,</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// composants de la vue</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    components: {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      Layout, Navigation</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  };</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;/</span><span style="color:#800000">script</span><span style="color:#0000ff">&gt;</span></span></span>
 </code></pre></div>
 
 <p>View #3 displayed by the <strong>[Component3]</strong> component:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
-<span class="odt-code-line">&lt;!-- view #3 --&gt;</span>
-<span class="odt-code-line"><span style="color:#0000ff">&lt;</span><span style="color:#800000">template</span><span style="color:#0000ff">&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">Layout </span><span style="color:#ff0000">:</span><span style="color:#0000ff">left=&quot;true&quot; </span><span style="color:#ff0000">:</span><span style="color:#0000ff">right=&quot;true&quot;&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#006400">&lt;!-- navigation --&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">Navigation </span><span style="color:#0000ff">slot=&quot;left&quot; /&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#006400">&lt;!-- message --&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">b-alert </span><span style="color:#ff0000">show </span><span style="color:#0000ff">variant=&quot;info&quot; slot=&quot;right&quot;&gt;</span><span style="color:#000000">View 3</span><span style="color:#0000ff">&lt;</span><span style="color:#800000">/b-alert</span><span style="color:#0000ff">&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">/Layout</span><span style="color:#0000ff">&gt;</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">&lt;</span><span style="color:#800000">/template</span><span style="color:#0000ff">&gt;</span></span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#0000ff">&lt;</span><span style="color:#800000">script</span><span style="color:#0000ff">&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#0000ff">import </span><span style="color:#000000">Navigation </span><span style="color:#0000ff">from </span><span style="color:#a31515">&quot;./Navigation&quot;</span><span style="color:#000000">;</span></span>
-<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#0000ff">import </span><span style="color:#000000">Layout </span><span style="color:#0000ff">from </span><span style="color:#a31515">&quot;./Layout&quot;</span><span style="color:#000000">;</span></span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#0000ff">export default </span><span style="color:#000000">{</span></span>
-<span class="odt-code-line"><span style="color:#000000">    name: </span><span style="color:#a31515">&quot;</span><span style="background-color:#ffff00;color:#a31515">component3</span><span style="color:#a31515">&quot;</span><span style="color:#000000">,</span></span>
-<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008000">// view components</span></span>
-<span class="odt-code-line">    components: {</span>
-<span class="odt-code-line">      Layout,</span>
-<span class="odt-code-line">      Navigation</span>
-<span class="odt-code-line">    }</span>
-<span class="odt-code-line">  };</span>
-<span class="odt-code-line"><span style="color:#0000ff">&lt;</span><span style="color:#800000">/script</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">&lt;!-- vue n° 3 --&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;</span><span style="color:#800000">template</span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">Layout</span><span style="color:#000000"> </span><span style="color:#ff0000">:left</span><span style="color:#0000ff">=&quot;true&quot;</span><span style="color:#000000"> </span><span style="color:#ff0000">:right</span><span style="color:#0000ff">=&quot;true&quot;&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">&lt;!-- navigation --&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">Navigation</span><span style="color:#000000"> </span><span style="color:#ff0000">slot</span><span style="color:#0000ff">=&quot;left&quot;</span><span style="color:#000000"> </span><span style="color:#0000ff">/&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">&lt;!-- message --&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">b-alert</span><span style="color:#000000"> </span><span style="color:#ff0000">show</span><span style="color:#000000"> </span><span style="color:#ff0000">variant</span><span style="color:#0000ff">=&quot;info&quot;</span><span style="color:#000000"> </span><span style="color:#ff0000">slot</span><span style="color:#0000ff">=&quot;right&quot;&gt;</span><span style="color:#000000">Vue 3</span><span style="color:#0000ff">&lt;/</span><span style="color:#800000">b-alert</span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#0000ff">&lt;/</span><span style="color:#800000">Layout</span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;/</span><span style="color:#800000">template</span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;</span><span style="color:#800000">script</span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#0000ff">import</span><span style="color:#000000"> Navigation </span><span style="color:#0000ff">from</span><span style="color:#000000"> </span><span style="color:#a31515">&quot;./Navigation&quot;</span><span style="color:#000000">;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#0000ff">import</span><span style="color:#000000"> Layout </span><span style="color:#0000ff">from</span><span style="color:#000000"> </span><span style="color:#a31515">&quot;./Layout&quot;</span><span style="color:#000000">;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#0000ff">export</span><span style="color:#000000"> </span><span style="color:#0000ff">default</span><span style="color:#000000"> {</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    name: </span><span style="color:#a31515">&quot;</span><span style="background-color:#ffff00;color:#a31515">component3</span><span style="color:#a31515">&quot;</span><span style="color:#000000">,</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// composants de la vue</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    components: {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      Layout,</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      Navigation</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  };</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;/</span><span style="color:#800000">script</span><span style="color:#0000ff">&gt;</span></span></span>
 </code></pre></div>
 
 <p><a id="refheadingtoc2480812728496130"></a></p>
 <h2 id="138-running-the-project">13.8. <span style="color: #4f81bd">Running the project</span></h2>
-<p><img src="images/10000000000006EE0000022C1408C263.png" style="width:14.079cm;height:4.413cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000006EE0000022C1408C263.png" /></p>
+<p><img src="images/10000000000006EE0000022C1408C263.png" width="532" height="167" style="width:14.079cm;height:4.413cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000006EE0000022C1408C263.png" /></p>
 <p>Upon execution, the following view is displayed:</p>
-<p><img src="images/10000000000005F600000276BAF9C18A.png" style="width:10.089cm;height:4.166cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000005F600000276BAF9C18A.png" /></p>
+<p><img src="images/10000000000005F600000276BAF9C18A.png" width="381" height="157" style="width:10.089cm;height:4.166cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000005F600000276BAF9C18A.png" /></p>
 <ul>
   <li>in <b>[1]</b>, the URL is <b>[http://localhost:8080]</b>. The following routing rule was then executed:
   </li>
 </ul>
 
 <div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
-<span class="odt-code-line"><span style="color:#000000">{ path: </span><span style="color:#a31515">&#x27;/&#x27;</span><span style="color:#000000">, name: </span><span style="color:#a31515">&#x27;home&#x27;</span><span style="color:#000000">, component: Component1 }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">{ path: </span><span style="color:#a31515">&#x27;</span><span style="background-color:#ffff00;color:#a31515">/</span><span style="color:#a31515">&#x27;</span><span style="color:#000000">, name: </span><span style="color:#a31515">&#x27;home&#x27;</span><span style="color:#000000">, component: Component1 }</span></span></span>
 </code></pre></div>
 
 <p>Therefore, the <strong>[Component1]</strong> component was displayed. It displays view #1 <strong>[2]</strong>. Now let’s click on the <strong>[View 1]</strong> link, whose code is as follows:</p>
 <div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
-<span class="odt-code-line"><span style="color:#0000ff">&lt;</span><span style="color:#800000">b-nav-item </span><span style="color:#0000ff">to=&quot;</span><span style="background-color:#ffff00;color:#0000ff">/view1</span><span style="color:#0000ff">&quot; </span><span style="color:#ff0000">exact </span><span style="color:#0000ff">exact-active-class=&quot;active&quot;&gt;</span><span style="color:#000000">View 1</span><span style="color:#0000ff">&lt;</span><span style="color:#800000">/b-nav-item</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;</span><span style="color:#800000">b-nav-item</span><span style="color:#000000"> </span><span style="color:#ff0000">to</span><span style="color:#0000ff">=&quot;</span><span style="background-color:#ffff00;color:#0000ff">/vue1</span><span style="color:#0000ff">&quot;</span><span style="color:#000000"> </span><span style="color:#ff0000">exact</span><span style="color:#000000"> </span><span style="color:#ff0000">exact-active-class</span><span style="color:#0000ff">=&quot;active&quot;&gt;</span><span style="color:#000000">Vue 1</span><span style="color:#0000ff">&lt;/</span><span style="color:#800000">b-nav-item</span><span style="color:#0000ff">&gt;</span></span></span>
 </code></pre></div>
 
 <p>The display now looks like this:</p>
@@ -1326,39 +1326,39 @@
 </ul>
 
 <div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
-<span class="odt-code-line"><span style="color:#000000">path: </span><span style="color:#a31515">&#x27;/view1&#x27;</span><span style="color:#000000">, name: </span><span style="color:#a31515">&#x27;view1&#x27;</span><span style="color:#000000">, component: Component1</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">path: </span><span style="color:#a31515">&#x27;</span><span style="background-color:#ffff00;color:#a31515">/vue1</span><span style="color:#a31515">&#x27;</span><span style="color:#000000">, name: </span><span style="color:#a31515">&#x27;vue1&#x27;</span><span style="color:#000000">, component: Component1</span></span></span>
 </code></pre></div>
 
 <p>So once again, the <strong>[Component1]</strong> component was displayed, and thus View 1 <strong>[4]</strong>. Now let’s click on the <strong>[View 2]</strong> link, whose code is as follows:</p>
 <div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
-<span class="odt-code-line"><span style="color:#0000ff">&lt;</span><span style="color:#800000">b-nav-item </span><span style="color:#0000ff">to=&quot;</span><span style="background-color:#ffff00;color:#0000ff">/view2</span><span style="color:#0000ff">&quot; </span><span style="color:#ff0000">exact </span><span style="color:#0000ff">exact-active-class=&quot;active&quot;&gt;</span><span style="color:#000000">View 2</span><span style="color:#0000ff">&lt;</span><span style="color:#800000">/b-nav-item</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;</span><span style="color:#800000">b-nav-item</span><span style="color:#000000"> </span><span style="color:#ff0000">to</span><span style="color:#0000ff">=&quot;</span><span style="background-color:#ffff00;color:#0000ff">/vue2</span><span style="color:#0000ff">&quot;</span><span style="color:#000000"> </span><span style="color:#ff0000">exact</span><span style="color:#000000"> </span><span style="color:#ff0000">exact-active-class</span><span style="color:#0000ff">=&quot;active&quot;&gt;</span><span style="color:#000000">Vue 2</span><span style="color:#0000ff">&lt;/</span><span style="color:#800000">b-nav-item</span><span style="color:#0000ff">&gt;</span></span></span>
 </code></pre></div>
 
 <p>The new view is then as follows:</p>
-<p><img src="images/10000000000002D10000028345F88051.png" style="width:4.77cm;height:4.255cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000002D10000028345F88051.png" /></p>
+<p><img src="images/10000000000002D10000028345F88051.png" width="180" height="161" style="width:4.77cm;height:4.255cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000002D10000028345F88051.png" /></p>
 <ul>
   <li>in <b>[5]</b>, the following routing rule was executed:
   </li>
 </ul>
 
 <div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
-<span class="odt-code-line"><span style="color:#000000">path: </span><span style="color:#a31515">&#x27;/view2&#x27;</span><span style="color:#000000">, name: </span><span style="color:#a31515">&#x27;view2&#x27;</span><span style="color:#000000">, component: Component2</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">path: </span><span style="color:#a31515">&#x27;</span><span style="background-color:#ffff00;color:#a31515">/vue2</span><span style="color:#a31515">&#x27;</span><span style="color:#000000">, name: </span><span style="color:#a31515">&#x27;vue2&#x27;</span><span style="color:#000000">, component: Component2</span></span></span>
 </code></pre></div>
 
 <p>Therefore, the <strong>[Component2]</strong> component was displayed, which is View 2. If we now click on the <strong>[View 3]</strong> link, whose code is as follows:</p>
 <div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
-<span class="odt-code-line"><span style="color:#0000ff">&lt;</span><span style="color:#800000">b-nav-item </span><span style="color:#0000ff">to=&quot;</span><span style="background-color:#ffff00;color:#0000ff">/view3</span><span style="color:#0000ff">&quot; </span><span style="color:#ff0000">exact </span><span style="color:#0000ff">exact-active-class=&quot;active&quot;&gt;</span><span style="color:#000000">View 3</span><span style="color:#0000ff">&lt;</span><span style="color:#800000">/b-nav-item</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;</span><span style="color:#800000">b-nav-item</span><span style="color:#000000"> </span><span style="color:#ff0000">to</span><span style="color:#0000ff">=&quot;</span><span style="background-color:#ffff00;color:#0000ff">/vue3</span><span style="color:#0000ff">&quot;</span><span style="color:#000000"> </span><span style="color:#ff0000">exact</span><span style="color:#000000"> </span><span style="color:#ff0000">exact-active-class</span><span style="color:#0000ff">=&quot;active&quot;&gt;</span><span style="color:#000000">Vue 3</span><span style="color:#0000ff">&lt;/</span><span style="color:#800000">b-nav-item</span><span style="color:#0000ff">&gt;</span></span></span>
 </code></pre></div>
 
 <p>We get the following new view:</p>
-<p><img src="images/10000000000002D200000247B35F1259.png" style="width:4.77cm;height:3.852cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000002D200000247B35F1259.png" /></p>
+<p><img src="images/10000000000002D200000247B35F1259.png" width="180" height="146" style="width:4.77cm;height:3.852cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000002D200000247B35F1259.png" /></p>
 <ul>
   <li>in <b>[6]</b>, the following routing rule was executed:
   </li>
 </ul>
 
 <div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
-<span class="odt-code-line"><span style="color:#000000">path: </span><span style="color:#a31515">&#x27;/view3&#x27;</span><span style="color:#000000">, name: </span><span style="color:#a31515">&#x27;view3&#x27;</span><span style="color:#000000">, component: Component3</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">path: </span><span style="color:#a31515">&#x27;</span><span style="background-color:#ffff00;color:#a31515">/vue3</span><span style="color:#a31515">&#x27;</span><span style="color:#000000">, name: </span><span style="color:#a31515">&#x27;vue3&#x27;</span><span style="color:#000000">, component: Component3</span></span></span>
 </code></pre></div>
 
 <p>Therefore, the <strong>[Component3]</strong> component was displayed, i.e., view #3 <strong>[8]</strong>.</p>
@@ -1397,8 +1397,8 @@
     <div class="md-footer-meta__inner">
 
       <div>
-        <a href="https://tahe.developpez.com" target="_blank">
-          https://tahe.developpez.com
+        <a href="https://stahe.github.io" target="_blank">
+          https://stahe.github.io
         </a>
         <br>
         This tutorial written by <strong>Serge Tahé</strong> is made available to the public under the terms of the

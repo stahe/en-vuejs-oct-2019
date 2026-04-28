@@ -980,14 +980,14 @@
 <p><a id="refheadingtoc2480492728496130"></a></p>
 <h1 id="12-project-vuejs-10-dao-plugin-asynchronous-http-requests">12. <span style="color: #365f91"><strong>Project</strong> [vuejs-10]<strong>:</strong> [dao] <strong>plugin, asynchronous HTTP requests</strong></span></h1>
 <p>The directory structure of the <strong>[vuejs-10]</strong> project is as follows:</p>
-<p><img src="images/100000000000017F0000014C6FA960FB.png" style="width:3.551cm;height:3.078cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000017F0000014C6FA960FB.png" /></p>
+<p><img src="images/100000000000017F0000014C6FA960FB.png" width="134" height="116" style="width:3.551cm;height:3.078cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000017F0000014C6FA960FB.png" /></p>
 <p>The <strong>[vuejs-10]</strong> project demonstrates a component making an HTTP request to a remote server. The architecture used is as follows:</p>
-<p><img src="images/10000000000008690000024E0C4F847A.png" style="width:17.09cm;height:4.683cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000008690000024E0C4F847A.png" /></p>
+<p><img src="images/10000000000008690000024E0C4F847A.png" width="646" height="177" style="width:17.09cm;height:4.683cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000008690000024E0C4F847A.png" /></p>
 <p>A <strong>[Vue.js]</strong> component uses the <strong>[dao]</strong> layer to communicate with the tax calculation server.</p>
 <p><a id="refheadingtoc2480512728496130"></a></p>
 <h2 id="121-installing-dependencies">12.1. <span style="color: #4f81bd">Installing dependencies</span></h2>
 <p>The <strong>[vuejs-10]</strong> application uses the <strong>[axios]</strong> library to make asynchronous requests to the tax calculation server. We need to install this dependency:</p>
-<p><img src="images/100000000000076A0000018CD19A0CFA.png" style="width:15.071cm;height:3.143cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000076A0000018CD19A0CFA.png" /></p>
+<p><img src="images/100000000000076A0000018CD19A0CFA.png" width="570" height="119" style="width:15.071cm;height:3.143cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000076A0000018CD19A0CFA.png" /></p>
 <ul>
   <li>in <b>[4-5]</b>, the line added to the <b>[package.json] </b>file after installing the <b>[axios] </b>library <b>[1-3]</b>;
   </li>
@@ -995,125 +995,125 @@
 <p><a id="refheadingtoc2480532728496130"></a></p>
 <h2 id="122-the-dao-class">12.2. <span style="color: #4f81bd"><strong>The</strong> [Dao] <strong>class</strong></span></h2>
 <p>The <strong>[Dao]</strong> class is the one developed in the section <a href="#1112la-classe-daooutline"><u><span style="color: #0563c1">[The Dao Class]</span></u></a>. We include it here for reference:</p>
-<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
-<span class="odt-code-line"><span style="color:#a31515">&#x27;use strict&#x27;</span><span style="color:#000000">;</span></span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line">// imports</span>
-<span class="odt-code-line"><span style="color:#0000ff">import </span><span style="color:#000000">qs </span><span style="color:#0000ff">from </span><span style="color:#a31515">&#x27;qs&#x27;</span></span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line">// <span style="font-weight:bold">[Dao] </span>class</span>
-<span class="odt-code-line"><span style="color:#0000ff">class </span><span style="color:#2b91af">Dao </span><span style="color:#000000">{</span></span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#008000">// constructor</span></span>
-<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#0000ff">constructor</span><span style="color:#000000">(axios) {</span></span>
-<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">this</span><span style="color:#000000">.axios = axios;</span></span>
-<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008000">// session cookie</span></span>
-<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">this</span><span style="color:#000000">.sessionCookieName = </span><span style="color:#a31515">&quot;PHPSESSID&quot;</span><span style="color:#000000">;</span></span>
-<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">this</span><span style="color:#000000">.sessionCookie = </span><span style="color:#a31515">&#x27;&#x27;</span><span style="color:#000000">;</span></span>
-<span class="odt-code-line">  }</span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#008000">// initialize session</span></span>
-<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#0000ff">async </span><span style="color:#000000">initSession() {</span></span>
-<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008000">// HTTP request options </span><span style="font-weight:bold;color:#008000">[get /main.php?action=init-session&amp;type=json]</span></span>
-<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">const </span><span style="color:#000000">options = {</span></span>
-<span class="odt-code-line"><span style="color:#000000">      method: </span><span style="color:#a31515">&quot;GET&quot;</span><span style="color:#000000">,</span></span>
-<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#008000">// URL parameters</span></span>
-<span class="odt-code-line">      params: {</span>
-<span class="odt-code-line"><span style="color:#000000">        action: </span><span style="color:#a31515">&#x27;init-session&#x27;</span><span style="color:#000000">,</span></span>
-<span class="odt-code-line"><span style="color:#000000">        type: </span><span style="color:#a31515">&#x27;json&#x27;</span></span>
-<span class="odt-code-line">      }</span>
-<span class="odt-code-line">    };</span>
-<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008000">// Execute the HTTP request</span></span>
-<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">return await this</span><span style="color:#000000">.getRemoteData(options);</span></span>
-<span class="odt-code-line">  }</span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#0000ff">async </span><span style="color:#000000">authenticateUser(user, password) {</span></span>
-<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008000">// HTTP request options </span><span style="font-weight:bold;color:#008000">[post /main.php?action=authenticate-user]</span></span>
-<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">const </span><span style="color:#000000">options = {</span></span>
-<span class="odt-code-line"><span style="color:#000000">      method: </span><span style="color:#a31515">&quot;POST&quot;</span><span style="color:#000000">,</span></span>
-<span class="odt-code-line">      headers: {</span>
-<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#a31515">&#x27;Content-type</span><span style="color:#000000">&#x27;: </span><span style="color:#a31515">&#x27;application/x-www-form-urlencoded&#x27;</span><span style="color:#000000">,</span></span>
-<span class="odt-code-line">      },</span>
-<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#008000">// POST body</span></span>
-<span class="odt-code-line">      data: qs.stringify({</span>
-<span class="odt-code-line">        user: user,</span>
-<span class="odt-code-line">        password: password</span>
-<span class="odt-code-line">      }),</span>
-<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#008000">// URL parameters</span></span>
-<span class="odt-code-line">      params: {</span>
-<span class="odt-code-line"><span style="color:#000000">        action: </span><span style="color:#a31515">&#x27;authenticate-user&#x27;</span></span>
-<span class="odt-code-line">      }</span>
-<span class="odt-code-line">    };</span>
-<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008000">// Execute the HTTP request</span></span>
-<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">return await this</span><span style="color:#000000">.getRemoteData(options);</span></span>
-<span class="odt-code-line">  }</span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#0000ff">async </span><span style="color:#000000">getAdminData() {</span></span>
-<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008000">// HTTP request options </span><span style="font-weight:bold;color:#008000"> [get /main.php?action=get-admindata]</span></span>
-<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">const </span><span style="color:#000000">options = {</span></span>
-<span class="odt-code-line"><span style="color:#000000">      method: </span><span style="color:#a31515">&quot;GET&quot;</span><span style="color:#000000">,</span></span>
-<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#008000">// URL parameters</span></span>
-<span class="odt-code-line">      params: {</span>
-<span class="odt-code-line"><span style="color:#000000">        action: </span><span style="color:#a31515">&#x27;get-admindata&#x27;</span></span>
-<span class="odt-code-line">      }</span>
-<span class="odt-code-line">    };</span>
-<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008000">// execute the HTTP request</span></span>
-<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">const </span><span style="color:#000000">data = </span><span style="color:#0000ff">await this</span><span style="color:#000000">.getRemoteData(options);</span></span>
-<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008000">// result</span></span>
-<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">return </span><span style="color:#000000">data;</span></span>
-<span class="odt-code-line">  }</span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#0000ff">async </span><span style="color:#000000">getRemoteData(options) {</span></span>
-<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008000">// for the session cookie</span></span>
-<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">if </span><span style="color:#000000">(!options.headers) {</span></span>
-<span class="odt-code-line">      options.headers = {};</span>
-<span class="odt-code-line">    }</span>
-<span class="odt-code-line"><span style="color:#000000">    options.headers.Cookie = </span><span style="color:#0000ff">this</span><span style="color:#000000">.sessionCookie;</span></span>
-<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008000">// execute the HTTP request</span></span>
-<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">let </span><span style="color:#000000">response;</span></span>
-<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">try </span><span style="color:#000000">{</span></span>
-<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#008000">// asynchronous request</span></span>
-<span class="odt-code-line"><span style="color:#000000">      response = </span><span style="color:#0000ff">await this</span><span style="color:#000000">.axios.request(</span><span style="color:#a31515">&#x27;main.php&#x27;</span><span style="color:#000000">, options);</span></span>
-<span class="odt-code-line"><span style="color:#000000">    } </span><span style="color:#0000ff">catch </span><span style="color:#000000">(error) {</span></span>
-<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#008000">// The </span><span style="font-weight:bold;color:#008000">[error] </span><span style="color:#008000">parameter is an exception instance—it can take various forms</span></span>
-<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#0000ff">if </span><span style="color:#000000">(error.response) {</span></span>
-<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008000">// the server&#x27;s response is in </span><span style="font-weight:bold;color:#008000">[error.response]</span></span>
-<span class="odt-code-line">        response = error.response;</span>
-<span class="odt-code-line"><span style="color:#000000">      } </span><span style="color:#0000ff">else </span><span style="color:#000000">{</span></span>
-<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008000">// we re-throw the error</span></span>
-<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">throw </span><span style="color:#000000">error;</span></span>
-<span class="odt-code-line">      }</span>
-<span class="odt-code-line">    }</span>
-<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008000">// response is the entire HTTP response from the server (HTTP headers + the response itself)</span></span>
-<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008000">// retrieve the session cookie if it exists</span></span>
-<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">const </span><span style="color:#000000">setCookie = response.headers</span><span style="font-weight:bold;color:#000000">[&#x27;set-cookie&#x27;]</span><span style="color:#000000">;</span></span>
-<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">if </span><span style="color:#000000">(setCookie) {</span></span>
-<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#008000">// setCookie is an array</span></span>
-<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#008000">// we search for the session cookie in this array</span></span>
-<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#0000ff">let </span><span style="color:#000000">found = </span><span style="color:#0000ff">false</span><span style="color:#000000">;</span></span>
-<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#0000ff">let </span><span style="color:#000000">i = 0;</span></span>
-<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#0000ff">while </span><span style="color:#000000">(!found &amp;&amp; i &lt; setCookie.length) {</span></span>
-<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008000">// search for the session cookie</span></span>
-<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">const </span><span style="color:#000000">results = RegExp(</span><span style="color:#a31515">&#x27;^(&#x27; </span><span style="color:#000000">+ </span><span style="color:#0000ff">this</span><span style="color:#000000">.sessionCookieName + </span><span style="color:#a31515">&#x27;.+?);&#x27;</span><span style="color:#000000">).exec(setCookie</span><span style="font-weight:bold;color:#000000">[i]</span><span style="color:#000000">);</span></span>
-<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">if </span><span style="color:#000000">(results) {</span></span>
-<span class="odt-code-line"><span style="color:#000000">          </span><span style="color:#008000">// store the session cookie</span></span>
-<span class="odt-code-line"><span style="color:#000000">          </span><span style="color:#008000">// eslint-disable-next-line require-atomic-updates</span></span>
-<span class="odt-code-line"><span style="color:#000000">          </span><span style="color:#0000ff">this</span><span style="color:#000000">.sessionCookie = results</span><span style="font-weight:bold;color:#000000">[1]</span><span style="color:#000000">;</span></span>
-<span class="odt-code-line"><span style="color:#000000">          </span><span style="color:#008000">// found</span></span>
-<span class="odt-code-line"><span style="color:#000000">          found = </span><span style="color:#0000ff">true</span><span style="color:#000000">;</span></span>
-<span class="odt-code-line"><span style="color:#000000">        } </span><span style="color:#0000ff">else </span><span style="color:#000000">{</span></span>
-<span class="odt-code-line"><span style="color:#000000">          </span><span style="color:#008000">// next element</span></span>
-<span class="odt-code-line">          i++;</span>
-<span class="odt-code-line">        }</span>
-<span class="odt-code-line">      }</span>
-<span class="odt-code-line">    }</span>
-<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008000">// The server&#x27;s response is in </span><span style="font-weight:bold;color:#008000">[response.data]</span></span>
-<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">return </span><span style="color:#000000">response.data;</span></span>
-<span class="odt-code-line">  }</span>
-<span class="odt-code-line">}</span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line">// export the class</span>
-<span class="odt-code-line"><span style="color:#0000ff">export default </span><span style="color:#000000">Dao;</span></span>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-javascript">
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#a31515">&#x27;use strict&#x27;;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">// imports</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">import</span><span style="color:#000000"> qs </span><span style="color:#0000ff">from</span><span style="color:#000000"> </span><span style="color:#a31515">&#x27;qs&#x27;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">// dao] class</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">class</span><span style="color:#000000"> </span><span style="color:#2b91af">Dao</span><span style="color:#000000"> {</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// manufacturer</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#0000ff">constructor</span><span style="color:#000000">(axios) {</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">this</span><span style="color:#000000">.axios = axios;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// session cookie</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">this</span><span style="color:#000000">.sessionCookieName = </span><span style="color:#a31515">&quot;PHPSESSID&quot;</span><span style="color:#000000">;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">this</span><span style="color:#000000">.sessionCookie = </span><span style="color:#a31515">&#x27;&#x27;</span><span style="color:#000000">;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// init session</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#0000ff">async</span><span style="color:#000000">  initSession() {</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// query options HHTP [get /main.php?action=init-session&amp;type=json]</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">const</span><span style="color:#000000"> options = {</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      method: </span><span style="color:#a31515">&quot;GET&quot;</span><span style="color:#000000">,</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// URL parameters</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      params: {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        action: </span><span style="color:#a31515">&#x27;init-session&#x27;</span><span style="color:#000000">,</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        type: </span><span style="color:#a31515">&#x27;json&#x27;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    };</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// execute query HTTP</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">return</span><span style="color:#000000"> </span><span style="color:#0000ff">await</span><span style="color:#000000"> </span><span style="color:#0000ff">this</span><span style="color:#000000">.getRemoteData(options);</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#0000ff">async</span><span style="color:#000000">  authentifierUtilisateur(user, password) {</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// query options HHTP [post /main.php?action=authenticate-user]</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">const</span><span style="color:#000000"> options = {</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      method: </span><span style="color:#a31515">&quot;POST&quot;</span><span style="color:#000000">,</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      headers: {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">&#x27;Content-type&#x27;: &#x27;application/x-www-form-urlencoded&#x27;,</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      },</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// body of POST</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      data: qs.stringify({</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        user: user,</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        password: password</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      }),</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// URL parameters</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      params: {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        action: </span><span style="color:#a31515">&#x27;authentifier-utilisateur&#x27;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    };</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// execute query HTTP</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">return</span><span style="color:#000000"> </span><span style="color:#0000ff">await</span><span style="color:#000000"> </span><span style="color:#0000ff">this</span><span style="color:#000000">.getRemoteData(options);</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#0000ff">async</span><span style="color:#000000"> getAdminData() {</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// query options HHTP [get /main.php?action=get-admindata]</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">const</span><span style="color:#000000"> options = {</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      method: </span><span style="color:#a31515">&quot;GET&quot;</span><span style="color:#000000">,</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// URL parameters</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      params: {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        action: </span><span style="color:#a31515">&#x27;get-admindata&#x27;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    };</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// execute query HTTP</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">const</span><span style="color:#000000"> data = </span><span style="color:#0000ff">await</span><span style="color:#000000"> </span><span style="color:#0000ff">this</span><span style="color:#000000">.getRemoteData(options);</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// result</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">return</span><span style="color:#000000"> data;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#0000ff">async</span><span style="color:#000000">  getRemoteData(options) {</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// for the session cookie</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">if</span><span style="color:#000000"> (!options.headers) {</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      options.headers = {};</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    options.headers.Cookie = </span><span style="color:#0000ff">this</span><span style="color:#000000">.sessionCookie;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// execute query HTTP</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">let</span><span style="color:#000000"> response;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">try</span><span style="color:#000000"> {</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// asynchronous request</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      response = </span><span style="color:#0000ff">await</span><span style="color:#000000"> </span><span style="color:#0000ff">this</span><span style="color:#000000">.axios.request(</span><span style="color:#a31515">&#x27;main.php&#x27;</span><span style="color:#000000">, options);</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    } </span><span style="color:#0000ff">catch</span><span style="color:#000000"> (error) {</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// the [error] parameter is an exception instance - it can take various forms</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span><span style="color:#0000ff">if</span><span style="color:#000000"> (error.response) {</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// the server response is in [error.response]</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        response = error.response;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      } </span><span style="color:#0000ff">else</span><span style="color:#000000"> {</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// error restart</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000ff">throw</span><span style="color:#000000"> error;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// response is the entire HTTP response from the server (HTTP headers + response itself)</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// retrieve the session cookie if it exists</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">const</span><span style="color:#000000"> setCookie = response.headers</span><span style="font-weight:bold;color:#000000">[&#x27;set-cookie&#x27;]</span><span style="color:#000000">;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">if</span><span style="color:#000000"> (setCookie) {</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// setCookie is an array</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// look for the session cookie in this table</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span><span style="color:#0000ff">let</span><span style="color:#000000"> trouvé = </span><span style="color:#0000ff">false</span><span style="color:#000000">;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span><span style="color:#0000ff">let</span><span style="color:#000000"> i = 0;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span><span style="color:#0000ff">while</span><span style="color:#000000"> (!trouvé &amp;&amp; i &lt; setCookie.length) {</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// look for the session cookie</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000ff">const</span><span style="color:#000000"> results = RegExp(</span><span style="color:#a31515">&#x27;^(&#x27;</span><span style="color:#000000"> + </span><span style="color:#0000ff">this</span><span style="color:#000000">.sessionCookieName + </span><span style="color:#a31515">&#x27;.+?);&#x27;</span><span style="color:#000000">).exec(setCookie</span><span style="font-weight:bold;color:#000000">[i]</span><span style="color:#000000">);</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000ff">if</span><span style="color:#000000"> (results) {</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">          <span style="color:#000000">// the session cookie is stored</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">          <span style="color:#000000">// eslint-disable-next-line require-atomic-updates</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">          </span><span style="color:#0000ff">this</span><span style="color:#000000">.sessionCookie = results</span><span style="font-weight:bold;color:#000000">[1]</span><span style="color:#000000">;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">          <span style="color:#000000">// we found</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">          trouvé = </span><span style="color:#0000ff">true</span><span style="color:#000000">;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        } </span><span style="color:#0000ff">else</span><span style="color:#000000"> {</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">          <span style="color:#000000">// next item</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">          i++;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// the server response is in [response.data]</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">return</span><span style="color:#000000"> response.data;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">// class export</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">export</span><span style="color:#000000"> </span><span style="color:#0000ff">default</span><span style="color:#000000"> Dao;</span></span></span>
 </code></pre></div>
 
 <p>The <strong>[vuejs-10]</strong> project uses only the asynchronous <strong>[initSession]</strong> method in lines 18–30. Note that the <strong>[Dao]</strong> class is instantiated with an <strong>[axios]</strong> parameter on line 10, which is initialized by the calling code. In this case, the calling code is the <strong>[./main.js]</strong> script.</p>
@@ -1121,15 +1121,15 @@
 <h2 id="123-the-plugindao-plugin">12.3. <span style="color: #4f81bd"><strong>The</strong> [pluginDao] <strong>plugin</strong></span></h2>
 <p>The <strong>[pluginDao]</strong> plugin is as follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
-<span class="odt-code-line"><span style="color:#0000ff">export default </span><span style="color:#000000">{</span></span>
-<span class="odt-code-line">  install(Vue, dao) {</span>
-<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008000">// adds a </span><span style="font-weight:bold;color:#008000">[$dao] </span><span style="color:#008000">property to the Vue class</span></span>
-<span class="odt-code-line"><span style="color:#000000">    Object.defineProperty(Vue.prototype, </span><span style="color:#a31515">&#x27;$dao&#x27;</span><span style="color:#000000">, {</span></span>
-<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#008000">// when Vue.$dao is referenced, we return the second parameter </span><span style="font-weight:bold;color:#008000">[dao]</span></span>
-<span class="odt-code-line">      get: () =&gt; dao,</span>
-<span class="odt-code-line">    })</span>
-<span class="odt-code-line">  }</span>
-<span class="odt-code-line">}</span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">export</span><span style="color:#000000"> </span><span style="color:#0000ff">default</span><span style="color:#000000"> {</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  install(Vue, dao) {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// ajoute une propriété [$dao] à la classe Vue</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    Object.defineProperty(Vue.prototype, </span><span style="color:#a31515">&#x27;$dao&#x27;</span><span style="color:#000000">, {</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// lorsque Vue.$dao est référencé, on rend le 2ième paramètre [dao]</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      get: () =&gt; dao,</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    })</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
 </code></pre></div>
 
 <p>If we recall the explanation given for the <strong>[event-bus]</strong> plugin, we see that the <strong>[pluginDao]</strong> plugin creates a new property called <strong>[$dao]</strong> in the <strong>[Vue]</strong> class/function. This property will have (as we will show) as its value the object exported by the <strong>[./Dao]</strong> script, i.e., the previous <strong>[Dao]</strong> class.</p>
@@ -1137,39 +1137,39 @@
 <h2 id="124-the-main-script-mainjs">12.4. <span style="color: #4f81bd"><strong>The main script</strong> [main.js]</span></h2>
 <p>The code for the main script <strong>[main.js]</strong> is as follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
-<span class="odt-code-line">// imports</span>
-<span class="odt-code-line"><span style="color:#0000ff">import </span><span style="color:#000000">Vue </span><span style="color:#0000ff">from </span><span style="color:#a31515">&#x27;vue&#x27;</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">import </span><span style="color:#000000">App </span><span style="color:#0000ff">from </span><span style="color:#a31515">&#x27;./App.vue&#x27;</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">import </span><span style="color:#000000">axios </span><span style="color:#0000ff">from </span><span style="color:#a31515">&#x27;axios&#x27;</span><span style="color:#000000">;</span></span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line">// plugins</span>
-<span class="odt-code-line"><span style="color:#0000ff">import </span><span style="color:#000000">BootstrapVue </span><span style="color:#0000ff">from </span><span style="color:#a31515">&#x27;bootstrap-vue&#x27;</span></span>
-<span class="odt-code-line">Vue.use(BootstrapVue);</span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line">// Bootstrap</span>
-<span class="odt-code-line"><span style="color:#0000ff">import </span><span style="color:#a31515">&#x27;bootstrap/dist/css/bootstrap.css&#x27;</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">import </span><span style="color:#a31515">&#x27;bootstrap-vue/dist/bootstrap-vue.css&#x27;</span></span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line">// <span style="font-weight:bold">[DAO] </span>layer</span>
-<span class="odt-code-line"><span style="color:#0000ff">import </span><span style="color:#000000">Dao </span><span style="color:#0000ff">from </span><span style="color:#a31515">&#x27;./Dao&#x27;</span><span style="color:#000000">;</span></span>
-<span class="odt-code-line">// axios configuration</span>
-<span class="odt-code-line">axios.defaults.timeout = 2000;</span>
-<span class="odt-code-line"><span style="color:#000000">axios.defaults.baseURL = </span><span style="color:#a31515">&#x27;http://localhost/php7/scripts-web/impots/version-14&#x27;</span><span style="color:#000000">;</span></span>
-<span class="odt-code-line"><span style="color:#000000">axios.defaults.withCredentials = </span><span style="color:#0000ff">true</span><span style="color:#000000">;</span></span>
-<span class="odt-code-line">// instantiate the <span style="font-weight:bold">[dao] </span>layer</span>
-<span class="odt-code-line"><span style="color:#0000ff">const </span><span style="color:#000000">dao = </span><span style="color:#0000ff">new </span><span style="color:#000000">Dao(axios);</span></span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line">// <span style="font-weight:bold">[dao] </span>plugin</span>
-<span class="odt-code-line"><span style="color:#0000ff">import </span><span style="color:#000000">pluginDao </span><span style="color:#0000ff">from </span><span style="color:#a31515">&#x27;./plugins/dao&#x27;</span></span>
-<span class="odt-code-line">Vue.use(pluginDao, dao)</span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line">// configuration</span>
-<span class="odt-code-line"><span style="color:#000000">Vue.config.productionTip = </span><span style="color:#0000ff">false</span></span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line">// instantiate project <span style="font-weight:bold">[App]</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">new </span><span style="color:#000000">Vue({</span></span>
-<span class="odt-code-line">  render: h =&gt; h(App),</span>
-<span class="odt-code-line"><span style="color:#000000">}).$mount(</span><span style="color:#a31515">&#x27;#app&#x27;</span><span style="color:#000000">)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">// imports</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">import</span><span style="color:#000000"> Vue </span><span style="color:#0000ff">from</span><span style="color:#000000"> </span><span style="color:#a31515">&#x27;vue&#x27;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">import</span><span style="color:#000000"> App </span><span style="color:#0000ff">from</span><span style="color:#000000"> </span><span style="color:#a31515">&#x27;./App.vue&#x27;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">import</span><span style="color:#000000"> axios </span><span style="color:#0000ff">from</span><span style="color:#000000"> </span><span style="color:#a31515">&#x27;axios&#x27;</span><span style="color:#000000">;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">// plugins</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">import</span><span style="color:#000000"> BootstrapVue </span><span style="color:#0000ff">from</span><span style="color:#000000"> </span><span style="color:#a31515">&#x27;bootstrap-vue&#x27;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">Vue.use(BootstrapVue);</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">// bootstrap</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">import</span><span style="color:#000000"> </span><span style="color:#a31515">&#x27;bootstrap/dist/css/bootstrap.css&#x27;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">import</span><span style="color:#000000"> </span><span style="color:#a31515">&#x27;bootstrap-vue/dist/bootstrap-vue.css&#x27;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold">// couche [dao]</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">import</span><span style="color:#000000"> Dao </span><span style="color:#0000ff">from</span><span style="color:#000000"> </span><span style="color:#a31515">&#x27;./Dao&#x27;</span><span style="color:#000000">;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">// configuration axios</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">axios.defaults.timeout = 2000;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">axios.defaults.baseURL = </span><span style="color:#a31515">&#x27;http://localhost/php7/scripts-web/impots/version-14&#x27;</span><span style="color:#000000">;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">axios.defaults.withCredentials = </span><span style="color:#0000ff">true</span><span style="color:#000000">;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold">// instanciation couche [dao]</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">const</span><span style="color:#000000"> dao = </span><span style="color:#0000ff">new</span><span style="color:#000000"> Dao(axios);</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold">// plugin [dao]</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">import</span><span style="color:#000000"> pluginDao </span><span style="color:#0000ff">from</span><span style="color:#000000"> </span><span style="color:#a31515">&#x27;./plugins/dao&#x27;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">Vue.use(pluginDao, dao)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">// configuration</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">Vue.config.productionTip = </span><span style="color:#0000ff">false</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold">// instanciation projet [App]</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">new</span><span style="color:#000000"> Vue({</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  render: h =&gt; h(App),</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">}).$mount(</span><span style="color:#a31515">&#x27;#app&#x27;</span><span style="color:#000000">)</span></span></span>
 </code></pre></div>
 
 <p>The <strong>[main.js]</strong> script:</p>
@@ -1203,71 +1203,71 @@
 <h2 id="125-the-main-view-appvue">12.5. <span style="color: #4f81bd"><strong>The main view</strong> [App.vue]</span></h2>
 <p>The code for the main view <strong>[App]</strong> is as follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
-<span class="odt-code-line"><span style="color:#0000ff">&lt;</span><span style="color:#800000">template</span><span style="color:#0000ff">&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">div </span><span style="color:#0000ff">class=&quot;container&quot;&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">b-card</span><span style="color:#0000ff">&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#006400">&lt;!-- message --&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">b-alert </span><span style="color:#ff0000">show </span><span style="color:#0000ff">variant=&quot;success&quot; align=&quot;center&quot;&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">h4</span><span style="color:#0000ff">&gt;</span><span style="font-weight:bold;color:#000000">[vuejs-10]</span><span style="color:#000000">: </span><span style="font-weight:bold;color:#000000">[dao] </span><span style="color:#000000">plugin, asynchronous HTTP requests</span><span style="color:#0000ff">&lt;</span><span style="color:#800000">/h4</span><span style="color:#0000ff">&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">/b-alert</span><span style="color:#0000ff">&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#006400">&lt;!-- component making an asynchronous request to the tax calculation server--&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">Component1 </span><span style="color:#0000ff">@error=&quot;doSomethingWithError&quot; @endWaiting=&quot;endWaiting&quot; @beginWaiting=&quot;beginWaiting&quot; /&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#006400">&lt;!-- display of any errors --&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">b-alert </span><span style="color:#ff0000">show</span></span>
-<span class="odt-code-line"><span style="color:#000000">               </span><span style="color:#0000ff">variant=&quot;danger&quot;</span></span>
-<span class="odt-code-line"><span style="color:#000000">               </span><span style="color:#0000ff">v-if=&quot;showError&quot;&gt;</span><span style="font-weight:bold;color:#000000">[error] </span><span style="color:#000000">event intercepted by </span><span style="font-weight:bold;color:#000000">[App]</span><span style="color:#000000">. Value received = </span><span style="font-weight:bold;color:#000000">{{</span><span style="color:#800080">error</span><span style="font-weight:bold;color:#000000">}}</span><span style="color:#0000ff">&lt;</span><span style="color:#800000">/b-alert</span><span style="color:#0000ff">&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#006400">&lt;!-- waiting message with a spinner --&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">b-alert </span><span style="color:#ff0000">show </span><span style="color:#0000ff">v-if=&quot;showWaiting&quot; variant=&quot;light&quot;&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">strong</span><span style="color:#0000ff">&gt;</span><span style="color:#000000">Request to the tax calculation server in progress...</span><span style="color:#0000ff">&lt;</span><span style="color:#800000">/strong</span><span style="color:#0000ff">&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">b-spinner </span><span style="color:#0000ff">variant=&quot;primary&quot; label=&quot;Spinning&quot;&gt;&lt;</span><span style="color:#800000">/b-spinner</span><span style="color:#0000ff">&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">/b-alert</span><span style="color:#0000ff">&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">/b-card</span><span style="color:#0000ff">&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">/div</span><span style="color:#0000ff">&gt;</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">&lt;</span><span style="color:#800000">/template</span><span style="color:#0000ff">&gt;</span></span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#0000ff">&lt;</span><span style="color:#800000">script</span><span style="color:#0000ff">&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#0000ff">import </span><span style="color:#000000">Component1 </span><span style="color:#0000ff">from </span><span style="color:#a31515">&quot;./components/Component1&quot;</span><span style="color:#000000">;</span></span>
-<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#0000ff">export default </span><span style="color:#000000">{</span></span>
-<span class="odt-code-line"><span style="color:#000000">    name: </span><span style="color:#a31515">&quot;app&quot;</span><span style="color:#000000">,</span></span>
-<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008000">// component state</span></span>
-<span class="odt-code-line">    data() {</span>
-<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#0000ff">return </span><span style="color:#000000">{</span></span>
-<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008000">// controls the loading spinner</span></span>
-<span class="odt-code-line"><span style="color:#000000">        showWaiting: </span><span style="color:#0000ff">false</span><span style="color:#000000">,</span></span>
-<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008000">// controls the display of the error</span></span>
-<span class="odt-code-line"><span style="color:#000000">        showError: </span><span style="color:#0000ff">false</span><span style="color:#000000">,</span></span>
-<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008000">// the intercepted error</span></span>
-<span class="odt-code-line">        error: {}</span>
-<span class="odt-code-line">      };</span>
-<span class="odt-code-line">    },</span>
-<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008000">// components used</span></span>
-<span class="odt-code-line">    components: {</span>
-<span class="odt-code-line">      Component1</span>
-<span class="odt-code-line">    },</span>
-<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008000">// event handling methods</span></span>
-<span class="odt-code-line">    methods: {</span>
-<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#008000">// start waiting</span></span>
-<span class="odt-code-line">      beginWaiting() {</span>
-<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008000">// display waiting status</span></span>
-<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">this</span><span style="color:#000000">.showWaiting = </span><span style="color:#0000ff">true</span><span style="color:#000000">;</span></span>
-<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008000">// hide the error message</span></span>
-<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">this</span><span style="color:#000000">.showError = </span><span style="color:#0000ff">false</span><span style="color:#000000">;</span></span>
-<span class="odt-code-line">      },</span>
-<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#008000">// end waiting</span></span>
-<span class="odt-code-line">      endWaiting() {</span>
-<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008000">// hide waiting</span></span>
-<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">this</span><span style="color:#000000">.showWaiting = </span><span style="color:#0000ff">false</span><span style="color:#000000">;</span></span>
-<span class="odt-code-line">      },</span>
-<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#008000">// error handling</span></span>
-<span class="odt-code-line">      doSomethingWithError(error) {</span>
-<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008000">// note that an error occurred</span></span>
-<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">this</span><span style="color:#000000">.error = error;</span></span>
-<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008000">// display the error message</span></span>
-<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">this</span><span style="color:#000000">.showError = </span><span style="color:#0000ff">true</span><span style="color:#000000">;</span></span>
-<span class="odt-code-line">      }</span>
-<span class="odt-code-line">    }</span>
-<span class="odt-code-line">  };</span>
-<span class="odt-code-line"><span style="color:#0000ff">&lt;</span><span style="color:#800000">/script</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;</span><span style="color:#800000">template</span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">div</span><span style="color:#000000"> </span><span style="color:#ff0000">class</span><span style="color:#0000ff">=&quot;container&quot;&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">b-card</span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">&lt;!-- message --&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">b-alert</span><span style="color:#000000"> </span><span style="color:#ff0000">show</span><span style="color:#000000"> </span><span style="color:#ff0000">variant</span><span style="color:#0000ff">=&quot;success&quot;</span><span style="color:#000000"> </span><span style="color:#ff0000">align</span><span style="color:#0000ff">=&quot;center&quot;&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">h4</span><span style="color:#0000ff">&gt;</span><span style="font-weight:bold;color:#000000">[vuejs-10]</span><span style="color:#000000"> : plugin </span><span style="font-weight:bold;color:#000000">[dao]</span><span style="color:#000000">, requêtes HTTP asynchrones</span><span style="color:#0000ff">&lt;/</span><span style="color:#800000">h4</span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span><span style="color:#0000ff">&lt;/</span><span style="color:#800000">b-alert</span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">&lt;!-- composant faisant une requête asynchrone au serveur de calcul d&#x27;impôt--&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">Component1</span><span style="color:#000000"> </span><span style="color:#ff0000">@error</span><span style="color:#0000ff">=&quot;doSomethingWithError&quot;</span><span style="color:#000000"> </span><span style="color:#ff0000">@endWaiting</span><span style="color:#0000ff">=&quot;endWaiting&quot;</span><span style="color:#000000"> </span><span style="color:#ff0000">@beginWaiting</span><span style="color:#0000ff">=&quot;beginWaiting&quot;</span><span style="color:#000000"> </span><span style="color:#0000ff">/&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">&lt;!-- affichage d&#x27;une éventuelle erreur --&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">b-alert</span><span style="color:#000000"> </span><span style="color:#ff0000">show</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">               </span><span style="color:#ff0000">variant</span><span style="color:#0000ff">=&quot;danger&quot;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">               </span><span style="color:#ff0000">v-if</span><span style="color:#0000ff">=&quot;showError&quot;&gt;</span><span style="color:#000000">Evénement </span><span style="font-weight:bold;color:#000000">[error]</span><span style="color:#000000"> intercepté par </span><span style="font-weight:bold;color:#000000">[App]</span><span style="color:#000000">. Valeur reçue = </span><span style="font-weight:bold;color:#000000">{{</span><span style="color:#800080">error</span><span style="font-weight:bold;color:#000000">}}</span><span style="color:#0000ff">&lt;/</span><span style="color:#800000">b-alert</span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">&lt;!-- message d&#x27;attente avec un spinner --&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">b-alert</span><span style="color:#000000"> </span><span style="color:#ff0000">show</span><span style="color:#000000"> </span><span style="color:#ff0000">v-if</span><span style="color:#0000ff">=&quot;showWaiting&quot;</span><span style="color:#000000"> </span><span style="color:#ff0000">variant</span><span style="color:#0000ff">=&quot;light&quot;&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">strong</span><span style="color:#0000ff">&gt;</span><span style="color:#000000">Requête au serveur de calcul d&#x27;impôt en cours...</span><span style="color:#0000ff">&lt;/</span><span style="color:#800000">strong</span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">b-spinner</span><span style="color:#000000"> </span><span style="color:#ff0000">variant</span><span style="color:#0000ff">=&quot;primary&quot;</span><span style="color:#000000"> </span><span style="color:#ff0000">label</span><span style="color:#0000ff">=&quot;Spinning&quot;&gt;&lt;/</span><span style="color:#800000">b-spinner</span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span><span style="color:#0000ff">&lt;/</span><span style="color:#800000">b-alert</span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">&lt;/</span><span style="color:#800000">b-card</span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#0000ff">&lt;/</span><span style="color:#800000">div</span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;/</span><span style="color:#800000">template</span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;</span><span style="color:#800000">script</span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#0000ff">import</span><span style="color:#000000"> Component1 </span><span style="color:#0000ff">from</span><span style="color:#000000"> </span><span style="color:#a31515">&quot;./components/Component1&quot;</span><span style="color:#000000">;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#0000ff">export</span><span style="color:#000000"> </span><span style="color:#0000ff">default</span><span style="color:#000000"> {</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    name: </span><span style="color:#a31515">&quot;app&quot;</span><span style="color:#000000">,</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// état du composant</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    data() {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span><span style="color:#0000ff">return</span><span style="color:#000000"> {</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// contrôle le spinner d&#x27;attente</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        showWaiting: </span><span style="color:#0000ff">false</span><span style="color:#000000">,</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// contrôle l&#x27;affichage de l&#x27;erreur</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        showError: </span><span style="color:#0000ff">false</span><span style="color:#000000">,</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// l&#x27;erreur interceptée</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        error: {}</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      };</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    },</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// composants utilisés</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    components: {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      Component1</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    },</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// méthodes de gestion des évts</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    methods: {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// début attente</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      beginWaiting() {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// on affiche l&#x27;attente</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000ff">this</span><span style="color:#000000">.showWaiting = </span><span style="color:#0000ff">true</span><span style="color:#000000">;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// on cache le msg d&#x27;erreur</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000ff">this</span><span style="color:#000000">.showError = </span><span style="color:#0000ff">false</span><span style="color:#000000">;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      },</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// fin attente</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      endWaiting() {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// on cache l&#x27;attente</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000ff">this</span><span style="color:#000000">.showWaiting = </span><span style="color:#0000ff">false</span><span style="color:#000000">;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      },</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// gestion d&#x27;erreur</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      doSomethingWithError(error) {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// on note qu&#x27;il y a eu erreur</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000ff">this</span><span style="color:#000000">.error = error;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// on affiche le msg d&#x27;erreur</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000ff">this</span><span style="color:#000000">.showError = </span><span style="color:#0000ff">true</span><span style="color:#000000">;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  };</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;/</span><span style="color:#800000">script</span><span style="color:#0000ff">&gt;</span></span></span>
 </code></pre></div>
 
 <p><strong>Comments</strong></p>
@@ -1296,62 +1296,62 @@
 <p><a id="refheadingtoc2480612728496130"></a></p>
 <h2 id="126-the-component1-component">12.6. <span style="color: #4f81bd"><strong>The</strong> [Component1] <strong>component</strong></span></h2>
 <p>The code for the <strong>[Component1]</strong> component is as follows:</p>
-<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
-<span class="odt-code-line"><span style="color:#0000ff">&lt;</span><span style="color:#800000">template</span><span style="color:#0000ff">&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">b-row</span><span style="color:#0000ff">&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">b-col</span><span style="color:#0000ff">&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">b-alert </span><span style="color:#ff0000">show</span></span>
-<span class="odt-code-line"><span style="color:#000000">               </span><span style="color:#0000ff">variant=&quot;warning&quot;</span></span>
-<span class="odt-code-line"><span style="color:#000000">               </span><span style="color:#0000ff">v-if=&quot;showMsg&quot;&gt;</span><span style="color:#000000">Value received from the server = </span><span style="font-weight:bold;color:#000000">{{</span><span style="color:#800080">data</span><span style="font-weight:bold;color:#000000">}}</span><span style="color:#0000ff">&lt;</span><span style="color:#800000">/b-alert</span><span style="color:#0000ff">&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">/b-col</span><span style="color:#0000ff">&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">/b-row</span><span style="color:#0000ff">&gt;</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">&lt;</span><span style="color:#800000">/template</span><span style="color:#0000ff">&gt;</span></span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#0000ff">&lt;</span><span style="color:#800000">script</span><span style="color:#0000ff">&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#0000ff">export default </span><span style="color:#000000">{</span></span>
-<span class="odt-code-line"><span style="color:#000000">    name: </span><span style="color:#a31515">&quot;component1&quot;</span><span style="color:#000000">,</span></span>
-<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008000">// component state</span></span>
-<span class="odt-code-line">    data() {</span>
-<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#0000ff">return </span><span style="color:#000000">{</span></span>
-<span class="odt-code-line"><span style="color:#000000">        showMsg: </span><span style="color:#0000ff">false</span></span>
-<span class="odt-code-line">      };</span>
-<span class="odt-code-line">    },</span>
-<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008000">// event handling methods</span></span>
-<span class="odt-code-line">    methods: {</span>
-<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#008000">// processing data received from the server</span></span>
-<span class="odt-code-line">      doSomethingWithData(data) {</span>
-<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008000">// store the received data</span></span>
-<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">this</span><span style="color:#000000">.data = data;</span></span>
-<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008000">// display it</span></span>
-<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">this</span><span style="color:#000000">.showMsg = </span><span style="color:#0000ff">true</span><span style="color:#000000">;</span></span>
-<span class="odt-code-line">      }</span>
-<span class="odt-code-line">    },</span>
-<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008000">// the component has just been created</span></span>
-<span class="odt-code-line">    created() {</span>
-<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#008000">// Initialize the session with the server - asynchronous request</span></span>
-<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#008000">// we use the promise returned by the </span><span style="font-weight:bold;color:#008000">[dao] </span><span style="color:#008000">layer methods</span></span>
-<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#008000">// signal the start of the operation</span></span>
-<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#0000ff">this</span><span style="color:#000000">.$emit(</span><span style="color:#a31515">&quot;beginWaiting&quot;</span><span style="color:#000000">);</span></span>
-<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#008000">// launch the asynchronous operation</span></span>
-<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#0000ff">this</span><span style="color:#000000">.$dao</span></span>
-<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008000">// This involves initializing a JSON session with the tax calculation server</span></span>
-<span class="odt-code-line">        .initSession()</span>
-<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008000">// method that processes the received data if successful</span></span>
-<span class="odt-code-line">        .then(data =&gt; {</span>
-<span class="odt-code-line"><span style="color:#000000">          </span><span style="color:#008000">// process the received data</span></span>
-<span class="odt-code-line"><span style="color:#000000">          </span><span style="color:#0000ff">this</span><span style="color:#000000">.doSomethingWithData(data);</span></span>
-<span class="odt-code-line">        })</span>
-<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008000">// method that handles the error if an error occurs</span></span>
-<span class="odt-code-line">        .catch(error =&gt; {</span>
-<span class="odt-code-line"><span style="color:#000000">          </span><span style="color:#008000">// propagate the error to the parent component</span></span>
-<span class="odt-code-line"><span style="color:#000000">          </span><span style="color:#0000ff">this</span><span style="color:#000000">.$emit(</span><span style="color:#a31515">&quot;error&quot;</span><span style="color:#000000">, error.message);</span></span>
-<span class="odt-code-line">        }).finally(() =&gt; {</span>
-<span class="odt-code-line"><span style="color:#000000">          </span><span style="color:#008000">// end of wait</span></span>
-<span class="odt-code-line"><span style="color:#000000">          </span><span style="color:#0000ff">this</span><span style="color:#000000">.$emit(</span><span style="color:#a31515">&quot;endWaiting&quot;</span><span style="color:#000000">);</span></span>
-<span class="odt-code-line">        })</span>
-<span class="odt-code-line">    }</span>
-<span class="odt-code-line">  };</span>
-<span class="odt-code-line"><span style="color:#0000ff">&lt;</span><span style="color:#800000">/script</span><span style="color:#0000ff">&gt;</span></span>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-javascript">
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;</span><span style="color:#800000">template</span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">b-row</span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">b-col</span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">b-alert</span><span style="color:#000000"> </span><span style="color:#ff0000">show</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">               </span><span style="color:#ff0000">variant</span><span style="color:#0000ff">=&quot;warning&quot;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">               </span><span style="color:#ff0000">v-if</span><span style="color:#0000ff">=&quot;showMsg&quot;&gt;</span><span style="color:#000000">Valeur reçue du serveur = </span><span style="font-weight:bold;color:#000000">{{</span><span style="color:#800080">data</span><span style="font-weight:bold;color:#000000">}}</span><span style="color:#0000ff">&lt;/</span><span style="color:#800000">b-alert</span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">&lt;/</span><span style="color:#800000">b-col</span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#0000ff">&lt;/</span><span style="color:#800000">b-row</span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;/</span><span style="color:#800000">template</span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;</span><span style="color:#800000">script</span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#0000ff">export</span><span style="color:#000000"> </span><span style="color:#0000ff">default</span><span style="color:#000000"> {</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    name: </span><span style="color:#a31515">&quot;component1&quot;</span><span style="color:#000000">,</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// component status</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    data() {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span><span style="color:#0000ff">return</span><span style="color:#000000"> {</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        showMsg: </span><span style="color:#0000ff">false</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      };</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    },</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// event management methods</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    methods: {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// processing data received from the server</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      doSomethingWithData(data) {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// record the data received</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000ff">this</span><span style="color:#000000">.data = data;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// we display it</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000ff">this</span><span style="color:#000000">.showMsg = </span><span style="color:#0000ff">true</span><span style="color:#000000">;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    },</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// the component has just been created</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    created() {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// initialize the session with the server - asynchronous request</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// we use the promise rendered by the [dao] layer methods</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// we signal the start of the operation</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span><span style="color:#0000ff">this</span><span style="color:#000000">.$emit(</span><span style="color:#a31515">&quot;beginWaiting&quot;</span><span style="color:#000000">);</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// asynchronous operation is launched</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span><span style="color:#0000ff">this</span><span style="color:#000000">.$dao</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// initialize a jSON session with the tax calculation server</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        .initSession()</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// method that processes the data received in the event of success</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        .then(data =&gt; {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">          <span style="color:#000000">// we process the data received</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">          </span><span style="color:#0000ff">this</span><span style="color:#000000">.doSomethingWithData(data);</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        })</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// error handling method in case of error</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        .catch(error =&gt; {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">          <span style="color:#000000">// the error is traced back to the parent component</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">          </span><span style="color:#0000ff">this</span><span style="color:#000000">.$emit(</span><span style="color:#a31515">&quot;error&quot;</span><span style="color:#000000">, error.message);</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        }).finally(() =&gt; {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">          <span style="color:#000000">// end of wait</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">          </span><span style="color:#0000ff">this</span><span style="color:#000000">.$emit(</span><span style="color:#a31515">&quot;endWaiting&quot;</span><span style="color:#000000">);</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        })</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  };</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;/</span><span style="color:#800000">script</span><span style="color:#0000ff">&gt;</span></span></span>
 </code></pre></div>
 
 <p><strong>Comments</strong></p>
@@ -1375,11 +1375,11 @@
 </ul>
 <p><a id="refheadingtoc2480632728496130"></a></p>
 <h2 id="127-running-the-project">12.7. <span style="color: #4f81bd">Running the project</span></h2>
-<p><img src="images/10000000000006F40000024A89EDD34C.png" style="width:14.131cm;height:4.651cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000006F40000024A89EDD34C.png" /></p>
+<p><img src="images/10000000000006F40000024A89EDD34C.png" width="534" height="176" style="width:14.131cm;height:4.651cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000006F40000024A89EDD34C.png" /></p>
 <p>If the tax calculation server is not running when the project is launched, the following result is obtained:</p>
-<p><img src="images/1000000000000743000001E5B468F398.png" style="width:14.75cm;height:3.849cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000743000001E5B468F398.png" /></p>
+<p><img src="images/1000000000000743000001E5B468F398.png" width="557" height="145" style="width:14.75cm;height:3.849cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000743000001E5B468F398.png" /></p>
 <p>Let’s start the <strong>[Laragon]</strong> server (see<a href="https://tahe.developpez.com/tutoriels-cours/php7"><u><span style="color: #0563c1"> https://tahe.developpez.com/tutoriels-cours/php7</span></u></a>) and reload the page above. The result is then as follows:</p>
-<p><img src="images/1000000000000713000001DF5E41F39C.png" style="width:14.37cm;height:3.801cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000713000001DF5E41F39C.png" /></p>
+<p><img src="images/1000000000000713000001DF5E41F39C.png" width="543" height="144" style="width:14.37cm;height:3.801cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000713000001DF5E41F39C.png" /></p>
 <p><strong>Note</strong>: We are using version 14 of the tax calculation server defined at<a href="https://tahe.developpez.com/tutoriels-cours/php7"><u><span style="color: #0563c1"> https://tahe.developpez.com/tutoriels-cours/php7</span></u></a>.</p>
 
 
@@ -1416,8 +1416,8 @@
     <div class="md-footer-meta__inner">
 
       <div>
-        <a href="https://tahe.developpez.com" target="_blank">
-          https://tahe.developpez.com
+        <a href="https://stahe.github.io" target="_blank">
+          https://stahe.github.io
         </a>
         <br>
         This tutorial written by <strong>Serge Tahé</strong> is made available to the public under the terms of the
