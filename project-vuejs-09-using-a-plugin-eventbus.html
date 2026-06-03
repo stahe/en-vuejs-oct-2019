@@ -12,13 +12,13 @@
         <meta name="author" content="Serge Tahé">
       
       
-        <link rel="canonical" href="https://stahe.github.io/en-vuejs-oct-2019/project-vuejs-08-events-independent-of-the-component-hierarchy-component-lifecycle.html">
+        <link rel="canonical" href="https://stahe.github.io/en-vuejs-oct-2019/project-vuejs-09-using-a-plugin-eventbus.html">
       
       
-        <link rel="prev" href="project-vuejs-07-event-propagation-in-the-component-hierarchy.html">
+        <link rel="prev" href="project-vuejs-08-events-independent-of-the-component-hierarchy-component-lifecycle.html">
       
       
-        <link rel="next" href="project-vuejs-09-using-a-plugin-eventbus.html">
+        <link rel="next" href="project-vuejs-10-plugin-dao-asynchronous-requests-http.html">
       
       
         
@@ -29,7 +29,7 @@
     
     
       
-        <title>10. Project [vuejs-08]: Events Independent of the Component Hierarchy, Component Lifecycle - An Introduction to the Vue.js Framework Through Examples</title>
+        <title>11. Project [vuejs-09]: Using a Plugin [eventBus] - An Introduction to the Vue.js Framework Through Examples</title>
       
     
     
@@ -94,7 +94,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#10-project-vuejs-08-events-independent-of-the-component-hierarchy-component-lifecycle" class="md-skip">
+        <a href="#11-project-vuejs-09-using-a-plugin-eventbus" class="md-skip">
           Skip to content
         </a>
       
@@ -130,7 +130,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              10. Project [vuejs-08]: Events Independent of the Component Hierarchy, Component Lifecycle
+              11. Project [vuejs-09]: Using a Plugin [eventBus]
             
           </span>
         </div>
@@ -545,6 +545,33 @@
       
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="project-vuejs-08-events-independent-of-the-component-hierarchy-component-lifecycle.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10. Project [vuejs-08]: Events Independent of the Component Hierarchy, Component Lifecycle
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
     
   
   
@@ -564,7 +591,7 @@
   <span class="md-ellipsis">
     
   
-    10. Project [vuejs-08]: Events Independent of the Component Hierarchy, Component Lifecycle
+    11. Project [vuejs-09]: Using a Plugin [eventBus]
   
 
     
@@ -575,14 +602,14 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <a href="project-vuejs-08-events-independent-of-the-component-hierarchy-component-lifecycle.html" class="md-nav__link md-nav__link--active">
+      <a href="project-vuejs-09-using-a-plugin-eventbus.html" class="md-nav__link md-nav__link--active">
         
   
   
   <span class="md-ellipsis">
     
   
-    10. Project [vuejs-08]: Events Independent of the Component Hierarchy, Component Lifecycle
+    11. Project [vuejs-09]: Using a Plugin [eventBus]
   
 
     
@@ -608,10 +635,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#101-the-main-script-mainjs" class="md-nav__link">
+  <a href="#111-the-pluginsevent-bus-plugin" class="md-nav__link">
     <span class="md-ellipsis">
       
-        10.1. The main script [main.js]
+        11.1. The [./plugins/event-bus] plugin
       
     </span>
   </a>
@@ -619,10 +646,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#102-the-script-even-busjs" class="md-nav__link">
+  <a href="#112-the-main-script-mainjs" class="md-nav__link">
     <span class="md-ellipsis">
       
-        10.2. The script [even-bus.js]
+        11.2. The main script [main.js]
       
     </span>
   </a>
@@ -630,10 +657,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#103-the-main-view-appvue" class="md-nav__link">
+  <a href="#113-the-main-view-app" class="md-nav__link">
     <span class="md-ellipsis">
       
-        10.3. The main view [App.vue]
+        11.3. The main view [App]
       
     </span>
   </a>
@@ -641,10 +668,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#104-the-component1-component" class="md-nav__link">
+  <a href="#114-the-component1-component" class="md-nav__link">
     <span class="md-ellipsis">
       
-        10.4. The [Component1] component
+        11.4. The [Component1] component
       
     </span>
   </a>
@@ -652,10 +679,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#105-the-component2-component" class="md-nav__link">
+  <a href="#115-the-component2-component" class="md-nav__link">
     <span class="md-ellipsis">
       
-        10.5. The [Component2] component
+        11.5. The [Component2] component
       
     </span>
   </a>
@@ -663,10 +690,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#106-the-component3-component" class="md-nav__link">
+  <a href="#116-component-component3" class="md-nav__link">
     <span class="md-ellipsis">
       
-        10.6. The [Component3] component
+        11.6. Component [Component3]
       
     </span>
   </a>
@@ -674,10 +701,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#107-running-the-vuejs-08-project" class="md-nav__link">
+  <a href="#117-running-the-project" class="md-nav__link">
     <span class="md-ellipsis">
       
-        10.7. Running the [vuejs-08] project
+        11.7. Running the project
       
     </span>
   </a>
@@ -688,33 +715,6 @@
   
 </nav>
       
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="project-vuejs-09-using-a-plugin-eventbus.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    11. Project [vuejs-09]: Using a Plugin [eventBus]
-  
-
-    
-  </span>
-  
-  
-
-      </a>
     </li>
   
 
@@ -979,73 +979,97 @@
 
 
 
-<p><span id="refheadingtoc2480172728496130" name="refheadingtoc2480172728496130" class="odt-bookmark-anchor"></span></p>
-<h1 id="10-project-vuejs-08-events-independent-of-the-component-hierarchy-component-lifecycle">10. <span style="color: #365f91"><strong>Project</strong> [vuejs-08]<strong>: Events Independent of the Component Hierarchy, Component Lifecycle</strong></span></h1>
-<p>Project <strong>[vuejs-08]</strong> demonstrates how components not directly linked in the component hierarchy can nevertheless communicate via events. The project tree for <strong>[vuejs-08]</strong> is as follows:</p>
-<p><img src="images/100000000000016700000192FAF13372.png" width="125" height="141" style="width:3.32cm;height:3.718cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000016700000192FAF13372.png" /></p>
-<p><span id="refheadingtoc2480192728496130" name="refheadingtoc2480192728496130" class="odt-bookmark-anchor"></span></p>
-<h2 id="101-the-main-script-mainjs">10.1. <span style="color: #4f81bd"><strong>The main script</strong> [main.js]</span></h2>
-<p>The script <strong>[main.js]</strong> remains the same as in the previous examples.</p>
-<p><span id="refheadingtoc2480212728496130" name="refheadingtoc2480212728496130" class="odt-bookmark-anchor"></span></p>
-<h2 id="102-the-script-even-busjs">10.2. <span style="color: #4f81bd">The script [even-bus.js]</span></h2>
-<p>The script <strong>[event-bus.js]</strong> is the tool we will use to emit and listen for events:</p>
+<p><span id="refheadingtoc2480332728496130" name="refheadingtoc2480332728496130" class="odt-bookmark-anchor"></span></p>
+<h1 id="11-project-vuejs-09-using-a-plugin-eventbus">11. <span style="color: #365f91"><strong>Project</strong> [vuejs-09]<strong>: Using a Plugin</strong> [eventBus]</span></h1>
+<p>The <strong>[vuejs-09]</strong> project is identical to the <strong>[vuejs-08]</strong> project except that it introduces the concept of a plugin. The project directory structure is as follows:</p>
+<p><img src="images/10000000000001650000021767474659.png" width="125" height="188" style="width:3.313cm;height:4.964cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001650000021767474659.png" /></p>
+<p><span id="refheadingtoc2480352728496130" name="refheadingtoc2480352728496130" class="odt-bookmark-anchor"></span></p>
+<h2 id="111-the-pluginsevent-bus-plugin">11.1. <span style="color: #4f81bd">The [./plugins/event-bus] plugin</span></h2>
+<p>The <strong>[./event-bus.js]</strong> script remains the same as in the previous example:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">import</span><span style="color:#000000"> Vue </span><span style="color:#0000ff">from</span><span style="color:#000000"> </span><span style="color:#a31515">&#x27;vue&#x27;</span><span style="color:#000000">;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">const</span><span style="color:#000000"> eventBus = </span><span style="color:#0000ff">new</span><span style="color:#000000"> Vue();</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">export</span><span style="color:#000000"> </span><span style="color:#0000ff">default</span><span style="color:#000000"> eventBus;</span></span></span>
 </code></pre></div>
 
-<p>The <strong>[event-bus]</strong> script simply creates an instance of the <strong>[Vue]</strong> class (lines 1–2) and exports it (line 3). The <strong>[Vue]</strong> class has two methods for handling events:</p>
-<ul>
-  <li><b>[Vue].$emit(name, data)</b>: allows you to trigger an event named <b>[nom] </b>and associated with the data <b>[donnée]</b>;
-  </li>
-  <li><b>[Vue].$on(name, fn)</b>: allows you to intercept the event named <b>[nom] </b>and have it processed by the function <b>[fn]</b>. The function <b>[fn] </b>will receive as a parameter the data <b>[donnée] </b>associated with the event by its emitter;
-  </li>
-</ul>
-
-<p>This event handling is not tied to the component hierarchy. Components that wish to communicate in this way simply need to use <strong>the same instance</strong> of the <strong>[Vue]</strong> class to emit/listen for events. In our example, we will use the <strong>[eventBus]</strong> instance defined by the previous <strong>[event-bus.js]</strong> script.</p>
-<p><span id="refheadingtoc2480232728496130" name="refheadingtoc2480232728496130" class="odt-bookmark-anchor"></span></p>
-<h2 id="103-the-main-view-appvue">10.3. <span style="color: #4f81bd"><strong>The main view</strong> [App.vue]</span></h2>
-<p>The code for the main view <strong>[App]</strong> is as follows:</p>
+<p>The <strong>[./plugins/event-bus.js]</strong> plugin is as follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
-<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;</span><span style="color:#800000">template</span><span style="color:#0000ff">&gt;</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">div</span><span style="color:#000000"> </span><span style="color:#ff0000">class</span><span style="color:#0000ff">=&quot;container&quot;&gt;</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">b-card</span><span style="color:#0000ff">&gt;</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">b-alert</span><span style="color:#000000"> </span><span style="color:#ff0000">show</span><span style="color:#000000"> </span><span style="color:#ff0000">variant</span><span style="color:#0000ff">=&quot;success&quot;</span><span style="color:#000000"> </span><span style="color:#ff0000">align</span><span style="color:#0000ff">=&quot;center&quot;&gt;</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">h4</span><span style="color:#0000ff">&gt;</span><span style="font-weight:bold;color:#000000">[vuejs-08]</span><span style="color:#000000"> : événements indépendants de la hiérarchie des composants, cycle de vie des composants</span><span style="color:#0000ff">&lt;/</span><span style="color:#800000">h4</span><span style="color:#0000ff">&gt;</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span><span style="color:#0000ff">&lt;/</span><span style="color:#800000">b-alert</span><span style="color:#0000ff">&gt;</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">&lt;!-- the three components that communicate via evt --&gt;</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">Component1</span><span style="color:#000000"> </span><span style="color:#0000ff">/&gt;</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">Component3</span><span style="color:#000000"> </span><span style="color:#0000ff">/&gt;</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">Component2</span><span style="color:#000000"> </span><span style="color:#0000ff">/&gt;</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">&lt;/</span><span style="color:#800000">b-card</span><span style="color:#0000ff">&gt;</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#0000ff">&lt;/</span><span style="color:#800000">div</span><span style="color:#0000ff">&gt;</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;/</span><span style="color:#800000">template</span><span style="color:#0000ff">&gt;</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
-<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;</span><span style="color:#800000">script</span><span style="color:#0000ff">&gt;</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#0000ff">import</span><span style="color:#000000"> Component1 </span><span style="color:#0000ff">from</span><span style="color:#000000"> </span><span style="color:#a31515">&quot;./components/Component1&quot;</span><span style="color:#000000">;</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#0000ff">import</span><span style="color:#000000"> Component2 </span><span style="color:#0000ff">from</span><span style="color:#000000"> </span><span style="color:#a31515">&quot;./components/Component2&quot;</span><span style="color:#000000">;</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#0000ff">import</span><span style="color:#000000"> Component3 </span><span style="color:#0000ff">from</span><span style="color:#000000"> </span><span style="color:#a31515">&quot;./components/Component3&quot;</span><span style="color:#000000">;</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#0000ff">export</span><span style="color:#000000"> </span><span style="color:#0000ff">default</span><span style="color:#000000"> {</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    name: </span><span style="color:#a31515">&quot;app&quot;</span><span style="color:#000000">,</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// components</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    components: {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      Component1,</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      Component2,</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      Component3</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  };</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;/</span><span style="color:#800000">script</span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">export</span><span style="color:#000000"> </span><span style="color:#0000ff">default</span><span style="color:#000000"> {</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  install(Vue, eventBus) {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// adds a [$eventBus] property to the Vue class</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    Object.defineProperty(Vue.prototype, </span><span style="color:#a31515">&#x27;$eventBus&#x27;</span><span style="color:#000000">, {</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// when Vue.$eventBus is referenced, we return the 2nd parameter [eventBus]</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      get: () =&gt; eventBus,</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    })</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
 </code></pre></div>
 
+<p><strong>Comments</strong></p>
 <ul>
-  <li>lines 8–10: The main view <b>[App] </b>uses three <b>[Component1, Component2, Component3]</b> components that will communicate via events. The three components are at the same level in the <b>[App]</b> view. Furthermore, there will be no hierarchical relationship between them;
+  <li>A <b>[Vue]</b> plugin is an object with a <b>[install]</b> function (line 2). This function will be automatically called when code declares the use of the plugin;
+  </li>
+  <li>lines 1–9: the object exported by the script;
+  </li>
+  <li>line 2: the function <b>[install] </b>accepts two parameters here:
+    <ul>
+      <li><b>[Vue]</b>: the function obtained by the <b>[import Vue from ‘Vue’]</b> statement. Can be thought of as a class;
+      </li>
+      <li><b>[eventBus]</b>: the object exported by the script <b>[./event-bus]</b>;
+      </li>
+    </ul>
+  </li>
+  <li>Lines 4–7: Modify the definition (known as the prototype) of the function <b>[Vue] </b>by adding the property <b>[$eventBus]</b>. If we consider the term <b>[classe]</b>, the property <b>[$eventBus] </b>is added to the class <b>[Vue]</b>. Components that are instances of <b>[Vue] </b>will therefore have access to this new property;
+  </li>
+  <li>line 6 indicates that when the property <b>[Vue].$eventBus </b>is referenced, the parameter <b>[eventBus] </b>from line 2 will be returned. We will see a little later that this second parameter will be the object <b>[eventBus] </b>exported by the script <b>[./event-bus.js]</b>. So ultimately, when a C component uses the expression <b>[C.$eventBus]</b>, it will reference the <b>[eventBus]</b> object exported by the <b>[./event-bus.js]</b> script. This will prevent it from importing the <b>[./event-bus.js]</b> script. This is the benefit of the plugin: simplifying access to the <b>[eventBus]</b> object exported by the <b>[./event-bus.js]</b> script;
+  </li>
+  <li>Note that the plugin does not have to be named <b>[event-bus.js]</b> itself. It could have been named <b>[plugin-event-bus], </b>for example;
+  </li>
+  <li>Note also that the $ in <b>[$eventBus] </b>is a convention used to denote properties of <b>[Vue] </b>that were added via plugins. This convention is not mandatory. In this text, we will follow it;
   </li>
 </ul>
-<p><span id="refheadingtoc2480252728496130" name="refheadingtoc2480252728496130" class="odt-bookmark-anchor"></span></p>
-<h2 id="104-the-component1-component">10.4. <span style="color: #4f81bd"><strong>The</strong> [Component1] <strong>component</strong></span></h2>
-<p>The code for the <strong>[Component1]</strong> component is as follows:</p>
+<p><span id="refheadingtoc2480372728496130" name="refheadingtoc2480372728496130" class="odt-bookmark-anchor"></span></p>
+<h2 id="112-the-main-script-mainjs">11.2. <span style="color: #4f81bd"><strong>The main script</strong> [main.js]</span></h2>
+<p>The script <strong>[./plugins/event-bus.js]</strong> defines a plugin for the <strong>[Vue.js]</strong> framework. This plugin is not yet used, only defined. It is the script <strong>[main.js]</strong> that activates it:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<span class="odt-code-line"><span class="odt-code-line-content">// imports</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">import</span><span style="color:#000000"> Vue </span><span style="color:#0000ff">from</span><span style="color:#000000"> </span><span style="color:#a31515">&#x27;vue&#x27;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">import</span><span style="color:#000000"> App </span><span style="color:#0000ff">from</span><span style="color:#000000"> </span><span style="color:#a31515">&#x27;./App.vue&#x27;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">// plugins</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">import</span><span style="color:#000000"> BootstrapVue </span><span style="color:#0000ff">from</span><span style="color:#000000"> </span><span style="color:#a31515">&#x27;bootstrap-vue&#x27;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">Vue.use(BootstrapVue);</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">// bootstrap</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">import</span><span style="color:#000000"> </span><span style="color:#a31515">&#x27;bootstrap/dist/css/bootstrap.css&#x27;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">import</span><span style="color:#000000"> </span><span style="color:#a31515">&#x27;bootstrap-vue/dist/bootstrap-vue.css&#x27;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">// eventbus</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">import</span><span style="color:#000000"> eventBus </span><span style="color:#0000ff">from</span><span style="color:#000000"> </span><span style="color:#a31515">&#x27;./event-bus&#x27;</span><span style="color:#000000">;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">import</span><span style="color:#000000"> PluginEventBus </span><span style="color:#0000ff">from</span><span style="color:#000000"> </span><span style="color:#a31515">&#x27;./plugins/event-bus&#x27;</span><span style="color:#000000">;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">Vue.use(PluginEventBus, eventBus);</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">// configuration</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">Vue.config.productionTip = </span><span style="color:#0000ff">false</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">// instantiation project [App]</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">new</span><span style="color:#000000"> Vue({</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  render: h =&gt; h(App),</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">}).$mount(&#x27;#app&#x27;)</span></span>
+</code></pre></div>
+
+<p><strong>Comments</strong></p>
+<ul>
+  <li>Lines 14–16 activate the <b>[PluginEventBus]</b> plugin. After line 16, all instances of the <b>[Vue]</b> class (function) have the <b>[$eventBus]</b> property, which points for each of them to the same object exported by the <b>[./event-bus.js]</b> script. This will be the case for each of the project’s components;
+  </li>
+</ul>
+<p><span id="refheadingtoc2480392728496130" name="refheadingtoc2480392728496130" class="odt-bookmark-anchor"></span></p>
+<h2 id="113-the-main-view-app">11.3. <span style="color: #4f81bd"><strong>The main view</strong> [App]</span></h2>
+<p>The main view <strong>[App]</strong> remains the same as it was in the previous project.</p>
+<p><span id="refheadingtoc2480412728496130" name="refheadingtoc2480412728496130" class="odt-bookmark-anchor"></span></p>
+<h2 id="114-the-component1-component">11.4. <span style="color: #4f81bd"><strong>The</strong> [Component1] <strong>component</strong></span></h2>
+<p>The <strong>[Component1]</strong> component now uses its <strong>[$eventBus]</strong> property to listen for the <strong>[someEvent]</strong> event:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-html">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;</span><span style="color:#800000">template</span><span style="color:#0000ff">&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">b-row</span><span style="color:#0000ff">&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">b-col</span><span style="color:#0000ff">&gt;</span></span></span>
@@ -1057,7 +1081,6 @@
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;/</span><span style="color:#800000">template</span><span style="color:#0000ff">&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;</span><span style="color:#800000">script</span><span style="color:#0000ff">&gt;</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#0000ff">import</span><span style="color:#000000"> eventBus </span><span style="color:#0000ff">from</span><span style="color:#000000"> </span><span style="color:#a31515">&quot;../event-bus.js&quot;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#0000ff">export</span><span style="color:#000000"> </span><span style="color:#0000ff">default</span><span style="color:#000000"> {</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    name: </span><span style="color:#a31515">&quot;component1&quot;</span><span style="color:#000000">,</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// component status</span></span></span>
@@ -1079,7 +1102,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// évt [created] - the component has been created</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    created() {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// listening to event [someEvent]</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      eventBus.$on(</span><span style="color:#a31515">&quot;someEvent&quot;</span><span style="color:#000000">, </span><span style="color:#0000ff">this</span><span style="color:#000000">.doSomething);</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span><span style="color:#0000ff">this</span><span style="color:#000000">.$eventBus.$on(</span><span style="color:#a31515">&quot;someEvent&quot;</span><span style="color:#000000">, </span><span style="color:#0000ff">this</span><span style="color:#000000">.doSomething);</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  };</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;/</span><span style="color:#800000">script</span><span style="color:#0000ff">&gt;</span></span></span>
@@ -1087,23 +1110,13 @@
 
 <p><strong>Comments</strong></p>
 <ul>
-  <li>lines 4-6: an alert that displays the data <b>[data] </b>from line 18. This data will be initialized by the event handler <b>[doSomething] </b>on line 25. This handler is triggered upon receipt of the <b>[someEvent]</b> event (line 34). The alert is displayed based on the value of the <b>[showMsg]</b> attribute in line 19. This attribute is also set by the event handler <b>[doSomething] </b>in line 25;
-  </li>
-  <li>line 32: the function <b>[created] </b>is an event handler. It handles the event <b>[created]</b>, an event emitted during the component’s lifecycle. There are others, such as <b>[beforeCreate, created, beforeMount, mounted, beforeUpdate, updated, beforeDestroy, destroyed]</b>. The <b>[created]</b> event is emitted when the component is created;
-  </li>
-  <li>line 12: the <b>[eventBus]</b> instance of the <b>[Vue]</b> class is imported;
-  </li>
-  <li>line 34: it is used to listen for the <b>[someEvent]</b> event. When this event occurs, the <b>[doSomething]</b> method on line 25 is called;
-  </li>
-  <li>line 25: the <b>[doSomething]</b> method receives, as the <b>[data]</b> parameter, the data that the sender of the <b>[someEvent]</b> event associated with the event;
-  </li>
-  <li>Lines 26–27: The component’s state is updated so that the alert in lines 4–6 displays the received data;
+  <li>Line 33, use of the component&#x27;s <b>[this.$eventBus]</b> property. Note also that the script on line 11 no longer imports the <b>[./event-bus.js]</b> script;
   </li>
 </ul>
-<p><span id="refheadingtoc2480272728496130" name="refheadingtoc2480272728496130" class="odt-bookmark-anchor"></span></p>
-<h2 id="105-the-component2-component">10.5. <span style="color: #4f81bd"><strong>The</strong> [Component2] <strong>component</strong></span></h2>
-<p>The <strong>[Component2]</strong> component is as follows:</p>
-<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<p><span id="refheadingtoc2480432728496130" name="refheadingtoc2480432728496130" class="odt-bookmark-anchor"></span></p>
+<h2 id="115-the-component2-component">11.5. <span style="color: #4f81bd"><strong>The</strong> [Component2] <strong>component</strong></span></h2>
+<p>The <strong>[Component2]</strong> component now uses its <strong>[$eventBus]</strong> property to trigger the <strong>[someEvent]</strong> event:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-html">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;</span><span style="color:#800000">template</span><span style="color:#0000ff">&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">div</span><span style="color:#0000ff">&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">b-button</span><span style="color:#000000"> </span><span style="color:#ff0000">@click</span><span style="color:#0000ff">=&quot;createEvent&quot;&gt;</span><span style="color:#000000">Créer un événement</span><span style="color:#0000ff">&lt;/</span><span style="color:#800000">b-button</span><span style="color:#0000ff">&gt;</span></span></span>
@@ -1111,13 +1124,12 @@
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;/</span><span style="color:#800000">template</span><span style="color:#0000ff">&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">&lt;!-- script --&gt;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;</span><span style="color:#800000">script</span><span style="color:#0000ff">&gt;</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#0000ff">import</span><span style="color:#000000"> eventBus </span><span style="color:#0000ff">from</span><span style="color:#000000"> </span><span style="color:#a31515">&#x27;../event-bus.js&#x27;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#0000ff">export</span><span style="color:#000000"> </span><span style="color:#0000ff">default</span><span style="color:#000000"> {</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    name: </span><span style="color:#a31515">&quot;component2&quot;</span><span style="color:#000000">,</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// event management methods</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// méthodes de gestion des évts</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    methods: {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      createEvent() {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        eventBus.$emit(</span><span style="color:#a31515">&quot;someEvent&quot;</span><span style="color:#000000">, { x: 2, y: 4 })</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000ff">this</span><span style="color:#000000">.$eventBus.$emit(</span><span style="color:#a31515">&quot;someEvent&quot;</span><span style="color:#000000">, { x: 2, y: 4 })</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  };</span></span>
@@ -1126,60 +1138,16 @@
 
 <p><strong>Comments</strong></p>
 <ul>
-  <li>line 3: a button to create an event. When the user clicks this button, the <b>[createEvent]</b> method on line 13 is called;
-  </li>
-  <li>line 8: the <b>[eventBus]</b> instance defined by the <b>[event-bus.js]</b> script is imported;
-  </li>
-  <li>line 14: this instance is used to emit an event named <b>[someEvent] </b>associated with the data <b>[{ x: 2, y: 4 }]</b>. Ultimately,  when the user clicks the button on line 3, the <b>[someEvent]</b> event is triggered. Recalling the definition of <b>[Component1]</b>, it will intercept this event;
+  <li>Line 13, use of the component&#x27;s <b>[this.$eventBus]</b> property. Note also that the script on line 7 no longer imports the <b>[./event-bus.js]</b> script;
   </li>
 </ul>
-<p><span id="refheadingtoc2480292728496130" name="refheadingtoc2480292728496130" class="odt-bookmark-anchor"></span></p>
-<h2 id="106-the-component3-component">10.6. <span style="color: #4f81bd"><strong>The</strong> [Component3] <strong>component</strong></span></h2>
-<p>The code for this component is as follows:</p>
-<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
-<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;</span><span style="color:#800000">template</span><span style="color:#0000ff">&gt;</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">b-row</span><span style="color:#0000ff">&gt;</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">b-col</span><span style="color:#0000ff">&gt;</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">b-alert</span><span style="color:#000000"> </span><span style="color:#ff0000">show</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">               </span><span style="color:#ff0000">v-if</span><span style="color:#0000ff">=&quot;showMsg&quot;&gt;</span><span style="color:#000000">Evénement </span><span style="font-weight:bold;color:#000000">[someEvent]</span><span style="color:#000000"> intercepté par </span><span style="font-weight:bold;color:#000000">[Component3]</span><span style="color:#000000">. Valeur reçue=</span><span style="font-weight:bold;color:#000000">{{</span><span style="color:#800080">data</span><span style="font-weight:bold;color:#000000">}}</span><span style="color:#0000ff">&lt;/</span><span style="color:#800000">b-alert</span><span style="color:#0000ff">&gt;</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">&lt;/</span><span style="color:#800000">b-col</span><span style="color:#0000ff">&gt;</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#0000ff">&lt;/</span><span style="color:#800000">b-row</span><span style="color:#0000ff">&gt;</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;/</span><span style="color:#800000">template</span><span style="color:#0000ff">&gt;</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
-<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;</span><span style="color:#800000">script</span><span style="color:#0000ff">&gt;</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#0000ff">import</span><span style="color:#000000"> eventBus </span><span style="color:#0000ff">from</span><span style="color:#000000"> </span><span style="color:#a31515">&quot;../event-bus.js&quot;</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#0000ff">export</span><span style="color:#000000"> </span><span style="color:#0000ff">default</span><span style="color:#000000"> {</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    name: </span><span style="color:#a31515">&quot;component3&quot;</span><span style="color:#000000">,</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// component status</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    data() {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span><span style="color:#0000ff">return</span><span style="color:#000000"> {</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        data: </span><span style="color:#a31515">&quot;&quot;</span><span style="color:#000000">,</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        showMsg: </span><span style="color:#0000ff">false</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      };</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    },</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    methods: {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// evt management [someEvent]</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      doSomething(data) {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000ff">this</span><span style="color:#000000">.data = data;</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000ff">this</span><span style="color:#000000">.showMsg = </span><span style="color:#0000ff">true</span><span style="color:#000000">;</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      }</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    },</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// component lifecycle management</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// évt [created] - the component has been created</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    created() {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// listening to event [someEvent]</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      eventBus.$on(</span><span style="color:#a31515">&quot;someEvent&quot;</span><span style="color:#000000">, </span><span style="color:#0000ff">this</span><span style="color:#000000">.doSomething);</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  };</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;/</span><span style="color:#800000">script</span><span style="color:#0000ff">&gt;</span></span></span>
-</code></pre></div>
-
-<p><strong>[Component3]</strong> is a clone of <strong>[Component1]</strong>. It is only there to demonstrate that an event can be intercepted by multiple components.</p>
-<p><span id="refheadingtoc2480312728496130" name="refheadingtoc2480312728496130" class="odt-bookmark-anchor"></span></p>
-<h2 id="107-running-the-vuejs-08-project">10.7. <span style="color: #4f81bd"><strong>Running the</strong> [vuejs-08] <strong>project</strong></span></h2>
-<p><img src="images/10000000000006E8000001E1C0B10DC1.png" width="530" height="144" style="width:14.032cm;height:3.817cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000006E8000001E1C0B10DC1.png" /></p>
-<p><img src="images/10000000000008EF0000020CB783A00E.png" width="572" height="131" style="width:15.131cm;height:3.468cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000008EF0000020CB783A00E.png" /></p>
-<p><img src="images/10000000000008F90000031262494467.png" width="574" height="196" style="width:15.191cm;height:5.198cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000008F90000031262494467.png" /></p>
+<p><span id="refheadingtoc2480452728496130" name="refheadingtoc2480452728496130" class="odt-bookmark-anchor"></span></p>
+<h2 id="116-component-component3">11.6. <span style="color: #4f81bd">Component [Component3]</span></h2>
+<p>The <strong>[Component3]</strong> component has the same code as <strong>[Component1]</strong>. It also listens for the <strong>[someEvent]</strong> event.</p>
+<p><span id="refheadingtoc2480472728496130" name="refheadingtoc2480472728496130" class="odt-bookmark-anchor"></span></p>
+<h2 id="117-running-the-project">11.7. <span style="color: #4f81bd">Running the project</span></h2>
+<p><img src="images/10000000000006FC0000023FBFF22C19.png" width="536" height="172" style="width:14.19cm;height:4.563cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000006FC0000023FBFF22C19.png" /></p>
+<p>We get the same results as in the previous project.</p>
 
 
 

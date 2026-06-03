@@ -12,13 +12,13 @@
         <meta name="author" content="Serge Tahé">
       
       
-        <link rel="canonical" href="https://stahe.github.io/en-vuejs-oct-2019/vuejs-client-of-the-tax-calculation-server.html">
+        <link rel="canonical" href="https://stahe.github.io/en-vuejs-oct-2019/client-viewjs-of-the-tax-calculation-server.html">
       
       
         <link rel="prev" href="project-vuejs-15-using-the-vuex-plugin.html">
       
       
-        <link rel="next" href="vuejs-client-improvements.html">
+        <link rel="next" href="improvements-to-the-vuejs-client.html">
       
       
         
@@ -29,7 +29,7 @@
     
     
       
-        <title>18. Vue.js client of the tax calculation server - An Introduction to the Vue.js Framework Through Examples</title>
+        <title>18. Client View.js of the tax calculation server - An Introduction to the Vue.js Framework Through Examples</title>
       
     
     
@@ -56,6 +56,8 @@
     
     
       <link rel="stylesheet" href="stylesheets/focus.css">
+    
+      <link rel="stylesheet" href="stylesheets/bidi.css">
     
     <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -92,7 +94,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#18-vuejs-client-of-the-tax-calculation-server" class="md-skip">
+        <a href="#18-client-viewjs-of-the-tax-calculation-server" class="md-skip">
           Skip to content
         </a>
       
@@ -128,7 +130,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              18. Vue.js client of the tax calculation server
+              18. Client View.js of the tax calculation server
             
           </span>
         </div>
@@ -364,7 +366,7 @@
   <span class="md-ellipsis">
     
   
-    3. Project [vuejs-01]: The Basics
+    3. Project [vuejs-01]: the basics
   
 
     
@@ -384,14 +386,14 @@
   
   
     <li class="md-nav__item">
-      <a href="project-vuejs-02-using-the-bootstrap-css-framework.html" class="md-nav__link">
+      <a href="project-vuejs-02-use-of-the-css-bootstrap-framework.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    4. Project [vuejs-02]: Using the Bootstrap CSS framework
+    4. Project [vuejs-02]: Use of the CSS Bootstrap framework
   
 
     
@@ -411,14 +413,14 @@
   
   
     <li class="md-nav__item">
-      <a href="project-vuejs-03-event-handling.html" class="md-nav__link">
+      <a href="vuejs-03-project-event-handling.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    5. Project [vuejs-03]: Event Handling
+    5. [vuejs-03] project: event handling
   
 
     
@@ -438,14 +440,14 @@
   
   
     <li class="md-nav__item">
-      <a href="project-vuejs-04-directives-v-model-v-bind-computed-properties-input-form.html" class="md-nav__link">
+      <a href="project-vuejs-04-directives-v-model-v-bind-calculated-attributes-input-form.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    6. project [vuejs-04]: directives [v-model, v-bind], computed properties, input form
+    6. Project [vuejs-04]: directives [v-model, v-bind], calculated attributes, input form
   
 
     
@@ -465,14 +467,14 @@
   
   
     <li class="md-nav__item">
-      <a href="vuejs-05-project-v-for-directive.html" class="md-nav__link">
+      <a href="project-vuejs-05-directive-v-for.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    7. [vuejs-05] project: [v-for] directive
+    7. Project [vuejs-05]: Directive [v-for]
   
 
     
@@ -492,14 +494,14 @@
   
   
     <li class="md-nav__item">
-      <a href="project-vuejs-06-laying-out-a-view-with-slots.html" class="md-nav__link">
+      <a href="project-vuejs-06-layout-of-a-view-with-slots.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    8. project [vuejs-06]: laying out a view with slots
+    8. Project [vuejs-06]: Layout of a view with slots
   
 
     
@@ -526,7 +528,7 @@
   <span class="md-ellipsis">
     
   
-    9. project [vuejs-07]: event propagation in the component hierarchy
+    9. Project [vuejs-07]: Event propagation in the component hierarchy
   
 
     
@@ -553,7 +555,7 @@
   <span class="md-ellipsis">
     
   
-    10. Project [vuejs-08]: Events independent of the component hierarchy, component lifecycle
+    10. Project [vuejs-08]: Events Independent of the Component Hierarchy, Component Lifecycle
   
 
     
@@ -573,14 +575,14 @@
   
   
     <li class="md-nav__item">
-      <a href="project-vuejs-09-using-an-eventbus-plugin.html" class="md-nav__link">
+      <a href="project-vuejs-09-using-a-plugin-eventbus.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    11. Project [vuejs-09]: Using an [eventBus] plugin
+    11. Project [vuejs-09]: Using a Plugin [eventBus]
   
 
     
@@ -600,14 +602,14 @@
   
   
     <li class="md-nav__item">
-      <a href="project-vuejs-10-dao-plugin-asynchronous-http-requests.html" class="md-nav__link">
+      <a href="project-vuejs-10-plugin-dao-asynchronous-requests-http.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    12. Project [vuejs-10]: [dao] plugin, asynchronous HTTP requests
+    12. Project [vuejs-10]: plugin [dao], asynchronous requests HTTP
   
 
     
@@ -627,14 +629,14 @@
   
   
     <li class="md-nav__item">
-      <a href="vuejs-11-project-routing-and-navigation.html" class="md-nav__link">
+      <a href="project-vuejs-11-routing-and-navigation.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    13. [vuejs-11] project: routing and navigation
+    13. Project [vuejs-11]: Routing and navigation
   
 
     
@@ -654,14 +656,14 @@
   
   
     <li class="md-nav__item">
-      <a href="project-vuejs-12-html-table-management.html" class="md-nav__link">
+      <a href="project-vuejs-12-table-management-html.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    14. Project [vuejs-12]: HTML table management
+    14. Project [vuejs-12]: Table Management HTML
   
 
     
@@ -688,7 +690,7 @@
   <span class="md-ellipsis">
     
   
-    15. Project [vuejs-13]: Updating a component, using a session
+    15. Project [vuejs-13]: updating a component, using a session
   
 
     
@@ -708,14 +710,14 @@
   
   
     <li class="md-nav__item">
-      <a href="project-vuejs-14-making-the-session-reactive.html" class="md-nav__link">
+      <a href="project-vuejs-14-make-the-session-responsive.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    16. Project [vuejs-14]: Making the session reactive
+    16. Project [vuejs-14]: Make the session responsive
   
 
     
@@ -778,7 +780,7 @@
   <span class="md-ellipsis">
     
   
-    18. Vue.js client of the tax calculation server
+    18. Client View.js of the tax calculation server
   
 
     
@@ -789,14 +791,14 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <a href="vuejs-client-of-the-tax-calculation-server.html" class="md-nav__link md-nav__link--active">
+      <a href="client-viewjs-of-the-tax-calculation-server.html" class="md-nav__link md-nav__link--active">
         
   
   
   <span class="md-ellipsis">
     
   
-    18. Vue.js client of the tax calculation server
+    18. Client View.js of the tax calculation server
   
 
     
@@ -844,34 +846,34 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#183-project-elements-vuejs-20" class="md-nav__link">
+  <a href="#183-elements-of-project-vuejs-20" class="md-nav__link">
     <span class="md-ellipsis">
       
-        18.3. Project Elements [vuejs-20]
+        18.3. Elements of project [vuejs-20]
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="18.3. Project Elements [vuejs-20]">
+    <nav class="md-nav" aria-label="18.3. Elements of project [vuejs-20]">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1831-the-business-and-dao-layers" class="md-nav__link">
+  <a href="#1831-layers-metier-and-dao" class="md-nav__link">
     <span class="md-ellipsis">
       
-        18.3.1. The [business] and [DAO] layers
+        18.3.1. Layers [métier] and [dao]
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="18.3.1. The [business] and [DAO] layers">
+    <nav class="md-nav" aria-label="18.3.1. Layers [métier] and [dao]">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#18311-the-dao-layer" class="md-nav__link">
     <span class="md-ellipsis">
       
-        18.3.1.1. The [DAO] layer
+        18.3.1.1. The [dao] layer
       
     </span>
   </a>
@@ -879,10 +881,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#18312-the-business-layer" class="md-nav__link">
+  <a href="#18312-the-metier-layer" class="md-nav__link">
     <span class="md-ellipsis">
       
-        18.3.1.2. The [business] layer
+        18.3.1.2. The [métier] layer
       
     </span>
   </a>
@@ -955,15 +957,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#184-the-applications-views" class="md-nav__link">
+  <a href="#184-application-views" class="md-nav__link">
     <span class="md-ellipsis">
       
-        18.4. The application’s views
+        18.4. Application Views
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="18.4. The application’s views">
+    <nav class="md-nav" aria-label="18.4. Application Views">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -978,10 +980,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#1842-the-layout-view" class="md-nav__link">
+  <a href="#1842-the-layout-view-layout" class="md-nav__link">
     <span class="md-ellipsis">
       
-        18.4.2. The [Layout] view
+        18.4.2. The layout view [Layout]
       
     </span>
   </a>
@@ -989,10 +991,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#1843-the-authentication-view" class="md-nav__link">
+  <a href="#1843-the-authentification-view" class="md-nav__link">
     <span class="md-ellipsis">
       
-        18.4.3. The [Authentication] view
+        18.4.3. The [Authentification] view
       
     </span>
   </a>
@@ -1011,10 +1013,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#1845-the-navigation-menu-menu" class="md-nav__link">
+  <a href="#1845-the-menu-for-navigation-menu" class="md-nav__link">
     <span class="md-ellipsis">
       
-        18.4.5. The navigation menu [Menu]
+        18.4.5. The menu for navigation [Menu]
       
     </span>
   </a>
@@ -1033,10 +1035,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#1847-the-simulationlist-view" class="md-nav__link">
+  <a href="#1847-the-listesimulations-view" class="md-nav__link">
     <span class="md-ellipsis">
       
-        18.4.7. The [SimulationList] view
+        18.4.7. The [ListeSimulations] view
       
     </span>
   </a>
@@ -1071,10 +1073,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#187-handling-manual-urls" class="md-nav__link">
+  <a href="#187-managing-manual-url-requests" class="md-nav__link">
     <span class="md-ellipsis">
       
-        18.7. Handling Manual URLs
+        18.7. Managing manual URL requests
       
     </span>
   </a>
@@ -1096,14 +1098,14 @@
   
   
     <li class="md-nav__item">
-      <a href="vuejs-client-improvements.html" class="md-nav__link">
+      <a href="improvements-to-the-vuejs-client.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    19. Vue.js Client Improvements
+    19. Improvements to the Vue.js client
   
 
     
@@ -1123,14 +1125,14 @@
   
   
     <li class="md-nav__item">
-      <a href="deploying-the-clientserver-application-on-a-hosting-service.html" class="md-nav__link">
+      <a href="deployment-of-the-clientserver-application-on-a-hosting-service.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    20. Deploying the client/server application on a hosting service
+    20. Deployment of the client/server application on a hosting service
   
 
     
@@ -1160,109 +1162,109 @@
 
 
 
-<p><a id="refheadingtoc2481212728496130"></a></p>
-<h1 id="18-vuejs-client-of-the-tax-calculation-server">18. <span style="color: #365f91">Vue.js client of the tax calculation server</span></h1>
-<p><a id="refheadingtoc2481232728496130"></a></p>
+<p><span id="refheadingtoc2481212728496130" name="refheadingtoc2481212728496130" class="odt-bookmark-anchor"></span></p>
+<h1 id="18-client-viewjs-of-the-tax-calculation-server">18. <span style="color: #365f91">Client View.js of the tax calculation server</span></h1>
+<p><span id="refheadingtoc2481232728496130" name="refheadingtoc2481232728496130" class="odt-bookmark-anchor"></span></p>
 <h2 id="181-architecture">18.1. <span style="color: #4f81bd">Architecture</span></h2>
 <p>We will implement a client/server application with the following architecture:</p>
 <p><img src="images/100000000000085A00000250D815679A.png" width="641" height="178" style="width:16.97cm;height:4.699cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000085A00000250D815679A.png" /></p>
 <p>The tax calculation server will be version 14, developed in the document |<a href="https://tahe.developpez.com/tutoriels-cours/php7"><u><span style="color: #0563c1">https://tahe.developpez.com/tutoriels-cours/php7</span></u></a>|</p>
-<p><a id="refheadingtoc2481252728496130"></a></p>
+<p><span id="refheadingtoc2481252728496130" name="refheadingtoc2481252728496130" class="odt-bookmark-anchor"></span></p>
 <h2 id="182-application-views">18.2. <span style="color: #4f81bd">Application Views</span></h2>
-<p>The application views <strong>[vuejs-10]</strong> are those from version 13 of the document |https://tahe.developpez.com/tutoriels-cours/php7| of the tax calculation server when used in HTML mode. However, in this application, these views will be generated by the JavaScript client rather than the PHP server.</p>
-<p>The first view is the authentication view:</p>
+<p>The views of the <strong>[vuejs-10]</strong> application are those of version 13 from the document |<a href="https://tahe.developpez.com/tutoriels-cours/php7"><u><span style="color: #0563c1">https://</span></u></a>tahe.developpez.com/tutorials-courses/php7| on the tax calculation server when used in HTML mode. However, in the current application, these views will be generated by the client Javascript and not by the server PHP.</p>
+<p>The first screen is the authentication screen:</p>
 <p><img src="images/1000000000000770000004AA35461DA4.png" width="476" height="298" style="width:12.591cm;height:7.895cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000770000004AA35461DA4.png" /></p>
 <p>The second view is the tax calculation view:</p>
 <p><img src="images/10000000000008AD0000055E31785C13.png" width="555" height="343" style="width:14.69cm;height:9.088cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000008AD0000055E31785C13.png" /></p>
 <p>The third view displays the list of simulations performed by the user:</p>
 <p><img src="images/100000000000089D000004D19CD113E8.png" width="552" height="308" style="width:14.593cm;height:8.16cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000089D000004D19CD113E8.png" /></p>
-<p>The screen above shows that you can delete simulation #1. This results in the following view:</p>
+<p>The screen above shows that simulation #1 can be deleted. This results in the following view:</p>
 <p><img src="images/100000000000088F000004622293E2BB.png" width="548" height="280" style="width:14.49cm;height:7.421cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000088F000004622293E2BB.png" /></p>
-<p>If you now delete the last simulation, you get the following new view:</p>
+<p>If we now delete the last simulation, we get the following new view:</p>
 <p><img src="images/10000000000008BE0000036F87B3657D.png" width="559" height="220" style="width:14.803cm;height:5.814cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000008BE0000036F87B3657D.png" /></p>
-<p><a id="refheadingtoc2481272728496130"></a></p>
-<h2 id="183-project-elements-vuejs-20">18.3. <span style="color: #4f81bd"><strong>Project</strong> Elements [vuejs-20]</span></h2>
-<p>The project tree <strong>[vuejs-20]</strong> is as follows:</p>
+<p><span id="refheadingtoc2481272728496130" name="refheadingtoc2481272728496130" class="odt-bookmark-anchor"></span></p>
+<h2 id="183-elements-of-project-vuejs-20">18.3. <span style="color: #4f81bd">Elements <strong>of project</strong> [vuejs-20]</span></h2>
+<p>The project tree for <strong>[vuejs-20]</strong> is as follows:</p>
 <p><img src="images/10000000000001BA0000031B0868DD70.png" width="155" height="278" style="width:4.09cm;height:7.357cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001BA0000031B0868DD70.png" /></p>
 <p>The project elements are as follows:</p>
 <ul>
   <li><b>[assets/logo.jpg]</b>: the project logo;
   </li>
-  <li><b>[layers]</b>: the application’s <b>[business] </b>and <b>[DAO] </b>layers;
+  <li><b>[couches]</b>: the <b>[métier] </b>and <b>[dao] </b>layers of the application;
   </li>
   <li><b>[plugins]</b>: the application’s plugins;
   </li>
-  <li><b>[views]</b>: the application&#x27;s views;
+  <li><b>[views]</b>: the application views;
   </li>
   <li><b>[config.js]</b>: configures the application;
   </li>
-  <li><b>[router.js]</b>: defines the application&#x27;s routing;
+  <li><b>[router.js]</b>: defines the application routing;
   </li>
-  <li><b>[store.js]</b>: the <b>[Vuex] </b>store;
+  <li><b>[store.js]</b>: the store for <b>[Vuex]</b>;
   </li>
   <li><b>[main.js]</b>: the application&#x27;s main script;
   </li>
 </ul>
-<p><a id="refheadingtoc2481292728496130"></a></p>
-<h3 id="1831-the-business-and-dao-layers">18.3.1. <span style="color: #4f81bd"><strong>The</strong> [business] <strong>and</strong> [DAO] <strong>layers</strong></span></h3>
-<p><a id="refheadingtoc2481312728496130"></a></p>
-<h4 id="18311-the-dao-layer">18.3.1.1. <span style="color: #4f81bd"><strong><em>The</em></strong> [DAO] <strong><em>layer</em></strong></span></h4>
-<p>The <strong>[DAO]</strong> layer is implemented by the <strong>[Dao]</strong> class in section <a href="#111projet-vuejs-10--plugin-dao-requetes-http-asynchronesoutline"><u><span style="color: #0563c1">|vuejs-10|</span></u></a></p>
-<p><a id="refheadingtoc2481332728496130"></a></p>
-<h4 id="18312-the-business-layer">18.3.1.2. <span style="color: #4f81bd"><strong><em>The</em></strong> [business] <strong><em>layer</em></strong></span></h4>
-<p>The <strong>[business]</strong> layer is implemented by the <strong>[Business]</strong> class in the document |<a href="https://tahe.developpez.com/tutoriels-cours/php7"><u><span style="color: #0563c1">https://tahe.developpez.com/tutoriels-cours/php7</span></u></a>|. The following <strong>[setTaxAdminData]</strong> method has been added to it:</p>
-<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
-<span class="odt-code-line"><span class="odt-code-line-content">// constructeur</span></span>
+<p><span id="refheadingtoc2481292728496130" name="refheadingtoc2481292728496130" class="odt-bookmark-anchor"></span></p>
+<h3 id="1831-layers-metier-and-dao">18.3.1. <span style="color: #4f81bd"><strong>Layers</strong> [métier] <strong>and</strong> [dao]</span></h3>
+<p><span id="refheadingtoc2481312728496130" name="refheadingtoc2481312728496130" class="odt-bookmark-anchor"></span></p>
+<h4 id="18311-the-dao-layer">18.3.1.1. <span style="color: #4f81bd"><strong><em>The</em></strong> [dao] <strong><em>layer</em></strong></span></h4>
+<p>The <strong>[dao]</strong> layer is implemented by the <strong>[Dao]</strong> class in section <a href="#111projet-vuejs-10--plugin-dao-requetes-http-asynchronesoutline"><u><span style="color: #0563c1">|vuejs-10|</span></u></a></p>
+<p><span id="refheadingtoc2481332728496130" name="refheadingtoc2481332728496130" class="odt-bookmark-anchor"></span></p>
+<h4 id="18312-the-metier-layer">18.3.1.2. <span style="color: #4f81bd"><strong><em>The</em></strong> [métier] <strong><em>layer</em></strong></span></h4>
+<p>The <strong>[métier]</strong> layer is implemented by the <strong>[Métier]</strong> class in the document |<a href="https://tahe.developpez.com/tutoriels-cours/php7"><u><span style="color: #0563c1">https://tahe.developpez.com/tutoriels-cours/php7</span></u></a>|. The following <strong>[setTaxAdminData]</strong> method has been added to it:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-javascript">
+<span class="odt-code-line"><span class="odt-code-line-content">// manufacturer</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#0000ff">constructor</span><span style="color:#000000">(taxAdmindata) {</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// this.taxAdminData : données de l&#x27;administration fiscale</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// this.taxAdminData: tax administration data</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">this</span><span style="color:#000000">.taxAdminData = taxAdmindata;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// setter</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  setTaxAdminData(taxAdmindata) {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// this.taxAdminData : données de l&#x27;administration fiscale</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// this.taxAdminData: tax administration data</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">this</span><span style="color:#000000">.taxAdminData = taxAdmindata;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
 </code></pre></div>
 
 <p>The <strong>[setTaxAdminData]</strong> method does the same thing as the constructor. Its presence allows for the following sequence:</p>
 <ol>
-  <li>instantiate the <b>[Métier] </b>class with the statement <b>[métier=new Métier()] </b>when you want to instantiate the class but do not yet have the <b>[taxAdminData] </b>data;
+  <li>instantiate the <b>[Métier]</b> class with a <b>[métier=new Métier()]</b> statement when you want to instantiate the class but do not yet have the <b>[taxAdminData]</b> data;
   </li>
-  <li>then populate its <b>[taxAdminData] </b>property later using an operation <b>[métier.setTaxAdminData(taxAdmindata)]</b>;
+  <li>then populate its <b>[taxAdminData]</b> property later using a <b>[métier.setTaxAdminData(taxAdmindata)]</b> operation;
   </li>
 </ol>
-<p><a id="refheadingtoc2481352728496130"></a></p>
+<p><span id="refheadingtoc2481352728496130" name="refheadingtoc2481352728496130" class="odt-bookmark-anchor"></span></p>
 <h3 id="1832-the-configuration-file-config">18.3.2. <span style="color: #4f81bd"><strong>The configuration file</strong> [config]</span></h3>
-<p>The <strong>[config.js]</strong> file is as follows:</p>
-<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
-<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold">// utilisation de la bibliothèque [axios]</span></span></span>
+<p>The file <strong>[config.js]</strong> is as follows:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
+<span class="odt-code-line"><span class="odt-code-line-content">// using the [axios] library</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">const</span><span style="color:#000000"> axios = require(</span><span style="color:#a31515">&#x27;axios&#x27;</span><span style="color:#000000">);</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">// timeout des requêtes HTTP</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">// query timeout HTTP</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">axios.defaults.timeout = 2000;</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">// la base des URL du serveur de calcul de l&#x27;impôt</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold">// le schéma [https] pose des problèmes à Firefox parce que le serveur de calcul</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">// de l&#x27;impôt envoie un certificat autosigné. ok avec Chrome et Edge. Safari pas testé.</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">axios.defaults.baseURL = </span><span style="color:#a31515">&#x27;https://localhost/php7/scripts-web/impots/version-14&#x27;</span><span style="color:#000000">;</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">// on va utiliser des cookies</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">// the URL base of the tax calculation server</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">// schema [https] causes problems for Firefox because the calculation server</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">// sends a self-signed certificate. ok with Chrome and Edge. Safari not tested.</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">axios.defaults.baseURL = &#x27;https://localhost/php7/scripts-web/impots/version-14&#x27;;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">// we&#x27;ll use cookies</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">axios.defaults.withCredentials = </span><span style="color:#0000ff">true</span><span style="color:#000000">;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">// export de la configuration</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">// configuration export</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">export</span><span style="color:#000000"> </span><span style="color:#0000ff">default</span><span style="color:#000000"> {</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  axios: axios</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
 </code></pre></div>
 
 <p>This configuration is for the <strong>[axios]</strong> library that the <strong>[dao]</strong> layer uses to make its HTTP requests. Note on line 8 that the server operates on a secure port <strong>[https]</strong>.</p>
-<p><a id="refheadingtoc2481372728496130"></a></p>
+<p><span id="refheadingtoc2481372728496130" name="refheadingtoc2481372728496130" class="odt-bookmark-anchor"></span></p>
 <h3 id="1833-the-plugins">18.3.3. <span style="color: #4f81bd">The plugins</span></h3>
-<p>The plugins <strong>[pluginDao, pluginMétier, pluginConfig]</strong> are designed to create three new properties for the <strong>[Vue]</strong> function/class:</p>
+<p>The <strong>[pluginDao, pluginMétier, pluginConfig]</strong> plugins are designed to create three new properties for the <strong>[Vue]</strong> function/class:</p>
 <ul>
-  <li><b>[$dao]</b>: will have the value of an instance of the <b>[Dao] </b>class;
+  <li><b>[$dao]</b>: will have as its value an instance of the <b>[Dao]</b> class;
   </li>
-  <li><b>[$métier]</b>: will have the value of an instance of the <b>[Métier] </b>class;
+  <li><b>[$métier]</b>: will have as its value an instance of the <b>[Métier]</b> class;
   </li>
-  <li><b>[$config]</b>: will be set to the object exported by the <b>[config] </b>configuration file;
+  <li><b>[$config]</b>: will have as its value the object exported by the configuration file <b>[config]</b>;
   </li>
 </ul>
 
@@ -1270,9 +1272,9 @@
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">export</span><span style="color:#000000"> </span><span style="color:#0000ff">default</span><span style="color:#000000"> {</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  install(Vue, dao) {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// ajoute une propriété [$dao] à la classe Vue</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// adds a [$dao] property to the Vue class</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    Object.defineProperty(Vue.prototype, </span><span style="color:#a31515">&#x27;$dao&#x27;</span><span style="color:#000000">, {</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// lorsque Vue.$dao est référencé, on rend le 2ième paramètre [dao]</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// when Vue.$dao is referenced, we return the 2nd parameter [dao]</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      get: () =&gt; dao,</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    })</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  }</span></span>
@@ -1282,9 +1284,9 @@
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">export</span><span style="color:#000000"> </span><span style="color:#0000ff">default</span><span style="color:#000000"> {</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  install(Vue, métier) {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// ajoute une propriété [$métier] à la classe Vue</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// adds a [$métier] property to the Vue class</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    Object.defineProperty(Vue.prototype, </span><span style="color:#a31515">&#x27;$métier&#x27;</span><span style="color:#000000">, {</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// lorsque Vue.$métier est référencé, on rend le 2ième paramètre [métier]</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// when Vue.$métier is referenced, we return the 2nd parameter [métier]</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      get: () =&gt; métier,</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    })</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  }</span></span>
@@ -1295,163 +1297,163 @@
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">export</span><span style="color:#000000"> </span><span style="color:#0000ff">default</span><span style="color:#000000"> {</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  install(Vue, config) {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// ajoute une propriété [$config] à la classe vue</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// adds a [$config] property to the view class</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    Object.defineProperty(Vue.prototype, </span><span style="color:#a31515">&#x27;$config&#x27;</span><span style="color:#000000">, {</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// lorsque Vue.$config est référencé, on rend le 2ième paramètre [config]</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// when Vue.$config is referenced, we return the 2nd parameter [config]</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      get: () =&gt; config,</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    })</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
 </code></pre></div>
 
-<p><a id="refheadingtoc2481392728496130"></a></p>
+<p><span id="refheadingtoc2481392728496130" name="refheadingtoc2481392728496130" class="odt-bookmark-anchor"></span></p>
 <h3 id="1834-the-vuex-store">18.3.4. <span style="color: #4f81bd"><strong>The</strong> [Vuex] <strong>store</strong></span></h3>
 <p>The <strong>[Vuex]</strong> store is implemented by the following <strong>[store]</strong> file:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
-<span class="odt-code-line"><span class="odt-code-line-content">// plugin Vuex</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">// vuex plugin</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">import</span><span style="color:#000000"> Vue </span><span style="color:#0000ff">from</span><span style="color:#000000"> </span><span style="color:#a31515">&#x27;vue&#x27;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">import</span><span style="color:#000000"> Vuex </span><span style="color:#0000ff">from</span><span style="color:#000000"> </span><span style="color:#a31515">&#x27;vuex&#x27;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">Vue.use(Vuex);</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">// store Vuex</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">// blind Vuex</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">const</span><span style="color:#000000"> store = </span><span style="color:#0000ff">new</span><span style="color:#000000"> </span><span style="color:#2b91af">Vuex</span><span style="color:#000000">.Store({</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  state: {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// le tableau des simulations</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// simulation table</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    simulations: [],</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// le n° de la dernière simulation</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// last simulation number</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    idSimulation: 0</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  },</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  mutations: {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// suppression ligne n° index</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// delete line n° index</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    deleteSimulation(state, index) {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// eslint-disable-next-line no-console</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      console.log(</span><span style="color:#a31515">&quot;mutation deleteSimulation&quot;</span><span style="color:#000000">);</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// on supprime la ligne n° [index]</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// delete line n° [index]</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      state.simulations.splice(index, 1);</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// eslint-disable-next-line no-console</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      console.log(</span><span style="color:#a31515">&quot;store simulations&quot;</span><span style="color:#000000">, state.simulations);</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    },</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// ajout d&#x27;une simulation</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// add a simulation</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    addSimulation(state, simulation) {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// eslint-disable-next-line no-console</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      console.log(</span><span style="color:#a31515">&quot;mutation addSimulation&quot;</span><span style="color:#000000">);</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// n° de la simulation</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// simulation no</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      state.idSimulation++;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      simulation.id = state.idSimulation;</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// on ajoute la simulation au tableau des simulations</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// add the simulation to the simulation table</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      state.simulations.push(simulation);</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    },</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// nettoyage state</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// state cleaning</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    clear(state) {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      state.simulations = [];</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      state.idSimulation = 1;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">});</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold">// export de l&#x27;objet [store]</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">// export object [store]</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">export</span><span style="color:#000000"> </span><span style="color:#0000ff">default</span><span style="color:#000000"> store;</span></span></span>
 </code></pre></div>
 
 <p><strong>Comments</strong></p>
 <ul>
-  <li>lines 2-4: the <b>[Vuex] </b>plugin is integrated into the <b>[Vue] </b>framework;
+  <li>lines 2-4: the <b>[Vuex]</b> plugin is integrated into the <b>[Vue]</b> framework;
   </li>
-  <li>lines 8-13: we put the following elements into the <b>[Vuex] </b>store:
+  <li>lines 8-13: we place the following elements in the <b>[Vuex]</b> store:
     <ul>
       <li><b>[simulations]</b>: the list of simulations performed by the user;
       </li>
-      <li><b>[idSimulation]</b>: the ID of the last simulation performed by the user;
+      <li><b>[idSimulation]</b>: the number of the last simulation performed by the user;
       </li>
     </ul>
   </li>
 </ul>
 
-<p>Note that the store will be shared among the views and that its content is reactive: when it is modified, the views that use it are automatically updated. In our application, only the <strong>[simulations]</strong> element needs to be reactive, not the <strong>[simulationId]</strong> element. We left this element in the store for convenience;</p>
+<p>Note that the store will be shared among the views and that its content is reactive: when it is modified, the views that use it are automatically updated. In our application, only the <strong>[simulations]</strong> element needs to be reactive; the <strong>[idSimulation]</strong> element does not. We left this element in the store for convenience;</p>
 <ul>
-  <li>lines 14–40: the mutations allowed on the <b>[state] </b>object from lines 8–13. Note that these always receive the <b>[state] </b>object from lines 8–13 as their first parameter;
+  <li>lines 14–40: the mutations allowed on the <b>[state]</b> object from lines 8–13. Note that these always receive the <b>[state]</b> object from lines 8–13 as the first parameter;
     <ul>
-      <li>line 16: the <b>[deleteSimulation] </b>mutation allows you to delete a simulation by specifying its <b>[index] </b>number;
+      <li>line 16: the <b>[deleteSimulation]</b> mutation allows you to delete a simulation with the ID <b>[index]</b>;
       </li>
-      <li>line 25: the <b>[addSimulation] </b>mutation allows you to add a new simulation to the simulation array;
+      <li>line 25: the <b>[addSimulation]</b> transaction allows you to add a new simulation to the simulation table;
       </li>
-      <li>line 35: the <b>[clear] </b>operation resets the <b>[state] </b>object from lines 8–13;
+      <li>line 35:  the mutation <b>[clear] </b>resets the object <b>[state] </b>from lines 8–13;
       </li>
     </ul>
   </li>
 </ul>
-<p><a id="refheadingtoc2481412728496130"></a></p>
+<p><span id="refheadingtoc2481412728496130" name="refheadingtoc2481412728496130" class="odt-bookmark-anchor"></span></p>
 <h3 id="1835-the-routing-file-router">18.3.5. <span style="color: #4f81bd"><strong>The routing file</strong> [router]</span></h3>
 <p>The routing file is as follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
 <span class="odt-code-line"><span class="odt-code-line-content">// imports</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">import</span><span style="color:#000000"> Vue </span><span style="color:#0000ff">from</span><span style="color:#000000"> </span><span style="color:#a31515">&#x27;vue&#x27;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">import</span><span style="color:#000000"> VueRouter </span><span style="color:#0000ff">from</span><span style="color:#000000"> </span><span style="color:#a31515">&#x27;vue-router&#x27;</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">// les vues</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">// the views</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">import</span><span style="color:#000000"> Authentification </span><span style="color:#0000ff">from</span><span style="color:#000000"> </span><span style="color:#a31515">&#x27;./views/Authentification&#x27;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">import</span><span style="color:#000000"> CalculImpot </span><span style="color:#0000ff">from</span><span style="color:#000000"> </span><span style="color:#a31515">&#x27;./views/CalculImpot&#x27;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">import</span><span style="color:#000000"> ListeSimulations </span><span style="color:#0000ff">from</span><span style="color:#000000"> </span><span style="color:#a31515">&#x27;./views/ListeSimulations&#x27;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">// plugin de routage</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">// routing plugin</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">Vue.use(VueRouter)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">// les routes de l&#x27;application</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">// application routes</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">const</span><span style="color:#000000"> routes = [</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// authentification</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// authentication</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    path: </span><span style="color:#a31515">&#x27;/&#x27;</span><span style="color:#000000">, name: </span><span style="color:#a31515">&#x27;authentification&#x27;</span><span style="color:#000000">, component: Authentification</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  },</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// calcul de l&#x27;impôt</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// tAX CALCULATION</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    path: </span><span style="color:#a31515">&#x27;/calcul-impot&#x27;</span><span style="color:#000000">, name: </span><span style="color:#a31515">&#x27;calculImpot&#x27;</span><span style="color:#000000">, component: CalculImpot</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  },</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// liste des simulations</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// list of simulations</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    path: </span><span style="color:#a31515">&#x27;/liste-des-simulations&#x27;</span><span style="color:#000000">, name: </span><span style="color:#a31515">&#x27;listeSimulations&#x27;</span><span style="color:#000000">, component: ListeSimulations</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  },</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// fin de session</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// end of session</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    path: </span><span style="color:#a31515">&#x27;/fin-session&#x27;</span><span style="color:#000000">, name: </span><span style="color:#a31515">&#x27;finSession&#x27;</span><span style="color:#000000">, component: Authentification</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">]</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">// le routeur</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">// the router</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">const</span><span style="color:#000000"> router = </span><span style="color:#0000ff">new</span><span style="color:#000000"> VueRouter({</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// les routes</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// the roads</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  routes,</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// le mode d&#x27;affichage des routes dans le navigateur</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// how routes are displayed in the browser</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  mode: </span><span style="color:#a31515">&#x27;history&#x27;</span><span style="color:#000000">,</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">})</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">// export du router</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">// router export</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">export</span><span style="color:#000000"> </span><span style="color:#0000ff">default</span><span style="color:#000000"> router</span></span></span>
 </code></pre></div>
 
 <p><strong>Comments</strong></p>
 <ul>
-  <li>line 16: When the application starts, the <b>[Authentication] </b>view is displayed because its URL is the root <b>[/]</b>;
+  <li>line 16: when the application starts, the <b>[Authentification]</b> view is displayed because its URL is the root <b>[/]</b>;
   </li>
-  <li>line 20: the <b>[TaxCalculation] </b>view is displayed when the URL <b>[/tax-calculation] </b>is requested;
+  <li>line 20: the <b>[CalculImpot]</b> view is displayed when the URL <b>[/calcul-impot] </b>is requested;
   </li>
-  <li>line 24: the <b>[SimulationList] </b>view is displayed when the URL <b>[/simulation-list] </b>is requested;
+  <li>line 24: the view <b>[ListeSimulations] </b>is displayed when URL or <b>[/liste-des-simualtions] </b>is requested;
   </li>
-  <li>line 28: the <b>[Authentication] </b>view is displayed when the URL <b>[/end-session] </b>is requested;
+  <li>line 28: the view <b>[Authentification] </b>is displayed when URL <b>[/fin-session] </b>is requested;
   </li>
-  <li>lines 33–38: a <b>[router] </b>object is created with these routes (line 35) and the <b>[history] </b>mode (line 37) for URL management;
+  <li>lines 33–38: a <b>[router]</b> object is created with these routes (line 35) and the <b>[history]</b> mode (line 37) for managing URL;
   </li>
   <li>line 41: this router is exported;
   </li>
 </ul>
-<p><a id="refheadingtoc2481432728496130"></a></p>
+<p><span id="refheadingtoc2481432728496130" name="refheadingtoc2481432728496130" class="odt-bookmark-anchor"></span></p>
 <h3 id="1836-the-main-script-mainjs">18.3.6. <span style="color: #4f81bd"><strong>The main script</strong> [main.js]</span></h3>
 <p>The <strong>[main.js]</strong> script is as follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
 <span class="odt-code-line"><span class="odt-code-line-content">// imports</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">import</span><span style="color:#000000"> Vue </span><span style="color:#0000ff">from</span><span style="color:#000000"> </span><span style="color:#a31515">&#x27;vue&#x27;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">// vue principale</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">// main view</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">import</span><span style="color:#000000"> Main </span><span style="color:#0000ff">from</span><span style="color:#000000"> </span><span style="color:#a31515">&#x27;./views/Main.vue&#x27;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
-<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold">// plugin [bootstrap-vue]</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">// plugin [bootstrap-vue]</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">import</span><span style="color:#000000"> BootstrapVue </span><span style="color:#0000ff">from</span><span style="color:#000000"> </span><span style="color:#a31515">&#x27;bootstrap-vue&#x27;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">Vue.use(BootstrapVue);</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
@@ -1459,71 +1461,71 @@
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">import</span><span style="color:#000000"> </span><span style="color:#a31515">&#x27;bootstrap/dist/css/bootstrap.css&#x27;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">import</span><span style="color:#000000"> </span><span style="color:#a31515">&#x27;bootstrap-vue/dist/bootstrap-vue.css&#x27;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">// routeur</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">// router</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">import</span><span style="color:#000000"> router </span><span style="color:#0000ff">from</span><span style="color:#000000"> </span><span style="color:#a31515">&#x27;./router&#x27;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
-<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold">// plugin [config]</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">// plugin [config]</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">import</span><span style="color:#000000"> config </span><span style="color:#0000ff">from</span><span style="color:#000000"> </span><span style="color:#a31515">&#x27;./config&#x27;</span><span style="color:#000000">;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">import</span><span style="color:#000000"> pluginConfig </span><span style="color:#0000ff">from</span><span style="color:#000000"> </span><span style="color:#a31515">&#x27;./plugins/pluginConfig&#x27;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">Vue.use(pluginConfig, config)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
-<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold">// instanciation couche [dao]</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">// instantiation layer [dao]</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">import</span><span style="color:#000000"> Dao </span><span style="color:#0000ff">from</span><span style="color:#000000"> </span><span style="color:#a31515">&#x27;./couches/Dao&#x27;</span><span style="color:#000000">;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">const</span><span style="color:#000000"> dao = </span><span style="color:#0000ff">new</span><span style="color:#000000"> Dao(config.axios);</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
-<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold">// plugin [dao]</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">// plugin [dao]</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">import</span><span style="color:#000000"> pluginDao </span><span style="color:#0000ff">from</span><span style="color:#000000"> </span><span style="color:#a31515">&#x27;./plugins/pluginDao&#x27;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">Vue.use(pluginDao, dao)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
-<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold">// instanciation couche [métier]</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">// instantiation layer [métier]</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">import</span><span style="color:#000000"> Métier </span><span style="color:#0000ff">from</span><span style="color:#000000"> </span><span style="color:#a31515">&#x27;./couches/Métier&#x27;</span><span style="color:#000000">;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">const</span><span style="color:#000000"> métier = </span><span style="color:#0000ff">new</span><span style="color:#000000"> Métier();</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
-<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold">// plugin [métier]</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">// plugin [métier]</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">import</span><span style="color:#000000"> pluginMétier </span><span style="color:#0000ff">from</span><span style="color:#000000"> </span><span style="color:#a31515">&#x27;./plugins/pluginMétier&#x27;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">Vue.use(pluginMétier, métier)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">// store Vuex</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">// blind Vuex</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">import</span><span style="color:#000000"> store </span><span style="color:#0000ff">from</span><span style="color:#000000"> </span><span style="color:#a31515">&#x27;./store&#x27;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">// démarrage de l&#x27;UI</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">// start-up of UI</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">new</span><span style="color:#000000"> Vue({</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  el: </span><span style="color:#a31515">&#x27;#app&#x27;</span><span style="color:#000000">,</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// le routeur</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  el: &#x27;#app&#x27;,</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// the router</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  router: router,</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// le store Vuex</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// the Vuex awning</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  store: store,</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// la vue principale</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// the main view</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  render: h =&gt; h(Main),</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">})</span></span>
 </code></pre></div>
 
 <p>Note the following points:</p>
 <ul>
-  <li>lines 18–21: the object exported by the <b>[./config] </b>script will be available in the <b>[Vue.$config] </b>property, and thus available to all views in the application. This was unnecessary here because the <b>[config] </b>object is only used by the <b>[main] </b>script (line 25). However, it is common for the configuration to be needed by multiple views. We therefore wanted to maintain the principle of making it available in a view attribute;
+  <li>lines 18–21: the object exported by the script <b>[./config] </b>will be available in the <b>[Vue.$config]</b> attribute and thus accessible to all views in the application. This was unnecessary here because the <b>[config]</b> object is used only by the <b>[main]</b> script (line 25). However, it is common for the configuration to be required by multiple views. We therefore wanted to maintain the principle of making it available in a view attribute;
   </li>
-  <li>lines 24–25: instantiation of the <b>[dao] </b>layer. The <b>[Dao] </b>class is imported on line 24 and then instantiated on line 25. Its constructor takes the <b>[axios] </b>object—a configuration property—as its only parameter;
+  <li>lines 24–25: instantiation of the <b>[dao]</b> layer. The <b>[Dao]</b> class is imported on line 24 and then instantiated on line 25. Its constructor accepts the <b>[axios]</b> object, a configuration property, as its sole parameter;
   </li>
-  <li>lines 27–29: the <b>[dao] </b>layer is made available in the <b>[$dao] </b>attribute of all views;
+  <li>lines 27–29: the <b>[dao]</b> layer is made available in the <b>[$dao]</b> attribute of all views;
   </li>
-  <li>lines 31–37: we repeat the same sequence for the <b>[business] </b>layer. The constructor of the <b>[Business] </b>class takes <b>[taxAdminData] </b>as a parameter, which represents tax administration data. We do not yet have this data. The <b>[business] </b>object on line 33 will therefore need to be populated later;
+  <li>lines 31–37: the same sequence is repeated for the <b>[métier]</b> layer. The constructor of the <b>[Métier]</b> class takes <b>[taxAdminData]</b> as a parameter, which represents the tax administration data. We do not yet have this data. The <b>[métier]</b> object in line 33 will therefore need to be completed at a later time;
   </li>
-  <li>line 40: we import the <b>[Vuex] </b>store;
+  <li>line 40: the <b>[Vuex]</b> store is imported;
   </li>
-  <li>lines 43–51: We instantiate the main view <b>[Main] </b>(lines 5 and 50), passing it two parameters:
+  <li>Lines 43–51: We instantiate the main view <b>[Main] </b>(lines 5 and 50), passing it two parameters:
     <ul>
       <li>line 46: the router <b>[router] </b>defined on line 16;
       </li>
-      <li>line 48: the <b>[Vuex] </b>store <b>[store] </b>defined on line 40;
+      <li>line 48: the store <b>[Vuex] [store] </b>defined on line 40;
       </li>
-      <li>in both cases, the property name is on the left and its value on the right. The property names <b>[router, store] </b>are set by the <b>[vue-router] </b>and <b>[vuex] </b>frameworks. The associated values can be anything;
+      <li>in both cases, the property name is on the left and its value on the right. The names of the <b>[router, store]</b> properties are set by the <b>[vue-router] </b>and <b>[vuex] </b>frameworks. The associated values can be anything;
       </li>
     </ul>
   </li>
 </ul>
-<p><a id="refheadingtoc2481452728496130"></a></p>
-<h2 id="184-the-applications-views">18.4. <span style="color: #4f81bd">The application’s views</span></h2>
-<p><a id="refheadingtoc2481472728496130"></a></p>
+<p><span id="refheadingtoc2481452728496130" name="refheadingtoc2481452728496130" class="odt-bookmark-anchor"></span></p>
+<h2 id="184-application-views">18.4. <span style="color: #4f81bd">Application Views</span></h2>
+<p><span id="refheadingtoc2481472728496130" name="refheadingtoc2481472728496130" class="odt-bookmark-anchor"></span></p>
 <h3 id="1841-the-main-view-main">18.4.1. <span style="color: #4f81bd"><strong>The main view</strong> [Main]</span></h3>
 <p>The code for the main view <strong>[Main]</strong> is as follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-javascript">
@@ -1604,56 +1606,56 @@
 
 <p><strong>Comments</strong></p>
 <ul>
-  <li>The <b>[Main] </b>view handles the layout of the routed and displayed view. Line 23:
+  <li>The <b>[Main]</b> view ensures the layout of the routed and displayed view Line 23:
   </li>
 </ul>
 
 <p><img src="images/1000000000000697000004B3516B4F3A.png" width="422" height="301" style="width:11.16cm;height:7.959cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000697000004B3516B4F3A.png" /></p>
 <ul>
-  <li>Lines 5–15 display zone 1;
+  <li>Lines 5–15 display area 1;
   </li>
   <li>line 23 displays the routed view <b>[2]</b>;
   </li>
   <li>Lines 16–19: an alert displayed only in the event of a communication error with the tax calculation server;
   </li>
-  <li>Lines 25–28: a loading message displayed for each HTTP request made to the server;
+  <li>lines 25–28: a waiting message displayed for each HTTP request made to the server;
   </li>
-  <li>all views will be displayed with this layout since each routed view is displayed by lines 20–24. The <b>[Main] </b>view is used to factor out what can be shared by the different views;
+  <li>all views will be displayed with this layout since each routed view is displayed by lines 20–24. The <b>[Main]</b> view is used to factor out what can be shared by the different views;
   </li>
   <li>Line 23: Each routed view can trigger three events:
     <ul>
-      <li><b>[loading]</b>: an HTTP request has been sent. The loading message must be displayed;
+      <li><b>[loading]</b>: a HTTP request has been launched. The message indicating that a response is pending must be displayed;
       </li>
-      <li><b>[error]</b>: the HTTP request ended in an error. The error message must be displayed and the routed view hidden;
+      <li><b>[error]</b>: The request HTTP ended with an error. Display the error message and hide the routed view;
       </li>
     </ul>
   </li>
   <li>lines 38–49: the view’s state:
     <ul>
-      <li>line 41: <b>[showLoading] </b>controls the display of the message indicating that an HTTP request is in progress (line 25);
+      <li>line 41: <b>[showLoading] </b>controls the display of the message waiting for the completion of a HTTP request (line 25);
       </li>
-      <li>line 43: <b>[showError] </b>controls the display of the error message for an HTTP request (lines 17–21);
+      <li>line 43: <b>[showError] </b>controls the display of the error message for a HTTP request (lines 17–21);
       </li>
       <li>line 45: <b>[showView] </b>controls the display of the routed view (line 23);
       </li>
     </ul>
   </li>
-  <li>lines 53–63: the <b>[mShowError] </b>method handles the <b>[error] </b>event emitted by the routed view (line 23);
+  <li>lines 53–63: the <b>[mShowError]</b> method handles the <b>[error]</b> event emitted by the routed view (line 23);
   </li>
-  <li>Lines 65–70: The <b>[mShowLoading] </b>method handles the <b>[loading] </b>event emitted by the routed view (line 23);
+  <li>lines 65–70: the <b>[mShowLoading]</b> method handles the <b>[loading]</b> event emitted by the routed view (line 23);
   </li>
-  <li>line 23: We will focus on the <b>[error] </b>and <b>[loading] </b>events. They are only intercepted if the routed view is displayed <b>[showView=true]</b>. This is why the routed view is initially displayed (line 45). It is only hidden in the event of an error (line 60). To avoid this issue, we could have used the <b>[v-show] </b>directive instead of <b>[v-if]</b>. The difference between these two directives is as follows:
+  <li>line 23: pay attention to events <b>[error] </b>and <b>[loading]</b>. They are intercepted only if the routed view is displayed (<b>[showView=true]</b>). This is why the routed view is initially displayed (line 45). It is hidden only in the event of an error (line 60). To avoid this problem, we could have used the directive <b>[v-show] </b>instead of <b>[v-if]</b>. The difference between these two directives is as follows:
     <ul>
-      <li><b>[v-if=’false’] </b>hides the controlled block by removing it from the global HTML. Events from the routed view can then no longer be intercepted;
+      <li><b>[v-if=’false’] </b>hides the controlled block by removing it from the global HTML code. Events from the routed view can then no longer be intercepted;
       </li>
-      <li><b>[v-show=’false’] </b>hides the controlled block by manipulating its CSS, but the block’s code remains present in the global HTML and can thus intercept events from the routed view;
+      <li><b>[v-show=’false’] </b>hides the controlled block by modifying its CSS, but the block’s code remains present in the global HTML and can thus intercept events from the routed view;
       </li>
     </ul>
   </li>
 </ul>
-<p><a id="refheadingtoc2481492728496130"></a></p>
-<h3 id="1842-the-layout-view">18.4.2. <span style="color: #4f81bd"><strong>The</strong> [Layout] <strong>view</strong></span></h3>
-<p>The <strong>[Layout]</strong> view code is as follows:</p>
+<p><span id="refheadingtoc2481492728496130" name="refheadingtoc2481492728496130" class="odt-bookmark-anchor"></span></p>
+<h3 id="1842-the-layout-view-layout">18.4.2. <span style="color: #4f81bd"><strong>The layout view</strong> [Layout]</span></h3>
+<p>The code for the <strong>[Layout]</strong> view is as follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-html">
 <span class="odt-code-line"><span class="odt-code-line-content">&lt;!-- definition HTML of the routed view layout --&gt;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;</span><span style="color:#800000">template</span><span style="color:#0000ff">&gt;</span></span></span>
@@ -1691,54 +1693,54 @@
 
 <p><strong>Comments</strong></p>
 <ul>
-  <li>The <b>[Layout] </b>view allows you to split the routed view into two areas:
+  <li>The <b>[Layout]</b> view allows you to split the routed view into two areas:
     <ul>
-      <li>a 3-column Bootstrap area on the left (lines 7–9). This area will contain the navigation menu when one is present;
+      <li>a 3-column Bootstrap area on the left (lines 7–9). This area will display the menu from navigation when one is available;
       </li>
       <li>a 9-column area on the right (lines 11–13). This area will display the information provided by the routed view;
       </li>
     </ul>
   </li>
 </ul>
-<p><a id="refheadingtoc2481512728496130"></a></p>
-<h3 id="1843-the-authentication-view">18.4.3. <span style="color: #4f81bd">The [Authentication] view</span></h3>
+<p><span id="refheadingtoc2481512728496130" name="refheadingtoc2481512728496130" class="odt-bookmark-anchor"></span></p>
+<h3 id="1843-the-authentification-view">18.4.3. <span style="color: #4f81bd">The [Authentification] view</span></h3>
 <p>The authentication view is as follows:</p>
 <p><img src="images/1000000000000770000004AA32C99067.png" width="476" height="298" style="width:12.591cm;height:7.895cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000770000004AA32C99067.png" /></p>
-<p>This view is derived from the <strong>[Layout]</strong> by removing the left column to display only the right column.</p>
+<p>This view is obtained from <strong>[Layout]</strong> by removing the left column to display only the right column.</p>
 <p>Its code is as follows:</p>
-<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-javascript">
-<span class="odt-code-line"><span class="odt-code-line-content">&lt;!-- définition HTML de la vue --&gt;</span></span>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<span class="odt-code-line"><span class="odt-code-line-content">&lt;!-- definition HTML of the view --&gt;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;</span><span style="color:#800000">template</span><span style="color:#0000ff">&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">Layout</span><span style="color:#000000"> </span><span style="color:#ff0000">:left</span><span style="color:#0000ff">=&quot;false&quot;</span><span style="color:#000000"> </span><span style="color:#ff0000">:right</span><span style="color:#0000ff">=&quot;true&quot;&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">template</span><span style="color:#000000"> </span><span style="color:#ff0000">slot</span><span style="color:#0000ff">=&quot;right&quot;&gt;</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">&lt;!-- formulaire HTML - on poste ses valeurs avec l&#x27;action [authentifier-utilisateur] --&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">&lt;!-- form HTML - post values with [authentifier-utilisateur] action --&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">b-form</span><span style="color:#000000"> </span><span style="color:#ff0000">@submit.prevent</span><span style="color:#0000ff">=&quot;login&quot;&gt;</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">&lt;!-- titre --&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">&lt;!-- title --&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">b-alert</span><span style="color:#000000"> </span><span style="color:#ff0000">show</span><span style="color:#000000"> </span><span style="color:#ff0000">variant</span><span style="color:#0000ff">=&quot;primary&quot;&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">          </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">h4</span><span style="color:#0000ff">&gt;</span><span style="color:#000000">Bienvenue. Veuillez vous authentifier pour vous connecter</span><span style="color:#0000ff">&lt;/</span><span style="color:#800000">h4</span><span style="color:#0000ff">&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000ff">&lt;/</span><span style="color:#800000">b-alert</span><span style="color:#0000ff">&gt;</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">&lt;!-- 1ère ligne --&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">&lt;!-- 1st line --&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">b-form-group</span><span style="color:#000000"> </span><span style="color:#ff0000">label</span><span style="color:#0000ff">=&quot;Nom d&#x27;utilisateur&quot;</span><span style="color:#000000"> </span><span style="color:#ff0000">label-for</span><span style="color:#0000ff">=&quot;user&quot;</span><span style="color:#000000"> </span><span style="color:#ff0000">label-cols</span><span style="color:#0000ff">=&quot;3&quot;&gt;</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">          <span style="color:#000000">&lt;!-- zone de saisie user --&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">          <span style="color:#000000">&lt;!-- user input field --&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">          </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">b-col</span><span style="color:#000000"> </span><span style="color:#ff0000">cols</span><span style="color:#0000ff">=&quot;6&quot;&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">b-form-input</span><span style="color:#000000"> </span><span style="color:#ff0000">type</span><span style="color:#0000ff">=&quot;text&quot;</span><span style="color:#000000"> </span><span style="color:#ff0000">id</span><span style="color:#0000ff">=&quot;user&quot;</span><span style="color:#000000"> </span><span style="color:#ff0000">placeholder</span><span style="color:#0000ff">=&quot;Nom d&#x27;utilisateur&quot;</span><span style="color:#000000"> </span><span style="color:#ff0000">v-model</span><span style="color:#0000ff">=&quot;user&quot;</span><span style="color:#000000"> </span><span style="color:#0000ff">/&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">          </span><span style="color:#0000ff">&lt;/</span><span style="color:#800000">b-col</span><span style="color:#0000ff">&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000ff">&lt;/</span><span style="color:#800000">b-form-group</span><span style="color:#0000ff">&gt;</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">&lt;!-- 2ième ligne --&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">&lt;!-- 2nd line --&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">b-form-group</span><span style="color:#000000"> </span><span style="color:#ff0000">label</span><span style="color:#0000ff">=&quot;Mot de passe&quot;</span><span style="color:#000000"> </span><span style="color:#ff0000">label-for</span><span style="color:#0000ff">=&quot;password&quot;</span><span style="color:#000000"> </span><span style="color:#ff0000">label-cols</span><span style="color:#0000ff">=&quot;3&quot;&gt;</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">          <span style="color:#000000">&lt;!-- zone de saisie password --&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">          <span style="color:#000000">&lt;!-- password input field --&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">          </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">b-col</span><span style="color:#000000"> </span><span style="color:#ff0000">cols</span><span style="color:#0000ff">=&quot;6&quot;&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">b-input</span><span style="color:#000000"> </span><span style="color:#ff0000">type</span><span style="color:#0000ff">=&quot;password&quot;</span><span style="color:#000000"> </span><span style="color:#ff0000">id</span><span style="color:#0000ff">=&quot;password&quot;</span><span style="color:#000000"> </span><span style="color:#ff0000">placeholder</span><span style="color:#0000ff">=&quot;Mot de passe&quot;</span><span style="color:#000000"> </span><span style="color:#ff0000">v-model</span><span style="color:#0000ff">=&quot;password&quot;</span><span style="color:#000000"> </span><span style="color:#0000ff">/&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">          </span><span style="color:#0000ff">&lt;/</span><span style="color:#800000">b-col</span><span style="color:#0000ff">&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000ff">&lt;/</span><span style="color:#800000">b-form-group</span><span style="color:#0000ff">&gt;</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">&lt;!-- 3ième ligne --&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">&lt;!-- 3rd line --&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">b-alert</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">          </span><span style="color:#ff0000">show</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">          </span><span style="color:#ff0000">variant</span><span style="color:#0000ff">=&quot;danger&quot;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">          </span><span style="color:#ff0000">v-if</span><span style="color:#0000ff">=&quot;showError&quot;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">          </span><span style="color:#ff0000">class</span><span style="color:#0000ff">=&quot;mt-3&quot;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000ff">&gt;</span><span style="color:#000000">L&#x27;erreur suivante s&#x27;est produite : </span><span style="font-weight:bold;color:#000000">{{</span><span style="color:#800080">message</span><span style="font-weight:bold;color:#000000">}}</span><span style="color:#0000ff">&lt;/</span><span style="color:#800000">b-alert</span><span style="color:#0000ff">&gt;</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">&lt;!-- bouton de type [submit] sur une 3ième ligne --&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">&lt;!-- button type [submit] on a 3rd line --&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">b-row</span><span style="color:#0000ff">&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">          </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">b-col</span><span style="color:#000000"> </span><span style="color:#ff0000">cols</span><span style="color:#0000ff">=&quot;2&quot;&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">b-button</span><span style="color:#000000"> </span><span style="color:#ff0000">variant</span><span style="color:#0000ff">=&quot;primary&quot;</span><span style="color:#000000"> </span><span style="color:#ff0000">type</span><span style="color:#0000ff">=&quot;submit&quot;</span><span style="color:#000000"> </span><span style="color:#ff0000">:disabled</span><span style="color:#0000ff">=&quot;!valid&quot;&gt;</span><span style="color:#000000">Valider</span><span style="color:#0000ff">&lt;/</span><span style="color:#800000">b-button</span><span style="color:#0000ff">&gt;</span></span></span>
@@ -1749,7 +1751,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#0000ff">&lt;/</span><span style="color:#800000">Layout</span><span style="color:#0000ff">&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;/</span><span style="color:#800000">template</span><span style="color:#0000ff">&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">&lt;!-- dynamique de la vue --&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">&lt;!-- view dynamics --&gt;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;</span><span style="color:#800000">script</span><span style="color:#0000ff">&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">import</span><span style="color:#000000"> Layout </span><span style="color:#0000ff">from</span><span style="color:#000000"> </span><span style="color:#a31515">&quot;./Layout&quot;</span><span style="color:#000000">;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">export</span><span style="color:#000000"> </span><span style="color:#0000ff">default</span><span style="color:#000000"> {</span></span></span>
@@ -1821,7 +1823,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content">        }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// no error</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000ff">this</span><span style="color:#000000">.showError = </span><span style="color:#0000ff">false</span><span style="color:#000000">;</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// the received data is stored in the [business] layer</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// the received data is stored in the [métier] layer</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000ff">this</span><span style="color:#000000">.$métier.setTaxAdminData(response2.réponse);</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// we move on to the tax calculation view</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000ff">this</span><span style="color:#000000">.$router.push({ name: </span><span style="color:#a31515">&quot;calculImpot&quot;</span><span style="color:#000000"> });</span></span></span>
@@ -1838,10 +1840,10 @@
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// start a jSON session with the server</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// start waiting</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">this</span><span style="color:#000000">.$emit(</span><span style="color:#a31515">&quot;loading&quot;</span><span style="color:#000000">, </span><span style="color:#0000ff">true</span><span style="color:#000000">);</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// initialize the session with the server - asynchronous request</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// we use the promise rendered by the [dao] layer methods</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// on initialise la session avec le serveur - requête asynchrone</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// we use the promise rendered by [dao] layer methods</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">this</span><span style="color:#000000">.$dao</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// initialize a jSON session</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// on initialise une session jSON</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      .initSession()</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// we got the answer</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      .then(response =&gt; {</span></span>
@@ -1859,7 +1861,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content">      })</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// in case of error</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      .catch(error =&gt; {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// the error is traced back to the [Main] view</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// trace the error to view [Main]</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000ff">this</span><span style="color:#000000">.$emit(</span><span style="color:#a31515">&quot;error&quot;</span><span style="color:#000000">, error);</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      });</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  }</span></span>
@@ -1869,21 +1871,21 @@
 
 <p><strong>Comments</strong></p>
 <ul>
-  <li>line 3: the <b>[Authentication] </b>view uses only the right column of the <b>[Layout] </b>(lines 3 and 4);
+  <li>line 3: the <b>[Authentification]</b> view uses only the right column of <b>[Layout] </b>(lines 3 and 4);
   </li>
   <li>lines 6–38: the Bootstrap form that generates area 1 in the screenshot above;
   </li>
-  <li>line 6: the <b>[@submit] </b>event occurs when the user clicks the <b>[submit] </b>button on line 35. The <b>[prevent] </b>modifier ensures that the page is not reloaded upon <b>[submit]</b>. We could also have written:
+  <li>line 6: the <b>[@submit]</b> event occurs when the user clicks the <b>[submit]</b> button on line 35. The <b>[prevent]</b> modifier specifies that the page should not reload during the <b>[submit] event</b>. We could also have written:
     <ul>
-      <li>a &lt;b-form&gt; tag without handling the <b>[submit] </b>event;
+      <li>a &lt;b-form&gt; tag without handling the <b>[submit]</b> event;
       </li>
-      <li>a &lt;b-button&gt; tag with the <b>[@click=&#x27;login&#x27;] </b>event and without the <b>[type=&#x27;submit&#x27;] </b>attribute;
+      <li>a &lt;b-button&gt; tag with the <b>[@click=’login’]</b> event and without the <b>[type=’submit’]</b> attribute;
       </li>
     </ul>
   </li>
 </ul>
 
-<p>That works too. The advantage of the chosen solution is that the form is submitted not only by clicking the <strong>[Submit]</strong> button but also by pressing the <strong>[Enter]</strong> key in the input fields. The <strong>[&lt;b-form @submit.prevent=&quot;login&quot;&gt;]</strong> solution was therefore chosen here for the user’s convenience;</p>
+<p>That works as well. The advantage of the chosen solution is that submit is triggered not only by clicking the <strong>[Valider]</strong> button but also by a validation (<strong>[Entrée]</strong> key) in the input fields. It is therefore for the user’s convenience that the <strong>[&lt;b-form @submit.prevent=&quot;login&quot;&gt;]</strong> solution was chosen here;</p>
 <ul>
   <li>lines 33–37: an alert that appears when the server has rejected the credentials entered by the user:
   </li>
@@ -1891,59 +1893,59 @@
 
 <p><img src="images/100000000000065D0000053EB147A75B.png" width="408" height="336" style="width:10.783cm;height:8.881cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000065D0000053EB147A75B.png" /></p>
 <ul>
-  <li>line 35: the <b>[Submit] </b>button is not always active. Its state depends on the calculated attribute <b>[valid] </b>in lines 71–73. The <b>[valid] </b>attribute is true if:
+  <li>line 35: the <b>[Valider]</b> button is not always active. Its state depends on the calculated attribute <b>[valid] </b>in lines 71–73. The attribute <b>[valid] </b>is true if:
     <ul>
-      <li>there is something in the <b>[user, password] </b>fields of the form;
+      <li>there is something in the <b>[user, password]</b> fields of the form;
       </li>
-      <li>the JSON session has started. Initially, this session has not started (line 59) and therefore the <b>[Validate] </b>button is inactive.
+      <li>the jSON session has started. Initially, this session has not started (line 59) and therefore the <b>[Valider]</b> button is inactive.
       </li>
     </ul>
   </li>
-  <li>lines 49–60: the state of the view;
+  <li>lines 49–60: the view state;
     <ul>
-      <li><b>[user] </b>represents the user’s input in the <b>[user] </b>field (lines 12–17) of the form. The <b>[v-model] </b>directive on line 15 establishes a two-way binding between the user’s input and the <b>[user] </b>attribute of the view;
+      <li><b>[user] </b>represents the user’s input in the <b>[user]</b> field (lines 12–17) of the form. The <b>[v-model]</b> directive on line 15 establishes a two-way binding between the user input and the <b>[user]</b> attribute of the view;
       </li>
-      <li><b>[password] </b>represents the user’s input in the <b>[password] </b>field (lines 19–24) of the form. The <b>[v-model] </b>directive on line 22 establishes a two-way binding between the user’s input and the view’s <b>[password] </b>attribute;
+      <li><b>[password] </b>represents the user&#x27;s input in field <b>[password] </b>(lines 19–24) of the form. The <b>[v-model]</b> directive on line 22 establishes a two-way link between the user&#x27;s input and the <b>[password]</b> attribute of the view;
       </li>
-      <li><b>[showError] </b>controls (line 29) the display of the alert in lines 26–31;
+      <li><b>[showError] </b>controls (line 29) the display of the alert for lines 26–31;
       </li>
-      <li><b>[message] </b>is the error message (line 31) to be displayed in the alert on lines 26–31;
+      <li><b>[message] </b>is the error message (line 31) to be displayed in the alert for lines 26–31;
       </li>
-      <li><b>[sessionStarted] </b>indicates whether or not the JSON session with the server has started. Initially, this attribute has the value <b>[false] </b>(line 59). The JSON session with the server is initialized in the <b>[created] </b>event of the view’s lifecycle, lines 126–156. If the server responds positively, then the <b>[sessionStarted] </b>attribute is set to <b>[true] </b>(line 149);
+      <li><b>[sessionStarted] </b>indicates whether the jSON session with the server has started or not. Initially, this attribute has the value <b>[false] </b>(line 59). The session jSON with the server is initialized in the <b>[created]</b> event of the view lifecycle, lines 126–156. If the server responds positively, then the attribute <b>[sessionStarted] </b>is set to <b>[true] </b>(line 149);
       </li>
     </ul>
   </li>
-  <li>lines 126–156: the <b>[created] </b>function is executed when the <b>[Authentication] </b>view has been created (though not necessarily displayed yet). In the background, a JSON session with the server is then initialized. We know this is the first action to perform with the tax calculation server. To do this, we use the application’s <b>[dao] </b>layer (line 134). All methods in this layer are asynchronous. Here, we use the Promise returned by the <b>[$dao.initSession] </b>method, which initializes the JSON session with the server.
+  <li>lines 126–156: The <b>[created]</b> function is executed when the <b>[Authentification]</b> view has been created (though not necessarily displayed yet). In the background, a jSON session is then initialized with the server. We know this is the first action to perform with the tax calculation server. To do this, we use the application’s <b>[dao]</b> layer (line 134). All methods in this layer are asynchronous. Here, we use the Promise returned by the <b>[$dao.initSession]</b> method, which initializes the jSON session with the server.
   </li>
-  <li>Lines 138–150: the code executed when the server returns its response without an error;
+  <li>lines 138–150: the code executed when the server has returned its response without errors;
   </li>
-  <li>line 142: we check the <b>[status] </b>property of the response. It must have the value <b>[700] </b>for a successful operation. Otherwise, an error has occurred, the cause of which is indicated in the <b>[response.response] </b>property (line 144). We then display the error message in the view (line 145);
+  <li>Line 142: The <b>[état]</b> property of the response is checked. It must have the value <b>[700] </b>for a successful operation. Otherwise, an error has occurred, the cause of which is indicated in the <b>[response.réponse]</b> property (line 144). The view’s error message is then displayed (line 145);
   </li>
-  <li>line 149: we note that the JSON session has started;
+  <li>line 149: note that session jSON has started;
   </li>
-  <li>lines 152–155: the code executed in case of an error. This error is propagated to the parent view <b>[Main], </b>which
+  <li>lines 152–155: the code executed in the event of an error. This error is propagated to the parent view <b>[Main], </b>which
     <ul>
       <li>will display the error;
       </li>
-      <li>hides the waiting message;
+      <li>will hide the waiting message;
       </li>
-      <li>hide the routed view, the <b>[Authentication] </b>view;
+      <li>hide the routed view, the <b>[Autentification]</b> view;
       </li>
     </ul>
   </li>
-  <li>lines 79–124: the <b>[login] </b>method handles the click on the <b>[Validate] </b>button;
+  <li>lines 79–124: the method <b>[login] </b>handles the click on the button <b>[Valider]</b>;
   </li>
-  <li>line 79: the method has been prefixed with the <b>[async] </b>keyword to allow the use of the <b>[await] </b>keyword, lines 84 and 103;
+  <li>line 79: the method has been prefixed with the keyword <b>[async] </b>to allow the use of the keyword <b>[await]</b>, lines 84 and 103;
   </li>
-  <li>lines 84–87: blocking call to the <b>[$dao.authenticateUser(user, password)] </b>method. We could have used a <b>[Promise] </b>as was done in the <b>[created] </b>function. We wanted to vary the styles. There is no risk of blocking the user because we have set a 2-second <b>[timeout] </b>on all HTTP requests. They won’t have to wait long. Furthermore, they cannot do anything until the server has returned its response, as the <b>[Validate] </b>button remains inactive until then;
+  <li>lines 84–87: blocking call to the <b>[$dao.authentifierUtilisateur(user, password)]</b> method. We could have used a <b>[Promise]</b> promise as was done in the <b>[created]</b> function. We wanted to vary the styles. There is no risk of blocking the user because we have set a 2-second <b>[timeout] </b>on all HTTP requests. They won’t have to wait long. Furthermore, they can’t do anything until the server returns its response, because the <b>[Valider]</b> button remains inactive until then;
   </li>
-  <li>line 91: the tax calculation server sends JSON responses, all of which have the structure <b>[{‘action’:action, ‘status’:val, ‘response’:response}]</b>. Authentication was successful if <b>[status==200]</b>. If not, an error message is displayed, lines 93-94;
+  <li>line 91: the tax calculation server sends jSON responses, all of which have the structure <b>[{‘action’:action, ‘état’:val, ‘réponse’:réponse}]</b>. Authentication is successful if <b>[état==200]</b>. If not, an error message is displayed, lines 93–94;
   </li>
-  <li>line 98: any error messages from a previous operation are hidden;
+  <li>line 98: any error message from a previous operation is hidden;
   </li>
-  <li>lines 99–116: we now request the tax authority data from the server that is needed to calculate the tax. In <b>[this.$métier], </b>we have an instance of the <b>[Métier] </b>class that cannot do anything at this point because it does not have this data;
+  <li>lines 99–116: we now request the tax authority data from the server that enables tax calculation. In <b>[this.$métier], </b>we have an instance of the class <b>[Métier], </b>which cannot do anything at this point because it does not have this data;
   </li>
-  <li>line 103: the tax authority data is requested from the server via a blocking operation;
+  <li>line 103:  the tax authority data is requested from the server via a blocking operation;
   </li>
   <li>lines 107–112: The server’s response is analyzed. It must have a status value of 1000; otherwise, an error has occurred. In the latter case, an error message is displayed (lines 109–110);
   </li>
@@ -1951,37 +1953,37 @@
     <ul>
       <li>hide the error message (line 114);
       </li>
-      <li>we pass the tax authority data to the <b>[business] </b>layer (line 116);
+      <li>the tax administration data is transmitted to the <b>[métier]</b> layer (line 116);
       </li>
-      <li>display the <b>[CalculImpot] </b>view, line 118. Recall that <b>[this.$router] </b>refers to the application router. The <b>[push] </b>method is used to set the next routed view. Here, we refer to it by its <b>[name] </b>attribute. We could also have referred to it by its <b>[path] </b>attribute. This information is in the routing file:
+      <li>We display view <b>[CalculImpot]</b>, line 118. Recall that <b>[this.$router] </b>refers to the application router. The method <b>[push] </b>is used to set the next routed view. Here, we specify it by its attribute <b>[name]</b>. We could also have specified it by its attribute <b>[path]</b>. This information is in the routing file:
       </li>
     </ul>
   </li>
 </ul>
 
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
-<span class="odt-code-line"><span class="odt-code-line-content">// calcul de l&#x27;impôt</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">// tAX CALCULATION</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    path: </span><span style="color:#a31515">&#x27;/calcul-impot&#x27;</span><span style="color:#000000">, name: </span><span style="color:#a31515">&#x27;calculImpot&#x27;</span><span style="color:#000000">, component: CalculImpot</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  },</span></span>
 </code></pre></div>
 
 <ul>
-  <li>lines 119–122: The <b>[catch] </b>block is triggered when one of the two HTTP requests fails (server not found, timeout exceeded, etc.). The error is then reported to the parent view <b>[Main]</b>, which will display it, hide the loading message, and hide the <b>[Authentication] </b>view;
+  <li>lines 119–122: <b>[catch] </b>is triggered when one of the two HTTP requests fails (server not available, timeout exceeded, etc.). The error is then reported to the parent view <b>[Main], </b>which will display it, hide the loading message, and the view <b>[Authentification]</b>;
   </li>
 </ul>
-<p><a id="refheadingtoc2481532728496130"></a></p>
+<p><span id="refheadingtoc2481532728496130" name="refheadingtoc2481532728496130" class="odt-bookmark-anchor"></span></p>
 <h3 id="1844-the-calculimpot-view">18.4.4. <span style="color: #4f81bd">The [CalculImpot] view</span></h3>
 <p>The <strong>[CalculImpot]</strong> view is as follows:</p>
 <p><img src="images/100000000000089E000005362FAE52B6.png" width="552" height="334" style="width:14.593cm;height:8.825cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000089E000005362FAE52B6.png" /></p>
 <ul>
-  <li><b>[1]</b>: A navigation menu occupies the left column of the routed view;
+  <li><b>[1]</b>: a menu from navigation occupies the left column of the routed view;
   </li>
-  <li><b>[2]</b>: The tax calculation form occupies the right column of the routed view;
+  <li><b>[2]</b>: the tax calculation form occupies the right column of the routed view;
   </li>
 </ul>
 
-<p>The code for the <strong>[TaxCalculation]</strong> view is as follows:</p>
+<p>The code for the <strong>[CalculImpot]</strong> view is as follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-html">
 <span class="odt-code-line"><span class="odt-code-line-content">&lt;!-- definition HTML of the view --&gt;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;</span><span style="color:#800000">template</span><span style="color:#0000ff">&gt;</span></span></span>
@@ -1989,7 +1991,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">Layout</span><span style="color:#000000"> </span><span style="color:#ff0000">:left</span><span style="color:#0000ff">=&quot;true&quot;</span><span style="color:#000000"> </span><span style="color:#ff0000">:right</span><span style="color:#0000ff">=&quot;true&quot;&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">&lt;!-- tax calculation form on the right --&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">FormCalculImpot</span><span style="color:#000000"> </span><span style="color:#ff0000">slot</span><span style="color:#0000ff">=&quot;right&quot;</span><span style="color:#000000"> </span><span style="color:#ff0000">@resultatObtenu</span><span style="color:#0000ff">=&quot;handleResultatObtenu&quot;</span><span style="color:#000000"> </span><span style="color:#0000ff">/&gt;</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">&lt;!-- left-hand navigation menu --&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">&lt;!-- menu from navigation to left --&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">Menu</span><span style="color:#000000"> </span><span style="color:#ff0000">slot</span><span style="color:#0000ff">=&quot;left&quot;</span><span style="color:#000000"> </span><span style="color:#ff0000">:options</span><span style="color:#0000ff">=&quot;options&quot;</span><span style="color:#000000"> </span><span style="color:#0000ff">/&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">&lt;/</span><span style="color:#800000">Layout</span><span style="color:#0000ff">&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">&lt;!-- display area for tax calculation results under the form --&gt;</span></span></span>
@@ -2071,42 +2073,42 @@
 
 <p><strong>Comments</strong></p>
 <ul>
-  <li>line 4: the two columns of the <b>[Layout] </b>are present here;
+  <li>line 4: the two columns of <b>[Layout] </b>are present here;
   </li>
-  <li>line 6: the tax calculation form occupies the right column. It triggers the <b>[resultatObtenu] </b>event when the tax calculation result has been obtained. Note that event names and the names of the methods that handle them cannot contain accented characters;
+  <li>line 6: the tax calculation form occupies the right column. It triggers the <b>[resultatObtenu]</b> event when the tax calculation result has been obtained. Note that event names and the names of the methods that handle them cannot contain accented characters;
   </li>
   <li>line 8: the navigation menu occupies the left column;
   </li>
-  <li>lines 11–20: the result of the tax calculation is displayed below the form:
+  <li>lines 11–20: the tax calculation result is displayed below the form:
   </li>
 </ul>
 
 <p><img src="images/1000000000000679000004069109784C.png" width="414" height="258" style="width:10.963cm;height:6.814cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000679000004069109784C.png" /></p>
 <ul>
-  <li>line 11: the result is displayed only if the <b>[resultObtained] </b>attribute (line 47) is <b>[true]</b>;
+  <li>line 11: the result is displayed only if the <b>[résultatObtenu]</b> attribute (line 47) is set to <b>[true]</b>;
   </li>
-  <li>lines 34–48: the view state:
+  <li>lines 34–48: the view status:
     <ul>
-      <li><b>[options]</b>: the list of navigation menu options. This array is passed as a parameter to the <b>[Menu] </b>component on line 8;
+      <li><b>[options]</b>: the list of menu options for navigation. This table is passed as a parameter to the <b>[Menu]</b> component, line 8;
       </li>
-      <li><b>[result]</b>: the result of the tax calculation. This result is an HTML string. That is why the <b>[v-html] </b>directive was used on line 17 to display it;
+      <li><b>[résultat]</b>: the result of the tax calculation. This result is a string HTML. This is why the directive <b>[v-html]</b> was used on line 17 to display it;
       </li>
-      <li><b>[resultObtained]</b>: the boolean that controls the display of the result, line 11;
+      <li><b>[résultatObtenu]</b>: the Boolean that controls the display of the result, line 11;
       </li>
     </ul>
   </li>
-  <li>lines 59–81: the <b>[handleResultatObtenu] </b>method displays the result of the tax calculation sent to it by the child view <b>[FormCalculImpot]</b>, line 6. This result is an object with the properties <b>[tax, discount, reduction, surcharge, rate, married, children, salary]</b>;
+  <li>lines 59–81: the method <b>[handleResultatObtenu] </b>displays the result of the tax calculation sent to it by the child view <b>[FormCalculImpot]</b>, line 6. This result is an object with the properties <b>[impot, décôte, réduction, surcôte, taux, marié, enfants, salaire]</b>;
   </li>
-  <li>lines 61–75: the object <b>[tax, discount, reduction, surcharge, rate] </b>is inserted into HTML text that is rendered by line 17 of the template;
+  <li>lines 61–75: the object <b>[impot, décôte, réduction, surcôte, taux]</b> is written to a text field HTML, which is displayed by line 17 of the template;
   </li>
   <li>line 77: this result is displayed;
   </li>
-  <li>Line 80: Calls the <b>[addSimulation] </b>method of the Vuex store, which adds <b>[result] </b>to the simulations already present in the store;
+  <li>line 80: the <b>[addSimulation]</b> mutation of the Vuex store is called, which will add <b>[résultat] </b>to the simulations already present in the store;
   </li>
 </ul>
-<p><a id="refheadingtoc2481552728496130"></a></p>
-<h3 id="1845-the-navigation-menu-menu">18.4.5. <span style="color: #4f81bd"><strong>The navigation menu</strong> [Menu]</span></h3>
-<p>The navigation menu is displayed in the left column of routed views:</p>
+<p><span id="refheadingtoc2481552728496130" name="refheadingtoc2481552728496130" class="odt-bookmark-anchor"></span></p>
+<h3 id="1845-the-menu-for-navigation-menu">18.4.5. <span style="color: #4f81bd"><strong>The menu for navigation</strong> [Menu]</span></h3>
+<p>The menu for navigation appears in the left column of the routed views:</p>
 <p><img src="images/1000000000000417000002BFB584D657.png" width="262" height="176" style="width:6.93cm;height:4.653cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000417000002BFB584D657.png" /></p>
 <p>The code for the <strong>[Menu]</strong> view is as follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-html">
@@ -2139,13 +2141,13 @@
 
 <p><strong>Comments</strong></p>
 <ul>
-  <li>the menu options are provided by the <b>[options] </b>parameter (lines 7, 20–22);
+  <li>the menu options are provided by the parameter <b>[options] </b>(lines 7, 20–22);
   </li>
-  <li>each element of the <b>[options] </b>array has a <b>[text] </b>property (line 12) which is the link text and a <b>[path] </b>property (line 9) which will be the path to the link’s target view;
+  <li>Each element in the <b>[options]</b> table has a <b>[text]</b> property (line 12) that is the link text and a <b>[path]</b> property (line 9) that is the path to the link’s target view;
   </li>
 </ul>
-<p><a id="refheadingtoc251834278084667"></a></p>
-<h3 id="1846-the-formcalculimpot-view">18.4.6. <span style="color: #4f81bd"><strong>The [FormCalculImpot] view</strong></span></h3>
+<p><span id="refheadingtoc251834278084667" name="refheadingtoc251834278084667" class="odt-bookmark-anchor"></span></p>
+<h3 id="1846-the-formcalculimpot-view">18.4.6. <span style="color: #4f81bd">The [FormCalculImpot] view</span></h3>
 <p>This view provides the tax calculation form:</p>
 <p><img src="images/1000000000000668000002C41922E524.png" width="410" height="177" style="width:10.85cm;height:4.683cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000668000002C41922E524.png" /></p>
 <p>Its code is as follows:</p>
@@ -2244,7 +2246,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// event manager</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  methods: {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    calculerImpot() {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// tax is calculated using the [business] layer</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// tax is calculated using the [métier] layer</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span><span style="color:#0000ff">const</span><span style="color:#000000"> résultat = </span><span style="color:#0000ff">this</span><span style="color:#000000">.$métier.calculerImpot(</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000ff">this</span><span style="color:#000000">.marié,</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000ff">this</span><span style="color:#000000">.enfants,</span></span></span>
@@ -2256,7 +2258,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      résultat.marié = </span><span style="color:#0000ff">this</span><span style="color:#000000">.marié;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      résultat.enfants = </span><span style="color:#0000ff">this</span><span style="color:#000000">.enfants;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      résultat.salaire = </span><span style="color:#0000ff">this</span><span style="color:#000000">.salaire;</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// the [resultatObtenu] event is issued</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// we issue the event [resultatObtenu]</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span><span style="color:#0000ff">this</span><span style="color:#000000">.$emit(</span><span style="color:#a31515">&quot;resultatObtenu&quot;</span><span style="color:#000000">, résultat);</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  }</span></span>
@@ -2268,90 +2270,90 @@
 <ul>
   <li>lines 4–51: the Bootstrap form;
   </li>
-  <li>lines 11–17: a group of radio buttons with their labels;
+  <li>lines 11-17: a group of radio buttons with their labels;
   </li>
   <li>lines 14–15: the &lt;b-form-radio&gt; tag displays a radio button:
     <ul>
-      <li>line 14: the <b>[v-model] </b>directive ensures that when the button is clicked, the <b>[married] </b>attribute on line 61 will be set to <b>[yes] </b>(attribute <b>[value=&quot;yes&quot;]</b>);
+      <li>line 14: the directive <b>[v-model] </b>ensures that when the button is clicked, the attribute <b>[marié] </b>on line 61 will be set to the value <b>[oui] </b>(attribute <b>[value=&quot;oui&quot;]</b>);
       </li>
-      <li>line 15: the <b>[v-model] </b>directive ensures that when the button is clicked, the <b>[married] </b>attribute on line 61 will be set to <b>[no] </b>(attribute <b>[value=&quot;no&quot;]</b>);
+      <li>line 15: The directive <b>[v-model] </b>ensures that when the button is clicked, the attribute <b>[marié] </b>in line 61 will be set to <b>[non] </b>(attribute <b>[value=&quot;non&quot;]</b>);
       </li>
     </ul>
   </li>
   <li>lines 19–29: the section for entering the number of children:
     <ul>
-      <li>line 24: the entry for the number of children is linked to the <b>[children] </b>attribute on line 63;
+      <li>row 24: the entry for the number of children is linked to attribute <b>[enfants] </b>in row 63;
       </li>
-      <li>line 25: the validity of the entry is verified by the calculated attribute <b>[validChildren] </b>in lines 87–89;
+      <li>line 25: the validity of the entry is verified by the calculated attribute <b>[enfantsValide] </b>in lines 87–89;
       </li>
-      <li>line 28: ensures that an error message is displayed if the entry is invalid;
+      <li>line 28: displays an error message if the entry is invalid;
       </li>
     </ul>
   </li>
-  <li>lines 31–45: the annual salary input section:
+  <li>Lines 31–45: the annual salary entry section:
     <ul>
       <li>line 35: displays a help message just below the input field;
       </li>
-      <li>line 41: the salary entry is linked to the <b>[salary] </b>attribute on line 65;
+      <li>line 41: the salary entry is linked to attribute <b>[salaire] </b>in line 65;
       </li>
-      <li>line 42: the validity of the input is verified by the calculated attribute <b>[validSalary] </b>in lines 82–85;
+      <li>line 42: the validity of the entry is verified by the calculated attribute <b>[salaireValide] </b>in lines 82–85;
       </li>
-      <li>line 45: displays an error message if the entry is invalid;
+      <li>line 45: ensures that an error message is displayed if the entry is invalid;
       </li>
     </ul>
   </li>
-  <li>lines 48–50: a <b>[submit] </b>button. When this button is clicked or when an entry is validated with the <b>[Enter] </b>key, the <b>[calculateTax] </b>method is executed (line 94);
+  <li>lines 48–50: a button of type <b>[submit]</b>. When this button is clicked or when an entry is validated using the <b>[Entrée]</b> key, the <b>[calculerImpot]</b> method is executed (line 94);
     <ul>
-      <li>Line 49: The active/inactive state of the button is controlled by the calculated attribute <b>[formInvalid] </b>in lines 71–80;
+      <li>line 49: the active/inactive state of the button is controlled by the calculated attribute <b>[formInvalide] </b>in lines 71-80;
       </li>
     </ul>
   </li>
-  <li>Lines 71–80: The form is valid if:
+  <li>lines 71–80: the form is valid if:
     <ul>
       <li>the number of children is valid;
       </li>
       <li>the salary is valid;
       </li>
-      <li>the application has obtained the tax administration data from the server to calculate the tax. Note that this data is stored in the <b>[$métier.taxAdminData] </b>property. The <b>[FormCalculImpot] </b>view can be displayed before this data has been obtained because it is requested asynchronously at the same time the view is being displayed. Here, we ensure that the user cannot click the <b>[Validate] </b>button until the data has been retrieved;
+      <li>the application has obtained the tax administration data from the server that enables tax calculation. Note that this data is stored in the <b>[$métier.taxAdminData]</b> property. The view <b>[FormCalculImpot] </b>can be displayed before this data has been obtained because it is requested asynchronously at the same time the view is displayed. Here, we ensure that the user cannot click the <b>[Valider]</b> button until the data has been retrieved;
       </li>
     </ul>
   </li>
   <li>lines 94–109: the tax calculation method:
     <ul>
-      <li>lines 96–100: the <b>[business] </b>layer performs this calculation. This is a synchronous calculation. Once the <b>[taxAdminData] </b>has been retrieved, the client <b>[View] </b>no longer needs to communicate with the server. Everything is done locally. We obtain an object <b>[result] </b>with the properties <b>[tax, discount, surcharge, reduction, rate]</b>;
+      <li>lines 96–100: the <b>[métier]</b> layer performs this calculation. This is a synchronous calculation. Once the <b>[taxAdminData]</b> data has been retrieved, the <b>[Vue]</b> client no longer needs to communicate with the server. Everything is done locally. We obtain a <b>[résultat]</b> object with the properties of <b>[impôt, décôte, surcôte, réduction, taux]</b>;
       </li>
-      <li>lines 104–106: the properties <b>[married, children, salary] </b>are added to the result;
+      <li>lines 104–106: the properties <b>[marié, enfants, salaire]</b> are added to the result;
       </li>
-      <li>line 108: the result is passed to the parent view <b>[CalculImpot] </b>via the <b>[resultatObtenu] </b>event. This view is responsible for displaying the result;
+      <li>line 108: the result is passed to the parent view <b>[CalculImpot] </b>via the event <b>[resultatObtenu]</b>. This view is responsible for displaying the result;
       </li>
     </ul>
   </li>
 </ul>
-<p><a id="refheadingtoc251836278084667"></a></p>
-<h3 id="1847-the-simulationlist-view">18.4.7. <span style="color: #4f81bd">The [SimulationList] view</span></h3>
-<p>The <strong>[SimulationList]</strong> view displays the list of simulations performed by the user:</p>
+<p><span id="refheadingtoc251836278084667" name="refheadingtoc251836278084667" class="odt-bookmark-anchor"></span></p>
+<h3 id="1847-the-listesimulations-view">18.4.7. <span style="color: #4f81bd">The [ListeSimulations] view</span></h3>
+<p>The view <strong>[ListeSimulations]</strong> displays the list of simulations performed by the user:</p>
 <p><img src="images/10000000000008A2000004CADE512F01.png" width="553" height="307" style="width:14.623cm;height:8.112cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000008A2000004CADE512F01.png" /></p>
-<p>The view’s code is as follows:</p>
+<p>The view code is as follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
-<span class="odt-code-line"><span class="odt-code-line-content">&lt;!-- définition HTML de la vue --&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">&lt;!-- definition HTML of the view --&gt;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;</span><span style="color:#800000">template</span><span style="color:#0000ff">&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">div</span><span style="color:#0000ff">&gt;</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">&lt;!-- mise en page --&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">&lt;!-- layout --&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">Layout</span><span style="color:#000000"> </span><span style="color:#ff0000">:left</span><span style="color:#0000ff">=&quot;true&quot;</span><span style="color:#000000"> </span><span style="color:#ff0000">:right</span><span style="color:#0000ff">=&quot;true&quot;&gt;</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">&lt;!-- simulations dans colonne de droite --&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">&lt;!-- simulations in right-hand column --&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">template</span><span style="color:#000000"> </span><span style="color:#ff0000">slot</span><span style="color:#0000ff">=&quot;right&quot;&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">template</span><span style="color:#000000"> </span><span style="color:#ff0000">v-if</span><span style="color:#0000ff">=&quot;simulations.length==0&quot;&gt;</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">          <span style="color:#000000">&lt;!-- pas de simulations --&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">          <span style="color:#000000">&lt;!-- no simulations --&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">          </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">b-alert</span><span style="color:#000000"> </span><span style="color:#ff0000">show</span><span style="color:#000000"> </span><span style="color:#ff0000">variant</span><span style="color:#0000ff">=&quot;primary&quot;&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">h4</span><span style="color:#0000ff">&gt;</span><span style="color:#000000">Votre liste de simulations est vide</span><span style="color:#0000ff">&lt;/</span><span style="color:#800000">h4</span><span style="color:#0000ff">&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">          </span><span style="color:#0000ff">&lt;/</span><span style="color:#800000">b-alert</span><span style="color:#0000ff">&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000ff">&lt;/</span><span style="color:#800000">template</span><span style="color:#0000ff">&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">template</span><span style="color:#000000"> </span><span style="color:#ff0000">v-if</span><span style="color:#0000ff">=&quot;simulations.length!=0&quot;&gt;</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">          <span style="color:#000000">&lt;!-- il y a des simulations --&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">          <span style="color:#000000">&lt;!-- there are simulations --&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">          </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">b-alert</span><span style="color:#000000"> </span><span style="color:#ff0000">show</span><span style="color:#000000"> </span><span style="color:#ff0000">variant</span><span style="color:#0000ff">=&quot;primary&quot;&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">h4</span><span style="color:#0000ff">&gt;</span><span style="color:#000000">Liste de vos simulations</span><span style="color:#0000ff">&lt;/</span><span style="color:#800000">h4</span><span style="color:#0000ff">&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">          </span><span style="color:#0000ff">&lt;/</span><span style="color:#800000">b-alert</span><span style="color:#0000ff">&gt;</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">          <span style="color:#000000">&lt;!-- tableau des simulations --&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">          <span style="color:#000000">&lt;!-- simulation table --&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">          </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">b-table</span><span style="color:#000000"> </span><span style="color:#ff0000">striped</span><span style="color:#000000"> </span><span style="color:#ff0000">hover</span><span style="color:#000000"> </span><span style="color:#ff0000">responsive</span><span style="color:#000000"> </span><span style="color:#ff0000">:items</span><span style="color:#0000ff">=&quot;simulations&quot;</span><span style="color:#000000"> </span><span style="color:#ff0000">:fields</span><span style="color:#0000ff">=&quot;fields&quot;&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">template</span><span style="color:#000000"> </span><span style="color:#ff0000">v-slot:cell(action)</span><span style="color:#0000ff">=&quot;data&quot;&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">              </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">b-button</span><span style="color:#000000"> </span><span style="color:#ff0000">variant</span><span style="color:#0000ff">=&quot;link&quot;</span><span style="color:#000000"> </span><span style="color:#ff0000">@click</span><span style="color:#0000ff">=&quot;supprimerSimulation(data.index)&quot;&gt;</span><span style="color:#000000">Supprimer</span><span style="color:#0000ff">&lt;/</span><span style="color:#800000">b-button</span><span style="color:#0000ff">&gt;</span></span></span>
@@ -2359,7 +2361,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">          </span><span style="color:#0000ff">&lt;/</span><span style="color:#800000">b-table</span><span style="color:#0000ff">&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000ff">&lt;/</span><span style="color:#800000">template</span><span style="color:#0000ff">&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span><span style="color:#0000ff">&lt;/</span><span style="color:#800000">template</span><span style="color:#0000ff">&gt;</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">&lt;!-- menu de navigation dans colonne de gauche --&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">&lt;!-- navigation menu in left-hand column --&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">Menu</span><span style="color:#000000"> </span><span style="color:#ff0000">slot</span><span style="color:#0000ff">=&quot;left&quot;</span><span style="color:#000000"> </span><span style="color:#ff0000">:options</span><span style="color:#0000ff">=&quot;options&quot;</span><span style="color:#000000"> </span><span style="color:#0000ff">/&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">&lt;/</span><span style="color:#800000">Layout</span><span style="color:#0000ff">&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#0000ff">&lt;/</span><span style="color:#800000">div</span><span style="color:#0000ff">&gt;</span></span></span>
@@ -2370,15 +2372,15 @@
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#0000ff">import</span><span style="color:#000000"> Layout </span><span style="color:#0000ff">from</span><span style="color:#000000"> </span><span style="color:#a31515">&quot;./Layout&quot;</span><span style="color:#000000">;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#0000ff">import</span><span style="color:#000000"> Menu </span><span style="color:#0000ff">from</span><span style="color:#000000"> </span><span style="color:#a31515">&quot;./Menu&quot;</span><span style="color:#000000">;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#0000ff">export</span><span style="color:#000000"> </span><span style="color:#0000ff">default</span><span style="color:#000000"> {</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// composants</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// components</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    components: {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      Layout,</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      Menu</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    },</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// état interne</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// inner state</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    data() {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span><span style="color:#0000ff">return</span><span style="color:#000000"> {</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// options du menu de navigation</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// navigation menu options</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        options: [</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">          {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            text: </span><span style="color:#a31515">&quot;Calcul de l&#x27;impôt&quot;</span><span style="color:#000000">,</span></span></span>
@@ -2389,7 +2391,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            path: </span><span style="color:#a31515">&quot;/fin-session&quot;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">          }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        ],</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// paramètres de la table HTML</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// table parameters HTML</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        fields: [</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">          { label: </span><span style="color:#a31515">&quot;#&quot;</span><span style="color:#000000">, key: </span><span style="color:#a31515">&quot;id&quot;</span><span style="color:#000000"> },</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">          { label: </span><span style="color:#a31515">&quot;Marié&quot;</span><span style="color:#000000">, key: </span><span style="color:#a31515">&quot;marié&quot;</span><span style="color:#000000"> },</span></span></span>
@@ -2403,19 +2405,19 @@
 <span class="odt-code-line"><span class="odt-code-line-content">        ]</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      };</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    },</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// état interne calculé</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// calculated internal state</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    computed: {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// liste des simulations prise dans le store Vuex</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// list of simulations taken from the Vuex blind</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      simulations() {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000ff">return</span><span style="color:#000000"> </span><span style="color:#0000ff">this</span><span style="color:#000000">.$store.state.simulations;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    },</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// méthodes</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// methods</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    methods: {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      supprimerSimulation(index) {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// eslint-disable-next-line</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        console.log(</span><span style="color:#a31515">&quot;supprimerSimulation&quot;</span><span style="color:#000000">, index);</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// suppression de la simulation n° [index]</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// delete simulation n° [index]</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000ff">this</span><span style="color:#000000">.$store.commit(</span><span style="color:#a31515">&quot;deleteSimulation&quot;</span><span style="color:#000000">, index);</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
@@ -2425,55 +2427,55 @@
 
 <p><strong>Comments</strong></p>
 <ul>
-  <li>line 5: the view occupies both columns of the <b>[Layout] </b>for routed views;
+  <li>line 5: the view occupies both columns of the <b>[Layout]</b> layout for routed views;
   </li>
   <li>lines 7–26: the simulations go in the right column;
   </li>
   <li>line 28: the navigation menu goes in the left column;
   </li>
-  <li>lines 8, 14, 20, 75: the simulations come from the store <b>[Vuex] [$this.store]</b>;
+  <li>lines 8, 14, 20, 75: the simulations come from the <b>[Vuex] and [$this.store] </b>data streams;
   </li>
   <li>lines 8–13: alert displayed when the list of simulations is empty;
   </li>
-  <li>lines 14–25: the HTML table is displayed when the list of simulations is not empty;
+  <li>lines 14–25: the HTML table displayed when the list of simulations is not empty;
   </li>
-  <li>lines 20–24: the HTML table is generated by a &lt;b-table&gt; tag;
+  <li>lines 20–24: the table HTML is generated by a &lt;b-table&gt; tag;
     <ul>
-      <li>line 20: the simulation table is provided by the computed attribute <b>[simulations] </b>from lines 74–76;
+      <li>line 20: the simulation table is provided by the calculated attribute <b>[simulations] </b>from lines 74–76;
       </li>
-      <li>line 20: the HTML table is configured by the calculated attribute <b>[fields] </b>in lines 58–69. Line 67: the <b>[action] </b>key column is the last column of the HTML table;
+      <li>line 20: the configuration of table HTML is determined by the calculated attribute <b>[fields] </b>from lines 58–69. Line 67: The key column <b>[action] </b>is the last column of table HTML;
       </li>
-      <li>Lines 21–23: template for the last column of the HTML table;
+      <li>Lines 21–23: template for the last column of table HTML;
       </li>
-      <li>line 22: a link button is placed here. When clicked, the method <b>[deleteSimulation(data.index)] </b>is called, where <b>[data] </b>represents the current row (line 21). <b>[data.index] </b>represents the number of this row in the list of displayed rows;
+      <li>row 22: a link button is placed here. When clicked, the method <b>[supprimerSimulation(data.index)] </b>is called, where <b>[data] </b>represents the current row (row 21). <b>[data.index] </b>represents the number of this row in the list of displayed rows;
       </li>
     </ul>
   </li>
-  <li>line 28: generation of the navigation menu. Its options are provided by the <b>[options] </b>attribute in lines 47–56;
+  <li>line 28: generation of the navigation menu. Its options are provided by the <b>[options]</b> attribute of lines 47–56;
   </li>
-  <li>lines 80–85: the method that responds to a click on a <b>[Delete] </b>link on the HTML page;
+  <li>lines 80–85: the method that responds to a click on a <b>[Supprimer]</b> link on the HTML page;
     <ul>
-      <li>line 84: the <b>[deleteSimulation] </b>method of the <b>[Vuex] </b>store is called (see section <a href="#116projet-vuejs-15--utilisation-du-plugin-vuexoutline"><u><span style="color: #0563c1">|vuejs-15|</span></u></a>);
+      <li>line 84: the <b>[deleteSimulation]</b> mutation of the <b>[Vuex]</b> store is called (see section <a href="#116projet-vuejs-15--utilisation-du-plugin-vuexoutline"><u><span style="color: #0563c1">|vuejs-15|</span></u></a>);
       </li>
     </ul>
   </li>
 </ul>
-<p><a id="refheadingtoc251838278084667"></a></p>
-<h2 id="185-running-the-project">18.5. <span style="color: #4f81bd">Running the project</span></h2>
+<p><span id="refheadingtoc251838278084667" name="refheadingtoc251838278084667" class="odt-bookmark-anchor"></span></p>
+<h2 id="185-running-the-project">18.5. <span style="color: #4f81bd"><strong>Running the project</strong></span></h2>
 <p><img src="images/10000000000007350000026D785B8212.png" width="553" height="186" style="width:14.64cm;height:4.928cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000007350000026D785B8212.png" /></p>
-<p>You must also start the <strong>[Laragon]</strong> server (see document |https://tahe.developpez.com/tutoriels-cours/php7|) so that the tax calculation server is online.</p>
-<p><a id="refheadingtoc251840278084667"></a></p>
+<p>You must also start the <strong>[Laragon]</strong> server (see document |<a href="https://tahe.developpez.com/tutoriels-cours/php7"><u><span style="color: #0563c1">https://tahe.developpez.com/tutoriels-cours/php7</span></u></a>|) so that the tax calculation server is online.</p>
+<p><span id="refheadingtoc251840278084667" name="refheadingtoc251840278084667" class="odt-bookmark-anchor"></span></p>
 <h2 id="186-deploying-the-application-on-a-local-server">18.6. <span style="color: #4f81bd">Deploying the application on a local server</span></h2>
-<p>Currently, our <strong>[Vue]</strong> client is deployed on a test server at the URL <strong>[http://localhost:8080]</strong>. We will deploy it on the <strong>[Laragon]</strong> server at the URL <strong>[http://localhost:80]</strong>. There are several steps to follow to get there.</p>
+<p>Currently, our <strong>[Vue]</strong> client is deployed on a test server at URL <strong>[http://localhost:8080]</strong>. We will deploy it to the <strong>[Laragon]</strong> server at URL <strong>[http://localhost:80]</strong>. There are several steps to complete to achieve this.</p>
 <p><u><strong>Step 1</strong></u></p>
-<p>First, we will ensure that the <strong>[Vue]</strong> client is deployed on the test server at the URL <strong>[http://localhost:8080/client-vuejs-impot/]</strong>.</p>
-<p>We create a <strong>[vue.config.js]</strong> file at the root of our current <strong>[VSCode]</strong> project:</p>
+<p>First, we will ensure that the client <strong>[Vue]</strong> is deployed to the test server at URL and <strong>[http://localhost:8080/client-vuejs-impot/]</strong>.</p>
+<p>We create a file named <strong>[vue.config.js]</strong> at the root of our current <strong>[VSCode]</strong> project:</p>
 <p><img src="images/10000000000004A50000044D16B03D6C.png" width="357" height="330" style="width:9.44cm;height:8.742cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000004A50000044D16B03D6C.png" /></p>
-<p>The <strong>[vue.config.js]</strong> file <strong>[1]</strong> will have the following content:</p>
-<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<p>The <strong>[vue.config.js] [1]</strong> file will have the following content:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-javascript">
 <span class="odt-code-line"><span class="odt-code-line-content">// vue.config.js</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">module.exports = {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// l&#x27;URL de service du client [vuejs] du serveur de calcul de l&#x27;impôt</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// the client&#x27;s URL service [vuejs] of the tax calculation server</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  publicPath: </span><span style="color:#a31515">&#x27;</span><span style="background-color:#ffff00;color:#a31515">/client-vuejs-impot/</span><span style="color:#a31515">&#x27;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
 </code></pre></div>
@@ -2483,84 +2485,84 @@
 <span class="odt-code-line"><span class="odt-code-line-content">// imports</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">import</span><span style="color:#000000"> Vue </span><span style="color:#0000ff">from</span><span style="color:#000000"> </span><span style="color:#a31515">&#x27;vue&#x27;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">import</span><span style="color:#000000"> VueRouter </span><span style="color:#0000ff">from</span><span style="color:#000000"> </span><span style="color:#a31515">&#x27;vue-router&#x27;</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">// les vues</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">// the views</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">import</span><span style="color:#000000"> Authentification </span><span style="color:#0000ff">from</span><span style="color:#000000"> </span><span style="color:#a31515">&#x27;./views/Authentification&#x27;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">import</span><span style="color:#000000"> CalculImpot </span><span style="color:#0000ff">from</span><span style="color:#000000"> </span><span style="color:#a31515">&#x27;./views/CalculImpot&#x27;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">import</span><span style="color:#000000"> ListeSimulations </span><span style="color:#0000ff">from</span><span style="color:#000000"> </span><span style="color:#a31515">&#x27;./views/ListeSimulations&#x27;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">// plugin de routage</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">// routing plugin</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">Vue.use(VueRouter)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">// les routes de l&#x27;application</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">// application routes</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">const</span><span style="color:#000000"> routes = [</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// authentification</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// authentication</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    path: </span><span style="color:#a31515">&#x27;/&#x27;</span><span style="color:#000000">, name: </span><span style="color:#a31515">&#x27;authentification&#x27;</span><span style="color:#000000">, component: Authentification</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  },</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// calcul de l&#x27;impôt</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// tAX CALCULATION</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    path: </span><span style="color:#a31515">&#x27;/calcul-impot&#x27;</span><span style="color:#000000">, name: </span><span style="color:#a31515">&#x27;calculImpot&#x27;</span><span style="color:#000000">, component: CalculImpot</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  },</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// liste des simulations</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// list of simulations</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    path: </span><span style="color:#a31515">&#x27;/liste-des-simulations&#x27;</span><span style="color:#000000">, name: </span><span style="color:#a31515">&#x27;listeSimulations&#x27;</span><span style="color:#000000">, component: ListeSimulations</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  },</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// fin de session</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// end of session</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    path: </span><span style="color:#a31515">&#x27;/fin-session&#x27;</span><span style="color:#000000">, name: </span><span style="color:#a31515">&#x27;finSession&#x27;</span><span style="color:#000000">, component: Authentification</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">]</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">// le routeur</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">// the router</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">const</span><span style="color:#000000"> router = </span><span style="color:#0000ff">new</span><span style="color:#000000"> VueRouter({</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// les routes</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// the roads</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  routes,</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// le mode d&#x27;affichage des routes dans le navigateur</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// how routes are displayed in the browser</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  mode: </span><span style="color:#a31515">&#x27;history&#x27;</span><span style="color:#000000">,</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// l&#x27;URL de base de l&#x27;application</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// the application&#x27;s basic URL</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="background-color:#ffff00;color:#000000">base: </span><span style="background-color:#ffff00;color:#a31515">&#x27;/client-vuejs-impot/</span><span style="color:#a31515">&#x27;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">})</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">// export du router</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">// router export</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">export</span><span style="color:#000000"> </span><span style="color:#0000ff">default</span><span style="color:#000000"> router</span></span></span>
 </code></pre></div>
 
 <ul>
-  <li>line 39: we tell the router that the paths of the routes defined on lines 13–30 are relative to the path defined on line 39. For example, the path on line 20 <b>[/calcul-impot] </b>will become <b>[/client-vuejs-impot/calcul-impot]</b>;
+  <li>line 39: we tell the router that the paths of the routes defined on lines 13–30 are relative to the path defined on line 39. For example, the path on line 20, <b>[/calcul-impot], </b>will become <b>[/client-vuejs-impot/calcul-impot]</b>;
   </li>
 </ul>
 
-<p>We can then test the <strong>[vuejs-20]</strong> project again to verify the change in the application’s paths:</p>
+<p>We can then test the <strong>[vuejs-20]</strong> project again to verify the change in the application paths:</p>
 <p><img src="images/10000000000006B7000004D958A1D813.png" width="430" height="310" style="width:11.372cm;height:8.209cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000006B7000004D958A1D813.png" /></p>
 <p><u><strong>Step 2</strong></u></p>
-<p>We will now build the production version of the <strong>[vuejs-20]</strong> project:</p>
+<p>We now build the production version version of the project <strong>[vuejs-20]</strong>:</p>
 <p><img src="images/1000000000000732000002599D527D42.png" width="553" height="180" style="width:14.623cm;height:4.771cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000732000002599D527D42.png" /></p>
 <ul>
-  <li>In <b>[1-2]</b>, we configure the <b>[build] </b>task <b>[2] </b>in the <b>[package.json] </b>file <b>[1]</b>;
+  <li>In <b>[1-2]</b>, we configure the task <b>[build] [2] </b>in the file <b>[package.json] [1]</b>;
   </li>
-  <li>In <b>[3-5]</b>, we run this task. It will build the production version of the <b>[vuejs-20] </b>project;
+  <li>In <b>[3-5]</b>, we execute this task. It is this task that will build the production version for the <b>[vuejs-20]</b> project;
   </li>
 </ul>
 
-<p>The <strong>[build]</strong> task runs in a <strong>[VSCode]</strong> terminal:</p>
+<p>The execution of task <strong>[build]</strong> takes place in a terminal of <strong>[VSCode]</strong>:</p>
 <p><img src="images/1000000000000729000002598F4859BA.png" width="550" height="180" style="width:14.55cm;height:4.771cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000729000002598F4859BA.png" /></p>
 <p><img src="images/1000000000000670000003D4C30CC002.png" width="494" height="294" style="width:13.079cm;height:7.779cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000670000003D4C30CC002.png" /></p>
 <ul>
-  <li>in <b>[3-6]</b>, warnings indicate that the generated code is too large and should be split up <b>[8]</b>. This relates to code architecture optimization, which we won’t cover here;
+  <li>In <b>[3-6]</b>, warnings indicate that the generated code is too large and should be split into <b>[8]</b>. This involves optimizing the code architecture, which we will not address here;
   </li>
-  <li>In <b>[7]</b>, we are told that the <b>[dist] </b>folder contains the generated production version:
+  <li>In <b>[7]</b>, we are told that the folder <b>[dist] </b>contains the generated production version:
   </li>
 </ul>
 
 <p><img src="images/10000000000006C900000305F58F21C4.png" width="521" height="232" style="width:13.792cm;height:6.137cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000006C900000305F58F21C4.png" /></p>
 <ul>
-  <li>In <b>[3]</b>, the <b>[index.html] </b>file is the one that will be used when the URL <b>[https://localhost:80/client-vue-js-impot/] </b>is requested;
+  <li>In <b>[3]</b>, the file <b>[index.html] </b>is the file that will be used when URL or <b>[https://localhost:80/client-vue-js-impot/]</b> is requested;
   </li>
 </ul>
 
-<p>Here we have a <strong>static</strong> site that can be deployed on any server. We will deploy it on the local Laragon server (see document |https://tahe.developpez.com/tutoriels-cours/php7|). The <strong>[dist]</strong> folder <strong>[2]</strong> is copied to the <strong>[&lt;laragon&gt;/www]</strong> folder <strong>[4],</strong> where &lt;laragon&gt; is the Laragon server installation folder. We rename this folder <strong>to [client-vuejs-impot] [5]</strong> since we have configured the production version to run at the URL <strong>[/client-vuejs-impot/]</strong>.</p>
+<p>Here we have a <strong>static</strong> site that can be deployed on any server. We will deploy it on the local Laragon server (see document |https://tahe.developpez.com/tutoriels-cours/php7|). The folder <strong>[dist] [2]</strong> is copied into the folder <strong>[&lt;laragon&gt;/www] [4],</strong> where &lt;laragon&gt; is the Laragon server installation folder. We rename this folder <strong>[client-vuejs-impot] [5]</strong> since we have configured the production version to run on URL <strong>[/client-vuejs-impot/]</strong>.</p>
 <p><u><strong>Step 3</strong></u></p>
-<p>We add the following <strong>[.htaccess]</strong> file to the <strong>[client-vuejs-impot]</strong> folder that was just created:</p>
+<p>We add the following file to the newly created <strong>[client-vuejs-impot]</strong> folder:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;</span><span style="color:#a31515">IfModule</span><span style="color:#0000ff"> </span><span style="color:#ff0000">mod_rewrite.c</span><span style="color:#0000ff">&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  RewriteEngine On</span></span>
@@ -2573,64 +2575,64 @@
 </code></pre></div>
 
 <p><img src="images/1000000000000152000001C31F515BCA.png" width="118" height="158" style="width:3.129cm;height:4.175cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000152000001C31F515BCA.png" /></p>
-<p>This file is an Apache web server configuration file. If we don’t include it and directly request the URL <strong>[https://localhost/client-vuejs-impot/calcul-impot]</strong>, without first going through the URL <strong>[https://localhost/client-vuejs-impot/]</strong>, we get a 404 error. With this file, we successfully get the <strong>[CalculImpot]</strong> view.</p>
-<p>Once that’s done, start the Laragon server if you haven’t already, and navigate to the URL <strong>[https://localhost/client-vuejs-impot/]</strong>:</p>
+<p>This file is an Apache web server configuration file. If we do not include it and request URL <strong>[https://localhost/client-vuejs-impot/calcul-impot]</strong> directly, without first going through URL <strong>[https://localhost/client-vuejs-impot/]</strong>, we get a 404 error. With this file, we successfully get the <strong>[CalculImpot]</strong> view.</p>
+<p>Once this is done, we start the Laragon server if we haven’t already and request the URL <strong>[https://localhost/client-vuejs-impot/]</strong>:</p>
 <p><img src="images/10000000000008160000051D4D9B5013.png" width="517" height="327" style="width:13.69cm;height:8.657cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000008160000051D4D9B5013.png" /></p>
 <p>Readers are invited to test the production version of our application.</p>
-<p>We can modify the tax calculation server in one respect: the CORS headers it systematically sends to its clients. This was necessary for the client version running from the <strong>[localhost:8080]</strong> domain. Now that both the client and server are running on the <strong>[localhost:80]</strong> domain, the CORS headers are no longer needed.</p>
-<p>We modify the <strong>[config.json]</strong> file for version 14 of the server:</p>
+<p>We can modify the tax calculation server in one respect: the headers it systematically sends to its clients. This was necessary for the client’s version running from the <strong>[localhost:8080]</strong> domain. Now that both the client and server are running in the <strong>[localhost:80]</strong> domain, the CORS headers are no longer needed.</p>
+<p>We modify the <strong>[config.json]</strong> file in the server’s version 14:</p>
 <p><img src="images/10000000000006F30000033A75F81E6D.png" width="534" height="248" style="width:14.122cm;height:6.556cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000006F30000033A75F81E6D.png" /></p>
 <ul>
-  <li>in <b>[4]</b>, we specify that CORS requests are now rejected;
+  <li>in <b>[4]</b>, we specify that CORS requests are now denied;
   </li>
 </ul>
 
-<p>Let’s save this change and request the URL <strong>[https://localhost/client-vuejs-impot/]</strong> again. It should continue to work.</p>
-<p><a id="refheadingtoc251842278084667"></a></p>
-<h2 id="187-handling-manual-urls">18.7. <span style="color: #4f81bd">Handling Manual URLs</span></h2>
-<p>Instead of using the navigation menu links, the user might want to type the application’s URLs manually into the browser’s address bar. For example, let’s request the URL <strong>[https://client-vuejs-impot/calcul-impot]</strong> without going through the authentication page. A hacker would surely try this. We get the following view:</p>
+<p>Let’s save this change and resubmit the URL <strong>[https://localhost/client-vuejs-impot/]</strong>. It should continue to work.</p>
+<p><span id="refheadingtoc251842278084667" name="refheadingtoc251842278084667" class="odt-bookmark-anchor"></span></p>
+<h2 id="187-managing-manual-url-requests">18.7. <span style="color: #4f81bd">Managing manual URL requests</span></h2>
+<p>Instead of using the links in the navigation menu, the user may want to type the application’s URL URLs manually into the browser’s address bar. Let’s try, for example, the URL <strong>[https://client-vuejs-impot/calcul-impot]</strong> without going through the authentication step. A hacker would surely try this. We get the following view:</p>
 <p><img src="images/10000000000009990000060DE0E2C4A4.png" width="614" height="387" style="width:16.251cm;height:10.245cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000009990000060DE0E2C4A4.png" /></p>
 <p>We do indeed get the tax calculation view. Now let’s try filling in the input fields and submitting them:</p>
 <p><img src="images/10000000000009A0000005B4D5AA66F1.png" width="616" height="365" style="width:16.302cm;height:9.659cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000009A0000005B4D5AA66F1.png" /></p>
-<p>We then discover that the <strong>[1] [Submit]</strong> button remains disabled even if the entries are correct. Let’s look at the code for the <strong>[FormCalculImpot]</strong> view:</p>
+<p>We then find that the <strong>[1] [Valider]</strong> button remains disabled even when the entries are correct. Let&#x27;s look at the code for the <strong>[FormCalculImpot]</strong> view:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;</span><span style="color:#800000">b-col</span><span style="color:#000000"> </span><span style="color:#ff0000">cols</span><span style="color:#0000ff">=&quot;5&quot;&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">b-button</span><span style="color:#000000"> </span><span style="color:#ff0000">type</span><span style="color:#0000ff">=&quot;submit&quot;</span><span style="color:#000000"> </span><span style="color:#ff0000">variant</span><span style="color:#0000ff">=&quot;primary&quot;</span><span style="color:#000000"> </span><span style="background-color:#ffff00;color:#ff0000">:disabled</span><span style="background-color:#ffff00;color:#0000ff">=&quot;formInvalide&quot;</span><span style="color:#0000ff">&gt;</span><span style="color:#000000">Valider</span><span style="color:#0000ff">&lt;/</span><span style="color:#800000">b-button</span><span style="color:#0000ff">&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;/</span><span style="color:#800000">b-col</span><span style="color:#0000ff">&gt;</span></span></span>
 </code></pre></div>
 
-<p>In line 2, we see that its active/inactive state depends on the <strong>[formInvalide]</strong> property. This is the following computed property:</p>
+<p>In line 2, we see that its active/inactive state depends on the property <strong>[formInvalide]</strong>. This is the following computed property:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
 <span class="odt-code-line"><span class="odt-code-line-content">formInvalide() {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span><span style="color:#0000ff">return</span><span style="color:#000000"> (</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// salaire invalide</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// disabled salary</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        !</span><span style="color:#0000ff">this</span><span style="color:#000000">.salaireValide ||</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// ou enfants invalide</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// or disabled children</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        !</span><span style="color:#0000ff">this</span><span style="color:#000000">.enfantsValide ||</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// ou données fiscales pas obtenues</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// or tax data not obtained</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="background-color:#ffff00;color:#000000">!</span><span style="background-color:#ffff00;color:#0000ff">this</span><span style="background-color:#ffff00;color:#000000">.$métier.taxAdminData</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      );</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">},</span></span>
 </code></pre></div>
 
-<p>Line 8 shows that for the form to be valid, tax data must have been obtained. However, this data is obtained during the validation of the <strong>[Authentication]</strong> view, which the user has “skipped.” Therefore, they will not be able to submit the form. If they had been able to do so, they would have received an error message from the server indicating that they were not authenticated. Validation must always be performed on the server side. Browser-side validation can always be bypassed. All it takes is a client like <strong>[Postman]</strong> that sends raw requests to the server.</p>
+<p>Line 8 shows that for the form to be valid, tax data must have been obtained. However, this data is obtained during the validation of view <strong>[Authentification]</strong>, which the user “skipped.” Therefore, they will not be able to submit the form. If they had been able to do so, they would have received an error message from the server indicating that they were not authenticated. Validations must always be performed on the server side. Validations on the browser side can always be bypassed. All it takes is a client of type <strong>[Postman]</strong> that will send raw requests to the server.</p>
 <p>Now let’s request the URL <strong>[https://localhost/client-vuejs-impot/liste-des-simulations]</strong>. We get the following view:</p>
 <p><img src="images/10000000000007A7000003C7A251E7DE.png" width="490" height="242" style="width:12.959cm;height:6.398cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000007A7000003C7A251E7DE.png" /></p>
-<p>Now the URL <strong>[https://localhost/client-vuejs-impot/fin-session]</strong>. We get the following view:</p>
+<p>Now URL <strong>[https://localhost/client-vuejs-impot/fin-session]</strong>. We get the following view:</p>
 <p><img src="images/100000000000076C00000503B9B3BBF5.png" width="475" height="321" style="width:12.569cm;height:8.488cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000076C00000503B9B3BBF5.png" /></p>
-<p>Now a view that doesn’t exist <strong>[https://localhost/client-vuejs-impot/abcd]</strong>:</p>
+<p>Now a view that doesn’t exist: <strong>[https://localhost/client-vuejs-impot/abcd]</strong>:</p>
 <p><img src="images/10000000000007E00000031EC6F5AA4B.png" width="504" height="200" style="width:13.34cm;height:5.281cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000007E00000031EC6F5AA4B.png" /></p>
-<p>Our application handles manually typed URLs quite well. When these are called, the application router knows about it. It is therefore possible to intervene before the view is finally displayed. We’ll look at this in the <strong>[vuejs-21]</strong> project.</p>
+<p>Our application handles manually typed URL URLs quite well. When these are called, the application router is aware of it. It is therefore possible to intervene before the view is finally displayed. We will examine this point in the <strong>[vuejs-21]</strong> project.</p>
 <p>Another point to consider is the following. Let’s imagine that the user has run a few simulations according to the rules:</p>
 <p><img src="images/10000000000009960000052EC12328DB.png" width="613" height="331" style="width:16.23cm;height:8.77cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000009960000052EC12328DB.png" /></p>
 <p>Now let’s refresh the page by pressing F5:</p>
 <p><img src="images/10000000000007B5000003DD88E9BE69.png" width="493" height="247" style="width:13.049cm;height:6.542cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000007B5000003DD88E9BE69.png" /></p>
-<p>We did something that’s not recommended: typing the URL manually (pressing F5 is essentially the same thing). As a result, we lost our simulations.</p>
-<p>The following project <strong>[vuejs-21]</strong> aims to introduce two improvements:</p>
+<p>We did something that is not recommended: typing URL manually (pressing F5 amounts to this). As a result, we lost our simulations.</p>
+<p>The following project, <strong>[vuejs-21],</strong> aims to introduce two improvements:</p>
 <ul>
-  <li>validate URLs entered by the user;
+  <li>validate the URL entered by the user;
   </li>
-  <li>maintain the application’s state even if the user types a URL. Above, we see that we’ve lost the list of simulations;
+  <li>maintain the application’s state even if the user enters a URL. Above, we can see that we have lost the list of simulations;
   </li>
 </ul>
 

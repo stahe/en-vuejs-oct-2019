@@ -12,13 +12,13 @@
         <meta name="author" content="Serge Tahé">
       
       
-        <link rel="canonical" href="https://stahe.github.io/en-vuejs-oct-2019/project-vuejs-10-dao-plugin-asynchronous-http-requests.html">
+        <link rel="canonical" href="https://stahe.github.io/en-vuejs-oct-2019/project-vuejs-10-plugin-dao-asynchronous-requests-http.html">
       
       
-        <link rel="prev" href="project-vuejs-09-using-an-eventbus-plugin.html">
+        <link rel="prev" href="project-vuejs-09-using-a-plugin-eventbus.html">
       
       
-        <link rel="next" href="vuejs-11-project-routing-and-navigation.html">
+        <link rel="next" href="project-vuejs-11-routing-and-navigation.html">
       
       
         
@@ -29,7 +29,7 @@
     
     
       
-        <title>12. Project [vuejs-10]: [dao] plugin, asynchronous HTTP requests - An Introduction to the Vue.js Framework Through Examples</title>
+        <title>12. Project [vuejs-10]: plugin [dao], asynchronous requests HTTP - An Introduction to the Vue.js Framework Through Examples</title>
       
     
     
@@ -56,6 +56,8 @@
     
     
       <link rel="stylesheet" href="stylesheets/focus.css">
+    
+      <link rel="stylesheet" href="stylesheets/bidi.css">
     
     <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -92,7 +94,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#12-project-vuejs-10-dao-plugin-asynchronous-http-requests" class="md-skip">
+        <a href="#12-project-vuejs-10-plugin-dao-asynchronous-requests-http" class="md-skip">
           Skip to content
         </a>
       
@@ -128,7 +130,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              12. Project [vuejs-10]: [dao] plugin, asynchronous HTTP requests
+              12. Project [vuejs-10]: plugin [dao], asynchronous requests HTTP
             
           </span>
         </div>
@@ -364,7 +366,7 @@
   <span class="md-ellipsis">
     
   
-    3. Project [vuejs-01]: The Basics
+    3. Project [vuejs-01]: the basics
   
 
     
@@ -384,14 +386,14 @@
   
   
     <li class="md-nav__item">
-      <a href="project-vuejs-02-using-the-bootstrap-css-framework.html" class="md-nav__link">
+      <a href="project-vuejs-02-use-of-the-css-bootstrap-framework.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    4. Project [vuejs-02]: Using the Bootstrap CSS framework
+    4. Project [vuejs-02]: Use of the CSS Bootstrap framework
   
 
     
@@ -411,14 +413,14 @@
   
   
     <li class="md-nav__item">
-      <a href="project-vuejs-03-event-handling.html" class="md-nav__link">
+      <a href="vuejs-03-project-event-handling.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    5. Project [vuejs-03]: Event Handling
+    5. [vuejs-03] project: event handling
   
 
     
@@ -438,14 +440,14 @@
   
   
     <li class="md-nav__item">
-      <a href="project-vuejs-04-directives-v-model-v-bind-computed-properties-input-form.html" class="md-nav__link">
+      <a href="project-vuejs-04-directives-v-model-v-bind-calculated-attributes-input-form.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    6. project [vuejs-04]: directives [v-model, v-bind], computed properties, input form
+    6. Project [vuejs-04]: directives [v-model, v-bind], calculated attributes, input form
   
 
     
@@ -465,14 +467,14 @@
   
   
     <li class="md-nav__item">
-      <a href="vuejs-05-project-v-for-directive.html" class="md-nav__link">
+      <a href="project-vuejs-05-directive-v-for.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    7. [vuejs-05] project: [v-for] directive
+    7. Project [vuejs-05]: Directive [v-for]
   
 
     
@@ -492,14 +494,14 @@
   
   
     <li class="md-nav__item">
-      <a href="project-vuejs-06-laying-out-a-view-with-slots.html" class="md-nav__link">
+      <a href="project-vuejs-06-layout-of-a-view-with-slots.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    8. project [vuejs-06]: laying out a view with slots
+    8. Project [vuejs-06]: Layout of a view with slots
   
 
     
@@ -526,7 +528,7 @@
   <span class="md-ellipsis">
     
   
-    9. project [vuejs-07]: event propagation in the component hierarchy
+    9. Project [vuejs-07]: Event propagation in the component hierarchy
   
 
     
@@ -553,7 +555,7 @@
   <span class="md-ellipsis">
     
   
-    10. Project [vuejs-08]: Events independent of the component hierarchy, component lifecycle
+    10. Project [vuejs-08]: Events Independent of the Component Hierarchy, Component Lifecycle
   
 
     
@@ -573,14 +575,14 @@
   
   
     <li class="md-nav__item">
-      <a href="project-vuejs-09-using-an-eventbus-plugin.html" class="md-nav__link">
+      <a href="project-vuejs-09-using-a-plugin-eventbus.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    11. Project [vuejs-09]: Using an [eventBus] plugin
+    11. Project [vuejs-09]: Using a Plugin [eventBus]
   
 
     
@@ -616,7 +618,7 @@
   <span class="md-ellipsis">
     
   
-    12. Project [vuejs-10]: [dao] plugin, asynchronous HTTP requests
+    12. Project [vuejs-10]: plugin [dao], asynchronous requests HTTP
   
 
     
@@ -627,14 +629,14 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <a href="project-vuejs-10-dao-plugin-asynchronous-http-requests.html" class="md-nav__link md-nav__link--active">
+      <a href="project-vuejs-10-plugin-dao-asynchronous-requests-http.html" class="md-nav__link md-nav__link--active">
         
   
   
   <span class="md-ellipsis">
     
   
-    12. Project [vuejs-10]: [dao] plugin, asynchronous HTTP requests
+    12. Project [vuejs-10]: plugin [dao], asynchronous requests HTTP
   
 
     
@@ -751,14 +753,14 @@
   
   
     <li class="md-nav__item">
-      <a href="vuejs-11-project-routing-and-navigation.html" class="md-nav__link">
+      <a href="project-vuejs-11-routing-and-navigation.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    13. [vuejs-11] project: routing and navigation
+    13. Project [vuejs-11]: Routing and navigation
   
 
     
@@ -778,14 +780,14 @@
   
   
     <li class="md-nav__item">
-      <a href="project-vuejs-12-html-table-management.html" class="md-nav__link">
+      <a href="project-vuejs-12-table-management-html.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    14. Project [vuejs-12]: HTML table management
+    14. Project [vuejs-12]: Table Management HTML
   
 
     
@@ -812,7 +814,7 @@
   <span class="md-ellipsis">
     
   
-    15. Project [vuejs-13]: Updating a component, using a session
+    15. Project [vuejs-13]: updating a component, using a session
   
 
     
@@ -832,14 +834,14 @@
   
   
     <li class="md-nav__item">
-      <a href="project-vuejs-14-making-the-session-reactive.html" class="md-nav__link">
+      <a href="project-vuejs-14-make-the-session-responsive.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    16. Project [vuejs-14]: Making the session reactive
+    16. Project [vuejs-14]: Make the session responsive
   
 
     
@@ -886,14 +888,14 @@
   
   
     <li class="md-nav__item">
-      <a href="vuejs-client-of-the-tax-calculation-server.html" class="md-nav__link">
+      <a href="client-viewjs-of-the-tax-calculation-server.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    18. Vue.js client of the tax calculation server
+    18. Client View.js of the tax calculation server
   
 
     
@@ -913,14 +915,14 @@
   
   
     <li class="md-nav__item">
-      <a href="vuejs-client-improvements.html" class="md-nav__link">
+      <a href="improvements-to-the-vuejs-client.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    19. Vue.js Client Improvements
+    19. Improvements to the Vue.js client
   
 
     
@@ -940,14 +942,14 @@
   
   
     <li class="md-nav__item">
-      <a href="deploying-the-clientserver-application-on-a-hosting-service.html" class="md-nav__link">
+      <a href="deployment-of-the-clientserver-application-on-a-hosting-service.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    20. Deploying the client/server application on a hosting service
+    20. Deployment of the client/server application on a hosting service
   
 
     
@@ -977,31 +979,31 @@
 
 
 
-<p><a id="refheadingtoc2480492728496130"></a></p>
-<h1 id="12-project-vuejs-10-dao-plugin-asynchronous-http-requests">12. <span style="color: #365f91"><strong>Project</strong> [vuejs-10]<strong>:</strong> [dao] <strong>plugin, asynchronous HTTP requests</strong></span></h1>
+<p><span id="refheadingtoc2480492728496130" name="refheadingtoc2480492728496130" class="odt-bookmark-anchor"></span></p>
+<h1 id="12-project-vuejs-10-plugin-dao-asynchronous-requests-http">12. <span style="color: #365f91"><strong>Project</strong> [vuejs-10]<strong>: plugin</strong> [dao]<strong>, asynchronous requests HTTP</strong></span></h1>
 <p>The directory structure of the <strong>[vuejs-10]</strong> project is as follows:</p>
 <p><img src="images/100000000000017F0000014C6FA960FB.png" width="134" height="116" style="width:3.551cm;height:3.078cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000017F0000014C6FA960FB.png" /></p>
-<p>The <strong>[vuejs-10]</strong> project demonstrates a component making an HTTP request to a remote server. The architecture used is as follows:</p>
+<p>The <strong>[vuejs-10]</strong> project shows a component making a HTTP request to a remote server. The architecture used is as follows:</p>
 <p><img src="images/10000000000008690000024E0C4F847A.png" width="646" height="177" style="width:17.09cm;height:4.683cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000008690000024E0C4F847A.png" /></p>
 <p>A <strong>[Vue.js]</strong> component uses the <strong>[dao]</strong> layer to communicate with the tax calculation server.</p>
-<p><a id="refheadingtoc2480512728496130"></a></p>
-<h2 id="121-installing-dependencies">12.1. <span style="color: #4f81bd">Installing dependencies</span></h2>
+<p><span id="refheadingtoc2480512728496130" name="refheadingtoc2480512728496130" class="odt-bookmark-anchor"></span></p>
+<h2 id="121-installing-dependencies">12.1. <span style="color: #4f81bd"><strong>Installing dependencies</strong></span></h2>
 <p>The <strong>[vuejs-10]</strong> application uses the <strong>[axios]</strong> library to make asynchronous requests to the tax calculation server. We need to install this dependency:</p>
 <p><img src="images/100000000000076A0000018CD19A0CFA.png" width="570" height="119" style="width:15.071cm;height:3.143cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000076A0000018CD19A0CFA.png" /></p>
 <ul>
-  <li>in <b>[4-5]</b>, the line added to the <b>[package.json] </b>file after installing the <b>[axios] </b>library <b>[1-3]</b>;
+  <li>in <b>[4-5]</b>, the line added to the <b>[package.json]</b> file after installing the <b>[axios]</b> library <b>[1-3]</b>;
   </li>
 </ul>
-<p><a id="refheadingtoc2480532728496130"></a></p>
+<p><span id="refheadingtoc2480532728496130" name="refheadingtoc2480532728496130" class="odt-bookmark-anchor"></span></p>
 <h2 id="122-the-dao-class">12.2. <span style="color: #4f81bd"><strong>The</strong> [Dao] <strong>class</strong></span></h2>
-<p>The <strong>[Dao]</strong> class is the one developed in the section <a href="#1112la-classe-daooutline"><u><span style="color: #0563c1">[The Dao Class]</span></u></a>. We include it here for reference:</p>
+<p>The <strong>[Dao]</strong> class is the one developed in section <a href="#1112la-classe-daooutline"><u><span style="color: #0563c1">[La classe Dao]</span></u></a>. We reproduce it here for reference:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-javascript">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#a31515">&#x27;use strict&#x27;;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">// imports</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">import</span><span style="color:#000000"> qs </span><span style="color:#0000ff">from</span><span style="color:#000000"> </span><span style="color:#a31515">&#x27;qs&#x27;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">// dao] class</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">// class [Dao]</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">class</span><span style="color:#000000"> </span><span style="color:#2b91af">Dao</span><span style="color:#000000"> {</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// manufacturer</span></span></span>
@@ -1028,7 +1030,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content">  }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#0000ff">async</span><span style="color:#000000">  authentifierUtilisateur(user, password) {</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// query options HHTP [post /main.php?action=authenticate-user]</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// query options HHTP [post /main.php?action=authentifier-utilisateur]</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">const</span><span style="color:#000000"> options = {</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      method: </span><span style="color:#a31515">&quot;POST&quot;</span><span style="color:#000000">,</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      headers: {</span></span>
@@ -1116,24 +1118,24 @@
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">export</span><span style="color:#000000"> </span><span style="color:#0000ff">default</span><span style="color:#000000"> Dao;</span></span></span>
 </code></pre></div>
 
-<p>The <strong>[vuejs-10]</strong> project uses only the asynchronous <strong>[initSession]</strong> method in lines 18–30. Note that the <strong>[Dao]</strong> class is instantiated with an <strong>[axios]</strong> parameter on line 10, which is initialized by the calling code. In this case, the calling code is the <strong>[./main.js]</strong> script.</p>
-<p><a id="refheadingtoc2480552728496130"></a></p>
+<p>The <strong>[vuejs-10]</strong> project uses only the asynchronous method <strong>[initSession]</strong> in lines 18–30. Note that the <strong>[Dao]</strong> class is instantiated with a <strong>[axios]</strong> parameter on line 10, which is initialized by the calling code. In this case, the calling code is the <strong>[./main.js]</strong> script.</p>
+<p><span id="refheadingtoc2480552728496130" name="refheadingtoc2480552728496130" class="odt-bookmark-anchor"></span></p>
 <h2 id="123-the-plugindao-plugin">12.3. <span style="color: #4f81bd"><strong>The</strong> [pluginDao] <strong>plugin</strong></span></h2>
 <p>The <strong>[pluginDao]</strong> plugin is as follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">export</span><span style="color:#000000"> </span><span style="color:#0000ff">default</span><span style="color:#000000"> {</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  install(Vue, dao) {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// ajoute une propriété [$dao] à la classe Vue</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// adds a [$dao] property to the Vue class</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    Object.defineProperty(Vue.prototype, </span><span style="color:#a31515">&#x27;$dao&#x27;</span><span style="color:#000000">, {</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// lorsque Vue.$dao est référencé, on rend le 2ième paramètre [dao]</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// when Vue.$dao is referenced, we return the 2nd parameter [dao]</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      get: () =&gt; dao,</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    })</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
 </code></pre></div>
 
-<p>If we recall the explanation given for the <strong>[event-bus]</strong> plugin, we see that the <strong>[pluginDao]</strong> plugin creates a new property called <strong>[$dao]</strong> in the <strong>[Vue]</strong> class/function. This property will have (as we will show) as its value the object exported by the <strong>[./Dao]</strong> script, i.e., the previous <strong>[Dao]</strong> class.</p>
-<p><a id="refheadingtoc2480572728496130"></a></p>
+<p>If we recall the explanation provided for the <strong>[event-bus]</strong> plugin, we can see that the <strong>[pluginDao]</strong> plugin creates a new property called <strong>[$dao]</strong> within the <strong>[Vue]</strong> class/function. This property will have (as remains to be shown) as its value the object exported by the <strong>[./Dao]</strong> script, i.e., the previous <strong>[Dao]</strong> class.</p>
+<p><span id="refheadingtoc2480572728496130" name="refheadingtoc2480572728496130" class="odt-bookmark-anchor"></span></p>
 <h2 id="124-the-main-script-mainjs">12.4. <span style="color: #4f81bd"><strong>The main script</strong> [main.js]</span></h2>
 <p>The code for the main script <strong>[main.js]</strong> is as follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
@@ -1150,56 +1152,56 @@
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">import</span><span style="color:#000000"> </span><span style="color:#a31515">&#x27;bootstrap/dist/css/bootstrap.css&#x27;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">import</span><span style="color:#000000"> </span><span style="color:#a31515">&#x27;bootstrap-vue/dist/bootstrap-vue.css&#x27;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
-<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold">// couche [dao]</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">// layer [dao]</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">import</span><span style="color:#000000"> Dao </span><span style="color:#0000ff">from</span><span style="color:#000000"> </span><span style="color:#a31515">&#x27;./Dao&#x27;</span><span style="color:#000000">;</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">// configuration axios</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">// axios configuration</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">axios.defaults.timeout = 2000;</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">axios.defaults.baseURL = </span><span style="color:#a31515">&#x27;http://localhost/php7/scripts-web/impots/version-14&#x27;</span><span style="color:#000000">;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">axios.defaults.baseURL = &#x27;http://localhost/php7/scripts-web/impots/version-14&#x27;;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">axios.defaults.withCredentials = </span><span style="color:#0000ff">true</span><span style="color:#000000">;</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold">// instanciation couche [dao]</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">// instantiation layer [dao]</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">const</span><span style="color:#000000"> dao = </span><span style="color:#0000ff">new</span><span style="color:#000000"> Dao(axios);</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
-<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold">// plugin [dao]</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">// plugin [dao]</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">import</span><span style="color:#000000"> pluginDao </span><span style="color:#0000ff">from</span><span style="color:#000000"> </span><span style="color:#a31515">&#x27;./plugins/dao&#x27;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">Vue.use(pluginDao, dao)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">// configuration</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">Vue.config.productionTip = </span><span style="color:#0000ff">false</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
-<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold">// instanciation projet [App]</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">// instantiation project [App]</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">new</span><span style="color:#000000"> Vue({</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  render: h =&gt; h(App),</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">}).$mount(</span><span style="color:#a31515">&#x27;#app&#x27;</span><span style="color:#000000">)</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">}).$mount(&#x27;#app&#x27;)</span></span>
 </code></pre></div>
 
-<p>The <strong>[main.js]</strong> script:</p>
+<p>The script <strong>[main.js]</strong>:</p>
 <ul>
-  <li>instantiates the <b>[dao] </b>layer on lines 14–21;
+  <li>instantiates the <b>[dao]</b> layer on lines 14–21;
   </li>
-  <li>includes the <b>[pluginDao] </b>plugin on lines 24–25;
+  <li>integrates the <b>[pluginDao]</b> plugin on lines 24–25;
   </li>
-  <li>line 15: the <b>[Dao] </b>class is imported;
+  <li>line 15: the <b>[Dao]</b> class is imported;
   </li>
-  <li>lines 17–18: the <b>[axios] </b>object, which handles HTTP requests, is configured. This object is imported on line 4;
+  <li>lines 17–18: the <b>[axios]</b> object is configured to execute the HTTP queries. This object is imported on line 4;
     <ul>
-      <li>line 17: defines a <b>[timeout] </b>of 2 seconds;
+      <li>line 17: definition of a 2-second <b>[timeout]</b>;
       </li>
-      <li>line 18: the URL of the tax calculation server;
+      <li>line 18: the URL for the tax calculation server;
       </li>
       <li>line 19: to enable cookie exchange with the server;
       </li>
     </ul>
   </li>
-  <li>lines 24-25: use of the <b>[pluginDao] </b>plugin
+  <li>lines 24–25: use of the <b>[pluginDao]</b> plugin
     <ul>
-      <li>line 24: import of the plugin;
+      <li>line 24: import the plugin;
       </li>
-      <li>line 25: integration of the plugin. We can see that the second parameter of the <b>[Vue.use] </b>method is the reference to the <b>[dao] </b>layer defined on line 21. This is why the <b>[Vue.$dao] </b>property will refer to the <b>[dao] </b>layer in all instances of the <b>[Vue] </b>class/function, i.e., in all <b>[Vue.js] </b>components;
+      <li>Line 25: Plugin integration. Note that the second parameter of the <b>[Vue.use]</b> method is the reference to the <b>[dao]</b> layer defined on line 21. This is why the property <b>[Vue.$dao] </b>will refer to the layer <b>[dao] </b>in all instances of the class/function <b>[Vue]</b>, i.e., in all components <b>[Vue.js]</b>;
       </li>
     </ul>
   </li>
 </ul>
-<p><a id="refheadingtoc2480592728496130"></a></p>
+<p><span id="refheadingtoc2480592728496130" name="refheadingtoc2480592728496130" class="odt-bookmark-anchor"></span></p>
 <h2 id="125-the-main-view-appvue">12.5. <span style="color: #4f81bd"><strong>The main view</strong> [App.vue]</span></h2>
 <p>The code for the main view <strong>[App]</strong> is as follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
@@ -1210,13 +1212,13 @@
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">b-alert</span><span style="color:#000000"> </span><span style="color:#ff0000">show</span><span style="color:#000000"> </span><span style="color:#ff0000">variant</span><span style="color:#0000ff">=&quot;success&quot;</span><span style="color:#000000"> </span><span style="color:#ff0000">align</span><span style="color:#0000ff">=&quot;center&quot;&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">h4</span><span style="color:#0000ff">&gt;</span><span style="font-weight:bold;color:#000000">[vuejs-10]</span><span style="color:#000000"> : plugin </span><span style="font-weight:bold;color:#000000">[dao]</span><span style="color:#000000">, requêtes HTTP asynchrones</span><span style="color:#0000ff">&lt;/</span><span style="color:#800000">h4</span><span style="color:#0000ff">&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span><span style="color:#0000ff">&lt;/</span><span style="color:#800000">b-alert</span><span style="color:#0000ff">&gt;</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">&lt;!-- composant faisant une requête asynchrone au serveur de calcul d&#x27;impôt--&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">&lt;!-- component making an asynchronous request to the tax calculation server--&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">Component1</span><span style="color:#000000"> </span><span style="color:#ff0000">@error</span><span style="color:#0000ff">=&quot;doSomethingWithError&quot;</span><span style="color:#000000"> </span><span style="color:#ff0000">@endWaiting</span><span style="color:#0000ff">=&quot;endWaiting&quot;</span><span style="color:#000000"> </span><span style="color:#ff0000">@beginWaiting</span><span style="color:#0000ff">=&quot;beginWaiting&quot;</span><span style="color:#000000"> </span><span style="color:#0000ff">/&gt;</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">&lt;!-- affichage d&#x27;une éventuelle erreur --&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">&lt;!-- error display --&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">b-alert</span><span style="color:#000000"> </span><span style="color:#ff0000">show</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">               </span><span style="color:#ff0000">variant</span><span style="color:#0000ff">=&quot;danger&quot;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">               </span><span style="color:#ff0000">v-if</span><span style="color:#0000ff">=&quot;showError&quot;&gt;</span><span style="color:#000000">Evénement </span><span style="font-weight:bold;color:#000000">[error]</span><span style="color:#000000"> intercepté par </span><span style="font-weight:bold;color:#000000">[App]</span><span style="color:#000000">. Valeur reçue = </span><span style="font-weight:bold;color:#000000">{{</span><span style="color:#800080">error</span><span style="font-weight:bold;color:#000000">}}</span><span style="color:#0000ff">&lt;/</span><span style="color:#800000">b-alert</span><span style="color:#0000ff">&gt;</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">&lt;!-- message d&#x27;attente avec un spinner --&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">&lt;!-- message waiting with a spinner --&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">b-alert</span><span style="color:#000000"> </span><span style="color:#ff0000">show</span><span style="color:#000000"> </span><span style="color:#ff0000">v-if</span><span style="color:#0000ff">=&quot;showWaiting&quot;</span><span style="color:#000000"> </span><span style="color:#ff0000">variant</span><span style="color:#0000ff">=&quot;light&quot;&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">strong</span><span style="color:#0000ff">&gt;</span><span style="color:#000000">Requête au serveur de calcul d&#x27;impôt en cours...</span><span style="color:#0000ff">&lt;/</span><span style="color:#800000">strong</span><span style="color:#0000ff">&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">b-spinner</span><span style="color:#000000"> </span><span style="color:#ff0000">variant</span><span style="color:#0000ff">=&quot;primary&quot;</span><span style="color:#000000"> </span><span style="color:#ff0000">label</span><span style="color:#0000ff">=&quot;Spinning&quot;&gt;&lt;/</span><span style="color:#800000">b-spinner</span><span style="color:#0000ff">&gt;</span></span></span>
@@ -1229,40 +1231,40 @@
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#0000ff">import</span><span style="color:#000000"> Component1 </span><span style="color:#0000ff">from</span><span style="color:#000000"> </span><span style="color:#a31515">&quot;./components/Component1&quot;</span><span style="color:#000000">;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#0000ff">export</span><span style="color:#000000"> </span><span style="color:#0000ff">default</span><span style="color:#000000"> {</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    name: </span><span style="color:#a31515">&quot;app&quot;</span><span style="color:#000000">,</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// état du composant</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// component status</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    data() {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span><span style="color:#0000ff">return</span><span style="color:#000000"> {</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// contrôle le spinner d&#x27;attente</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// controls the waiting spinner</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        showWaiting: </span><span style="color:#0000ff">false</span><span style="color:#000000">,</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// contrôle l&#x27;affichage de l&#x27;erreur</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// controls error display</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        showError: </span><span style="color:#0000ff">false</span><span style="color:#000000">,</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// l&#x27;erreur interceptée</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// the intercepted error</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        error: {}</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      };</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    },</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// composants utilisés</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// components used</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    components: {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      Component1</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    },</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// méthodes de gestion des évts</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// event management methods</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    methods: {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// début attente</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// start waiting</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      beginWaiting() {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// on affiche l&#x27;attente</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// wait is displayed</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000ff">this</span><span style="color:#000000">.showWaiting = </span><span style="color:#0000ff">true</span><span style="color:#000000">;</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// on cache le msg d&#x27;erreur</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// hide error message</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000ff">this</span><span style="color:#000000">.showError = </span><span style="color:#0000ff">false</span><span style="color:#000000">;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      },</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// fin attente</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// end waiting</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      endWaiting() {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// on cache l&#x27;attente</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// we hide the wait</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000ff">this</span><span style="color:#000000">.showWaiting = </span><span style="color:#0000ff">false</span><span style="color:#000000">;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      },</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// gestion d&#x27;erreur</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// error handling</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      doSomethingWithError(error) {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// on note qu&#x27;il y a eu erreur</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// we note that there has been an error</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000ff">this</span><span style="color:#000000">.error = error;</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// on affiche le msg d&#x27;erreur</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// error msg is displayed</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000ff">this</span><span style="color:#000000">.showError = </span><span style="color:#0000ff">true</span><span style="color:#000000">;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
@@ -1272,31 +1274,31 @@
 
 <p><strong>Comments</strong></p>
 <ul>
-  <li>line 9: <b>[Component1] </b>is the component that makes the asynchronous HTTP request. It can emit three events:
+  <li>Line 9: <b>[Component1] </b>is the component that makes the asynchronous HTTP request. It can emit three events:
     <ul>
-      <li><b>[beginWaiting]</b>: the request is about to be made. A waiting message must be displayed to the user;
+      <li><b>[beginWaiting]</b>: The request is about to be made. A loading message must be displayed to the user;
       </li>
-      <li><b>[endWaiting]</b>: the request is complete. The wait must be stopped;
+      <li><b>[endWaiting]</b>: The request is complete. The wait must be terminated;
       </li>
-      <li><b>[error]</b>: the request failed. An error message must be displayed;
+      <li><b>[error]</b>: The request failed. An error message must be displayed;
       </li>
     </ul>
   </li>
-  <li>lines 10–13: the alert that displays any error message. It is controlled by the boolean <b>[showError] </b>on line 33. It displays the error on line 35;
+  <li>lines 10–13: the alert that displays any error message. It is controlled by the Boolean <b>[showError] </b>on line 33. It displays the error on line 35;
   </li>
-  <li>lines 14–18: the alert that displays the waiting message with a spinner. It is controlled by the boolean <b>[showWaiting] </b>on line 47;
+  <li>lines 14–18: the alert that displays the loading message with a spinner. It is controlled by the Boolean <b>[showWaiting] </b>on line 47;
   </li>
-  <li>lines 45–50: <b>[beginWaiting] </b>is the method executed upon receiving the <b>[beginWaiting] </b>event. It displays the waiting message (line 47) and hides the error message (line 49) in case it is still visible from a previous operation;
+  <li>lines 45–50: <b>[beginWaiting] </b>is the method executed upon receipt of the <b>[beginWaiting]</b> event. It displays the loading message (line 47) and hides the error message (line 49) in case it is visible following a previous operation;
   </li>
-  <li>lines 52–55: <b>[endWaiting] </b>is the method executed upon receiving the <b>[endWaiting] </b>event. It hides the waiting message (line 54);
+  <li>lines 52–55: <b>[endWaiting] </b>is the method executed upon receipt of the <b>[endWaiting]</b> event. It hides the waiting message (line 54);
   </li>
-  <li>lines 57–62: <b>[doSomethingWithError] </b>is the method executed upon receiving the <b>[error] </b>event. It logs the received error (line 59) and displays the error message (line 61);
+  <li>lines 57–62: <b>[doSomethingWithError] </b>is the method executed upon receipt of the <b>[error]</b> event. It logs the received error (line 59) and displays the error message (line 61);
   </li>
 </ul>
-<p><a id="refheadingtoc2480612728496130"></a></p>
+<p><span id="refheadingtoc2480612728496130" name="refheadingtoc2480612728496130" class="odt-bookmark-anchor"></span></p>
 <h2 id="126-the-component1-component">12.6. <span style="color: #4f81bd"><strong>The</strong> [Component1] <strong>component</strong></span></h2>
 <p>The code for the <strong>[Component1]</strong> component is as follows:</p>
-<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-javascript">
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;</span><span style="color:#800000">template</span><span style="color:#0000ff">&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">b-row</span><span style="color:#0000ff">&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">b-col</span><span style="color:#0000ff">&gt;</span></span></span>
@@ -1328,8 +1330,8 @@
 <span class="odt-code-line"><span class="odt-code-line-content">    },</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// the component has just been created</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    created() {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// initialize the session with the server - asynchronous request</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// we use the promise rendered by the [dao] layer methods</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// on initialise la session avec le serveur - requête asynchrone</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// we use the promise rendered by [dao] layer methods</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// we signal the start of the operation</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span><span style="color:#0000ff">this</span><span style="color:#000000">.$emit(</span><span style="color:#a31515">&quot;beginWaiting&quot;</span><span style="color:#000000">);</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// asynchronous operation is launched</span></span></span>
@@ -1356,31 +1358,31 @@
 
 <p><strong>Comments</strong></p>
 <ul>
-  <li>lines 4–6: The component consists of a single alert that displays the value returned by the tax calculation server, but only if the HTTP request is successful. This alert is controlled by the boolean <b>[showMsg] </b>on line 17;
+  <li>lines 4-6: the component consists of a single alert that displays the value returned by the tax calculation server, but only if the HTTP query is successful. This alert is controlled by the Boolean <b>[showMsg] </b>on line 17;
   </li>
-  <li>lines 31–53: The HTTP request is made as soon as the component is created. Therefore, its code is placed in the <b>[created] </b>method on line 31;
+  <li>lines 31–53: The HTTP request is made as soon as the component is created. Its code is therefore placed in the <b>[created]</b> method on line 31;
   </li>
   <li>line 35: the parent component is notified that the asynchronous request is about to start;
   </li>
-  <li>lines 37–39: the <b>[this.$dao.initSession] </b>method is executed. It initializes a JSON session with the tax calculation server. The immediate result of this method is a <b>[Promise]</b>;
+  <li>lines 37–39: the <b>[this.$dao.initSession]</b> method is executed. It initializes a jSON session with the tax calculation server. The immediate result of this method is a <b>[Promise]</b>;
   </li>
-  <li>lines 41–44: this code runs when the server returns its result without an error. The server’s result is in <b>[data]</b>. On line 43, we call the <b>[doSomethingWithData] </b>method to process this result;
+  <li>lines 41–44: this code executes when the server has returned its result without an error. The server’s result is in <b>[data]</b>. On line 43, the <b>[doSomethingWithData]</b> method is called to process this result;
   </li>
-  <li>lines 46–49: this code runs if an error occurs while executing the request. On line 48, the parent component is notified that an error has occurred, and the error message <b>[error.message] </b>is passed to it;
+  <li>lines 46–49: this code runs if an error occurs while executing the request. On line 48, the parent component is notified that an error has occurred, and the error message <b>[error.message]</b> is passed to it;
   </li>
-  <li>Lines 49–52: This code runs in all cases. We notify the parent component that the HTTP request is complete;
+  <li>lines 49–52: this code runs in all cases. The parent component is notified that the HTTP query has completed;
   </li>
-  <li>Lines 23–28: The <b>[doSomethingWithData] </b>method is responsible for processing the data <b>[data] </b>sent by the server. On line 25, this data is stored, and on line 27, it is displayed;
+  <li>Lines 23–28: The method <b>[doSomethingWithData] </b>is responsible for processing the data <b>[data] </b>sent by the server. On line 25, this data is stored, and on line 27, it is displayed;
   </li>
 </ul>
-<p><a id="refheadingtoc2480632728496130"></a></p>
+<p><span id="refheadingtoc2480632728496130" name="refheadingtoc2480632728496130" class="odt-bookmark-anchor"></span></p>
 <h2 id="127-running-the-project">12.7. <span style="color: #4f81bd">Running the project</span></h2>
 <p><img src="images/10000000000006F40000024A89EDD34C.png" width="534" height="176" style="width:14.131cm;height:4.651cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000006F40000024A89EDD34C.png" /></p>
 <p>If the tax calculation server is not running when the project is launched, the following result is obtained:</p>
 <p><img src="images/1000000000000743000001E5B468F398.png" width="557" height="145" style="width:14.75cm;height:3.849cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000743000001E5B468F398.png" /></p>
-<p>Let’s start the <strong>[Laragon]</strong> server (see<a href="https://tahe.developpez.com/tutoriels-cours/php7"><u><span style="color: #0563c1"> https://tahe.developpez.com/tutoriels-cours/php7</span></u></a>) and reload the page above. The result is then as follows:</p>
+<p>Let’s launch the <strong>[Laragon]</strong> server (see<a href="https://tahe.developpez.com/tutoriels-cours/php7"><u><span style="color: #0563c1"> https://tahe.developpez.com/tutoriels-cours/php7</span></u></a>) and reload the page above. The result is then as follows:</p>
 <p><img src="images/1000000000000713000001DF5E41F39C.png" width="543" height="144" style="width:14.37cm;height:3.801cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000713000001DF5E41F39C.png" /></p>
-<p><strong>Note</strong>: We are using version 14 of the tax calculation server defined at<a href="https://tahe.developpez.com/tutoriels-cours/php7"><u><span style="color: #0563c1"> https://tahe.developpez.com/tutoriels-cours/php7</span></u></a>.</p>
+<p><strong>Note</strong>: Here we are using version 14 from the tax calculation server defined at<a href="https://tahe.developpez.com/tutoriels-cours/php7"><u><span style="color: #0563c1"> https://tahe.developpez.com/tutoriels-cours/php7</span></u></a>.</p>
 
 
 
