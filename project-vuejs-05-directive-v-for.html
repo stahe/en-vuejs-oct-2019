@@ -1020,14 +1020,14 @@
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#0000ff">export</span><span style="color:#000000"> </span><span style="color:#0000ff">default</span><span style="color:#000000"> {</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    name: </span><span style="color:#a31515">&quot;VFor&quot;</span><span style="color:#000000">,</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// propriétés statiques du composant</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// component static properties</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    data() {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span><span style="color:#0000ff">return</span><span style="color:#000000"> {</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// liste des erreurs</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// error list</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        erreurs: [],</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// erreur ou pas</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// error or not</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        error: </span><span style="color:#0000ff">false</span><span style="color:#000000">,</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// liste des options du menu</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// list of menu options</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        options: [</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">          { text: </span><span style="color:#a31515">&quot;option 1&quot;</span><span style="color:#000000">, id: 1 },</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">          { text: </span><span style="color:#a31515">&quot;option 2&quot;</span><span style="color:#000000">, id: 2 },</span></span></span>
@@ -1036,14 +1036,14 @@
 <span class="odt-code-line"><span class="odt-code-line-content">      };</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    },</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// méthodes</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// methods</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    methods: {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// génération d&#x27;une liste d&#x27;erreurs</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// error list generation</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      generateErrors() {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000ff">this</span><span style="color:#000000">.erreurs = </span><span style="font-weight:bold;color:#000000">[&quot;erreur 1&quot;, &quot;erreur 2&quot;, &quot;erreur 3&quot;]</span><span style="color:#000000">;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000ff">this</span><span style="color:#000000">.error = </span><span style="color:#0000ff">true</span><span style="color:#000000">;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      },</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// l&#x27;utilisateur a sélectionné une option</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// the user has selected a option</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      select(index) {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        alert(</span><span style="color:#a31515">&quot;Vous avez choisi : &quot;</span><span style="color:#000000"> + </span><span style="color:#0000ff">this</span><span style="color:#000000">.options</span><span style="font-weight:bold;color:#000000">[index]</span><span style="color:#000000">.text);</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      }</span></span>

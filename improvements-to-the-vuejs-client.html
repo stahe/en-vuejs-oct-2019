@@ -1279,7 +1279,7 @@
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
 <span class="odt-code-line"><span class="odt-code-line-content">// we import the Vuex blind</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">import</span><span style="color:#000000"> store </span><span style="color:#0000ff">from</span><span style="color:#000000"> </span><span style="color:#a31515">&#x27;./store&#x27;</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">// import the configuration</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">// import configuration</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">import</span><span style="color:#000000"> config </span><span style="color:#0000ff">from</span><span style="color:#000000"> </span><span style="color:#a31515">&#x27;./config&#x27;</span><span style="color:#000000">;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">// the [session] object</span></span>
@@ -1295,7 +1295,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// vuex status</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  state: </span><span style="color:#0000ff">null</span><span style="color:#000000">,</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// save session in jSON string</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// save session in a jSON string</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  save() {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// we add a few features to the session</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">this</span><span style="color:#000000">.saveTime = Date.now();</span></span></span>
@@ -1418,8 +1418,8 @@
 <p><span id="refheadingtoc259309196815120" name="refheadingtoc259309196815120" class="odt-bookmark-anchor"></span></p>
 <h2 id="194-the-configuration-file-config">19.4. <span style="color: #4f81bd"><strong>The configuration file</strong> [config]</span></h2>
 <p>The <strong>[./config]</strong> file changes as follows:</p>
-<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
-<span class="odt-code-line"><span class="odt-code-line-content">// using the [axios] library</span></span>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<span class="odt-code-line"><span class="odt-code-line-content">// use of the [axios] library</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">const</span><span style="color:#000000"> axios = require(</span><span style="color:#a31515">&#x27;axios&#x27;</span><span style="color:#000000">);</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">// query timeout HTTP</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">axios.defaults.timeout = 2000;</span></span>
@@ -1569,7 +1569,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content">  routes,</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// the URL display mode</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  mode: </span><span style="color:#a31515">&#x27;history&#x27;</span><span style="color:#000000">,</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// the application&#x27;s basic URL</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// the basic URL of the application</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  base: </span><span style="color:#a31515">&#x27;/client-vuejs-impot/&#x27;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">})</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
